@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Description of User
  *
@@ -9,19 +10,21 @@ class User {
 
     public $id;
     public $name;
+    public $parent;
     public $email;
     public $createdAt;
+    public $profile_picture;
     public $isActive;
     public $authToken;
     public $lastLogin;
     public $username;
     public $resetCode;
-    private $password;
+    public $password;
 
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT `id`,`name`,`email`,`createdAt`,`isActive`,`authToken`,`lastLogin`,`username`,`resetcode` FROM `user` WHERE `id`=" . $id;
+            $query = "SELECT `id`,`name`,`parent`,`email`,`createdAt`,`profile_picture`,`isActive`,`authToken`,`lastLogin`,`username`,`resetcode` FROM `user` WHERE `id`=" . $id;
 
             $db = new Database();
 
@@ -29,8 +32,10 @@ class User {
 
             $this->id = $result['id'];
             $this->name = $result['name'];
+            $this->parent = $result['parent'];
             $this->email = $result['email'];
             $this->createdAt = $result['createdAt'];
+            $this->profile_picture = $result['profile_picture'];
             $this->isActive = $result['isActive'];
             $this->lastLogin = $result['lastLogin'];
             $this->username = $result['username'];
@@ -41,21 +46,29 @@ class User {
         }
     }
 
-    public function create($name, $email, $username, $passwor) {
-
-        $enPass = md5($passwor);
+    public function create() {
 
         date_default_timezone_set('Asia/Colombo');
 
         $createdAt = date('Y-m-d H:i:s');
 
-        $query = "INSERT INTO `user` (name, email, createdAt, isActive, username, password) VALUES  ('" . $name . "', '" . $email . "', '" . $createdAt . "', '" . 1 . "', '" . $username . "', '" . $enPass . "')";
+        $query = "INSERT INTO `user` (`name`,`email`,`parent`,`createdAt`,`profile_picture`,`isActive`,`username`,`password`) VALUES  ('"
+                . $this->name . "','"
+                . $this->email . "','"
+                . $this->parent . "','"
+                . $this->createdAt . "','"
+                . $this->profile_picture . "','"
+                . $this->isActive . "','"
+                . $this->username . "','"
+                . $this->password . "')";
 
         $db = new Database();
 
         $result = $db->readQuery($query);
+
         if ($result) {
             $last_id = mysql_insert_id();
+
             return $this->__construct($last_id);
         } else {
             return FALSE;
@@ -65,7 +78,7 @@ class User {
     public function login($username, $password) {
 
         $enPass = md5($password);
-        $query = "SELECT `id`,`name`,`email`,`createdAt`,`isActive`,`lastLogin`,`username` FROM `user` WHERE `username`= '" . $username . "' AND `password`= '" . $enPass . "'";
+        $query = "SELECT `id`,`name`,`email`,`createdAt`,`profile_picture`,`isActive`,`lastLogin`,`username` FROM `user` WHERE `username`= '" . $username . "' AND `password`= '" . $enPass . "'";
 
         $db = new Database();
 
@@ -177,6 +190,7 @@ class User {
                 . "`name` ='" . $this->name . "', "
                 . "`username` ='" . $this->username . "', "
                 . "`email` ='" . $this->email . "', "
+                . "`profile_picture` ='" . $this->profile_picture . "', "
                 . "`isActive` ='" . $this->isActive . "' "
                 . "WHERE `id` = '" . $this->id . "'";
 
@@ -220,6 +234,22 @@ class User {
         } else {
             return FALSE;
         }
+    }
+
+    public function GetUserByParent($parent) {
+
+        $query = "SELECT * FROM `user` WHERE `parent` = '" . $parent . "'";
+
+        $db = new Database();
+
+        $result = $db->readQuery($query);
+        $array_res = array();
+
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+
+        return $array_res;
     }
 
     private function setLastLogin($id) {

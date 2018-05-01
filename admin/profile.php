@@ -1,12 +1,9 @@
 ﻿<?php
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
+ 
+$USER = new User($_SESSION["id"]);
 
-$id = '';
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-}
-$USER = new User($id);
 ?> 
 ﻿<!DOCTYPE html>
 <html> 

@@ -14,7 +14,7 @@
         <p>Please wait...</p>
     </div>
 </div>
-<!-- #END# Page Loader -->
+
 <!-- Overlay For Sidebars -->
 <div class="overlay"></div>
 <!-- #END# Overlay For Sidebars -->
@@ -241,7 +241,7 @@
         <!-- User Info -->
         <div class="user-info">
             <div class="image">
-                <img src="images/profile/<?php echo $_SESSION["id"]; ?>.jpg" width="48" height="48" alt="User" />
+                <img src="../upload/user/<?php echo $USER->profile_picture; ?>" width="48" height="48" alt="User" />
             </div>
             <div class="info-container">
                 <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -252,12 +252,12 @@
                     <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">settings</i>
                     <ul class="dropdown-menu pull-right">
                         <li>
-                            <a href="profile.php?id=<?php echo $_SESSION['id']; ?>">
+                            <a href="profile.php">
                                 <i class="material-icons">person</i>Profile</a>
                         </li>
                         <li role="seperator" class="divider"></li>
-                        <li><a href="edit-profile.php?id=<?php echo $_SESSION['id']; ?>"><i class="material-icons">edit</i>Edit My Profile</a></li>
-                        <li><a href="change-password.php?id=<?php echo $_SESSION['id']; ?>"><i class="material-icons">vpn_key</i>Change Password</a></li> 
+                        <li><a href="edit-profile.php"><i class="material-icons">edit</i>Edit My Profile</a></li>
+                        <li><a href="change-password.php"><i class="material-icons">vpn_key</i>Change Password</a></li> 
                         <li role="seperator" class="divider"></li>
                         <li><a href="post-and-get/log-out.php"><i class="material-icons">input</i>Sign Out</a></li>
                     </ul>
@@ -283,20 +283,20 @@
                     </a>
                     <ul class="ml-menu">
                         <li>
-                            <a href="create-district.php">
+                            <a href="create-new-user.php">
                                 <i class="material-icons">add</i>
                                 <span>Add New</span>
                             </a>
                         </li>
                         <li>
-                            <a href="manage-district.php">
+                            <a href="manage-user.php">
                                 <i class="material-icons">list</i>
                                 <span>Manage</span>
                             </a>
                         </li>
                     </ul>
                 </li>
-                
+              
                 <!--                <li>
                                     <a href="javascript:void(0);" class="menu-toggle">
                                         <i class="material-icons">location_city</i>
