@@ -1,7 +1,7 @@
 <?php
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . './auth.php');
-
+$USER = new User($_SESSION["id"]);
 date_default_timezone_set('Asia/Colombo');
 
 $createdAt = date('Y-m-d H:i:s');
