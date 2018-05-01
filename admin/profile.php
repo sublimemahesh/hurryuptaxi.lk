@@ -10,7 +10,7 @@ $USER = new User($_SESSION["id"]);
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Profile || Admin || Support Lanka</title>
+        <title>Profile || Admin || hurryuptaxi.lk</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
@@ -68,7 +68,7 @@ $USER = new User($_SESSION["id"]);
                                         </ul>
                                     </div>
                                     <div class="col-sm-3 col-md-3">  
-                                        <img src="images/profile/<?php echo $USER->id; ?>.jpg" class="img img-responsive img-thumbnail"/> 
+                                        <img src="../upload/user/<?php echo $USER->profile_picture; ?>" class="img img-responsive img-thumbnail"/> 
                                     </div>
                                 </div>
                             </div>
