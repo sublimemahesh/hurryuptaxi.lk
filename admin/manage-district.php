@@ -77,16 +77,20 @@ $DISTRICT = new District(NULL)
                                                     <td><?php echo $district['sort']; ?></td> 
                                                     <td><?php echo $district['name']; ?></td> 
                                                     <td> 
-                                                        <a href="edit-district.php?id=<?php echo $district['id']; ?>" class="op-link btn btn-sm btn-default">
+                                                        <a href="edit-district.php?id=<?php echo $district['id']; ?>" class="op-link btn btn-sm btn-success">
                                                             <i class="glyphicon glyphicon-pencil"></i>
                                                         </a>
 
                                                         <a href="#" class="delete-district btn btn-sm btn-danger" data-id="<?php echo $district['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
                                                         </a>
-                                                        
-                                                        <a href="arrange-district.php" class="btn btn-sm btn-success">
+
+                                                        <a href="arrange-district.php" class="btn btn-sm btn-primary">
                                                             <i class="glyphicon glyphicon-random"></i>
+                                                        </a>
+
+                                                        <a href="create-city.php?id=<?php echo $district['id'];?>" class="btn btn-sm btn-warning">
+                                                            <i class="glyphicon glyphicon-map-marker"></i>
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -100,7 +104,7 @@ $DISTRICT = new District(NULL)
                         </div>
                     </div>
                 </div>
-            
+
             </div>
         </section>
 

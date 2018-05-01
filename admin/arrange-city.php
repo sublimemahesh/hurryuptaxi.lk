@@ -2,8 +2,11 @@
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . './auth.php');
 $USER = new User($_SESSION["id"]);
-
-$CITY = City::all();
+$id = '';
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+}
+$DISTRICT = new District($id)
 ?>
 <!DOCTYPE html>
 <html>
@@ -66,6 +69,7 @@ $CITY = City::all();
                                         <div class="dd nestable-with-handle">
                                             <ol class="dd-list">
                                                 <?php
+                                                $CITY = City::GetCitiesByDistrict($id);
                                                 if (count($CITY) > 0) {
                                                     foreach ($CITY as $key => $img) {
                                                         ?>

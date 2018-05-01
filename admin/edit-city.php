@@ -50,7 +50,7 @@ $CITY = new City($id);
                                 </h2>
                                 <ul class="header-dropdown">
                                     <li class="">
-                                        <a href="manage-city.php">
+                                        <a href="manage-district.php">
                                             <i class="material-icons">list</i> 
                                         </a>
                                     </li>
@@ -58,7 +58,6 @@ $CITY = new City($id);
                             </div>
                             <div class="body row">
                                 <form class="form-horizontal col-sm-9 col-md-12" method="post" action="post-and-get/city.php" enctype="multipart/form-data"> 
-
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                             <label for="district">District</label>
@@ -101,8 +100,7 @@ $CITY = new City($id);
                                     <div class="row clearfix">
                                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
                                             <input type="hidden" id="id" value="<?php echo $CITY->id; ?>" name="id"/>
-                                            <input type="hidden" id="id" value="<?php echo $DIS->id; ?>" name="id"/>
-                                            <input type="hidden" id="authToken" value="<?php echo $_SESSION["authToken"]; ?>" name="authToken"/>
+                                           
                                             <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="edit-city" value="submit">Save Changes</button>
                                         </div>
                                     </div>
