@@ -85,12 +85,22 @@ $USE = new User($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <select class="form-control show-tick place-select1" type="text" id="district" autocomplete="off" name="district">
-                                                        <option value="" class="active light-c">---Pleace Select---</option>
-                                                        <?php foreach (District::all() as $key => $dist) {
-                                                            ?>
-                                                            <option value="<?php echo $dist['id']; ?>"><?php echo $dist['name']; ?></option>
+                                                    <select class="form-control" autocomplete="off" type="text" id="district" autocomplete="off" name="district" required="TRUE">
+                                                        <option value="<?php echo $USER->id; ?>" class="active light-c">
                                                             <?php
+                                                            $DISTRICT = new District(NULL);
+                                                            if ($USER->district) {
+                                                                echo $DISTRICT->name;
+                                                            } else {
+                                                                ?>
+                                                                --Please Select--
+                                                                <?php
+                                                            }
+                                                            ?>
+                                                        </option>
+                                                        <?php foreach (District::all() as $key => $city) {
+                                                            ?>
+                                                            <option ind_id="<?php echo $city['id']; ?>" value="<?php echo $city['id']; ?>"><?php echo $city['name']; ?></option><?php
                                                         }
                                                         ?>
                                                     </select>
@@ -106,14 +116,20 @@ $USE = new User($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <select class="form-control show-tick place-select1" type="text" id="city" autocomplete="off" name="city">
-                                                        <option value="" class="active light-c">---Pleace Select---</option>
-                                                        <?php foreach (City::all() as $key => $dist) {
-                                                            ?>
-                                                            <option value="<?php echo $dist['id']; ?>"><?php echo $dist['name']; ?></option>
+                                                    <select class="form-control" autocomplete="off" type="text" id="city-bar" autocomplete="off" name="city" required="TRUE">
+                                                        <option value="<?php echo $USER->id; ?>">
                                                             <?php
-                                                        }
-                                                        ?>
+                                                            $CITY = new City(NULL);
+                                                            if ($USER->city) {
+                                                                echo $USER->name;
+                                                            } else {
+                                                                ?>
+                                                                --Please Select a District First --
+                                                                <?php
+                                                            }
+                                                            ?>
+
+                                                        </option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -295,6 +311,7 @@ $USE = new User($id);
         <script src="js/demo.js"></script>
         <script src="js/add-new-ad.js" type="text/javascript"></script>
         <script src="tinymce/js/tinymce/tinymce.min.js"></script>
+        <script src="js/city.js" type="text/javascript"></script>
         <script>
             tinymce.init({
                 selector: "#about_me",
