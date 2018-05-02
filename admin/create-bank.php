@@ -9,7 +9,7 @@ $USER = new User($_SESSION["id"]);
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Add New Dealer || Admin || hurryuptaxi.lk</title>
+        <title>Add New Bank || Admin || hurryuptaxi.lk</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -47,17 +47,17 @@ $USER = new User($_SESSION["id"]);
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="card">
                             <div class="header">
-                                <h2>Add New Dealer</h2>
+                                <h2>Add New Bank</h2>
                                 <ul class="header-dropdown">
                                     <li class="">
-                                        <a href="manage-dealer.php">
+                                        <a href="manage-bank.php">
                                             <i class="material-icons">list</i> 
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="body">
-                                <form class="form-horizontal"  method="post" action="post-and-get/dealer.php" enctype="multipart/form-data"> 
+                                <form class="form-horizontal"  method="post" action="post-and-get/bank.php" enctype="multipart/form-data"> 
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                             <label for="name">Name</label>
@@ -73,7 +73,7 @@ $USER = new User($_SESSION["id"]);
 
                                     <div class="row clearfix">
                                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5"> 
-                                            <input type="submit" name="add-dealer" class="btn btn-primary m-t-15 waves-effect" value="Add Dealear"/>
+                                            <input type="submit" name="add-bank" class="btn btn-primary m-t-15 waves-effect" value="Add Bank"/>
                                         </div>
                                     </div>
                                     <hr/>
