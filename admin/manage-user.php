@@ -70,7 +70,13 @@ $USER = new User($_SESSION["id"]);
                                         <tbody>
                                             <?php
                                             $USE = new User(NULL);
-                                            foreach ($USE->GetUserByParent($_SESSION["id"]) as $key => $user) {
+                                            if (isset($_GET['user'])) {
+                                                $USERS = $USE->GetUserByParent($_GET['user']);
+                                            } else {
+                                                $USERS = $USE->GetUserByParent($_SESSION["id"]);
+                                            }
+
+                                            foreach ($USERS as $key => $user) {
                                                 ?>
                                                 <tr id="row_<?php echo $user['id']; ?>">
                                                     <td><?php echo $user['id']; ?></td> 
@@ -80,11 +86,10 @@ $USER = new User($_SESSION["id"]);
                                                     <td><?php echo $user['createdAt']; ?></td> 
                                                     <td><?php echo $user['lastLogin']; ?></td> 
                                                     <td> 
-                                                        <a href="edit-user.php?id=<?php echo $user['id'];?>" class="op-link btn btn-sm btn-success"><i class="glyphicon glyphicon-pencil"></i></a>
+                                                        <a href="edit-user.php?id=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-success"><i class="glyphicon glyphicon-pencil"></i></a>
+                                                        |
+                                                        <a href="manage-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-success"><i class="glyphicon glyphicon-user"></i></a>
 
-<!--                                                        <a href="#" class="delete-member btn btn-sm btn-danger" data-id="<?php echo $user['id']; ?>">
-                                                            <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
-                                                        </a>-->
                                                     </td>
                                                 </tr>
                                                 <?php

@@ -15,6 +15,7 @@ if (isset($_POST['create'])) {
     $USER->email = filter_input(INPUT_POST, 'email');
     $USER->district = filter_input(INPUT_POST, 'district');
     $USER->city = filter_input(INPUT_POST, 'city');
+    $USER->dealer = filter_input(INPUT_POST, 'dealer');
     $USER->address = filter_input(INPUT_POST, 'address');
     $USER->phone_number = filter_input(INPUT_POST, 'phone_number');
     $USER->nic = filter_input(INPUT_POST, 'nic');
@@ -57,6 +58,7 @@ if (isset($_POST['create'])) {
         'name' => ['required' => TRUE],
         'email' => ['required' => TRUE],
         'city' => ['required' => TRUE],
+        'dealer' => ['required' => TRUE],
         'district' => ['required' => TRUE],
         'nic' => ['required' => TRUE],
         'bank' => ['required' => TRUE],
@@ -119,6 +121,7 @@ if (isset($_POST['update'])) {
     $USER->email = filter_input(INPUT_POST, 'email');
     $USER->district = filter_input(INPUT_POST, 'district');
     $USER->city = filter_input(INPUT_POST, 'city');
+    $USER->dealer = filter_input(INPUT_POST, 'dealer');
     $USER->address = filter_input(INPUT_POST, 'address');
     $USER->phone_number = filter_input(INPUT_POST, 'phone_number');
     $USER->nic = filter_input(INPUT_POST, 'nic');

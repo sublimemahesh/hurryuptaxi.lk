@@ -135,6 +135,41 @@ $USE = new User($id);
                                             </div>
                                         </div>
                                     </div> 
+                                     <!--Dealer-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="dealer">Dealer</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group place-select">
+                                                <div class="form-line">
+                                                    <select class="form-control" autocomplete="off" type="text" id="dealer" autocomplete="off" name="dealer" required="TRUE">
+                                                        <option value="<?php echo $USE->id ?>"> 
+                                                            <?php
+                                                            $DEALEAR = new Dealer($USE->dealer);
+                                                            if ($USE->dealer) {
+                                                                echo $DEALEAR->name;
+                                                            } else {
+                                                                ?>
+                                                                -- Please Select -- 
+                                                                <?php
+                                                            }
+                                                            ?>
+
+                                                        </option>
+                                                        <?php foreach (Dealer::all() as $key => $dealer) {
+                                                            ?>
+                                                            <option value="<?php echo $dealer['id']; ?>">
+                                                                <?php echo $dealer['name']; ?>
+                                                            </option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
                                     <!--Address-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
@@ -223,9 +258,31 @@ $USE = new User($id);
                                             <label for="bank">Bank</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                            <div class="form-group">
+                                            <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <input type="text" id="bank" class="form-control" placeholder="Enter Your Bank Name" autocomplete="off" name="bank" value="<?php echo $USE->bank; ?>">
+                                                    <select class="form-control" autocomplete="off" type="text" id="bank" autocomplete="off" name="bank" required="TRUE">
+                                                        <option value="<?php echo $USE->id ?>"> 
+                                                            <?php
+                                                            $BANK = new Bank($USE->bank);
+                                                            if ($USE->bank) {
+                                                                echo $BANK->name;
+                                                            } else {
+                                                                ?>
+                                                                -- Please Select -- 
+                                                                <?php
+                                                            }
+                                                            ?>
+
+                                                        </option>
+                                                        <?php foreach (Bank::all() as $key => $bank) {
+                                                            ?>
+                                                            <option value="<?php echo $bank['id']; ?>">
+                                                                <?php echo $bank['name']; ?>
+                                                            </option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -249,9 +306,31 @@ $USE = new User($id);
                                             <label for="account_type">Account Type</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                            <div class="form-group">
+                                            <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <input type="text" id="account_type" class="form-control" placeholder="Enter Account Type" autocomplete="off" name="account_type" value="<?php echo $USE->account_type; ?>">
+                                                    <select class="form-control" autocomplete="off" type="text" id="account_type" autocomplete="off" name="account_type" required="TRUE">
+                                                        <option value="<?php echo $USE->account_type ?>">
+                                                            <?php
+                                                            if ($USE->account_type == 1) {
+                                                                ?>
+                                                                Saving Account
+                                                                <?php
+                                                            } elseif ($USE->account_type == 2) {
+                                                                ?>
+                                                                Current Account
+                                                                <?php
+                                                            } else {
+                                                                ?>
+                                                                ---Please Select---
+                                                                <?php
+                                                            }
+                                                            ?>
+
+                                                        </option>
+
+                                                        <option value="1">Saving Account</option>
+                                                        <option value="2">Current Account</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>

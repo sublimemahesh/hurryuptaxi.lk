@@ -9,10 +9,10 @@
 class Database {
 
 //    private $host = 'kelum818.ipagemysql.com';
-//    private $name = 'supportlanka';
-//    private $user = 'supportlanka';
-//    private $password = '2L{;nEUJ@2\):7r!';
-    
+//    private $name = 'hurryuptaxi';
+//    private $user = 'hurryuptaxi';
+//    private $password = 'Chin@228@hurryuptaxi';
+
     private $host = 'localhost';
     private $name = 'hurryuptaxi';
     private $user = 'root';
@@ -27,7 +27,6 @@ class Database {
 
         $result = mysql_query($query) or die(mysql_error());
         return $result;
- 
     }
 
 }

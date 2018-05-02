@@ -14,6 +14,7 @@ class User {
     public $email;
     public $district;
     public $city;
+    public $dealer;
     public $address;
     public $phone_number;
     public $nic;
@@ -34,7 +35,7 @@ class User {
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT `id`,`name`,`parent`,`email`,`district`,`city`,`address`,`phone_number`,`nic`,`createdAt`,`profile_picture`,`isActive`,`authToken`,`lastLogin`,`bank`,`branch`,`account_type`,`holder_name`,`account_number`,`username`,`resetcode` FROM `user` WHERE `id`=" . $id;
+            $query = "SELECT `id`,`name`,`parent`,`email`,`district`,`city`,`dealer`,`address`,`phone_number`,`nic`,`createdAt`,`profile_picture`,`isActive`,`authToken`,`lastLogin`,`bank`,`branch`,`account_type`,`holder_name`,`account_number`,`username`,`resetcode` FROM `user` WHERE `id`=" . $id;
 
             $db = new Database();
 
@@ -46,6 +47,7 @@ class User {
             $this->email = $result['email'];
             $this->district = $result['district'];
             $this->city = $result['city'];
+            $this->dealer =$result['dealer'];
             $this->address = $result['address'];
             $this->phone_number = $result['phone_number'];
             $this->nic = $result['nic'];
@@ -72,11 +74,12 @@ class User {
 
         $createdAt = date('Y-m-d H:i:s');
 
-        $query = "INSERT INTO `user` (`name`,`email`,`district`,`city`,`address`,`phone_number`,`nic`,`parent`,`createdAt`,`profile_picture`,`isActive`,`bank`,`branch`,`account_type`,`holder_name`,`account_number`,`username`,`password`) VALUES  ('"
+        $query = "INSERT INTO `user` (`name`,`email`,`district`,`city`,`dealer`,`address`,`phone_number`,`nic`,`parent`,`createdAt`,`profile_picture`,`isActive`,`bank`,`branch`,`account_type`,`holder_name`,`account_number`,`username`,`password`) VALUES  ('"
                 . $this->name . "','"
                 . $this->email . "','"
                 . $this->district . "','"
                 . $this->city . "','"
+                . $this->dealer . "','"
                 . $this->address . "','"
                 . $this->phone_number . "','"
                 . $this->nic . "','"
@@ -208,6 +211,7 @@ class User {
         unset($_SESSION["email"]);
         unset($_SESSION["district"]);
         unset($_SESSION["city"]);
+        unset($_SESSION["dealer"]);
         unset($_SESSION["address"]);
         unset($_SESSION["phone_number"]);
         unset($_SESSION["nic"]);
@@ -233,6 +237,7 @@ class User {
                 . "`email` ='" . $this->email . "', "
                 . "`district` ='" . $this->district . "', "
                 . "`city` ='" . $this->city . "', "
+                . "`dealer` ='" . $this->dealer . "', "
                 . "`address` ='" . $this->address . "', "
                 . "`phone_number` ='" . $this->phone_number . "', "
                 . "`nic` ='" . $this->nic . "', "
@@ -267,6 +272,7 @@ class User {
         $_SESSION["email"] = $user['email'];
         $_SESSION["district"] = $user['district'];
         $_SESSION["city"] = $user['city'];
+        $_SESSION["dealer"] = $user['dealer'];
         $_SESSION["address"] = $user['address'];
         $_SESSION["phone_number"] = $user['phone_number'];
         $_SESSION["nic"] = $user['nic'];
