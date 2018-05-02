@@ -275,6 +275,27 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+                
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">assignment_ind</i>
+                        <span>Dealer</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="create-dealer.php">
+                                <i class="material-icons">add</i>
+                                <span>Add New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="manage-dealer.php">
+                                <i class="material-icons">list</i>
+                                <span>Manage</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">

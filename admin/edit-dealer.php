@@ -6,14 +6,14 @@ $id = '';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 }
-$DIS = new District($id);
+$DEALE = new Dealer($id);
 ?> 
 ﻿<!DOCTYPE html>
 <html> 
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Edit District || Admin || hurryuptaxi.lk</title>
+        <title>Edit Dealer || Admin || hurryuptaxi.lk</title>
 
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -52,12 +52,11 @@ $DIS = new District($id);
                         <div class="card">
                             <div class="header">
                                 <h2>
-                                    Edit District
+                                    Edit Dealer
                                 </h2>
-
                             </div>
                             <div class="body row">
-                                <form class="form-horizontal col-sm-9 col-md-9" method="post" action="post-and-get/district.php" enctype="multipart/form-data"> 
+                                <form class="form-horizontal col-sm-9 col-md-9" method="post" action="post-and-get/dealer.php" enctype="multipart/form-data"> 
 
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
@@ -66,7 +65,7 @@ $DIS = new District($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="name" class="form-control" placeholder="Enter name" value="<?php echo $DIS->name; ?>"  name="name"  required="TRUE">
+                                                    <input type="text" id="name" class="form-control" placeholder="Enter name" value="<?php echo $DEALE->name; ?>"  name="name"  required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -75,12 +74,12 @@ $DIS = new District($id);
                                     <div class="row clearfix">
                                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
 
-                                            <input type="hidden" id="id" value="<?php echo $DIS->id; ?>" name="id"/>
-                                            <input type="hidden" id="authToken" value="<?php echo $_SESSION["authToken"]; ?>" name="authToken"/>
-
-                                            <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="edit-district" value="submit">Save Changes</button>
+                                            <input type="hidden" id="id" value="<?php echo $DEALE->id; ?>" name="id"/>
+                                            
+                                            <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="edit-dealer" value="submit">Save Changes</button>
                                         </div>
                                     </div>
+                                    
                                 </form>
                             </div>
                         </div>
