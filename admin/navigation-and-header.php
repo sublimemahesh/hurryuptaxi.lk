@@ -278,7 +278,7 @@
                 
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">assignment_ind</i>
+                        <i class="material-icons">recent_actors</i>
                         <span>Dealer</span>
                     </a>
                     <ul class="ml-menu">
@@ -324,6 +324,27 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">store_mall_directory</i>
+                        <span>Bank</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="create-bank.php">
+                                <i class="material-icons">add</i>
+                                <span>Add New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="manage-bank.php">
+                                <i class="material-icons">list</i>
+                                <span>Manage</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">folder_shared</i>
