@@ -3,7 +3,11 @@ include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 
 $USER = new User($_SESSION["id"]);
-
+$id = '';
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+}
+$USE = new User($id);
 ?> 
 ﻿<!DOCTYPE html>
 <html> 
@@ -55,7 +59,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="name" class="form-control" placeholder="Enter Member name" autocomplete="off" name="name" required="TRUE" value="<?php echo $USER->name; ?>">
+                                                    <input type="text" id="name" class="form-control" placeholder="Enter Member name" autocomplete="off" name="name" required="TRUE" value="<?php echo $USE->name; ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -68,20 +72,88 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="email" id="email" class="form-control" placeholder="Enter Email" autocomplete="off" name="email" required="TRUE" value="<?php echo $USER->email; ?>">
+                                                    <input type="email" id="email" class="form-control" placeholder="Enter Email" autocomplete="off" name="email" required="TRUE" value="<?php echo $USE->email; ?>">
                                                 </div>
                                             </div>
                                         </div>
                                     </div> 
-                                    <!--User Name-->
+                                    <!--District-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                            <label for="username">User Name</label>
+                                            <label for="district">District</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group place-select">
+                                                <div class="form-line">
+                                                    <select class="form-control show-tick place-select1" type="text" id="district" autocomplete="off" name="district">
+                                                        <option value="" class="active light-c">---Pleace Select---</option>
+                                                        <?php foreach (District::all() as $key => $dist) {
+                                                            ?>
+                                                            <option value="<?php echo $dist['id']; ?>"><?php echo $dist['name']; ?></option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--City-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="city">City</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group place-select">
+                                                <div class="form-line">
+                                                    <select class="form-control show-tick place-select1" type="text" id="city" autocomplete="off" name="city">
+                                                        <option value="" class="active light-c">---Pleace Select---</option>
+                                                        <?php foreach (City::all() as $key => $dist) {
+                                                            ?>
+                                                            <option value="<?php echo $dist['id']; ?>"><?php echo $dist['name']; ?></option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--Address-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="address">Address</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="username" class="form-control" placeholder="Enter User Name" autocomplete="off" name="username" required="TRUE" value="<?php echo $USER->username; ?>">
+                                                    <input type="text" id="address" class="form-control" placeholder="Enter Your Address" autocomplete="off" name="address" value="<?php echo $USE->address; ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--Phone Number-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="phone_number">Phone Number</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="phone_number" class="form-control" placeholder="Enter Your Phone Number" autocomplete="off" name="phone_number" value="<?php echo $USE->phone_number; ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--NIC-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="nic">NIC</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="nic" class="form-control" placeholder="Enter Your NIC Number" autocomplete="off" name="nic" value="<?php echo $USE->nic; ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -94,19 +166,114 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="file" id="image" class="form-control" name="image" value="<?php echo $USER->profile_picture; ?>">
-                                                    <img src="../upload/user/<?php echo $USER->profile_picture; ?>" id="image" class="view-edit-img img img-responsive img-thumbnail" name="image" alt="old image">
+                                                    <input type="file" id="image" class="form-control" name="image" value="<?php echo $USE->profile_picture; ?>">
+                                                    <img src="../upload/user/<?php echo $USE->profile_picture; ?>" id="image" class="view-edit-img img img-responsive img-thumbnail" name="image" alt="old image">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!--User Name-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="username">User Name</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="username" class="form-control" placeholder="Enter User Name" autocomplete="off" name="username" required="TRUE" value="<?php echo $USE->username; ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Password-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="name">Password</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="password" id="password" class="form-control" placeholder="Enter password" autocomplete="off" name="password" required>
+                                                    <input type="hidden" id="createdAt" name="createdAt" value="<?php echo $createdAt; ?>">
+                                                    <input type="hidden" id="parent" name="parent" value="<?php echo $_SESSION["id"]; ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <hr>
+                                    <!--Bank-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="bank">Bank</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="bank" class="form-control" placeholder="Enter Your Bank Name" autocomplete="off" name="bank" value="<?php echo $USE->bank; ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--Branch-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="branch">Branch</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="branch" class="form-control" placeholder="Enter Your Branch City" autocomplete="off" name="branch" value="<?php echo $USE->branch; ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--Account Type-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="account_type">Account Type</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="account_type" class="form-control" placeholder="Enter Account Type" autocomplete="off" name="account_type" value="<?php echo $USE->account_type; ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Holder Name-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="holder_name">Holder Name</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="holder_name" class="form-control" placeholder="Enter Holder Name" autocomplete="off" name="holder_name" value="<?php echo $USE->holder_name; ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Account Type-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="account_number">Account Number</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="account_number" class="form-control" placeholder="Enter Account Number" autocomplete="off" name="account_number" value="<?php echo $USE->account_number; ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="col-md-12">
                                         <div class="col-md-2"></div>  
-                                     
+
                                         <div class="row clearfix">
                                             <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
-                                                <input type="hidden" id="oldImageName" value="<?php echo $USER->profile_picture; ?>" name="oldImageName"/>
-                                                <input type="hidden" id="id" value="<?php echo $USER->id; ?>" name="id"/>
+                                                <input type="hidden" id="oldImageName" value="<?php echo $USE->profile_picture; ?>" name="oldImageName"/>
+                                                <input type="hidden" id="id" value="<?php echo $USE->id; ?>" name="id"/>
                                                 <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="update" value="update">Save Changes</button>
                                             </div>
                                         </div>

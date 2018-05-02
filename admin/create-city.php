@@ -93,7 +93,6 @@ $DISTRICT = new District($id)
 
                                     <hr/>
                                 </form>
-
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>

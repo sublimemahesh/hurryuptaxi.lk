@@ -12,11 +12,21 @@ class User {
     public $name;
     public $parent;
     public $email;
+    public $district;
+    public $city;
+    public $address;
+    public $phone_number;
+    public $nic;
     public $createdAt;
     public $profile_picture;
     public $isActive;
     public $authToken;
     public $lastLogin;
+    public $bank;
+    public $branch;
+    public $account_type;
+    public $holder_name;
+    public $account_number;
     public $username;
     public $resetCode;
     public $password;
@@ -24,7 +34,7 @@ class User {
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT `id`,`name`,`parent`,`email`,`createdAt`,`profile_picture`,`isActive`,`authToken`,`lastLogin`,`username`,`resetcode` FROM `user` WHERE `id`=" . $id;
+            $query = "SELECT `id`,`name`,`parent`,`email`,`district`,`city`,`address`,`phone_number`,`nic`,`createdAt`,`profile_picture`,`isActive`,`authToken`,`lastLogin`,`bank`,`branch`,`account_type`,`holder_name`,`account_number`,`username`,`resetcode` FROM `user` WHERE `id`=" . $id;
 
             $db = new Database();
 
@@ -34,10 +44,20 @@ class User {
             $this->name = $result['name'];
             $this->parent = $result['parent'];
             $this->email = $result['email'];
+            $this->district = $result['district'];
+            $this->city = $result['city'];
+            $this->address = $result['address'];
+            $this->phone_number = $result['phone_number'];
+            $this->nic = $result['nic'];
             $this->createdAt = $result['createdAt'];
             $this->profile_picture = $result['profile_picture'];
             $this->isActive = $result['isActive'];
             $this->lastLogin = $result['lastLogin'];
+            $this->bank = $result['bank'];
+            $this->branch = $result['branch'];
+            $this->account_type = $result['account_type'];
+            $this->holder_name = $result['holder_name'];
+            $this->account_number = $result['account_number'];
             $this->username = $result['username'];
             $this->authToken = $result['authToken'];
             $this->resetCode = $result['resetcode'];
@@ -52,13 +72,23 @@ class User {
 
         $createdAt = date('Y-m-d H:i:s');
 
-        $query = "INSERT INTO `user` (`name`,`email`,`parent`,`createdAt`,`profile_picture`,`isActive`,`username`,`password`) VALUES  ('"
+        $query = "INSERT INTO `user` (`name`,`email`,`district`,`city`,`address`,`phone_number`,`nic`,`parent`,`createdAt`,`profile_picture`,`isActive`,`bank`,`branch`,`account_type`,`holder_name`,`account_number`,`username`,`password`) VALUES  ('"
                 . $this->name . "','"
                 . $this->email . "','"
+                . $this->district . "','"
+                . $this->city . "','"
+                . $this->address . "','"
+                . $this->phone_number . "','"
+                . $this->nic . "','"
                 . $this->parent . "','"
                 . $this->createdAt . "','"
                 . $this->profile_picture . "','"
                 . $this->isActive . "','"
+                . $this->bank . "','"
+                . $this->branch . "','"
+                . $this->account_type . "','"
+                . $this->holder_name . "','"
+                . $this->account_number . "','"
                 . $this->username . "','"
                 . $this->password . "')";
 
@@ -78,7 +108,7 @@ class User {
     public function login($username, $password) {
 
         $enPass = md5($password);
-        $query = "SELECT `id`,`name`,`email`,`createdAt`,`profile_picture`,`isActive`,`lastLogin`,`username` FROM `user` WHERE `username`= '" . $username . "' AND `password`= '" . $enPass . "'";
+        $query = "SELECT * FROM `user` WHERE `username`= '" . $username . "' AND `password`= '" . $enPass . "'";
 
         $db = new Database();
 
@@ -176,8 +206,19 @@ class User {
         unset($_SESSION["id"]);
         unset($_SESSION["name"]);
         unset($_SESSION["email"]);
+        unset($_SESSION["district"]);
+        unset($_SESSION["city"]);
+        unset($_SESSION["address"]);
+        unset($_SESSION["phone_number"]);
+        unset($_SESSION["nic"]);
+        unset($_SESSION["profile_picture"]);
         unset($_SESSION["isActive"]);
         unset($_SESSION["authToken"]);
+        unset($_SESSION["bank"]);
+        unset($_SESSION["branch"]);
+        unset($_SESSION["account_type"]);
+        unset($_SESSION["holder_name"]);
+        unset($_SESSION["account_number"]);
         unset($_SESSION["lastLogin"]);
         unset($_SESSION["username"]);
 
@@ -190,8 +231,18 @@ class User {
                 . "`name` ='" . $this->name . "', "
                 . "`username` ='" . $this->username . "', "
                 . "`email` ='" . $this->email . "', "
+                . "`district` ='" . $this->district . "', "
+                . "`city` ='" . $this->city . "', "
+                . "`address` ='" . $this->address . "', "
+                . "`phone_number` ='" . $this->phone_number . "', "
+                . "`nic` ='" . $this->nic . "', "
                 . "`profile_picture` ='" . $this->profile_picture . "', "
-                . "`isActive` ='" . $this->isActive . "' "
+                . "`isActive` ='" . $this->isActive . "', "
+                . "`bank` ='" . $this->bank . "', "
+                . "`branch` ='" . $this->branch . "', "
+                . "`account_type` ='" . $this->account_type . "', "
+                . "`holder_name` ='" . $this->holder_name . "', "
+                . "`account_number` ='" . $this->account_number . "' "
                 . "WHERE `id` = '" . $this->id . "'";
 
         $db = new Database();
@@ -214,8 +265,19 @@ class User {
         $_SESSION["id"] = $user['id'];
         $_SESSION["name"] = $user['name'];
         $_SESSION["email"] = $user['email'];
+        $_SESSION["district"] = $user['district'];
+        $_SESSION["city"] = $user['city'];
+        $_SESSION["address"] = $user['address'];
+        $_SESSION["phone_number"] = $user['phone_number'];
+        $_SESSION["nic"] = $user['nic'];
+        $_SESSION["profile_picture"] = $user['profile_picture'];
         $_SESSION["isActive"] = $user['isActive'];
         $_SESSION["authToken"] = $user['authToken'];
+        $_SESSION["bank"] = $user['bank'];
+        $_SESSION["branch"] = $user['branch'];
+        $_SESSION["account_type"] = $user['account_type'];
+        $_SESSION["holder_name"] = $user['holder_name'];
+        $_SESSION["account_number"] = $user['account_number'];
         $_SESSION["lastLogin"] = $user['lastLogin'];
         $_SESSION["username"] = $user['username'];
     }

@@ -2,6 +2,7 @@
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . './auth.php');
 $USER = new User($_SESSION["id"]);
+
 date_default_timezone_set('Asia/Colombo');
 
 $createdAt = date('Y-m-d H:i:s');
@@ -81,6 +82,87 @@ $createdAt = date('Y-m-d H:i:s');
                                             </div>
                                         </div>
                                     </div>
+                                    <!--District-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="district">District</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group place-select">
+                                                <div class="form-line">
+                                                    <select class="form-control show-tick place-select1" type="text" id="district" autocomplete="off" name="district">
+                                                        <option value="" class="active light-c">---Pleace Select---</option>
+                                                        <?php foreach (District::all() as $key => $dist) {
+                                                            ?>
+                                                            <option value="<?php echo $dist['id']; ?>"><?php echo $dist['name']; ?></option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--City-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="city">City</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group place-select">
+                                                <div class="form-line">
+                                                    <select class="form-control show-tick place-select1" type="text" id="city" autocomplete="off" name="city">
+                                                        <option value="" class="active light-c">---Pleace Select---</option>
+                                                        <?php foreach (City::all() as $key => $dist) {
+                                                            ?>
+                                                            <option value="<?php echo $dist['id']; ?>"><?php echo $dist['name']; ?></option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--Address-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="address">Address</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="address" class="form-control" placeholder="Enter Your Address" autocomplete="off" name="address">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--Phone Number-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="phone_number">Phone Number</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="phone_number" class="form-control" placeholder="Enter Your Phone Number" autocomplete="off" name="phone_number">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--NIC-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="nic">NIC</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="nic" class="form-control" placeholder="Enter Your NIC Number" autocomplete="off" name="nic">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!--Profile Picture-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
@@ -115,17 +197,83 @@ $createdAt = date('Y-m-d H:i:s');
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="password" id="password" class="form-control" placeholder="Enter password" autocomplete="off" name="password">
-                                                    <input type="hidden" id="createdAt" name="createdAt" value="<?php echo $createdAt;?>">
-                                                    <input type="hidden" id="parent" name="parent" value="<?php echo $_SESSION["id"];?>">
+                                                    <input type="password" id="password" class="form-control" placeholder="Enter password" autocomplete="off" name="password" required>
+                                                    <input type="hidden" id="createdAt" name="createdAt" value="<?php echo $createdAt; ?>">
+                                                    <input type="hidden" id="parent" name="parent" value="<?php echo $_SESSION["id"]; ?>">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>  
+                                    <!--Bank-->
+                                    <hr>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="bank">Bank</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="bank" class="form-control" placeholder="Enter Your Bank Name" autocomplete="off" name="bank" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--Branch-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="branch">Branch</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="branch" class="form-control" placeholder="Enter Your Branch City" autocomplete="off" name="branch">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--Account Type-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="account_type">Account Type</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="account_type" class="form-control" placeholder="Enter Account Type" autocomplete="off" name="account_type">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Holder Name-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="holder_name">Holder Name</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="holder_name" class="form-control" placeholder="Enter Holder Name" autocomplete="off" name="holder_name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Account Type-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="account_number">Account Number</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="account_number" class="form-control" placeholder="Enter Account Number" autocomplete="off" name="account_number">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!--save-->
                                     <div class="row clearfix">
                                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5"> 
-                                           
+
                                             <input type="submit" name="create" class="btn btn-primary m-t-15 waves-effect" value="Add Member"/>
                                         </div>
                                     </div>

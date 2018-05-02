@@ -7,15 +7,25 @@ include_once(dirname(__FILE__) . '/../auth.php');
 if (isset($_POST['create'])) {
     $USER = new User(NULL);
     $VALID = new Validator();
-    
-    
+
+
     $password = md5(filter_var($_POST['password'], FILTER_SANITIZE_STRING));
 
     $USER->name = filter_input(INPUT_POST, 'name');
     $USER->email = filter_input(INPUT_POST, 'email');
+    $USER->district = filter_input(INPUT_POST, 'district');
+    $USER->city = filter_input(INPUT_POST, 'city');
+    $USER->address = filter_input(INPUT_POST, 'address');
+    $USER->phone_number = filter_input(INPUT_POST, 'phone_number');
+    $USER->nic = filter_input(INPUT_POST, 'nic');
     $USER->parent = filter_input(INPUT_POST, 'parent');
     $USER->createdAt = filter_input(INPUT_POST, 'createdAt');
     $USER->username = filter_input(INPUT_POST, 'username');
+    $USER->bank = filter_input(INPUT_POST, 'bank');
+    $USER->branch = filter_input(INPUT_POST, 'branch');
+    $USER->account_type = filter_input(INPUT_POST, 'account_type');
+    $USER->holder_name = filter_input(INPUT_POST, 'holder_name');
+    $USER->account_number = filter_input(INPUT_POST, 'account_number');
     $USER->isActive = 1;
     $USER->password = $password;
 
@@ -46,6 +56,11 @@ if (isset($_POST['create'])) {
     $VALID->check($USER, [
         'name' => ['required' => TRUE],
         'email' => ['required' => TRUE],
+        'city' => ['required' => TRUE],
+        'district' => ['required' => TRUE],
+        'nic' => ['required' => TRUE],
+        'bank' => ['required' => TRUE],
+        'branch' => ['required' => TRUE],
         'username' => ['required' => TRUE],
         'password' => ['required' => TRUE]
 //        'profile_picture' => ['required' => TRUE]
@@ -102,7 +117,17 @@ if (isset($_POST['update'])) {
 
     $USER->name = filter_input(INPUT_POST, 'name');
     $USER->email = filter_input(INPUT_POST, 'email');
+    $USER->district = filter_input(INPUT_POST, 'district');
+    $USER->city = filter_input(INPUT_POST, 'city');
+    $USER->address = filter_input(INPUT_POST, 'address');
+    $USER->phone_number = filter_input(INPUT_POST, 'phone_number');
+    $USER->nic = filter_input(INPUT_POST, 'nic');
     $USER->createdAt = filter_input(INPUT_POST, 'createdAt');
+    $USER->bank = filter_input(INPUT_POST, 'bank');
+    $USER->branch = filter_input(INPUT_POST, 'branch');
+    $USER->account_type = filter_input(INPUT_POST, 'account_type');
+    $USER->holder_name = filter_input(INPUT_POST, 'holder_name');
+    $USER->account_number = filter_input(INPUT_POST, 'account_number');
     $USER->username = filter_input(INPUT_POST, 'username');
     $USER->isActive = 1;
 
@@ -110,6 +135,13 @@ if (isset($_POST['update'])) {
     $VALID->check($USER, [
         'name' => ['required' => TRUE],
         'email' => ['required' => TRUE],
+        'address' => ['required' => TRUE],
+        'nic' => ['required' => TRUE],
+        'bank' => ['required' => TRUE],
+        'branch' => ['required' => TRUE],
+        'account_type' => ['required' => TRUE],
+        'holder_name' => ['required' => TRUE],
+        'account_number' => ['required' => TRUE],
         'username' => ['required' => TRUE],
         'profile_picture' => ['required' => TRUE]
     ]);
