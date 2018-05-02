@@ -1,89 +1,83 @@
-<?php
+﻿<?php
 include_once(dirname(__FILE__) . '/../class/include.php');
-include_once(dirname(__FILE__) . './auth.php');
+include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
-?>
-<!DOCTYPE html>
+$DEALEAR = new Dealer(NULL)
+?> 
+﻿<!DOCTYPE html>
 <html>
 
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Manage City || Admin || hurryuptaxi.lk</title>
+        <title>Manage Dealer  || Admin || hurryuptaxi.lk</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
+
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
         <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
         <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+
         <link href="plugins/animate-css/animate.css" rel="stylesheet" />
+        <link href="plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet">
+
         <link href="css/themes/all-themes.css" rel="stylesheet" />
     </head>
 
     <body class="theme-red">
         <?php
-        include 'navigation-and-header.php';
+        include './navigation-and-header.php';
         ?>
-
         <section class="content">
             <div class="container-fluid"> 
-                <!--                Manage Costomer -->
+                <!-- Manage Districts -->
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="card">
                             <div class="header">
                                 <h2>
-                                    Manage City
+                                    Manage Dealer
                                 </h2>
                                 <ul class="header-dropdown">
                                     <li>
-                                        <a href="create-city.php">
+                                        <a href="create-dealer.php">
                                             <i class="material-icons">add</i> 
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="body">
+                                <!-- <div class="table-responsive">-->
                                 <div>
                                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>District</th>
                                                 <th>Name</th> 
-                                                <th>Option</th>
-
+                                                <th>Options</th>
                                             </tr>
                                         </thead>
-
                                         <tbody>
                                             <?php
-                                            $CITY = new City(NULL);
-                                            foreach ($CITY->all() as $key => $dis) {
+                                            foreach ($DEALEAR->all() as $key => $dealer) {
                                                 ?>
-                                                <tr id="row_<?php echo $dis['id']; ?>">
-                                                    <td><?php echo $dis['sort']; ?></td> 
-                                                    <td>
-                                                        <?php
-                                                        $DISTRI = new District($dis['district']);
-                                                        echo $DISTRI->name;
-                                                        ?>
-                                                    </td>
-                                                    <td><?php echo $dis['name']; ?></td>
-
+                                                <tr id="row_<?php echo $dealer['id']; ?>">
+                                                    <td><?php echo $dealer['id']; ?></td> 
+                                                    <td><?php echo $dealer['name']; ?></td> 
                                                     <td> 
-                                                        <a href="edit-city.php?id=<?php echo $dis['id']; ?>" class="op-link btn btn-sm btn-default"><i class="glyphicon glyphicon-pencil"></i>
+                                                        <a href="edit-dealer.php?id=<?php echo $dealer['id']; ?>" class="op-link btn btn-sm btn-success">
+                                                            <i class="glyphicon glyphicon-pencil"></i>
                                                         </a>
 
-                                                        <a href="#" class="delete-city btn btn-sm btn-danger" data-id="<?php echo $dis['id']; ?>">
+                                                        <a href="#" class="delete-dealer btn btn-sm btn-danger" data-id="<?php echo $dealer['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
                                                         </a>
 
-                                                        <a href="arrange-city.php" class="btn btn-sm btn-success">
-                                                            <i class="glyphicon glyphicon-random"></i>
-                                                        </a>
                                                     </td>
                                                 </tr>
                                                 <?php
@@ -93,9 +87,8 @@ $USER = new User($_SESSION["id"]);
                                         <tfoot>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>District</th>
                                                 <th>Name</th> 
-                                                <th>Option</th>
+                                                <th>Options</th>
                                             </tr>
                                         </tfoot>
                                     </table>
@@ -103,12 +96,11 @@ $USER = new User($_SESSION["id"]);
                             </div>
                         </div>
                     </div>
-                    <!--                 #END# Manage City-->
                 </div>
+
             </div>
         </section>
 
-        <!-- Jquery Core Js -->
         <script src="plugins/jquery/jquery.min.js"></script>
         <script src="plugins/bootstrap/js/bootstrap.js"></script> 
         <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
@@ -119,7 +111,7 @@ $USER = new User($_SESSION["id"]);
         <script src="js/admin.js"></script>
         <script src="js/pages/ui/dialogs.js"></script>
         <script src="js/demo.js"></script>
-        <script src="delete/js/city.js" type="text/javascript"></script>
+        <script src="delete/js/dealer.js" type="text/javascript"></script>
     </body>
 
-</html>
+</html> 

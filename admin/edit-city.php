@@ -13,7 +13,7 @@ $CITY = new City($id);
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Edit City || Admin || Support Lanka</title>
+        <title>Edit City || Admin || hurryuptaxi.lk</title>
 
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
