@@ -3,6 +3,11 @@ include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 
 $USER = new User($_SESSION["id"]);
+$id = '';
+if (isset($_GET['user'])) {
+    $id = $_GET['user'];
+}
+$USE = new User($id);
 
 ?> 
 ﻿<!DOCTYPE html>
@@ -49,20 +54,8 @@ $USER = new User($_SESSION["id"]);
 
                             </div>
                             <div class="body row">
-                                <form class="form-horizontal col-sm-9 col-md-9" method="post" action="post-and-get/change-password.php" enctype="multipart/form-data"> 
+                                <form class="form-horizontal col-sm-9 col-md-9" method="post" action="post-and-get/add-new-user.php" enctype="multipart/form-data"> 
 
-                                    <div class="row clearfix">
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5 form-control-label">
-                                            <label for="oldPass">Old Password</label>
-                                        </div>
-                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="password" id="oldPass" class="form-control" placeholder="Enter your old password" name="oldPass"  required="TRUE">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
                                     <div class="row clearfix">
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5 form-control-label">
@@ -78,22 +71,9 @@ $USER = new User($_SESSION["id"]);
                                     </div>
 
                                     <div class="row clearfix">
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5 form-control-label">
-                                            <label for="confPass">Confirm Password</label>
-                                        </div>
-                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="password" id="confPass" class="form-control" minlength="6" placeholder="confirm your new password" name="confPass"  required="TRUE">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row clearfix">
                                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
 
-                                            <input type="hidden" id="id" value="<?php echo $USER->id; ?>" name="id">
+                                            <input type="hidden" id="id" value="<?php echo $USE->id; ?>" name="id">
 
                                             <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="changePassword" value="submit">Change Password</button>
                                         </div>

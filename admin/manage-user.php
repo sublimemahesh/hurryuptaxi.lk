@@ -88,7 +88,9 @@ $USER = new User($_SESSION["id"]);
                                                     <td> 
                                                         <a href="edit-user.php?id=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-success"><i class="glyphicon glyphicon-pencil"></i></a>
                                                         |
-                                                        <a href="manage-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-success"><i class="glyphicon glyphicon-user"></i></a>
+                                                        <a href="manage-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-warning"><i class="glyphicon glyphicon-user"></i></a>
+                                                        |
+                                                        <a href="change-password-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-info"><i class="material-icons">vpn_key</i></a>
 
                                                     </td>
                                                 </tr>
