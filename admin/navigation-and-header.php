@@ -253,10 +253,11 @@
                     <ul class="dropdown-menu pull-right">
                         <li>
                             <a href="profile.php">
-                                <i class="material-icons">person</i>Profile</a>
+                                <i class="material-icons">person</i>Profile
+                            </a>
                         </li>
                         <li role="seperator" class="divider"></li>
-                        <li><a href="edit-profile.php"><i class="material-icons">edit</i>Edit My Profile</a></li>
+                        <li><a href="edit-profile.php?id=<?php echo $_SESSION['id']; ?>"><i class="material-icons">edit</i>Edit My Profile</a></li>
                         <li><a href="change-password.php"><i class="material-icons">vpn_key</i>Change Password</a></li> 
                         <li role="seperator" class="divider"></li>
                         <li><a href="post-and-get/log-out.php"><i class="material-icons">input</i>Sign Out</a></li>
@@ -275,7 +276,7 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                
+
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">recent_actors</i>
@@ -296,7 +297,7 @@
                         </li>
                     </ul>
                 </li>
-                
+
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">assignment_ind</i>
@@ -365,7 +366,7 @@
                         </li>
                     </ul>
                 </li>
-                
+
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">folder_shared</i>
