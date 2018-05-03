@@ -169,3 +169,16 @@ if (isset($_POST['update'])) {
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }
+
+if (isset($_POST['changePassword'])) {
+
+
+    $result = User::changePassword($_POST["id"], $_POST["newPass"]);
+    if ($result == 'TRUE') {
+        header('location: ../change-password-user.php?id=' . $_POST["id"] . '&&message=9');
+        exit();
+    } else {
+        header('location: ../change-password-user.php?id=' . $_POST["id"] . '&&message=14');
+        exit();
+    }
+}
