@@ -63,8 +63,7 @@ if (isset($_POST['create'])) {
         'nic' => ['required' => TRUE],
         'bank' => ['required' => TRUE],
         'branch' => ['required' => TRUE],
-        'username' => ['required' => TRUE],
-        'password' => ['required' => TRUE]
+        'username' => ['required' => TRUE]
 //        'profile_picture' => ['required' => TRUE]
     ]);
 

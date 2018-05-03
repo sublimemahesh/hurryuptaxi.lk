@@ -20,6 +20,7 @@ $(document).ready(function () {
                 });
                 $('#city-bar').empty();
                 $('#city-bar').append(html);
+                $('select[name="data.name"]').val('data.id');
             }
         });
     });

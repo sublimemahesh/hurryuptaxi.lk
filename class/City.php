@@ -88,7 +88,7 @@ class City {
 
     public function GetCitiesByDistrict($district) {
 
-        $query = "SELECT * FROM `city` WHERE `district` = '" . $district . "' ORDER BY `sort` ASC";
+        $query = "SELECT * FROM `city` WHERE `district` = '" . $district . "'";
 
         $db = new Database();
 

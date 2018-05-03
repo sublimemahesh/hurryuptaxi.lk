@@ -84,23 +84,24 @@ $USE = new User($id);
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group place-select">
-                                                <div class="form-line">
-                                                    <select class="form-control" autocomplete="off" type="text" id="district" autocomplete="off" name="district" required="TRUE">
-                                                        <option value="<?php echo $USER->id; ?>" class="active light-c">
-                                                            <?php
-                                                            $DISTRICT = new District(NULL);
-                                                            if ($USER->district) {
-                                                                echo $DISTRICT->name;
+                                                <div class="form-line"> 
+                                                    <select name="district" id="district" class="form-control" >
+                                                        <option value=""> -- Please Select -- </option>
+                                                        <?php
+                                                        foreach (District::all() as $key => $district) {
+                                                            if ($district['id'] == $USE->district) {
+                                                                ?>
+                                                                <option value="<?php echo $district['id']; ?>" selected>
+                                                                    <?php echo $district['name']; ?>
+                                                                </option>
+                                                                <?php
                                                             } else {
                                                                 ?>
-                                                                --Please Select--
+                                                                <option value="<?php echo $district['id']; ?>">
+                                                                    <?php echo $district['name']; ?>
+                                                                </option>
                                                                 <?php
                                                             }
-                                                            ?>
-                                                        </option>
-                                                        <?php foreach (District::all() as $key => $city) {
-                                                            ?>
-                                                            <option ind_id="<?php echo $city['id']; ?>" value="<?php echo $city['id']; ?>"><?php echo $city['name']; ?></option><?php
                                                         }
                                                         ?>
                                                     </select>
@@ -116,26 +117,33 @@ $USE = new User($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <select class="form-control" autocomplete="off" type="text" id="city-bar" autocomplete="off" name="city" required="TRUE">
-                                                        <option value="<?php echo $USER->id; ?>">
-                                                            <?php
-                                                            $CITY = new City(NULL);
-                                                            if ($USER->city) {
-                                                                echo $USER->name;
+                                                    <select class="form-control" autocomplete="off" id="city-bar" autocomplete="off" name="city" required="TRUE">
+                                                        <option> -- Please Select -- </option> 
+                                                        <?php
+                                                        $CITY = new City(Null);
+                                                        foreach ($CITY->GetCitiesByDistrict($USE->district) as $city) {
+
+                                                            if ($city['id'] == $USE->city) {
+                                                                ?>
+                                                                <option value="<?php echo $city['id']; ?>" selected>
+                                                                    <?php echo $city['name']; ?>
+                                                                </option>
+                                                                <?php
                                                             } else {
                                                                 ?>
-                                                                --Please Select a District First --
+                                                                <option value="<?php echo $city['id']; ?>">
+                                                                    <?php echo $city['name']; ?>
+                                                                </option>
                                                                 <?php
                                                             }
-                                                            ?>
-
-                                                        </option>
+                                                        }
+                                                        ?> 
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
                                     </div> 
-                                     <!--Dealer-->
+                                    <!--Dealer-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                             <label for="dealer">Dealer</label>
@@ -144,25 +152,22 @@ $USE = new User($id);
                                             <div class="form-group place-select">
                                                 <div class="form-line">
                                                     <select class="form-control" autocomplete="off" type="text" id="dealer" autocomplete="off" name="dealer" required="TRUE">
-                                                        <option value="<?php echo $USE->id ?>"> 
-                                                            <?php
-                                                            $DEALEAR = new Dealer($USE->dealer);
-                                                            if ($USE->dealer) {
-                                                                echo $DEALEAR->name;
+                                                        <option value=""> -- Please Select -- </option>
+                                                        <?php
+                                                        foreach (Dealer::all() as $key => $dealer) {
+                                                            if ($dealer['id'] == $USE->dealer) {
+                                                                ?>
+                                                                <option value="<?php echo $dealer['id']; ?>" selected>
+                                                                    <?php echo $dealer['name']; ?>
+                                                                </option>
+                                                                <?php
                                                             } else {
                                                                 ?>
-                                                                -- Please Select -- 
+                                                                <option value="<?php echo $dealer['id']; ?>">
+                                                                    <?php echo $dealer['name']; ?>
+                                                                </option>
                                                                 <?php
                                                             }
-                                                            ?>
-
-                                                        </option>
-                                                        <?php foreach (Dealer::all() as $key => $dealer) {
-                                                            ?>
-                                                            <option value="<?php echo $dealer['id']; ?>">
-                                                                <?php echo $dealer['name']; ?>
-                                                            </option>
-                                                            <?php
                                                         }
                                                         ?>
                                                     </select>
@@ -236,21 +241,7 @@ $USE = new User($id);
                                             </div>
                                         </div>
                                     </div>
-                                    <!--Password-->
-                                    <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                            <label for="name">Password</label>
-                                        </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="password" id="password" class="form-control" placeholder="Enter password" autocomplete="off" name="password" required>
-                                                    <input type="hidden" id="createdAt" name="createdAt" value="<?php echo $createdAt; ?>">
-                                                    <input type="hidden" id="parent" name="parent" value="<?php echo $_SESSION["id"]; ?>">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> 
+                                  
                                     <hr>
                                     <!--Bank-->
                                     <div class="row clearfix">
@@ -261,32 +252,29 @@ $USE = new User($id);
                                             <div class="form-group place-select">
                                                 <div class="form-line">
                                                     <select class="form-control" autocomplete="off" type="text" id="bank" autocomplete="off" name="bank" required="TRUE">
-                                                        <option value="<?php echo $USE->id ?>"> 
-                                                            <?php
-                                                            $BANK = new Bank($USE->bank);
-                                                            if ($USE->bank) {
-                                                                echo $BANK->name;
+                                                        <option value=""> -- Please Select -- </option>
+                                                        <?php
+                                                        foreach (Bank::all() as $key => $bank) {
+                                                            if ($bank['id'] == $USE->bank) {
+                                                                ?>
+                                                                <option value="<?php echo $bank['id']; ?>" selected>
+                                                                    <?php echo $bank['name']; ?>
+                                                                </option>
+                                                                <?php
                                                             } else {
                                                                 ?>
-                                                                -- Please Select -- 
+                                                                <option value="<?php echo $bank['id']; ?>">
+                                                                    <?php echo $bank['name']; ?>
+                                                                </option>
                                                                 <?php
                                                             }
-                                                            ?>
-
-                                                        </option>
-                                                        <?php foreach (Bank::all() as $key => $bank) {
-                                                            ?>
-                                                            <option value="<?php echo $bank['id']; ?>">
-                                                                <?php echo $bank['name']; ?>
-                                                            </option>
-                                                            <?php
                                                         }
                                                         ?>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <!--Branch-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
@@ -308,28 +296,18 @@ $USE = new User($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <select class="form-control" autocomplete="off" type="text" id="account_type" autocomplete="off" name="account_type" required="TRUE">
-                                                        <option value="<?php echo $USE->account_type ?>">
-                                                            <?php
-                                                            if ($USE->account_type == 1) {
-                                                                ?>
-                                                                Saving Account
-                                                                <?php
-                                                            } elseif ($USE->account_type == 2) {
-                                                                ?>
-                                                                Current Account
-                                                                <?php
-                                                            } else {
-                                                                ?>
-                                                                ---Please Select---
-                                                                <?php
-                                                            }
-                                                            ?>
-
-                                                        </option>
-
-                                                        <option value="1">Saving Account</option>
-                                                        <option value="2">Current Account</option>
+                                                    <select class="form-control" autocomplete="off" type="text" id="account_type" autocomplete="off" name="account_type" required="TRUE"> 
+                                                        <option value=""> -- Please Select -- </option>
+                                                        <option value="1" <?php
+                                                        if ($USER->account_type == 1) {
+                                                            echo 'selected';
+                                                        }
+                                                        ?>>Saving Account</option>
+                                                        <option value="2" <?php
+                                                        if ($USER->account_type == 2) {
+                                                            echo 'selected';
+                                                        }
+                                                        ?>>Current Account</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -348,7 +326,7 @@ $USE = new User($id);
                                             </div>
                                         </div>
                                     </div>
-                                    <!--Account Type-->
+                                    <!--Account Number-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                             <label for="account_number">Account Number</label>
