@@ -296,6 +296,27 @@
                         </li>
                     </ul>
                 </li>
+                
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">assignment_ind</i>
+                        <span>Driver</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="create-driver.php">
+                                <i class="material-icons">add</i>
+                                <span>Add New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="manage-driver.php">
+                                <i class="material-icons">list</i>
+                                <span>Manage</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
