@@ -48,7 +48,7 @@ $DRIVER = new Driver($id);
                         <div class="card">
                             <div class="header">
                                 <h2>Edit Driver</h2>
-                               
+
                             </div>
                             <div class="body">
                                 <form class="form-horizontal"  method="post" action="post-and-get/driver.php" enctype="multipart/form-data"> 
@@ -60,7 +60,7 @@ $DRIVER = new Driver($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="name" class="form-control" placeholder="Enter Your name" autocomplete="off" name="name" value="<?php echo $DRIVER->name?>">
+                                                    <input type="text" id="name" class="form-control" placeholder="Enter Your name" autocomplete="off" name="name" value="<?php echo $DRIVER->name ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -73,7 +73,73 @@ $DRIVER = new Driver($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="contact_no" class="form-control" placeholder="Enter Your Phone Number" autocomplete="off" name="contact_no" value="<?php echo $DRIVER->contact_no?>">
+                                                    <input type="text" id="contact_no" class="form-control" placeholder="Enter Your Phone Number" autocomplete="off" name="contact_no" value="<?php echo $DRIVER->contact_no ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--District-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="district">District</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group place-select">
+                                                <div class="form-line">
+                                                    <select name="district" id="district" class="form-control" >
+                                                        <option value=""> -- Please Select -- </option>
+                                                        <?php
+                                                        foreach (District::all() as $key => $district) {
+                                                            if ($district['id'] == $DRIVER->district) {
+                                                                ?>
+                                                                <option value="<?php echo $district['id']; ?>" selected>
+                                                                    <?php echo $district['name']; ?>
+                                                                </option>
+                                                                <?php
+                                                            } else {
+                                                                ?>
+                                                                <option value="<?php echo $district['id']; ?>">
+                                                                    <?php echo $district['name']; ?>
+                                                                </option>
+                                                                <?php
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--City-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="city">City</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group place-select">
+                                                <div class="form-line">
+                                                    <select class="form-control" autocomplete="off" id="city-bar" autocomplete="off" name="city" required="TRUE">
+                                                        <option> -- Please Select -- </option> 
+                                                        <?php
+                                                        $CITY = new City(Null);
+                                                        foreach ($CITY->GetCitiesByDistrict($DRIVER->district) as $city) {
+
+                                                            if ($city['id'] == $DRIVER->city) {
+                                                                ?>
+                                                                <option value="<?php echo $city['id']; ?>" selected>
+                                                                    <?php echo $city['name']; ?>
+                                                                </option>
+                                                                <?php
+                                                            } else {
+                                                                ?>
+                                                                <option value="<?php echo $city['id']; ?>">
+                                                                    <?php echo $city['name']; ?>
+                                                                </option>
+                                                                <?php
+                                                            }
+                                                        }
+                                                        ?> 
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -86,7 +152,7 @@ $DRIVER = new Driver($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="address" class="form-control" placeholder="Enter Your Address" autocomplete="off" name="address" value="<?php echo $DRIVER->address?>">
+                                                    <input type="text" id="address" class="form-control" placeholder="Enter Your Address" autocomplete="off" name="address" value="<?php echo $DRIVER->address ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -99,7 +165,7 @@ $DRIVER = new Driver($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="vehicle_number" class="form-control" placeholder="Enter Vehicle Number" autocomplete="off" name="vehicle_number" value="<?php echo $DRIVER->vehicle_number?>">
+                                                    <input type="text" id="vehicle_number" class="form-control" placeholder="Enter Vehicle Number" autocomplete="off" name="vehicle_number" value="<?php echo $DRIVER->vehicle_number ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -112,7 +178,7 @@ $DRIVER = new Driver($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="nic_number" class="form-control" placeholder="Enter NIC Number" autocomplete="off" name="nic_number" value="<?php echo $DRIVER->nic_number?>">
+                                                    <input type="text" id="nic_number" class="form-control" placeholder="Enter NIC Number" autocomplete="off" name="nic_number" value="<?php echo $DRIVER->nic_number ?>">
                                                 </div>
                                             </div>
                                         </div>
