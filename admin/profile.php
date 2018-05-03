@@ -1,9 +1,8 @@
 ﻿<?php
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
- 
-$USER = new User($_SESSION["id"]);
 
+$USER = new User($_SESSION["id"]);
 ?> 
 ﻿<!DOCTYPE html>
 <html> 
@@ -63,6 +62,30 @@ $USER = new User($_SESSION["id"]);
                                             <li class="list-group-item"><b>Name</b> : <?php echo $USER->name; ?></li> 
                                             <li class="list-group-item"><b>Username</b> : <?php echo $USER->username; ?></li> 
                                             <li class="list-group-item"><b>Email</b> : <?php echo $USER->email; ?></li> 
+                                            <li class="list-group-item"><b>Phone Number</b> : <?php echo $USER->phone_number; ?></li> 
+                                            <li class="list-group-item"><b>Address</b> : <?php echo $USER->address; ?></li> 
+                                            <li class="list-group-item"><b>NIC</b> : <?php echo $USER->nic; ?></li> 
+
+                                            <li class="list-group-item"><b>District</b> :
+                                                <?php
+                                                $DISTRICT = new District($USER->district);
+                                                echo $DISTRICT->name;
+                                                ?>
+                                            </li> 
+                                            <li class="list-group-item"><b>City</b> : 
+                                                <?php
+                                                $CITY = new City($USER->city);
+                                                echo $CITY->name;
+                                                ?>
+                                            </li> 
+                                            <li class="list-group-item"><b>Dealer</b> : 
+                                                <?php
+                                                $DEALEAR = new Dealer($USER->dealer);
+                                                echo $DEALEAR->name;
+                                                ?>
+                                            </li> 
+
+
                                             <li class="list-group-item"><b>Created Date</b> : <?php echo $USER->createdAt; ?></li>
                                             <li class="list-group-item"><b>Last Login</b> : <?php echo $USER->lastLogin; ?></li> 
                                         </ul>
@@ -70,6 +93,34 @@ $USER = new User($_SESSION["id"]);
                                     <div class="col-sm-3 col-md-3">  
                                         <img src="../upload/user/<?php echo $USER->profile_picture; ?>" class="img img-responsive img-thumbnail"/> 
                                     </div>
+                                    
+                                    <div class="col-sm-9 col-md-9">
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><b>Bank</b> : 
+                                                <?php
+                                                $BANK = new Bank($USER->bank);
+                                                echo $BANK->name;
+                                                ?>
+                                            </li>
+                                            <li class="list-group-item"><b>Branch</b> : <?php echo $USER->branch; ?></li>
+                                            <li class="list-group-item"><b>Account Type</b> :
+                                                <?php
+                                                if ($USER->account_type == 1) {
+                                                    ?>
+                                                    Saving Account
+                                                    <?php
+                                                } elseif ($USER->account_type == 2) {
+                                                    ?>
+                                                    Current Account
+                                                    <?php
+                                                }
+                                                ?>
+                                            </li>
+                                            <li class="list-group-item"><b>Holder Name</b> : <?php echo $USER->holder_name; ?></li>
+                                            <li class="list-group-item"><b>Account Number</b> : <?php echo $USER->account_number; ?></li>
+                                        </ul>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
