@@ -47,7 +47,7 @@ class User {
             $this->email = $result['email'];
             $this->district = $result['district'];
             $this->city = $result['city'];
-            $this->dealer =$result['dealer'];
+            $this->dealer = $result['dealer'];
             $this->address = $result['address'];
             $this->phone_number = $result['phone_number'];
             $this->nic = $result['nic'];

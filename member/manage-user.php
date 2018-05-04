@@ -23,6 +23,11 @@ $USER = new User($_SESSION["id"]);
         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet">
         <link href="css/themes/all-themes.css" rel="stylesheet" />
+        <style>
+            .btn-danger{
+
+            }
+        </style>
     </head>
 
     <body class="theme-red">
@@ -62,9 +67,9 @@ $USER = new User($_SESSION["id"]);
                                                 <th>Name</th> 
                                                 <th>email</th>
                                                 <th>User Name</th> 
-                                                <th>Start Date</th>
                                                 <th>Last Login</th>
                                                 <th>Options</th>
+                                                <th>Active</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -83,7 +88,7 @@ $USER = new User($_SESSION["id"]);
                                                     <td><?php echo substr($user['name'], 0, 20); ?></td> 
                                                     <td><?php echo substr($user['email'], 0, 30); ?></td> 
                                                     <td><?php echo substr($user['username'], 0, 20); ?></td> 
-                                                    <td><?php echo $user['createdAt']; ?></td> 
+                                              
                                                     <td><?php echo $user['lastLogin']; ?></td> 
                                                     <td> 
                                                         <a href="edit-user.php?id=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-success"><i class="glyphicon glyphicon-pencil"></i></a>
@@ -92,6 +97,20 @@ $USER = new User($_SESSION["id"]);
                                                         |
                                                         <a href="change-password-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-info"><i class="material-icons">vpn_key</i></a>
 
+                                                    </td>
+                                                    <td>
+                                                        <?php
+                                                        if ($user['isActive'] == 1) {
+                                                            ?>
+                                                            <a href="#" title="Active this Account" class="op-link btn btn-md btn-success"><i class="material-icons">check_circle</i></a>
+                                                            <?php
+                                                        } else {
+                                                            ?>
+
+                                                            <a href="#" title="Inactive this Account" class="op-link btn btn-md btn-danger"><i class="material-icons">error_outline</i></a>
+                                                            <?php
+                                                        }
+                                                        ?>
                                                     </td>
                                                 </tr>
                                                 <?php
@@ -104,9 +123,9 @@ $USER = new User($_SESSION["id"]);
                                                 <th>Name</th> 
                                                 <th>email</th>
                                                 <th>User Name</th> 
-                                                <th>Start Date</th>
                                                 <th>Last Login</th>
                                                 <th>Options</th>
+                                                <th>Active</th>
                                             </tr>
                                         </tfoot>
                                     </table>

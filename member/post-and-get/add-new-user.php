@@ -131,7 +131,7 @@ if (isset($_POST['update'])) {
     $USER->holder_name = filter_input(INPUT_POST, 'holder_name');
     $USER->account_number = filter_input(INPUT_POST, 'account_number');
     $USER->username = filter_input(INPUT_POST, 'username');
-    $USER->isActive = 1;
+    $USER->isActive = filter_input(INPUT_POST, 'active');
 
     $VALID = new Validator();
     $VALID->check($USER, [
