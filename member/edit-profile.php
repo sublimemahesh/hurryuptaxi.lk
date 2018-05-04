@@ -24,9 +24,7 @@ $USE = new User(NULL);
     <body class="theme-red">
         <?php
         include './navigation-and-header.php';
-        ?>
 
-        <?php
         if ($USER->id == 1) {
             ?>
             <section class="content">
@@ -366,9 +364,9 @@ $USE = new User(NULL);
                     <div class="row clearfix">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="card">
-                                <div class="header">
-                                    <h2>
-                                        You don`t have acces this page. pleace inform admin change your details
+                                <div class="header" >
+                                    <h2 style="color: red">
+                                        You don`t have acces this page. Pleace inform admin change your details
                                     </h2>
                                     <ul class="header-dropdown">
                                         <li>

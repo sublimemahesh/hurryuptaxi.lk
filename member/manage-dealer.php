@@ -32,67 +32,97 @@ $DEALEAR = new Dealer(NULL)
     <body class="theme-red">
         <?php
         include './navigation-and-header.php';
-        ?>
-        <section class="content">
-            <div class="container-fluid"> 
-                <!-- Manage Districts -->
-                <div class="row clearfix">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="card">
-                            <div class="header">
-                                <h2>
-                                    Manage Dealer
-                                </h2>
-                                <ul class="header-dropdown">
-                                    <li>
-                                        <a href="create-dealer.php">
-                                            <i class="material-icons">add</i> 
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="body">
-                                <!-- <div class="table-responsive">-->
-                                <div>
-                                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Name</th> 
-                                                <th>Options</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            foreach ($DEALEAR->all() as $key => $dealer) {
-                                                ?>
-                                                <tr id="row_<?php echo $dealer['id']; ?>">
-                                                    <td><?php echo $dealer['id']; ?></td> 
-                                                    <td><?php echo $dealer['name']; ?></td> 
-                                                    <td> 
-                                                        <a href="edit-dealer.php?id=<?php echo $dealer['id']; ?>" class="op-link btn btn-sm btn-success">
-                                                            <i class="glyphicon glyphicon-pencil"></i>
-                                                        </a>
 
-                                                        <a href="#" class="delete-dealer btn btn-sm btn-danger" data-id="<?php echo $dealer['id']; ?>">
-                                                            <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
-                                                        </a>
-
-                                                    </td>
-                                                </tr>
-                                                <?php
-                                            }
-                                            ?>   
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Name</th> 
-                                                <th>Options</th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
+        if ($USER->id == 1) {
+            ?>
+            <section class="content">
+                <div class="container-fluid"> 
+                    <!-- Manage Districts -->
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h2>
+                                        Manage Dealer
+                                    </h2>
+                                    <ul class="header-dropdown">
+                                        <li>
+                                            <a href="create-dealer.php">
+                                                <i class="material-icons">add</i> 
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
+                                <div class="body">
+                                    <!-- <div class="table-responsive">-->
+                                    <div>
+                                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Name</th> 
+                                                    <th>Options</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                foreach ($DEALEAR->all() as $key => $dealer) {
+                                                    ?>
+                                                    <tr id="row_<?php echo $dealer['id']; ?>">
+                                                        <td><?php echo $dealer['id']; ?></td> 
+                                                        <td><?php echo $dealer['name']; ?></td> 
+                                                        <td> 
+                                                            <a href="edit-dealer.php?id=<?php echo $dealer['id']; ?>" class="op-link btn btn-sm btn-success">
+                                                                <i class="glyphicon glyphicon-pencil"></i>
+                                                            </a>
+
+                                                            <a href="#" class="delete-dealer btn btn-sm btn-danger" data-id="<?php echo $dealer['id']; ?>">
+                                                                <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
+                                                            </a>
+
+                                                        </td>
+                                                    </tr>
+                                                    <?php
+                                                }
+                                                ?>   
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Name</th> 
+                                                    <th>Options</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <?php
+        } else {
+            ?>
+            <section class="content">
+                <div class="container-fluid"> 
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="header" >
+                                    <h2 style="color: red">
+                                        You don`t have acces this page
+                                    </h2>
+                                    <ul class="header-dropdown">
+                                        <li>
+                                            <a href="./">
+                                                <i class="material-icons">person</i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -100,18 +130,21 @@ $DEALEAR = new Dealer(NULL)
 
             </div>
         </section>
+        <?php
+    }
+    ?>
 
-        <script src="plugins/jquery/jquery.min.js"></script>
-        <script src="plugins/bootstrap/js/bootstrap.js"></script> 
-        <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
-        <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-        <script src="plugins/bootstrap-notify/bootstrap-notify.js"></script>
-        <script src="plugins/node-waves/waves.js"></script>
-        <script src="plugins/sweetalert/sweetalert.min.js"></script>
-        <script src="js/admin.js"></script>
-        <script src="js/pages/ui/dialogs.js"></script>
-        <script src="js/demo.js"></script>
-        <script src="delete/js/dealer.js" type="text/javascript"></script>
-    </body>
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.js"></script> 
+    <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="plugins/bootstrap-notify/bootstrap-notify.js"></script>
+    <script src="plugins/node-waves/waves.js"></script>
+    <script src="plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/pages/ui/dialogs.js"></script>
+    <script src="js/demo.js"></script>
+    <script src="delete/js/dealer.js" type="text/javascript"></script>
+</body>
 
 </html> 

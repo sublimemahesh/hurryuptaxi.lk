@@ -106,7 +106,7 @@
     margin-left: 5px; }
 
 .navbar-nav .dropdown-menu {
-    margin-top: -40px !important; }
+    margin-top: 0px !important; }
 
 .label-count {
     position: absolute;
@@ -6749,7 +6749,8 @@ fieldset[disabled] .form-control {
     margin-left: 5px; }
 
 .navbar-nav .dropdown-menu {
-    margin-top: -40px !important; }
+    margin-top: 0px !important; 
+}
 
 .label-count {
     position: absolute;
@@ -7525,7 +7526,7 @@ fieldset[disabled] .form-control {
     background: url("../images/user-img-background.jpg") no-repeat no-repeat;
     height: 135px; }
 .sidebar .user-info .image {
-    margin-right: 12px;
+    margin-right: 0px;
     display: inline-block; }
 .sidebar .user-info .image img {
     -webkit-border-radius: 50%;
@@ -7537,7 +7538,8 @@ fieldset[disabled] .form-control {
     cursor: default;
     display: block;
     position: relative;
-    top: 25px; }
+    top: 16px; 
+}
 .sidebar .user-info .info-container .name {
     white-space: nowrap;
     -ms-text-overflow: ellipsis;
@@ -7545,7 +7547,6 @@ fieldset[disabled] .form-control {
     text-overflow: ellipsis;
     overflow: hidden;
     font-size: 14px;
-    max-width: 200px;
     color: #fff; }
 .sidebar .user-info .info-container .email {
     white-space: nowrap;
@@ -7554,7 +7555,6 @@ fieldset[disabled] .form-control {
     text-overflow: ellipsis;
     overflow: hidden;
     font-size: 12px;
-    max-width: 200px;
     color: #fff; }
 .sidebar .user-info .info-container .user-helper-dropdown {
     position: absolute;
@@ -8124,4 +8124,11 @@ html.ie11 .bs-searchbox .form-control {
     margin: 16px 4px 13px 11px;
     border: 1px solid;
     display: none;
+}
+.dropdown-menu{
+    min-width: 183px !important;
+}
+.ml-menu-2{
+    padding-left: 20px;
+    list-style: none;
 }

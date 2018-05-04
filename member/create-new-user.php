@@ -14,7 +14,7 @@ $createdAt = date('Y-m-d H:i:s');
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-        <title>Add New User || Admin || hurryuptaxi.lk</title>
+        <title>Register New Member || Admin || hurryuptaxi.lk</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -45,7 +45,7 @@ $createdAt = date('Y-m-d H:i:s');
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="card">
                             <div class="header">
-                                <h2>Add New User</h2>
+                                <h2>Register New Member</h2>
                                 <ul class="header-dropdown">
                                     <li class="">
                                         <a href="manage-user.php">
