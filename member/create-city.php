@@ -32,135 +32,166 @@ $DISTRICT = new District($id)
     <body class="theme-red">
         <?php
         include 'navigation-and-header.php';
-        ?>
+        if ($USER->id == 1) {
+            ?>
 
-        <section class="content">
-            <div class="container-fluid">  
-                <?php
-                $vali = new Validator();
+            <section class="content">
+                <div class="container-fluid">  
+                    <?php
+                    $vali = new Validator();
 
-                $vali->show_message();
-                ?>
-                <!-- Vertical Layout -->
-                <div class="row clearfix">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="card">
-                            <div class="header">
-                                <h2>Create City</h2>
-                                <ul class="header-dropdown">
-                                    <li class="">
-                                        <a href="manage-district.php">
-                                            <i class="material-icons">list</i> 
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="body">
-                                <form class="form-horizontal"  method="post" action="post-and-get/city.php" enctype="multipart/form-data"> 
-                                    <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                            <label for="district">District</label>
-                                        </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="text" id="name" class="form-control" value="<?php echo $DISTRICT->name ?>" autocomplete="off" name="name" disabled="true">
+                    $vali->show_message();
+                    ?>
+                    <!-- Vertical Layout -->
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h2>Create City</h2>
+                                    <ul class="header-dropdown">
+                                        <li class="">
+                                            <a href="manage-district.php">
+                                                <i class="material-icons">list</i> 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="body">
+                                    <form class="form-horizontal"  method="post" action="post-and-get/city.php" enctype="multipart/form-data"> 
+                                        <div class="row clearfix">
+                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                                <label for="district">District</label>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input type="text" id="name" class="form-control" value="<?php echo $DISTRICT->name ?>" autocomplete="off" name="name" disabled="true">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                            <label for="name">Name</label>
-                                        </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="text" id="name" class="form-control" placeholder="Enter Product name" autocomplete="off" name="name" >
-                                                    <input type="hidden" id="id" value="<?php echo $DISTRICT->id; ?>" name="id"/>
+                                        <div class="row clearfix">
+                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                                <label for="name">Name</label>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input type="text" id="name" class="form-control" placeholder="Enter Product name" autocomplete="off" name="name" >
+                                                        <input type="hidden" id="id" value="<?php echo $DISTRICT->id; ?>" name="id"/>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row clearfix">
-                                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5"> 
+                                        <div class="row clearfix">
+                                            <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5"> 
 
-                                            <input type="submit" name="add-city" class="btn btn-primary m-t-15 waves-effect" value="Add City"/>
+                                                <input type="submit" name="add-city" class="btn btn-primary m-t-15 waves-effect" value="Add City"/>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <hr/>
-                                </form>
-                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th> 
-                                            <th>Option</th>
-                                        </tr>
-                                    </thead>
+                                        <hr/>
+                                    </form>
+                                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th> 
+                                                <th>Option</th>
+                                            </tr>
+                                        </thead>
 
-                                    <tbody>
-                                        <?php
-                                        $CITY = City::GetCitiesByDistrict($id);
-                                        if (count($CITY) > 0) {
-                                            foreach ($CITY as $key => $city) {
-                                                ?>
-                                                <tr id="row_<?php echo $city['id']; ?>">
-                                                    <td><?php echo $city['sort']; ?></td> 
+                                        <tbody>
+                                            <?php
+                                            $CITY = City::GetCitiesByDistrict($id);
+                                            if (count($CITY) > 0) {
+                                                foreach ($CITY as $key => $city) {
+                                                    ?>
+                                                    <tr id="row_<?php echo $city['id']; ?>">
+                                                        <td><?php echo $city['sort']; ?></td> 
 
-                                                    <td><?php echo $city['name']; ?></td>
+                                                        <td><?php echo $city['name']; ?></td>
 
-                                                    <td> 
-                                                        <a href="edit-city.php?id=<?php echo $city['id']; ?>" class="op-link btn btn-sm btn-success"><i class="glyphicon glyphicon-pencil"></i>
-                                                        </a>
+                                                        <td> 
+                                                            <a href="edit-city.php?id=<?php echo $city['id']; ?>" class="op-link btn btn-sm btn-success"><i class="glyphicon glyphicon-pencil"></i>
+                                                            </a>
 
-                                                        <a href="#" class="delete-city btn btn-sm btn-danger" data-id="<?php echo $city['id']; ?>">
-                                                            <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
-                                                        </a>
+                                                            <a href="#" class="delete-city btn btn-sm btn-danger" data-id="<?php echo $city['id']; ?>">
+                                                                <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
+                                                            </a>
 
-                                                        <a href="arrange-city.php?id=<?php echo $id ?>" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-random"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <?php
+                                                            <a href="arrange-city.php?id=<?php echo $id ?>" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-random"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <?php
+                                                }
                                             }
-                                        }
-                                        ?>   
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th> 
-                                            <th>Option</th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+                                            ?>   
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th> 
+                                                <th>Option</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- #END# Vertical Layout -->
+
             </div>
-            <!-- #END# Vertical Layout -->
+        </section>
+        <?php
+    } else {
+        ?>
+        <section class="content">
+            <div class="container-fluid"> 
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="header" >
+                                <h2 style="color: red">
+                                    You don`t have acces this page
+                                </h2>
+                                <ul class="header-dropdown">
+                                    <li>
+                                        <a href="./">
+                                            <i class="material-icons">person</i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
-
-    <!-- Jquery Core Js -->
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <script src="plugins/bootstrap/js/bootstrap.js"></script> 
-    <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
-    <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-    <script src="plugins/jquery-spinner/js/jquery.spinner.js"></script>
-    <script src="plugins/bootstrap-notify/bootstrap-notify.js"></script>
-    <script src="plugins/node-waves/waves.js"></script>
-    <script src="plugins/sweetalert/sweetalert.min.js"></script>
-    <script src="js/admin.js"></script>
-    <script src="js/pages/ui/dialogs.js"></script>
-    <script src="js/demo.js"></script>
-    <script src="delete/js/city.js" type="text/javascript"></script>
+    <?php
+}
+?>
+<!-- Jquery Core Js -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.js"></script> 
+<script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+<script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script src="plugins/jquery-spinner/js/jquery.spinner.js"></script>
+<script src="plugins/bootstrap-notify/bootstrap-notify.js"></script>
+<script src="plugins/node-waves/waves.js"></script>
+<script src="plugins/sweetalert/sweetalert.min.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/pages/ui/dialogs.js"></script>
+<script src="js/demo.js"></script>
+<script src="delete/js/city.js" type="text/javascript"></script>
 
 </body>
 

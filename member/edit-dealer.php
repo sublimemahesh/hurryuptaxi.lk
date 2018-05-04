@@ -41,46 +41,75 @@ $DEALE = new Dealer($id);
     <body class="theme-red">
         <?php
         include './navigation-and-header.php';
-        ?>
 
-        <section class="content">
-            <div class="container-fluid"> 
-                <!-- Body Copy -->
+        if ($USER->id == 1) {
+            ?>
+            <section class="content">
+                <div class="container-fluid"> 
+                    <!-- Body Copy -->
 
-                <div class="row clearfix">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="card">
-                            <div class="header">
-                                <h2>
-                                    Edit Dealer
-                                </h2>
-                            </div>
-                            <div class="body row">
-                                <form class="form-horizontal col-sm-9 col-md-9" method="post" action="post-and-get/dealer.php" enctype="multipart/form-data"> 
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h2>
+                                        Edit Dealer
+                                    </h2>
+                                </div>
+                                <div class="body row">
+                                    <form class="form-horizontal col-sm-9 col-md-9" method="post" action="post-and-get/dealer.php" enctype="multipart/form-data"> 
 
-                                    <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                            <label for="name">Name</label>
-                                        </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="text" id="name" class="form-control" placeholder="Enter name" value="<?php echo $DEALE->name; ?>"  name="name"  required="TRUE">
+                                        <div class="row clearfix">
+                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                                <label for="name">Name</label>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input type="text" id="name" class="form-control" placeholder="Enter name" value="<?php echo $DEALE->name; ?>"  name="name"  required="TRUE">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row clearfix">
-                                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                                        <div class="row clearfix">
+                                            <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
 
-                                            <input type="hidden" id="id" value="<?php echo $DEALE->id; ?>" name="id"/>
-                                            
-                                            <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="edit-dealer" value="submit">Save Changes</button>
+                                                <input type="hidden" id="id" value="<?php echo $DEALE->id; ?>" name="id"/>
+
+                                                <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="edit-dealer" value="submit">Save Changes</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    
-                                </form>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <?php
+        } else {
+            ?>
+            <section class="content">
+                <div class="container-fluid"> 
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="header" >
+                                    <h2 style="color: red">
+                                        You don`t have acces this page
+                                    </h2>
+                                    <ul class="header-dropdown">
+                                        <li>
+                                            <a href="./">
+                                                <i class="material-icons">person</i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -88,27 +117,30 @@ $DEALE = new Dealer($id);
 
             </div>
         </section>
+        <?php
+    }
+    ?>  
 
-        <!-- Jquery Core Js -->
-        <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
 
-        <!-- Bootstrap Core Js -->
-        <script src="plugins/bootstrap/js/bootstrap.js"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="plugins/bootstrap/js/bootstrap.js"></script>
 
-        <!-- Select Plugin Js -->
-        <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <!-- Select Plugin Js -->
+    <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
-        <!-- Slimscroll Plugin Js -->
-        <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- Slimscroll Plugin Js -->
+    <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
-        <!-- Waves Effect Plugin Js -->
-        <script src="plugins/node-waves/waves.js"></script>
+    <!-- Waves Effect Plugin Js -->
+    <script src="plugins/node-waves/waves.js"></script>
 
-        <!-- Custom Js -->
-        <script src="js/admin.js"></script>
+    <!-- Custom Js -->
+    <script src="js/admin.js"></script>
 
-        <!-- Demo Js -->
-        <script src="js/demo.js"></script>
-    </body>
+    <!-- Demo Js -->
+    <script src="js/demo.js"></script>
+</body>
 
 </html>

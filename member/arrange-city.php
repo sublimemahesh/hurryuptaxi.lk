@@ -44,93 +44,124 @@ $DISTRICT = new District($id)
     <body class="theme-red">
         <?php
         include 'navigation-and-header.php';
-        ?>
-        <section class="content">
-            <div class="container-fluid">
+        if ($USER->id == 1) {
+            ?>
+            <section class="content">
+                <div class="container-fluid">
 
-                <div class="row clearfix">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="card">
-                            <div class="header">
-                                <h2>
-                                    Arrange City
-                                </h2>
-                                <ul class="header-dropdown">
-                                    <li class="">
-                                        <a href="manage-district.php">
-                                            <i class="material-icons">list</i> 
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="body">
-                                <form method="post" action="post-and-get/city.php" class="form-horizontal" >
-                                    <div class="clearfix m-b-20">
-                                        <div class="dd nestable-with-handle">
-                                            <ol class="dd-list">
-                                                <?php
-                                                $CITY = City::GetCitiesByDistrict($id);
-                                                if (count($CITY) > 0) {
-                                                    foreach ($CITY as $key => $img) {
-                                                        ?>
-                                                        <li class="dd-item dd3-item" data-id="13">
-                                                            <div class="dd-handle dd3-handle"></div>
-                                                            <div class="dd3-content">(<?php echo $key + 1; ?>) &ensp;
-                                                                District : &ensp; &ensp; 
-                                                                <?php
-                                                                $DISTRICT = new District($img['district']);
-                                                                echo $DISTRICT->name;
-                                                                ?> &ensp; &ensp; &ensp; / &ensp; &ensp; 
-                                                                City : &ensp; &ensp; <?php echo $img['name']; ?></div>
-                                                            <input type="hidden" name="sort[]"  value="<?php echo $img["id"]; ?>" class="sort-input"/>
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h2>
+                                        Arrange City
+                                    </h2>
+                                    <ul class="header-dropdown">
+                                        <li class="">
+                                            <a href="manage-district.php">
+                                                <i class="material-icons">list</i> 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="body">
+                                    <form method="post" action="post-and-get/city.php" class="form-horizontal" >
+                                        <div class="clearfix m-b-20">
+                                            <div class="dd nestable-with-handle">
+                                                <ol class="dd-list">
+                                                    <?php
+                                                    $CITY = City::GetCitiesByDistrict($id);
+                                                    if (count($CITY) > 0) {
+                                                        foreach ($CITY as $key => $img) {
+                                                            ?>
+                                                            <li class="dd-item dd3-item" data-id="13">
+                                                                <div class="dd-handle dd3-handle"></div>
+                                                                <div class="dd3-content">(<?php echo $key + 1; ?>) &ensp;
+                                                                    District : &ensp; &ensp; 
+                                                                    <?php
+                                                                    $DISTRICT = new District($img['district']);
+                                                                    echo $DISTRICT->name;
+                                                                    ?> &ensp; &ensp; &ensp; / &ensp; &ensp; 
+                                                                    City : &ensp; &ensp; <?php echo $img['name']; ?></div>
+                                                                <input type="hidden" name="sort[]"  value="<?php echo $img["id"]; ?>" class="sort-input"/>
 
-                                                        </li>
-                                                        <?php
-                                                    }
-                                                } else {
-                                                    ?> 
-                                                    <b>No City in the database.</b> 
-                                                <?php } ?> 
-                                            </ol>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12 text-center" style="margin-top: 19px;">
-                                                <input type="submit" class="btn btn-info" id="btn-submit" value="Save Changes" name="save-arrange">
+                                                            </li>
+                                                            <?php
+                                                        }
+                                                    } else {
+                                                        ?> 
+                                                        <b>No City in the database.</b> 
+                                                    <?php } ?> 
+                                                </ol>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12 text-center" style="margin-top: 19px;">
+                                                    <input type="submit" class="btn btn-info" id="btn-submit" value="Save Changes" name="save-arrange">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
+            <?php
+        } else {
+            ?>
+            <section class="content">
+                <div class="container-fluid"> 
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="header" >
+                                    <h2 style="color: red">
+                                        You don`t have acces this page
+                                    </h2>
+                                    <ul class="header-dropdown">
+                                        <li>
+                                            <a href="./">
+                                                <i class="material-icons">person</i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
+        <?php
+    }
+    ?>
+    <script src="plugins/jquery/jquery.min.js"></script>
 
-        <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="plugins/bootstrap/js/bootstrap.js"></script>
 
-        <!-- Bootstrap Core Js -->
-        <script src="plugins/bootstrap/js/bootstrap.js"></script>
+    <!-- Select Plugin Js -->
+    <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
-        <!-- Select Plugin Js -->
-        <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <!-- Slimscroll Plugin Js -->
+    <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
-        <!-- Slimscroll Plugin Js -->
-        <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- Waves Effect Plugin Js -->
+    <script src="plugins/node-waves/waves.js"></script>
 
-        <!-- Waves Effect Plugin Js -->
-        <script src="plugins/node-waves/waves.js"></script>
+    <!-- Jquery Nestable -->
+    <script src="plugins/nestable/jquery.nestable.js"></script>
 
-        <!-- Jquery Nestable -->
-        <script src="plugins/nestable/jquery.nestable.js"></script>
+    <!-- Custom Js -->
+    <script src="js/admin.js"></script>
+    <script src="js/pages/ui/sortable-nestable.js"></script>
 
-        <!-- Custom Js -->
-        <script src="js/admin.js"></script>
-        <script src="js/pages/ui/sortable-nestable.js"></script>
+    <!-- Demo Js -->
+    <script src="js/demo.js"></script>
 
-        <!-- Demo Js -->
-        <script src="js/demo.js"></script>
-
-    </body>
+</body>
 
 </html>
