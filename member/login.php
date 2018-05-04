@@ -68,7 +68,7 @@ include_once(dirname(__FILE__) . '/../class/include.php');
                     }
                     ?>
                     <form id="sign_in" method="POST" action="post-and-get/login.php">
-                        <div class="msg">Sign in to start your session</div>
+                        <h4 class="msg">Sign in</h4>
                         <div class="input-group">
                             <span class="input-group-addon">
                                 <i class="material-icons">person</i>
@@ -87,11 +87,11 @@ include_once(dirname(__FILE__) . '/../class/include.php');
                         </div>
                         <div class="row">
                             <div class="col-xs-8 p-t-5">
-                                <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink">
+                                <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-blue">
                                 <label for="rememberme">Remember Me</label>
                             </div>
                             <div class="col-xs-4">
-                                <button class="btn btn-block bg-pink waves-effect" type="submit">SIGN IN</button>
+                                <button class="btn btn-block bg-blue waves-effect" type="submit">SIGN IN</button>
                             </div>
                         </div>
                         <div class="row m-t-15 m-b--20">
