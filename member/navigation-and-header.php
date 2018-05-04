@@ -76,8 +76,6 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-
-
                 <?php
                 if ($_SESSION['id'] == 1) {
                     ?>
@@ -103,7 +101,6 @@
                         </ul>
                     </li>  
 
-
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">assignment_ind</i>
@@ -124,6 +121,7 @@
                             </li>
                         </ul>
                     </li> 
+                    
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">recent_actors</i>
@@ -196,7 +194,7 @@
                 } else {
                     ?>
                     <li>
-                        <a>
+                        <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">folder_shared</i>
                             <span>My Members</span>
                         </a>
@@ -214,7 +212,8 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>  
+                    </li> 
+                    
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">assignment_ind</i>

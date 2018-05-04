@@ -59,6 +59,7 @@ $USER = new User($_SESSION["id"]);
                                 <div class="row">
                                     <div class="col-sm-9 col-md-9">
                                         <ul class="list-group">
+                                            <li class="list-group-item bcg-color"><b>Your Details</b></li>
                                             <li class="list-group-item"><b>Name</b> : <?php echo $USER->name; ?></li> 
                                             <li class="list-group-item"><b>Username</b> : <?php echo $USER->username; ?></li> 
                                             <li class="list-group-item"><b>Email</b> : <?php echo $USER->email; ?></li> 
@@ -96,6 +97,7 @@ $USER = new User($_SESSION["id"]);
                                     
                                     <div class="col-sm-9 col-md-9">
                                         <ul class="list-group">
+                                            <li class="list-group-item bcg-color"><b>Bank Details</b></li>
                                             <li class="list-group-item"><b>Bank</b> : 
                                                 <?php
                                                 $BANK = new Bank($USER->bank);

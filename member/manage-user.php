@@ -24,8 +24,8 @@ $USER = new User($_SESSION["id"]);
         <link href="css/style.css" rel="stylesheet">
         <link href="css/themes/all-themes.css" rel="stylesheet" />
         <style>
-            .btn-danger{
-
+            .op-link.dan-suc-btn {
+                padding: 11px 6px 2px 6px;
             }
         </style>
     </head>
@@ -33,7 +33,9 @@ $USER = new User($_SESSION["id"]);
     <body class="theme-red">
         <?php
         include './navigation-and-header.php';
+        
         ?>
+        
         <section class="content">
             <div class="container-fluid"> 
                 <?php
@@ -49,11 +51,16 @@ $USER = new User($_SESSION["id"]);
                                 <h2>
                                     Manage User
                                 </h2>
-                                <ul class="header-dropdown">
-                                    <li>
+                                <ul class="header-dropdown m-r--5">
+                                    <li class="dropdown">
                                         <a href="create-new-user.php">
                                             <i class="material-icons">add</i> 
                                         </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="javascript:void(0);">Action</a></li>
+                                            <li><a href="javascript:void(0);">Another action</a></li>
+                                            <li><a href="javascript:void(0);">Something else here</a></li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </div>
@@ -88,7 +95,7 @@ $USER = new User($_SESSION["id"]);
                                                     <td><?php echo substr($user['name'], 0, 20); ?></td> 
                                                     <td><?php echo substr($user['email'], 0, 30); ?></td> 
                                                     <td><?php echo substr($user['username'], 0, 20); ?></td> 
-                                              
+
                                                     <td><?php echo $user['lastLogin']; ?></td> 
                                                     <td> 
                                                         <a href="edit-user.php?id=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-success"><i class="glyphicon glyphicon-pencil"></i></a>
@@ -102,12 +109,12 @@ $USER = new User($_SESSION["id"]);
                                                         <?php
                                                         if ($user['isActive'] == 1) {
                                                             ?>
-                                                            <a href="#" title="Active this Account" class="op-link btn btn-md btn-success"><i class="material-icons">check_circle</i></a>
+                                                            <a href="#" title="Active this Account" class="op-link dan-suc-btn"><i class="material-icons">check_box</i></a>
                                                             <?php
                                                         } else {
                                                             ?>
 
-                                                            <a href="#" title="Inactive this Account" class="op-link btn btn-md btn-danger"><i class="material-icons">error_outline</i></a>
+                                                            <a href="#" title="Inactive this Account" class="op-link dan-suc-btn"><i class="material-icons">check_box_outline_blank</i></a>
                                                             <?php
                                                         }
                                                         ?>
@@ -137,22 +144,11 @@ $USER = new User($_SESSION["id"]);
             </div>
         </section>
 
-        <!-- Jquery Core Js -->
         <script src="plugins/jquery/jquery.min.js"></script>
-
-        <!-- Bootstrap Core Js -->
         <script src="plugins/bootstrap/js/bootstrap.js"></script>
-
-        <!-- Select Plugin Js -->
         <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
-
-        <!-- Slimscroll Plugin Js -->
         <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-
-        <!-- Waves Effect Plugin Js -->
         <script src="plugins/node-waves/waves.js"></script>
-
-        <!-- Jquery DataTable Plugin Js -->
         <script src="plugins/jquery-datatable/jquery.dataTables.js"></script>
         <script src="plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
         <script src="plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
@@ -162,13 +158,9 @@ $USER = new User($_SESSION["id"]);
         <script src="plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
         <script src="plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
         <script src="plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
-
         <script src="plugins/sweetalert/sweetalert.min.js"></script>
-        <!-- Custom Js -->
         <script src="js/admin.js"></script>
-<!--        <script src="js/pages/tables/jquery-datatable.js"></script>-->
-
-        <!-- Demo Js -->
+        <script src="js/pages/tables/jquery-datatable.js"></script>
         <script src="js/demo.js"></script>
         <script src="delete/js/member.js" type="text/javascript"></script>
     </body>
