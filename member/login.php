@@ -68,7 +68,6 @@ include_once(dirname(__FILE__) . '/../class/include.php');
                     }
                     ?>
                     <form id="sign_in" method="POST" action="post-and-get/login.php">
-
                         <div class="msg">Sign in to start your session</div>
                         <div class="input-group">
                             <span class="input-group-addon">

@@ -26,6 +26,7 @@ $USE = new User($id);
         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet">
         <link href="css/themes/all-themes.css" rel="stylesheet" />
+        <link href="css/custom.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <body class="theme-red">
@@ -48,7 +49,15 @@ $USE = new User($id);
                                 <h2>
                                     Edit Member
                                 </h2>
+                                <ul class="header-dropdown">
+                                    <li>
+                                        <h5>
+                                            Join With Us : &nbsp; <i class=""><?php echo $USE->createdAt; ?></i> 
+                                        </h5>
+                                    </li>
+                                </ul>
                             </div>
+
                             <div class="body row">
                                 <form class="form-horizontal" method="post" action="post-and-get/add-new-user.php" enctype="multipart/form-data"> 
                                     <!--Name-->
@@ -241,7 +250,7 @@ $USE = new User($id);
                                             </div>
                                         </div>
                                     </div>
-                                  
+
                                     <hr>
                                     <!--Bank-->
                                     <div class="row clearfix">
@@ -339,6 +348,20 @@ $USE = new User($id);
                                             </div>
                                         </div>
                                     </div>
+                                    <!--Active-->
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label for="isActive">Account</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                            <input class="filled-in chk-col-pink" type="checkbox" <?php
+                                            if ($USE->isActive == 1) {
+                                                echo 'checked';
+                                            }
+                                            ?> name="active" value="1" id="rememberme" />
+                                            <label for="rememberme">Activate</label>
+                                        </div>
+                                    </div>
 
                                     <div class="col-md-12">
                                         <div class="col-md-2"></div>  
@@ -369,31 +392,7 @@ $USE = new User($id);
         <script src="js/add-new-ad.js" type="text/javascript"></script>
         <script src="tinymce/js/tinymce/tinymce.min.js"></script>
         <script src="js/city.js" type="text/javascript"></script>
-        <script>
-            tinymce.init({
-                selector: "#about_me",
-                // ===========================================
-                // INCLUDE THE PLUGIN
-                // ===========================================
 
-                plugins: [
-                    "advlist autolink lists link image charmap print preview anchor",
-                    "searchreplace visualblocks code fullscreen",
-                    "insertdatetime media table contextmenu paste"
-                ],
-                // ===========================================
-                // PUT PLUGIN'S BUTTON on the toolbar
-                // ===========================================
-
-                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image jbimages",
-                // ===========================================
-                // SET RELATIVE_URLS to FALSE (This is required for images to display properly)
-                // ===========================================
-
-                relative_urls: false
-
-            });
-        </script>
     </body>
 
 </html>
