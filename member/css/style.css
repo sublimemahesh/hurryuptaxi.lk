@@ -8132,3 +8132,8 @@ html.ie11 .bs-searchbox .form-control {
     padding-left: 20px;
     list-style: none;
 }
+.bcg-color{
+    background-color: #DFDFDF;
+    font-size: 16px;
+}
+
