@@ -8,7 +8,6 @@ if (isset($_GET['user'])) {
     $id = $_GET['user'];
 }
 $USE = new User($id);
-
 ?> 
 ﻿<!DOCTYPE html>
 <html> 
@@ -44,45 +43,72 @@ $USE = new User($id);
                     <?php
                 }
                 ?>
-                <div class="row clearfix">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="card">
-                            <div class="header">
-                                <h2>
-                                    Change Password
-                                </h2>
 
-                            </div>
-                            <div class="body row">
-                                <form class="form-horizontal col-sm-9 col-md-9" method="post" action="post-and-get/add-new-user.php" enctype="multipart/form-data"> 
+                <?php
+                if (($_SESSION['id'] == $USE->parent || $_SESSION['id'] == 1)) {
+                    ?>
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h2>
+                                        Change Password
+                                    </h2>
+
+                                </div>
+                                <div class="body row">
+                                    <form class="form-horizontal col-sm-9 col-md-9" method="post" action="post-and-get/add-new-user.php" enctype="multipart/form-data"> 
 
 
-                                    <div class="row clearfix">
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5 form-control-label">
-                                            <label for="newPass">New Password</label>
-                                        </div>
-                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="password" id="newPass" class="form-control" minlength="6" placeholder="Enter your new password" name="newPass"  required="TRUE">
+                                        <div class="row clearfix">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5 form-control-label">
+                                                <label for="newPass">New Password</label>
+                                            </div>
+                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input type="password" id="newPass" class="form-control" minlength="6" placeholder="Enter your new password" name="newPass"  required="TRUE">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row clearfix">
-                                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                                        <div class="row clearfix">
+                                            <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
 
-                                            <input type="hidden" id="id" value="<?php echo $USE->id; ?>" name="id">
+                                                <input type="hidden" id="id" value="<?php echo $USE->id; ?>" name="id">
 
-                                            <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="changePassword" value="submit">Change Password</button>
+                                                <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="changePassword" value="submit">Change Password</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                </form> 
+                                    </form> 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <?php
+                } else {
+                    ?>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="header" >
+                                <h2 style="color: red">
+                                    You don`t have acces this page
+                                </h2>
+                                <ul class="header-dropdown">
+                                    <li>
+                                        <a href="./">
+                                            <i class="material-icons">person</i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <?php
+                }
+                ?>
 
             </div>
         </section>

@@ -14,7 +14,8 @@ and open the template in the editor.
 .c-logo{
     border-radius: 15px 50px !important;
 }
-.img-logo{
+.img-logo {
     width: 359px;
     text-align: center;
+    padding: 20px;
 }

@@ -34,15 +34,15 @@
     </head> 
 
     <body class="login-page">
-        <div class="login-box">
-            <div class="logo">
-                <a href="javascript:void(0);"><b>Control Panel</b></a>
-                <small style="padding-bottom: 10px;">Hurry Up Taxi</small>
-                <img class="img-logo" src="upload/logo.jpg">
-            </div>
-            <div class="card">
-                <div class="body">
-                    <a href="member/login.php" class="btn-index center-block"><b>LOGIN</b></a>
+        <div class="login-box col-md-12 col-sm-12 col-xs-10 col-xs-offset-1">
+            <div class="body">
+                <div class="card center-block">
+                    <div>
+                        <a href="javascript:void(0);"><b>Control Panel</b></a>
+                        <small style="padding-bottom: 10px;">Hurry Up Taxi</small>
+                        <img class="img-logo" src="upload/logo.jpg">
+                    </div>
+                    <a href="member/login.php" class="btn-index"><b>LOGIN</b></a>
                 </div>
             </div>
         </div>

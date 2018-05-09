@@ -23,6 +23,7 @@ class User {
     public $isActive;
     public $authToken;
     public $lastLogin;
+    public $payment;
     public $bank;
     public $branch;
     public $account_type;
@@ -35,7 +36,7 @@ class User {
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT `id`,`name`,`parent`,`email`,`district`,`city`,`dealer`,`address`,`phone_number`,`nic`,`createdAt`,`profile_picture`,`isActive`,`authToken`,`lastLogin`,`bank`,`branch`,`account_type`,`holder_name`,`account_number`,`username`,`resetcode` FROM `user` WHERE `id`=" . $id;
+            $query = "SELECT `id`,`name`,`parent`,`email`,`district`,`city`,`dealer`,`address`,`phone_number`,`nic`,`createdAt`,`profile_picture`,`isActive`,`authToken`,`lastLogin`,`payment`,`bank`,`branch`,`account_type`,`holder_name`,`account_number`,`username`,`resetcode` FROM `user` WHERE `id`=" . $id;
 
             $db = new Database();
 
@@ -55,6 +56,7 @@ class User {
             $this->profile_picture = $result['profile_picture'];
             $this->isActive = $result['isActive'];
             $this->lastLogin = $result['lastLogin'];
+            $this->payment = $result['payment'];
             $this->bank = $result['bank'];
             $this->branch = $result['branch'];
             $this->account_type = $result['account_type'];
@@ -217,6 +219,7 @@ class User {
         unset($_SESSION["nic"]);
         unset($_SESSION["profile_picture"]);
         unset($_SESSION["isActive"]);
+        unset($_SESSION["payment"]);
         unset($_SESSION["authToken"]);
         unset($_SESSION["bank"]);
         unset($_SESSION["branch"]);
@@ -243,6 +246,7 @@ class User {
                 . "`nic` ='" . $this->nic . "', "
                 . "`profile_picture` ='" . $this->profile_picture . "', "
                 . "`isActive` ='" . $this->isActive . "', "
+                . "`payment` ='" . $this->payment . "', "
                 . "`bank` ='" . $this->bank . "', "
                 . "`branch` ='" . $this->branch . "', "
                 . "`account_type` ='" . $this->account_type . "', "
@@ -278,6 +282,7 @@ class User {
         $_SESSION["nic"] = $user['nic'];
         $_SESSION["profile_picture"] = $user['profile_picture'];
         $_SESSION["isActive"] = $user['isActive'];
+        $_SESSION["payment"] = $user['payment'];
         $_SESSION["authToken"] = $user['authToken'];
         $_SESSION["bank"] = $user['bank'];
         $_SESSION["branch"] = $user['branch'];
