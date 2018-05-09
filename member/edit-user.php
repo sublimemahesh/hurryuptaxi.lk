@@ -43,7 +43,7 @@ $USE = new User($id);
                 $vali->show_message();
                 ?>
                 <?php
-                if ($_SESSION['id'] == $USE->parent) {
+                if (($_SESSION['id'] == $USE->parent || $_SESSION['id'] == 1)) {
                     ?>
 
                     <div class="row clearfix">
@@ -273,6 +273,19 @@ $USE = new User($id);
 
                                         </div>
                                         <hr>
+                                        <!--Payment-->
+                                        <div class="row clearfix">
+                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                                <label for="payment">Payment</label>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input type="text" id="payment" class="form-control" placeholder="Enter Payment" autocomplete="off" name="payment" value="<?php echo $USE->payment; ?>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <!--Bank-->
                                         <div class="row clearfix">
                                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
@@ -369,7 +382,6 @@ $USE = new User($id);
                                                 </div>
                                             </div>
                                         </div>
-
 
 
                                         <div class="col-md-12">

@@ -125,6 +125,7 @@ if (isset($_POST['update'])) {
     $USER->phone_number = filter_input(INPUT_POST, 'phone_number');
     $USER->nic = filter_input(INPUT_POST, 'nic');
     $USER->createdAt = filter_input(INPUT_POST, 'createdAt');
+    $USER->payment = filter_input(INPUT_POST, 'payment');
     $USER->bank = filter_input(INPUT_POST, 'bank');
     $USER->branch = filter_input(INPUT_POST, 'branch');
     $USER->account_type = filter_input(INPUT_POST, 'account_type');
