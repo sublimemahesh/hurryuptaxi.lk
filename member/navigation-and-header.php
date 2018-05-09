@@ -1,4 +1,12 @@
 <!-- Page Loader -->
+<style>
+    .navbar .navbar-toggle::before {
+        content: '' !important;
+        font-family: 'Material Icons';
+        font-size: 26px;
+
+    }
+</style>
 <div class="page-loader-wrapper">
     <div class="loader">
         <div class="preloader">
@@ -22,7 +30,27 @@
 <nav class="navbar">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+            <div class="navbar-toggle collapsed" aria-expanded="false">
+                <ul class="nav navbar-nav navbar-right">  
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i style="margin-top: -5px !important; margin-left: -15px !important;" class="material-icons">settings</i> 
+                        </a> 
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="profile.php">
+                                    <i class="material-icons">person</i>Profile
+                                </a>
+                            </li>
+                            <li role="seperator" class="divider"></li>
+                            <li><a href="edit-profile.php?id=<?php echo $_SESSION['id']; ?>"><i class="material-icons">edit</i>Edit My Profile</a></li>
+                            <li><a href="change-password.php"><i class="material-icons">vpn_key</i>Change Password</a></li> 
+                            <li role="seperator" class="divider"></li>
+                            <li><a href="post-and-get/log-out.php"><i class="material-icons">input</i>Sign Out</a></li>
+                        </ul> 
+                    </li> 
+                </ul>
+            </div>
             <a href="javascript:void(0);" class="bars"></a>
             <a class="navbar-brand" href="index.php">CONTROL PANEL</a>
         </div>
@@ -121,7 +149,7 @@
                             </li>
                         </ul>
                     </li> 
-                    
+
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">recent_actors</i>
@@ -213,7 +241,7 @@
                             </li>
                         </ul>
                     </li> 
-                    
+
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">assignment_ind</i>
