@@ -19,7 +19,7 @@
 
         <!-- Animation Css -->
         <link href="member/plugins/animate-css/animate.css" rel="stylesheet" />
-
+        <link href="member/css/custom.css" rel="stylesheet" type="text/css"/>
         <!-- Custom Css -->
         <link href="member/css/style.css" rel="stylesheet">
         <style>
@@ -36,8 +36,9 @@
     <body class="login-page">
         <div class="login-box">
             <div class="logo">
-                <a href="javascript:void(0);"><b>Member Login</b></a>
-                <small>hurryuptaxi.lk</small>
+                <a href="javascript:void(0);"><b>Control Panel</b></a>
+                <small style="padding-bottom: 10px;">Hurry Up Taxi</small>
+                <img class="img-logo" src="upload/logo.jpg">
             </div>
             <div class="card">
                 <div class="body">

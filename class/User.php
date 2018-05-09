@@ -337,9 +337,9 @@ class User {
         }
     }
 
-    public function checkUsername($username) {
+    public function checkEmail($email) {
 
-        $query = "SELECT `email`,`username` FROM `user` WHERE `username`= '" . $username . "'";
+        $query = "SELECT `email`,`username` FROM `user` WHERE `email`= '" . $email . "'";
 
         $db = new Database();
 
