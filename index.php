@@ -36,8 +36,8 @@
     <body class="login-page">
         <div class="login-box">
             <div class="logo">
-                <a href="javascript:void(0);"><b>Control Panel</b></a>
-                <small>Support Lanka</small>
+                <a href="javascript:void(0);"><b>Member Login</b></a>
+                <small>hurryuptaxi.lk</small>
             </div>
             <div class="card">
                 <div class="body">
