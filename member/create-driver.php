@@ -1,6 +1,7 @@
 <?php
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . './auth.php');
+
 $USER = new User($_SESSION["id"]);
 
 date_default_timezone_set('Asia/Colombo');
@@ -117,6 +118,19 @@ $createdAt = date('Y-m-d H:i:s');
                                             </div>
                                         </div>
                                     </div> 
+                                    <!--Profile Picture-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="image">Profile Picture</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="file" id="image" class="form-control" name="image" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!--Address-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
@@ -160,7 +174,7 @@ $createdAt = date('Y-m-d H:i:s');
                                     <!--Save-->
                                     <div class="row clearfix">
                                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5"> 
-                                            <input type="hidden" id="user" class="form-control" value="<?php echo $_SESSION["id"]?>" name="user">
+                                            <input type="hidden" id="user" class="form-control" value="<?php echo $_SESSION["id"] ?>" name="user">
                                             <input type="submit" name="add-driver" class="btn btn-primary m-t-15 waves-effect" value="Add Driver"/>
                                         </div>
                                     </div>

@@ -11,6 +11,7 @@ class Driver {
     public $user;
     public $name;
     public $contact_no;
+    public $profile_picture;
     public $district;
     public $city;
     public $address;
@@ -20,7 +21,7 @@ class Driver {
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT `id`,`user`,`name`,`contact_no`,`district`,`city`,`address`,`vehicle_number`,`nic_number` FROM `driver` WHERE `id`=" . $id;
+            $query = "SELECT `id`,`user`,`name`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number` FROM `driver` WHERE `id`=" . $id;
 
             $db = new Database();
 
@@ -30,6 +31,7 @@ class Driver {
             $this->user = $result['user'];
             $this->name = $result['name'];
             $this->contact_no = $result['contact_no'];
+            $this->profile_picture = $result['profile_picture'];
             $this->district = $result['district'];
             $this->city = $result['city'];
             $this->address = $result['address'];
@@ -42,10 +44,11 @@ class Driver {
 
     public function create() {
 
-        $query = "INSERT INTO `driver` (`user`,`name`,`contact_no`,`district`,`city`,`address`,`vehicle_number`,`nic_number`) VALUES  ('"
+        $query = "INSERT INTO `driver` (`user`,`name`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`) VALUES  ('"
                 . $this->user . "', '"
                 . $this->name . "', '"
                 . $this->contact_no . "', '"
+                . $this->profile_picture . "','"
                 . $this->district . "', '"
                 . $this->city . "', '"
                 . $this->address . "', '"
@@ -85,6 +88,7 @@ class Driver {
                 . "`user` ='" . $this->user . "', "
                 . "`name` ='" . $this->name . "', "
                 . "`contact_no` ='" . $this->contact_no . "', "
+                . "`profile_picture` ='" . $this->profile_picture . "', "
                 . "`district` ='" . $this->district . "', "
                 . "`city` ='" . $this->city . "', "
                 . "`address` ='" . $this->address . "', "

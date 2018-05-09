@@ -144,6 +144,20 @@ $DRIVER = new Driver($id);
                                             </div>
                                         </div>
                                     </div> 
+                                    <!--Profile Picture-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <label for="image">Profile Picture</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="file" id="image" class="form-control" name="image" value="<?php echo $DRIVER->profile_picture; ?>">
+                                                    <img src="../upload/driver/<?php echo $DRIVER->profile_picture; ?>" id="image" class="view-edit-img img img-responsive img-thumbnail" name="image" alt="old image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!--Address-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
@@ -187,6 +201,7 @@ $DRIVER = new Driver($id);
                                     <!--Save-->
                                     <div class="row clearfix">
                                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5"> 
+                                             <input type="hidden" id="oldImageName" value="<?php echo $DRIVER->profile_picture; ?>" name="oldImageName"/>
                                             <input type="hidden" id="user" class="form-control" value="<?php echo $_SESSION["id"] ?>" name="user">
                                             <input type="hidden" id="id" value="<?php echo $DRIVER->id; ?>" name="id"/>
                                             <input type="submit" name="edit-driver" class="btn btn-primary m-t-15 waves-effect" value="Save Changes"/>
