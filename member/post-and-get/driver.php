@@ -19,6 +19,30 @@ if (isset($_POST['add-driver'])) {
     $DRIVER->vehicle_number = $_POST['vehicle_number'];
     $DRIVER->nic_number = $_POST['nic_number'];
 
+    $dir_dest = '../../upload/driver/';
+
+    $handle = new Upload($_FILES['image']);
+
+    $imgName = null;
+
+    if ($handle->uploaded) {
+        $handle->image_resize = true;
+        $handle->file_new_name_ext = 'jpg';
+        $handle->image_ratio_crop = 'C';
+        $handle->file_new_name_body = Helper::randamId();
+        $handle->image_x = 250;
+        $handle->image_y = 250;
+
+        $handle->Process($dir_dest);
+
+        if ($handle->processed) {
+            $info = getimagesize($handle->file_dst_pathname);
+            $imgName = $handle->file_dst_name;
+        }
+    }
+
+    $DRIVER->profile_picture = $imgName;
+
     $VALID->check($DRIVER, [
         'name' => ['required' => TRUE],
         'contact_no' => ['required' => TRUE],
@@ -27,6 +51,7 @@ if (isset($_POST['add-driver'])) {
         'city' => ['required' => TRUE],
         'vehicle_number' => ['required' => TRUE],
         'nic_number' => ['required' => TRUE],
+        'profile_picture' => ['required' => TRUE],
     ]);
 
     if ($VALID->passed()) {
@@ -53,6 +78,30 @@ if (isset($_POST['add-driver'])) {
 
 if (isset($_POST['edit-driver'])) {
 
+
+    $dir_dest = '../../upload/driver/';
+
+    $handle = new Upload($_FILES['image']);
+
+    $imgName = null;
+    if ($handle->uploaded) {
+        $handle->image_resize = true;
+        $handle->file_new_name_body = TRUE;
+        $handle->file_overwrite = TRUE;
+        $handle->file_new_name_ext = FALSE;
+        $handle->image_ratio_crop = 'C';
+        $handle->file_new_name_body = $_POST ["oldImageName"];
+        $handle->image_x = 250;
+        $handle->image_y = 250;
+
+        $handle->Process($dir_dest);
+
+        if ($handle->processed) {
+            $info = getimagesize($handle->file_dst_pathname);
+            $imgName = $handle->file_dst_name;
+        }
+    }
+
     $DRIVER = New Driver($_POST['id']);
     $VALID = new Validator();
 
@@ -69,6 +118,7 @@ if (isset($_POST['edit-driver'])) {
         'address' => ['required' => TRUE],
         'vehicle_number' => ['required' => TRUE],
         'nic_number' => ['required' => TRUE],
+        'profile_picture' => ['required' => TRUE],
     ]);
 
     if ($VALID->passed()) {

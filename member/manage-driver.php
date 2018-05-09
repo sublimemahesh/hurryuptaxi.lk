@@ -137,6 +137,7 @@ $DRIVER = new Driver(NULL)
         <script src="js/pages/tables/jquery-datatable.js"></script>
         <script src="js/demo.js"></script>
         <script src="delete/js/member.js" type="text/javascript"></script>
+        <script src="delete/js/driver.js" type="text/javascript"></script>
     </body>
 
 </html> 
