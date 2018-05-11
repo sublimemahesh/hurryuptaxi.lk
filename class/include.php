@@ -12,6 +12,8 @@ include_once(dirname(__FILE__) . '/District.php');
 include_once(dirname(__FILE__) . '/Dealer.php');
 include_once(dirname(__FILE__) . '/Bank.php');
 include_once(dirname(__FILE__) . '/Driver.php');
+include_once(dirname(__FILE__) . '/VehiclePhotos.php');
+
 
 function dd($data) {
     var_dump($data);

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Welcome || Sublime Web Manager</title>
+        <title>Hurry Up Taxi || Home Page </title>
         <!-- Favicon-->
         <link rel="icon" href="member/favicon.ico" type="image/x-icon">
 
@@ -33,16 +33,27 @@
         </style>
     </head> 
 
-    <body class="login-page">
-        <div class="login-box col-md-12 col-sm-12 col-xs-10 col-xs-offset-1">
-            <div class="body">
-                <div class="card center-block">
-                    <div>
-                        <a href="javascript:void(0);"><b>Control Panel</b></a>
-                        <small style="padding-bottom: 10px;">Hurry Up Taxi</small>
-                        <img class="img-logo" src="upload/logo.jpg">
-                    </div>
-                    <a href="member/login.php" class="btn-index"><b>LOGIN</b></a>
+    <body class="login-page2">
+        <div class="login-box text-center">
+            <div class="logo">
+                <img class="img-logo" src="upload/logo.jpg">
+                <small style="padding-bottom: 10px;">www.hurryuptaxi.lk</small>
+            </div>  
+        </div> 
+        <p class="text-justify">
+            Siyapatha Taxi & Rent A Car Service  (Hurryup Taxi) ඔබට ප්‍රවාහන පහසුකම් ලබා ගත හැකි සහ ප්‍රවාහන පහසුකම් සපයා දිය හැකි අන්තර්ජාල සොදුරු නවාතැනකි.   
+            මෙම ක්‍රම වේදය යටතේ සැපයුම්කරුවන්, අතරමැදියන් සහ ගැණුම්කරුවන් එකිනෙකා මුණගැසිමට අවස්ථාවක් උදා වෙන අතර, වාහන ඇති, තැති සැමට ආදායම් මාර්ගයක් සලසා ගත හැකිවේ.එසේම සියළුම ප්‍රවාහන පහසුකම් අපගේ අන්තර්ජාලය හරහා සිදුවන බැවින් වේගවත් ප්‍රවාහන පහසුකම් ලබා ගැනිමට හැකියාවක් මෙමගින් උදාවනු ඇත.
+            තවද මෙම ක්‍රමවේදය යටතේ ප්‍රවාහන පහසුකම් ලබා ගන්නා ගැණුම්කරුවන්හටද ආදායම් මාර්ගයක් උදා විම මෙම සුවිශේෂත්වය වේ.
+            අප ආයතනයද facebook වැනිම ජාලගත වෙබ් අඩවියකි.අප ආයතනයේ ලියාපදිංචියට මුදලක් අය කරයි. එය ඔබට ජිවිත කාලයටම වලංගු වේ.ලියාපදිංචිය සදහා මුදල ගෙවූ පසු ඔබට facebook වගේ profile එකක් නිර්මාණය වෙයි.එය අප ආයතනය තුල ඔබට හිමිවන අන්තර්ජාල කාර්‍ය්ලයකි.එහි හිමිකරු වන්නේ ඔබමය.ඔබ විසින් සිදු කරන සියළුම ගණුදෙනු පිලිබද විස්තරයන් එහි සදහන් වේ.
+        </p>
+        <p class="text-justify">
+            මෙය පිරමීඩ් හෝ වෙනත් නීතිවිරෝදී දෙයක් නොවේ. විවිධ වයස් සීමාවල විවිධ තරාතිරම් වල අය අප හා එකතු වන අතර, අප සමග එකතුවෙන හැමෝටම ඇත්තේ එක් අරමුණකි.එනම් අමතර ආදායමක් ලබා ගැනීමයි.අප සමග එකතුවෙන ඔබට ඔබේ හැකියාව මත විවිධ ආදායම් මාර්ග මෙහිදි උදාවනු ඇත. එන්න අප හා එක්වන්න Siyapatha Taxi & Rent A Car Service (Hurryup Taxi)  www.hurryuptaxi.lk)
+        </p>
+        <br/>
+        <div class="text-center">
+            <div class="card text-center" style="width: 100%">
+                <div class="body">
+                    <a href="member/login.php" class="btn-index center-block"><b>LOGIN</b></a>
                 </div>
             </div>
         </div>

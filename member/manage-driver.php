@@ -2,7 +2,7 @@
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
-$DRIVER = new Driver(NULL)
+$DRIVER = new Driver(NULL);
 ?> 
 <!DOCTYPE html>
 <html>
@@ -83,8 +83,11 @@ $DRIVER = new Driver(NULL)
                                                     <td><?php echo $driver['vehicle_number']; ?></td> 
                                                     <td><?php echo $driver['nic_number']; ?></td> 
                                                     <td> 
-                                                        <a href="edit-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-success">
+                                                        <a href="edit-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-info">
                                                             <i class="glyphicon glyphicon-pencil"></i>
+                                                        </a>
+                                                        <a href="add-vehicle-photos.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-success">
+                                                            <i class="glyphicon glyphicon-picture"></i>
                                                         </a>
 
                                                         <a href="#" class="delete-driver btn btn-sm btn-danger" data-id="<?php echo $driver['id']; ?>">
