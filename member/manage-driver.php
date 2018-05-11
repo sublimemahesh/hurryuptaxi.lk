@@ -57,9 +57,9 @@ $DRIVER = new Driver(NULL);
                                 </ul>
                             </div>
                             <div class="body">
-                                <!-- <div class="table-responsive">-->
-                                <div>
-                                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                <div class="table-responsive">
+
+                                    <table id="myTable"class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
@@ -141,6 +141,7 @@ $DRIVER = new Driver(NULL);
         <script src="js/demo.js"></script>
         <script src="delete/js/member.js" type="text/javascript"></script>
         <script src="delete/js/driver.js" type="text/javascript"></script>
-    </body>
+   
+</body>
 
 </html> 

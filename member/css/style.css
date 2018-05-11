@@ -8169,3 +8169,12 @@ html.ie11 .bs-searchbox .form-control {
     text-align: center;
     color: #fff;
     margin-top: -5px; }
+
+@media (max-width:920px){
+    .login-page2 {
+        max-width: 80%;
+    }
+    .img-logo {
+        width: 80%;
+    }
+}

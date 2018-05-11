@@ -33,9 +33,8 @@ $USER = new User($_SESSION["id"]);
     <body class="theme-red">
         <?php
         include './navigation-and-header.php';
-        
         ?>
-        
+
         <section class="content">
             <div class="container-fluid"> 
                 <?php
@@ -64,83 +63,87 @@ $USER = new User($_SESSION["id"]);
                                     </li>
                                 </ul>
                             </div>
-                            <div class="body">
-                                <!-- <div class="table-responsive">-->
-                                <div>
-                                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Name</th> 
-                                                <th>email</th>
-                                                <th>User Name</th> 
-                                                <th>Last Login</th>
-                                                <th>Options</th>
-                                                <th>Active</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            $USE = new User(NULL);
-                                            if (isset($_GET['user'])) {
-                                                $USERS = $USE->GetUserByParent($_GET['user']);
-                                            } else {
-                                                $USERS = $USE->GetUserByParent($_SESSION["id"]);
-                                            }
 
-                                            foreach ($USERS as $key => $user) {
-                                                ?>
-                                                <tr id="row_<?php echo $user['id']; ?>">
-                                                    <td><?php echo $user['id']; ?></td> 
-                                                    <td><?php echo substr($user['name'], 0, 20); ?></td> 
-                                                    <td><?php echo substr($user['email'], 0, 30); ?></td> 
-                                                    <td><?php echo substr($user['username'], 0, 20); ?></td> 
-
-                                                    <td><?php echo $user['lastLogin']; ?></td> 
-                                                    <td> 
-                                                        <a href="edit-user.php?id=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-success"><i class="glyphicon glyphicon-pencil"></i></a>
-                                                        |
-                                                        <a href="manage-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-warning"><i class="glyphicon glyphicon-user"></i></a>
-                                                        |
-                                                        <a href="change-password-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-info"><i class="material-icons">vpn_key</i></a>
-
-                                                    </td>
-                                                    <td>
-                                                        <?php
-                                                        if ($user['isActive'] == 1) {
-                                                            ?>
-                                                            <a href="#" title="Active this Account" class="op-link dan-suc-btn"><i class="material-icons">check_box</i></a>
-                                                            <?php
-                                                        } else {
-                                                            ?>
-
-                                                            <a href="#" title="Inactive this Account" class="op-link dan-suc-btn"><i class="material-icons">check_box_outline_blank</i></a>
-                                                            <?php
-                                                        }
-                                                        ?>
-                                                    </td>
+                                <div class="body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 30px">ID</th>
+                                                    <th style="width: 90px">Name</th>
+                                                    <th style="width: 100px">Email</th>
+                                                    <th style="width: 90px">Username</th>
+                                                    <th style="width: 100px">Last Login</th>
+                                                    <th style="width: 120px">Options</th>
+                                                    <th style="width: 30px">Active</th>
                                                 </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th style="width: 30px">ID</th>
+                                                    <th style="width: 90px">Name</th>
+                                                    <th style="width: 150px">Email</th>
+                                                    <th style="width: 90px">Username</th>
+                                                    <th style="width: 100px">Last Login</th>
+                                                    <th style="width: 90px">Options</th>
+                                                    <th style="width: 30px">Active</th>
+                                                </tr>
+                                            </tfoot>
+                                            <tbody>
                                                 <?php
-                                            }
-                                            ?>   
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Name</th> 
-                                                <th>email</th>
-                                                <th>User Name</th> 
-                                                <th>Last Login</th>
-                                                <th>Options</th>
-                                                <th>Active</th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
+                                                $USE = new User(NULL);
+                                                if (isset($_GET['user'])) {
+                                                    $USERS = $USE->GetUserByParent($_GET['user']);
+                                                } else {
+                                                    $USERS = $USE->GetUserByParent($_SESSION["id"]);
+                                                }
+
+                                                foreach ($USERS as $key => $user) {
+                                                    ?>
+                                                    <tr id="row_<?php echo $user['id']; ?>">
+                                                        <td><?php echo $user['id']; ?></td> 
+                                                        <td><?php echo substr($user['name'], 0, 20); ?></td> 
+                                                        <td><?php echo substr($user['email'], 0, 30); ?></td> 
+                                                        <td><?php echo substr($user['username'], 0, 20); ?></td> 
+
+                                                        <td><?php echo $user['lastLogin']; ?></td> 
+                                                        <td> 
+                                                            <a href="edit-user.php?id=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-success"><i class="glyphicon glyphicon-pencil"></i></a>
+                                                            |
+                                                            <a href="manage-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-warning"><i class="glyphicon glyphicon-user"></i></a>
+                                                            |
+                                                            <a href="change-password-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-info"><i class="material-icons">vpn_key</i></a>
+
+                                                        </td>
+                                                        <td>
+                                                            <?php
+                                                            if ($user['isActive'] == 1) {
+                                                                ?>
+                                                                <a href="#" title="Active this Account" class="op-link dan-suc-btn"><i class="material-icons">check_box</i></a>
+                                                                <?php
+                                                            } else {
+                                                                ?>
+
+                                                                <a href="#" title="Inactive this Account" class="op-link dan-suc-btn"><i class="material-icons">check_box_outline_blank</i></a>
+                                                                <?php
+                                                            }
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                                    <?php
+                                                }
+                                                ?>   
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
-                            </div>
+                           
+
                         </div>
                     </div>
                 </div>
+                <!-- Basic Examples -->
+
             </div>
         </section>
 

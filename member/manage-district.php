@@ -54,7 +54,7 @@ $DISTRICT = new District(NULL)
                                     </ul>
                                 </div>
                                 <div class="body">
-                                    <!-- <div class="table-responsive">-->
+                                <div class="table-responsive">
                                     <div>
                                         <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                             <thead>
