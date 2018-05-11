@@ -1,33 +1,12 @@
 ﻿<?php
 include_once(dirname(__FILE__) . '/../class/include.php');
-
-//if (Input::exists()) {
-//    $validate = new Validator();
-//    $validation = $validate->check($_POST, array('username' => array(
-//    'name' => 'username',
-//    'required' => true,
-//    'min' => 2,
-//    'max' => 20,
-//    'unique' => 'user'),
-//    'password' => array (
-//    'required' => true,
-//    'min' => 6),
-//    ));
-//    if ($validation->passed()) {
-//        echo 'passed';
-//    } else {
-//        foreach ($validation ->errors() as $error){
-//            echo $error, '<br>';
-//        }
-//    }
-//}
 ?> ﻿
 <!DOCTYPE html>
 <html> 
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Sign In || Sublime Web Manager</title>
+        <title>Member Login || www.hurryuptaxi.lk</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -51,8 +30,8 @@ include_once(dirname(__FILE__) . '/../class/include.php');
     <body class="login-page">
         <div class="login-box">
             <div class="logo">
-                <a href="javascript:void(0);"><b>Control Panel</b></a>
-                <small>Hurry Up Taxi</small>
+                <a href="javascript:void(0);"><b>Member Login</b></a>
+                <small>www.hurryuptaxi.lk</small>
             </div>
             <div class="card">
                 <div class="body">
@@ -85,17 +64,13 @@ include_once(dirname(__FILE__) . '/../class/include.php');
                                 <input type="password" class="form-control" name="password" placeholder="Password" >
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xs-8 p-t-5">
-                                <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-blue">
-                                <label for="rememberme">Remember Me</label>
-                            </div>
-                            <div class="col-xs-4">
-                                <button class="btn btn-block bg-blue waves-effect" type="submit">SIGN IN</button>
+                        <div class="row"> 
+                            <div class="col-xs-12 text-center">
+                                <button class="btn btn-block bg-blue waves-effect" type="submit">Login...</button>
                             </div>
                         </div>
                         <div class="row m-t-15 m-b--20">
-                          
+
                             <div class="col-xs-12 align-center">
                                 <a href="forget-password.php">Forgot Username or Password?</a>
                             </div>

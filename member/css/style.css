@@ -8137,3 +8137,35 @@ html.ie11 .bs-searchbox .form-control {
     font-size: 16px;
 }
 
+
+
+/* Login Page ================================== */
+.login-page2 {
+    background-color: #00BCD4;
+    padding-left: 0;
+    max-width: 50%;
+    margin: 5% auto;
+    margin: 0% auto 0% auto;
+    overflow-x: hidden; }
+.login-page2 .login-box .msg {
+    color: #555;
+    margin-bottom: 30px;
+    text-align: center; }
+.login-page2 .login-box a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #00BCD4; }
+.login-page2 .login-box .logo {
+    margin-bottom: 20px; }
+.login-page2 .login-box .logo a {
+    font-size: 36px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff; }
+.login-page2 .login-box .logo small {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    margin-top: -5px; }
