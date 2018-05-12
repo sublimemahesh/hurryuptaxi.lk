@@ -224,33 +224,8 @@ $DRIVER = new Driver($id);
         <script src="plugins/jquery-spinner/js/jquery.spinner.js"></script>
         <script src="js/admin.js"></script>
         <script src="js/demo.js"></script>
-        <script src="tinymce/js/tinymce/tinymce.min.js"></script>
         <script src="js/city.js" type="text/javascript"></script>
-        <script>
-            tinymce.init({
-                selector: "#about_me",
-                // ===========================================
-                // INCLUDE THE PLUGIN
-                // ===========================================
 
-                plugins: [
-                    "advlist autolink lists link image charmap print preview anchor",
-                    "searchreplace visualblocks code fullscreen",
-                    "insertdatetime media table contextmenu paste"
-                ],
-                // ===========================================
-                // PUT PLUGIN'S BUTTON on the toolbar
-                // ===========================================
-
-                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image jbimages",
-                // ===========================================
-                // SET RELATIVE_URLS to FALSE (This is required for images to display properly)
-                // ===========================================
-
-                relative_urls: false
-
-            });
-        </script>
     </body>
 
 </html>
