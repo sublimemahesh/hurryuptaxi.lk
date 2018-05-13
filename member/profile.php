@@ -92,7 +92,7 @@ $USER = new User($_SESSION["id"]);
                                         </ul>
                                     </div>
                                     <div class="col-sm-3 col-md-3">  
-                                        <img src="../upload/user/<?php echo $USER->profile_picture; ?>" class="img img-responsive img-thumbnail"/> 
+                                        <img src="../upload/user/<?php echo $USER->profile_picture; ?>" class="img img-responsive img-thumbnail img-circle"/> 
                                     </div>
                                     
                                     <div class="col-sm-9 col-md-9">

@@ -43,7 +43,7 @@
                                 </a>
                             </li>
                             <li role="seperator" class="divider"></li>
-                            <li><a href="edit-profile.php?id=<?php echo $_SESSION['id']; ?>"><i class="material-icons">edit</i>Edit My Profile</a></li>
+                            <li><a href="edit-profile.php?id=<?php echo $USER->id; ?>"><i class="material-icons">edit</i>Edit My Profile</a></li>
                             <li><a href="change-password.php"><i class="material-icons">vpn_key</i>Change Password</a></li> 
                             <li role="seperator" class="divider"></li>
                             <li><a href="post-and-get/log-out.php"><i class="material-icons">input</i>Sign Out</a></li>
@@ -52,7 +52,9 @@
                 </ul>
             </div>
             <a href="javascript:void(0);" class="bars"></a>
-            <a class="navbar-brand" href="index.php">CONTROL PANEL</a>
+            <a class="navbar-brand" href="index.php">
+                <img src="../upload/logo-member-login.png" style="height:53px;"/>
+            </a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">  
@@ -67,7 +69,7 @@
                             </a>
                         </li>
                         <li role="seperator" class="divider"></li>
-                        <li><a href="edit-profile.php?id=<?php echo $_SESSION['id']; ?>"><i class="material-icons">edit</i>Edit My Profile</a></li>
+                        <li><a href="edit-profile.php?id=<?php echo $USER->is; ?>"><i class="material-icons">edit</i>Edit My Profile</a></li>
                         <li><a href="change-password.php"><i class="material-icons">vpn_key</i>Change Password</a></li> 
                         <li role="seperator" class="divider"></li>
                         <li><a href="post-and-get/log-out.php"><i class="material-icons">input</i>Sign Out</a></li>
@@ -82,15 +84,23 @@
     <!-- Left Sidebar -->
     <aside id="leftsidebar" class="sidebar">
         <!-- User Info -->
-        <div class="user-info text-center">
-            <div class="image">
-                <img src="../upload/user/<?php echo $USER->profile_picture; ?>" width="48" height="48" alt="User" />
+        <div class="user-info text-left">
+            <div class="image pull-left">
+
+                <?php
+                if (!empty($USER->profile_picture)) {
+                    ?>
+                    <img src="../upload/user/<?php echo $USER->profile_picture; ?>" width="48" height="48" alt="User" />
+                    <?php
+                }
+                ?>
+
             </div>
             <div class="info-container">
                 <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php echo $_SESSION['name']; ?>
+                    <?php echo $USER->name; ?>
                 </div>
-                <div class="email"><?php echo $_SESSION['email']; ?></div> 
+                <div class="email"><?php echo $USER->email; ?></div> 
             </div>
         </div>
         <!-- #User Info -->
@@ -104,51 +114,50 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">folder_shared</i>
+                        <span>My Members</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="create-new-user.php">
+                                <i class="material-icons">add</i>
+                                <span>Register New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="manage-user.php">
+                                <i class="material-icons">list</i>
+                                <span>View All</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>  
+
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">assignment_ind</i>
+                        <span>Driver</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="create-driver.php">
+                                <i class="material-icons">add</i>
+                                <span>Add New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="manage-driver.php">
+                                <i class="material-icons">list</i>
+                                <span>Manage</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
                 <?php
-                if ($_SESSION['id'] == 1) {
+                if ($USER->id == 1) {
                     ?>
-
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">folder_shared</i>
-                            <span>My Members</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="create-new-user.php">
-                                    <i class="material-icons">add</i>
-                                    <span>Register New</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="manage-user.php">
-                                    <i class="material-icons">list</i>
-                                    <span>View All</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>  
-
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">assignment_ind</i>
-                            <span>Driver</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="create-driver.php">
-                                    <i class="material-icons">add</i>
-                                    <span>Add New</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="manage-driver.php">
-                                    <i class="material-icons">list</i>
-                                    <span>Manage</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li> 
 
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
@@ -219,53 +228,12 @@
                         </ul>
                     </li> 
                     <?php
-                } else {
-                    ?>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">folder_shared</i>
-                            <span>My Members</span>
-                        </a>
-                        <ul class="ml-menu-2">
-                            <li>
-                                <a href="create-new-user.php">
-                                    <i class="material-icons">add</i>
-                                    <span>Register New</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="manage-user.php">
-                                    <i class="material-icons">list</i>
-                                    <span>View All</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li> 
-
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">assignment_ind</i>
-                            <span>Driver</span>
-                        </a>
-                        <ul class="ml-menu-2">
-                            <li>
-                                <a href="create-driver.php">
-                                    <i class="material-icons">add</i>
-                                    <span>Add New</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="manage-driver.php">
-                                    <i class="material-icons">list</i>
-                                    <span>Manage</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <?php
                 }
                 ?>
 
+                <li>
+                    <div style="height: 200px;"></div>
+                </li> 
             </ul>
         </div>
         <!-- #Menu -->
@@ -273,10 +241,7 @@
         <div class="legal">
             <div class="copyright">
                 &copy; <?php echo date('Y'); ?> <a href="javascript:void(0);">BY : SUBLIME HOLDINGS</a>.
-            </div>
-            <div class="version">
-                <b>Version: </b> 1.0.0
-            </div>
+            </div> 
         </div>
         <!-- #Footer -->
     </aside> 

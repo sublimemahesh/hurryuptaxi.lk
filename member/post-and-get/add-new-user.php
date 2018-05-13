@@ -21,13 +21,13 @@ if (isset($_POST['create'])) {
     $USER->nic = filter_input(INPUT_POST, 'nic');
     $USER->parent = filter_input(INPUT_POST, 'parent');
     $USER->createdAt = filter_input(INPUT_POST, 'createdAt');
-    $USER->username = filter_input(INPUT_POST, 'username');
+    $USER->username = User::getNextAvailableUsername();
     $USER->bank = filter_input(INPUT_POST, 'bank');
     $USER->branch = filter_input(INPUT_POST, 'branch');
     $USER->account_type = filter_input(INPUT_POST, 'account_type');
     $USER->holder_name = filter_input(INPUT_POST, 'holder_name');
     $USER->account_number = filter_input(INPUT_POST, 'account_number');
-    $USER->isActive = 1;
+    $USER->isActive = 0;
     $USER->password = $password;
 
     $dir_dest = '../../upload/user/';
@@ -57,14 +57,15 @@ if (isset($_POST['create'])) {
     $VALID->check($USER, [
         'name' => ['required' => TRUE],
         'email' => ['required' => TRUE],
-        'city' => ['required' => TRUE],
-        'dealer' => ['required' => TRUE],
         'district' => ['required' => TRUE],
+        'city' => ['required' => TRUE],
+        'address' => ['required' => TRUE],
+        'phone_number' => ['required' => TRUE],
         'nic' => ['required' => TRUE],
-        'bank' => ['required' => TRUE],
-        'branch' => ['required' => TRUE],
-        'username' => ['required' => TRUE]
-//        'profile_picture' => ['required' => TRUE]
+        'parent' => ['required' => TRUE],
+        'createdAt' => ['required' => TRUE],
+        'username' => ['required' => TRUE],
+        'password' => ['required' => TRUE],
     ]);
 
     if ($VALID->passed()) {
@@ -94,7 +95,12 @@ if (isset($_POST['update'])) {
     $dir_dest = '../../upload/user/';
 
     $handle = new Upload($_FILES['image']);
-
+    $imageName = $_POST ["oldImageName"];
+    
+    if (empty($imageName)) {
+        $imageName = Helper::randamId();
+    }
+ 
     $imgName = null;
     if ($handle->uploaded) {
         $handle->image_resize = true;
@@ -102,7 +108,7 @@ if (isset($_POST['update'])) {
         $handle->file_overwrite = TRUE;
         $handle->file_new_name_ext = FALSE;
         $handle->image_ratio_crop = 'C';
-        $handle->file_new_name_body = $_POST ["oldImageName"];
+        $handle->file_new_name_body = $imageName;
         $handle->image_x = 250;
         $handle->image_y = 250;
 
@@ -124,29 +130,27 @@ if (isset($_POST['update'])) {
     $USER->address = filter_input(INPUT_POST, 'address');
     $USER->phone_number = filter_input(INPUT_POST, 'phone_number');
     $USER->nic = filter_input(INPUT_POST, 'nic');
-    $USER->createdAt = filter_input(INPUT_POST, 'createdAt');
     $USER->payment = filter_input(INPUT_POST, 'payment');
     $USER->bank = filter_input(INPUT_POST, 'bank');
     $USER->branch = filter_input(INPUT_POST, 'branch');
     $USER->account_type = filter_input(INPUT_POST, 'account_type');
     $USER->holder_name = filter_input(INPUT_POST, 'holder_name');
     $USER->account_number = filter_input(INPUT_POST, 'account_number');
-    $USER->username = filter_input(INPUT_POST, 'username');
     $USER->isActive = filter_input(INPUT_POST, 'active');
-
+    $USER->profile_picture = $imgName;
+    
     $VALID = new Validator();
+
     $VALID->check($USER, [
         'name' => ['required' => TRUE],
         'email' => ['required' => TRUE],
+        'district' => ['required' => TRUE],
+        'city' => ['required' => TRUE],
         'address' => ['required' => TRUE],
+        'phone_number' => ['required' => TRUE],
         'nic' => ['required' => TRUE],
-        'bank' => ['required' => TRUE],
-        'branch' => ['required' => TRUE],
-        'account_type' => ['required' => TRUE],
-        'holder_name' => ['required' => TRUE],
-        'account_number' => ['required' => TRUE],
+        'parent' => ['required' => TRUE],
         'username' => ['required' => TRUE],
-        'profile_picture' => ['required' => TRUE]
     ]);
 
     if ($VALID->passed()) {
