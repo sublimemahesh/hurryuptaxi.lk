@@ -429,4 +429,15 @@ class User {
         }
     }
 
+    public function getNextAvailableUsername() {
+        
+        $query = "SELECT MAX(id)+1 FROM `user`";
+
+        $db = new Database();
+
+        $result = mysql_fetch_array($db->readQuery($query));
+
+        return 'HUR' . str_pad($result["MAX(id)+1"], 6, '0', STR_PAD_LEFT);
+    }
+
 }

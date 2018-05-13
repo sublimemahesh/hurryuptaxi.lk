@@ -12,7 +12,7 @@ $(document).ready(function () {
             dataType: "JSON",
             success: function (jsonStr) {
 
-                var html = '<option> -- Please Select a City -- </option>';
+                var html = '<option value=""> -- Please Select City -- </option>';
                 $.each(jsonStr, function (i, data) {
                     html += '<option value="' + data.id + '">';
                     html += data.name;

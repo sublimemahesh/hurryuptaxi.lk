@@ -42,7 +42,7 @@ $DRIVER = new Driver($id);
                 <!-- Vertical Layout -->
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="card">
+                        <div class="card" style="margin-top: 20px;">
                             <div class="header">
                                 <h2>Manage Vehicle Photos : <?php echo $DRIVER->name; ?></h2>
                                 <ul class="header-dropdown">
