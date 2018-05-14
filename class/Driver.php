@@ -124,11 +124,18 @@ class Driver {
 
     public function delete() {
 
-        $query = 'DELETE FROM `driver` WHERE id="' . $this->id . '"';
+        $V_PHOTO = new VehiclePhotos(NULL);
+
+        $result = $V_PHOTO->deleteRentACarPhotoByRentACar($this->id);
+
+        if ($result) {
+            $query = 'DELETE FROM `driver` WHERE id="' . $this->id . '"';
+        }
 
         $db = new Database();
 
         return $db->readQuery($query);
+//        dd($query);
     }
 
 }

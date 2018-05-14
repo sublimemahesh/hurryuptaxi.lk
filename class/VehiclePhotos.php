@@ -96,6 +96,16 @@ class VehiclePhotos {
         return $db->readQuery($query);
     }
 
+    public function deleteRentACarPhotoByRentACar($driver) {
+
+        $query = "DELETE FROM `vehicle_photos` WHERE `driver`= '" . $driver . "'";
+
+        $db = new Database();
+        $result = $db->readQuery($query);
+
+        return $result;
+    }
+
     public function getVehiclePhotosByDriver($id) {
 
         $query = "SELECT * FROM `vehicle_photos` WHERE `driver`= '" . $id . "' ORDER BY sort ASC";
