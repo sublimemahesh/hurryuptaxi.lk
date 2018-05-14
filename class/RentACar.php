@@ -173,11 +173,18 @@ class RentACar {
 
     public function delete() {
 
-        $query = 'DELETE FROM `rent_a_car` WHERE id="' . $this->id . '"';
+        $RENT_A_CAR_PHOTO = new RentACarPhoto(NULL);
+
+        $result = $RENT_A_CAR_PHOTO->deleteRentACarPhotoByRentACar($this->id);
+
+        if ($result) {
+            $query = 'DELETE FROM `rent_a_car` WHERE id="' . $this->id . '"';
+        }
 
         $db = new Database();
 
         return $db->readQuery($query);
+//        dd($query);
     }
 
 }

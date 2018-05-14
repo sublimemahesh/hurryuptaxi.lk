@@ -102,6 +102,16 @@ class RentACarPhoto {
         return $db->readQuery($query);
     }
 
+    public function deleteRentACarPhotoByRentACar($rentacar) {
+
+        $query = "DELETE FROM `rent_a_car_photo` WHERE `rentacar`= '" . $rentacar . "'";
+
+        $db = new Database();
+        $result = $db->readQuery($query);
+
+        return $result;
+    }
+
     public function getRentACarPhotosByRentACar($id) {
 
         $query = "SELECT * FROM `rent_a_car_photo` WHERE `rentacar`= '" . $id . "' ORDER BY sort ASC";
