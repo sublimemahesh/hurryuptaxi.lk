@@ -161,6 +161,27 @@
 
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">local_taxi</i>
+                            <span>Rent a car</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="create-rent-a-car.php">
+                                    <i class="material-icons">add</i>
+                                    <span>Add New</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="manage-rent-a-car.php">
+                                    <i class="material-icons">list</i>
+                                    <span>Manage</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li> 
+
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">recent_actors</i>
                             <span>Dealer</span>
                         </a>
@@ -227,6 +248,7 @@
                             </li>
                         </ul>
                     </li> 
+
                     <?php
                 }
                 ?>

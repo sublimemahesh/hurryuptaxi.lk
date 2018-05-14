@@ -13,6 +13,8 @@ include_once(dirname(__FILE__) . '/Dealer.php');
 include_once(dirname(__FILE__) . '/Bank.php');
 include_once(dirname(__FILE__) . '/Driver.php');
 include_once(dirname(__FILE__) . '/VehiclePhotos.php');
+include_once(dirname(__FILE__) . '/VehicleType.php');
+include_once(dirname(__FILE__) . '/RentACar.php');
 
 
 function dd($data) {
