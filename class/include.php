@@ -15,6 +15,7 @@ include_once(dirname(__FILE__) . '/Driver.php');
 include_once(dirname(__FILE__) . '/VehiclePhotos.php');
 include_once(dirname(__FILE__) . '/VehicleType.php');
 include_once(dirname(__FILE__) . '/RentACar.php');
+include_once(dirname(__FILE__) . '/RentACarPhoto.php');
 
 
 function dd($data) {
