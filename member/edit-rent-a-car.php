@@ -61,7 +61,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="name" class="form-control" placeholder="Enter Your name" value="<?php echo $RENT_A_CAR->name ?>" autocomplete="off" name="name" >
+                                                    <input type="text" id="name" class="form-control" placeholder="Enter Your name" value="<?php echo $RENT_A_CAR->name ?>" autocomplete="off" name="name" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -74,7 +74,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <select class="form-control" autocomplete="off" type="text" id="mainTypes" autocomplete="off" name="mainTypes">
+                                                    <select class="form-control" autocomplete="off" type="text" id="mainTypes" autocomplete="off" name="mainTypes" required="TRUE">
                                                         <option value=""> -- Select Vehicle Type -- </option>
 
                                                         <?php
@@ -108,7 +108,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <select class="form-control" autocomplete="off" type="text" id="account_type" autocomplete="off" name="requestTypes">
+                                                    <select class="form-control" autocomplete="off" type="text" id="account_type" autocomplete="off" name="requestTypes" required="TRUE">
                                                         <option value=""> -- Select Request Type -- </option>
 
                                                         <?php
@@ -141,7 +141,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <select class="form-control" autocomplete="off" type="text" id="fuelType" autocomplete="off" name="fuelType">
+                                                    <select class="form-control" autocomplete="off" type="text" id="fuelType" autocomplete="off" name="fuelType" required="TRUE">
                                                         <option value=""> -- Select Fuel Type -- </option>
 
                                                         <?php
@@ -174,7 +174,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="conatcName" class="form-control" placeholder="Enter Conatc Name" autocomplete="off" name="conatcName" value="<?php echo $RENT_A_CAR->conatcName ?>">
+                                                    <input type="text" id="conatcName" class="form-control" placeholder="Enter Conatc Name" autocomplete="off" name="conatcName" value="<?php echo $RENT_A_CAR->conatcName ?>" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -187,7 +187,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="phoneNumber" class="form-control" placeholder="Enter Phone Number" autocomplete="off" name="phoneNumber" value="<?php echo $RENT_A_CAR->phoneNumber ?>">
+                                                    <input type="text" id="phoneNumber" class="form-control" placeholder="Enter Phone Number" autocomplete="off" name="phoneNumber" value="<?php echo $RENT_A_CAR->phoneNumber ?>" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -200,7 +200,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="email" id="email" class="form-control" placeholder="Enter Your Email" autocomplete="off" name="email" value="<?php echo $RENT_A_CAR->email ?>">
+                                                    <input type="email" id="email" class="form-control" placeholder="Enter Your Email" autocomplete="off" name="email" value="<?php echo $RENT_A_CAR->email ?>" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -214,7 +214,7 @@ $RENT_A_CAR = new RentACar($id);
                                             <div class="form-group place-select">
                                                 <div class="form-line"> 
                                                     <label for="district" class="hidden-lg hidden-md">District</label>
-                                                    <select name="district" id="district" class="form-control" required="TRUE" >
+                                                    <select name="district" id="district" class="form-control" required="TRUE">
                                                         <option value=""> -- Please Select -- </option>
                                                         <?php
                                                         foreach (District::all() as $key => $district) {
@@ -247,7 +247,7 @@ $RENT_A_CAR = new RentACar($id);
                                             <div class="form-group place-select">
                                                 <div class="form-line">
                                                     <label for="city" class="hidden-lg hidden-md">City</label>
-                                                    <select class="form-control" autocomplete="off" id="city-bar" autocomplete="off" name="city"  required="TRUE" >
+                                                    <select class="form-control" autocomplete="off" id="city-bar" autocomplete="off" name="city"  required="TRUE">
                                                         <option> -- Please Select -- </option> 
                                                         <?php
                                                         $CITY = new City(Null);
@@ -281,7 +281,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="address" class="form-control" placeholder="Enter Your Address" autocomplete="off" name="address" value="<?php echo $RENT_A_CAR->address ?>">
+                                                    <input type="text" id="address" class="form-control" placeholder="Enter Your Address" autocomplete="off" name="address" value="<?php echo $RENT_A_CAR->address ?>"  required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -294,7 +294,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="vehicleNumber" class="form-control" placeholder="Enter Vehicle Number" autocomplete="off" name="vehicleNumber" value="<?php echo $RENT_A_CAR->vehicleNumber ?>">
+                                                    <input type="text" id="vehicleNumber" class="form-control" placeholder="Enter Vehicle Number" autocomplete="off" name="vehicleNumber" value="<?php echo $RENT_A_CAR->vehicleNumber ?>" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -307,7 +307,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="noOfPassengers" class="form-control" placeholder="Enter No Of Passengers" autocomplete="off" name="noOfPassengers" value="<?php echo $RENT_A_CAR->noOfPassengers ?>">
+                                                    <input type="text" id="noOfPassengers" class="form-control" placeholder="Enter No Of Passengers" autocomplete="off" name="noOfPassengers" value="<?php echo $RENT_A_CAR->noOfPassengers ?>" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -320,7 +320,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="noOfBaggage" class="form-control" placeholder="Enter No Of Baggage" autocomplete="off" name="noOfBaggage" value="<?php echo $RENT_A_CAR->noOfBaggage ?>">
+                                                    <input type="text" id="noOfBaggage" class="form-control" placeholder="Enter No Of Baggage" autocomplete="off" name="noOfBaggage" value="<?php echo $RENT_A_CAR->noOfBaggage ?>" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -333,7 +333,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="noOfDoors" class="form-control" placeholder="Enter No Of Doors" autocomplete="off" name="noOfDoors" value="<?php echo $RENT_A_CAR->noOfDoors ?>">
+                                                    <input type="text" id="noOfDoors" class="form-control" placeholder="Enter No Of Doors" autocomplete="off" name="noOfDoors" value="<?php echo $RENT_A_CAR->noOfDoors ?>" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -346,7 +346,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <select class="form-control" autocomplete="off" type="text" id="airConditioned" autocomplete="off" name="airConditioned" value="<?php echo $RENT_A_CAR->airConditioned ?>">
+                                                    <select class="form-control" autocomplete="off" type="text" id="airConditioned" autocomplete="off" name="airConditioned" value="<?php echo $RENT_A_CAR->airConditioned ?>" required="TRUE">
 
                                                         <option value=""> -- Please Select -- </option> 
                                                         <option value="1" <?php
