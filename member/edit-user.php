@@ -62,7 +62,7 @@ $MEMBER = new User($id);
                                         </div> 
                                     </div>
                                 </div> 
-
+                                <!--Name-->
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2  hidden-sm  hidden-xs  form-control-label">
                                         <label for="name">Name</label>
