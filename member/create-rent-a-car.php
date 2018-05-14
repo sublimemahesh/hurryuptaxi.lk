@@ -61,7 +61,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="name" class="form-control" placeholder="Enter Your name" autocomplete="off" name="name" >
+                                                    <input type="text" id="name" class="form-control" placeholder="Enter Your name" autocomplete="off" name="name" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -69,12 +69,12 @@ $USER = new User($_SESSION["id"]);
                                     <!--Main Types-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="mainTypes">Main Type</label>
+                                            <label for="mainTypes">Vehicle Type</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <select class="form-control" autocomplete="off" type="text" id="account_type" autocomplete="off" name="mainTypes">
+                                                    <select class="form-control" autocomplete="off" type="text" id="mainTypes" autocomplete="off" name="mainTypes" required="TRUE">
                                                         <option value="0"> -- Select Vehicle Type -- </option>
 
                                                         <?php foreach (VehicleType::mainTypes() as $key => $VEHICLE_TYPE) {
@@ -99,7 +99,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <select class="form-control" autocomplete="off" type="text" id="account_type" autocomplete="off" name="requestTypes">
+                                                    <select class="form-control" autocomplete="off" type="text" id="requestTypes" autocomplete="off" name="requestTypes" required="TRUE">
                                                         <option value="0"> -- Select Request Type -- </option>
 
                                                         <?php foreach (VehicleType::requestTypes() as $key => $REQUEST_TYPE) {
@@ -124,7 +124,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <select class="form-control" autocomplete="off" type="text" id="fuelType" autocomplete="off" name="fuelType">
+                                                    <select class="form-control" autocomplete="off" type="text" id="fuelType" autocomplete="off" name="fuelType" required="TRUE">
                                                         <option value="0"> -- Select Fuel Type -- </option>
 
                                                         <?php foreach (VehicleType::fuelTypes() as $key => $FUEL_TYPE) {
@@ -149,7 +149,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="conatcName" class="form-control" placeholder="Enter Conatc Name" autocomplete="off" name="conatcName">
+                                                    <input type="text" id="conatcName" class="form-control" placeholder="Enter Conatc Name" autocomplete="off" name="conatcName" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -162,7 +162,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="phoneNumber" class="form-control" placeholder="Enter Phone Number" autocomplete="off" name="phoneNumber">
+                                                    <input type="text" id="phoneNumber" class="form-control" placeholder="Enter Phone Number" autocomplete="off" name="phoneNumber" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -175,7 +175,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="email" id="email" class="form-control" placeholder="Enter Your Email" autocomplete="off" name="email">
+                                                    <input type="email" id="email" class="form-control" placeholder="Enter Your Email" autocomplete="off" name="email" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -223,7 +223,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="address" class="form-control" placeholder="Enter Your Address" autocomplete="off" name="address">
+                                                    <input type="text" id="address" class="form-control" placeholder="Enter Your Address" autocomplete="off" name="address" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -236,7 +236,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="vehicleNumber" class="form-control" placeholder="Enter Vehicle Number" autocomplete="off" name="vehicleNumber">
+                                                    <input type="text" id="vehicleNumber" class="form-control" placeholder="Enter Vehicle Number" autocomplete="off" name="vehicleNumber" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -249,7 +249,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="noOfPassengers" class="form-control" placeholder="Enter No Of Passengers" autocomplete="off" name="noOfPassengers">
+                                                    <input type="text" id="noOfPassengers" class="form-control" placeholder="Enter No Of Passengers" autocomplete="off" name="noOfPassengers" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -262,7 +262,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="noOfBaggage" class="form-control" placeholder="Enter No Of Baggage" autocomplete="off" name="noOfBaggage">
+                                                    <input type="text" id="noOfBaggage" class="form-control" placeholder="Enter No Of Baggage" autocomplete="off" name="noOfBaggage" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -275,7 +275,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="noOfDoors" class="form-control" placeholder="Enter No Of Doors" autocomplete="off" name="noOfDoors">
+                                                    <input type="text" id="noOfDoors" class="form-control" placeholder="Enter No Of Doors" autocomplete="off" name="noOfDoors" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -288,7 +288,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <select class="form-control" autocomplete="off" type="text" id="airConditioned" autocomplete="off" name="airConditioned">
+                                                    <select class="form-control" autocomplete="off" type="text" id="airConditioned" autocomplete="off" name="airConditioned" required="TRUE">
                                                         <option value=""> -- Please Select -- </option>
                                                         <option value="1">Yes</option>
                                                         <option value="0">No</option>
