@@ -4,15 +4,14 @@ include_once(dirname(__FILE__) . '/auth.php');
 $id = $_GET['id'];
 $USER = new User($_SESSION["id"]);
 
-$VEHICLE_PHOTO = VehiclePhotos::getVehiclePhotosByDriver($id);
-
+$RENT_A_CAR_PHOTO = RentACarPhoto::getRentACarPhotosByRentACar($id);
 ?>
 <!DOCTYPE html>
 <html> 
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Arrange Vehicle Photos || Admin || hurryuptaxi.lk</title>
+        <title>Arrange Rent A Car Photos || Admin || hurryuptaxi.lk</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -38,29 +37,29 @@ $VEHICLE_PHOTO = VehiclePhotos::getVehiclePhotosByDriver($id);
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="card" style="margin-top: 20px;">
                             <div class="header">
-                                <h2>Arrange Vehicle Photos</h2>
+                                <h2>Arrange Rent A Car Photos</h2>
                                 <ul class="header-dropdown">
                                     <li class="">
-                                        <a href="add-vehicle-photos.php?id=<?php echo $id; ?>">
+                                        <a href="add-rent-a-car-photos.php?id=<?php echo $id; ?>">
                                             <i class="material-icons">list</i> 
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="body">
-                                <form method="post" action="post-and-get/vehicle-photos.php" class="form-horizontal" >
+                                <form method="post" action="post-and-get/rent-a-car-photo.php" class="form-horizontal" >
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="col-md-12 arrange-container">
                                                 <ul id="sortable">
                                                     <?php
-                                                    if (count($VEHICLE_PHOTO) > 0) {
-                                                        foreach ($VEHICLE_PHOTO as $key => $img) {
+                                                    if (count($RENT_A_CAR_PHOTO) > 0) {
+                                                        foreach ($RENT_A_CAR_PHOTO as $key => $img) {
                                                             ?>
                                                             <div class="col-md-3" style="list-style: none;">
                                                                 <li class="ui-state-default">
                                                                     <span class="number-class">(<?php echo $key + 1; ?>)</span>
-                                                                    <img class="img-responsive" src="../upload/driver/vehicle-photos/thumb/<?php echo $img["image_name"]; ?>" alt=""/>
+                                                                    <img class="img-responsive" src="../upload/rent-car-photos/thumb/<?php echo $img["image_name"]; ?>" alt=""/>
                                                                     <input type="hidden" name="sort[]"  value="<?php echo $img["id"]; ?>" class="sort-input"/>
 
                                                                 </li>
