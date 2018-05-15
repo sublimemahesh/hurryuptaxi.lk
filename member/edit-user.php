@@ -64,7 +64,7 @@ $MEMBER = new User($id);
                                 </div> 
                                 <!--Name-->
                                 <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2  hidden-sm  hidden-xs  form-control-label">
+                                    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                         <label for="name">Name</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
@@ -78,7 +78,7 @@ $MEMBER = new User($id);
                                 </div> 
                                 <!--Email-->
                                 <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2 hidden-sm  hidden-xs form-control-label">
+                                    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                         <label for="name">Email</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
@@ -92,7 +92,7 @@ $MEMBER = new User($id);
                                 </div> 
                                 <!--District-->
                                 <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2  hidden-sm  hidden-xs  form-control-label">
+                                    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                         <label for="district">District</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
@@ -235,22 +235,20 @@ $MEMBER = new User($id);
                                 </div>
                                 <!--Profile Picture-->
                                 <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2  hidden-sm  hidden-xs  form-control-label">
+                                    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                         <label for="image">Profile Picture</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                         <div class="form-group">
-                                            <div class="">
-                                                <label for="image" class="hidden-lg hidden-md">Profile Picture</label>
-                                                <input type="file" id="image" class="form-control" name="image" value="<?php echo $MEMBER->profile_picture; ?>">
+                                            <label for="image" class="hidden-lg hidden-md">Profile Picture</label>
+                                            <input type="file" id="image" class="form-control" name="image" value="<?php echo $MEMBER->profile_picture; ?>">
+                                            <?php
+                                            if ($MEMBER->profile_picture) {
+                                                ?> 
+                                                <img src="../upload/user/<?php echo $MEMBER->profile_picture; ?>" id="image" class="view-edit-img img img-responsive img-thumbnail" name="image" alt="old image">
                                                 <?php
-                                                if ($MEMBER->profile_picture) {
-                                                    ?> 
-                                                    <img src="../upload/user/<?php echo $MEMBER->profile_picture; ?>" id="image" class="view-edit-img img img-responsive img-thumbnail" name="image" alt="old image">
-                                                    <?php
-                                                }
-                                                ?>
-                                            </div>
+                                            }
+                                            ?>
                                         </div>
                                     </div>
                                 </div> 
@@ -261,9 +259,7 @@ $MEMBER = new User($id);
                                 if ($USER->id == 1) {
                                     ?>
 
-
                                     <div class="row clearfix">
-
                                         <div class="col-lg-2 col-md-2  hidden-sm  hidden-xs  form-control-label">
                                             <label for="isActive">Status</label>
                                         </div>
@@ -277,7 +273,6 @@ $MEMBER = new User($id);
                                                 <label for="rememberme">Activate / InActive</label>
                                             </div>
                                         </div>
-
                                     </div>
                                     <!--Payment-->
                                     <div class="row clearfix">

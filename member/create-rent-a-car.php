@@ -55,10 +55,10 @@ $USER = new User($_SESSION["id"]);
                                 <form class="form-horizontal"  method="post" action="post-and-get/rent-a-car.php" enctype="multipart/form-data"> 
                                     <!--name-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="name">Name</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="text" id="name" class="form-control" placeholder="Enter Your name" autocomplete="off" name="name" required="TRUE">
@@ -143,10 +143,10 @@ $USER = new User($_SESSION["id"]);
                                     </div>
                                     <!--Conatc Name-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="conatcName">Conatc Name</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="text" id="conatcName" class="form-control" placeholder="Enter Conatc Name" autocomplete="off" name="conatcName" required="TRUE">
@@ -156,10 +156,10 @@ $USER = new User($_SESSION["id"]);
                                     </div>
                                     <!--Phone Number-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="phoneNumber">Phone Number</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="text" id="phoneNumber" class="form-control" placeholder="Enter Phone Number" autocomplete="off" name="phoneNumber" required="TRUE">
@@ -169,10 +169,10 @@ $USER = new User($_SESSION["id"]);
                                     </div>
                                     <!--Email-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="email">Email</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="email" id="email" class="form-control" placeholder="Enter Your Email" autocomplete="off" name="email" required="TRUE">
@@ -182,14 +182,14 @@ $USER = new User($_SESSION["id"]);
                                     </div>
                                     <!--District-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="district">District</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
                                                     <select class="form-control" autocomplete="off" type="text" id="district" autocomplete="off" name="district" required="TRUE">
-                                                        <option value=""> -- Please Select -- </option>
+                                                        <option value=""> -- Please Select District -- </option>
                                                         <?php foreach (District::all() as $key => $city) {
                                                             ?>
                                                             <option ind_id="<?php echo $city['id']; ?>" value="<?php echo $city['id']; ?>"><?php echo $city['name']; ?></option><?php
@@ -202,10 +202,10 @@ $USER = new User($_SESSION["id"]);
                                     </div> 
                                     <!--City-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="city">City</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
                                                     <select class="form-control" autocomplete="off" type="text" id="city-bar" autocomplete="off" name="city" required="TRUE">
@@ -217,10 +217,10 @@ $USER = new User($_SESSION["id"]);
                                     </div> 
                                     <!--Address-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="address">Address</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="text" id="address" class="form-control" placeholder="Enter Your Address" autocomplete="off" name="address" required="TRUE">
@@ -230,10 +230,10 @@ $USER = new User($_SESSION["id"]);
                                     </div> 
                                     <!--Vehicle Number-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="vehicleNumber">Vehicle Number</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="text" id="vehicleNumber" class="form-control" placeholder="Enter Vehicle Number" autocomplete="off" name="vehicleNumber" required="TRUE">
@@ -243,10 +243,10 @@ $USER = new User($_SESSION["id"]);
                                     </div>
                                     <!--No Of Passengers-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="noOfPassengers">No Of Passengers</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="text" id="noOfPassengers" class="form-control" placeholder="Enter No Of Passengers" autocomplete="off" name="noOfPassengers" required="TRUE">
@@ -256,10 +256,10 @@ $USER = new User($_SESSION["id"]);
                                     </div>
                                     <!--No Of Baggage-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="noOfBaggage">No Of Baggage</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="text" id="noOfBaggage" class="form-control" placeholder="Enter No Of Baggage" autocomplete="off" name="noOfBaggage" required="TRUE">
@@ -269,10 +269,10 @@ $USER = new User($_SESSION["id"]);
                                     </div>
                                     <!--No Of Doors-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="noOfDoors">No Of Doors</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="text" id="noOfDoors" class="form-control" placeholder="Enter No Of Doors" autocomplete="off" name="noOfDoors" required="TRUE">
@@ -289,7 +289,7 @@ $USER = new User($_SESSION["id"]);
                                             <div class="form-group place-select">
                                                 <div class="form-line">
                                                     <select class="form-control" autocomplete="off" type="text" id="airConditioned" autocomplete="off" name="airConditioned" required="TRUE">
-                                                        <option value=""> -- Please Select -- </option>
+                                                        <option value=""> -- Please Select Air Conditioned -- </option>
                                                         <option value="1">Yes</option>
                                                         <option value="0">No</option>
                                                     </select>
