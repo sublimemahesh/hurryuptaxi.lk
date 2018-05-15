@@ -28,6 +28,7 @@ class RentACar {
     public $price_tours;
     public $price_wedding;
     public $price_airport;
+    public $price_per_excited_milage;
 
     public function __construct($id) {
         if ($id) {
@@ -53,7 +54,8 @@ class RentACar {
                     . "`price_self_drive`,"
                     . "`price_tours`,"
                     . "`price_wedding`,"
-                    . "`price_airport`"
+                    . "`price_airport`,"
+                    . "`price_per_excited_milage`"
                     . " FROM `rent_a_car` WHERE `id`=" . $id;
 
 
@@ -82,6 +84,7 @@ class RentACar {
             $this->price_tours = $result['price_tours'];
             $this->price_wedding = $result['price_wedding'];
             $this->price_airport = $result['price_airport'];
+            $this->price_per_excited_milage = $result['price_per_excited_milage'];
 
             return $this;
         }
@@ -91,7 +94,7 @@ class RentACar {
 
         $query = "INSERT INTO `rent_a_car` "
                 . "(`user`,`name`,`mainTypes`,`requestTypes`,`conatcName`,`phoneNumber`,`email`,`district`,`city`,`address`,"
-                . "`vehicleNumber`,`fuelType`,`noOfPassengers`,`noOfBaggage`,`noOfDoors`,`airConditioned`,`price_self_drive`,`price_tours`,`price_wedding`,`price_airport`) "
+                . "`vehicleNumber`,`fuelType`,`noOfPassengers`,`noOfBaggage`,`noOfDoors`,`airConditioned`,`price_self_drive`,`price_tours`,`price_wedding`,`price_airport`,`price_per_excited_milage`) "
                 . "VALUES "
                 . " ('" . $this->user . "',"
                 . "'" . $this->name . "',"
@@ -112,7 +115,8 @@ class RentACar {
                 . "'" . $this->price_self_drive . "',"
                 . "'" . $this->price_tours . "',"
                 . "'" . $this->price_wedding . "',"
-                . "'" . $this->price_airport . "')";
+                . "'" . $this->price_airport . "',"
+                . "'" . $this->price_per_excited_milage . "')";
 
         $db = new Database();
 
@@ -163,7 +167,8 @@ class RentACar {
                 . '`price_self_drive`= "' . $this->price_self_drive . '", '
                 . '`price_tours`= "' . $this->price_tours . '", '
                 . '`price_wedding`= "' . $this->price_wedding . '", '
-                . '`price_airport`= "' . $this->price_airport . '"'
+                . '`price_airport`= "' . $this->price_airport . '", '
+                . '`price_per_excited_milage`= "' . $this->price_per_excited_milage . '"'
                 . ' WHERE id="' . $this->id . '"';
 
         $db = new Database();
