@@ -205,6 +205,20 @@ $DRIVER = new Driver($id);
                                             </div>
                                         </div>
                                     </div>
+                                    <!--Price Per KM-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="price_per_km">Price Per KM</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="price_per_km" class="hidden-lg hidden-md">Price Per KM</label>
+                                                    <input type="text" id="price_per_km" class="form-control" placeholder="Enter Price Per KM" autocomplete="off" name="price_per_km" value="<?php echo $DRIVER->price_per_km ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <!--Save-->
                                     <div class="row clearfix">
