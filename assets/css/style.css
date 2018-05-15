@@ -1,0 +1,140 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 15, 2018, 11:45:23 AM
+    Author     : U s E r ¨
+*/
+
+.header-container_wrap {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.header-container__flex .tt-header-info {
+    margin-top: 5px;
+}
+.header-navigation-wrap .navbar .menu-navigation__list > li {
+    margin-right: 52px;
+    width: 253px;
+    text-align: center;
+}
+.book-form .book-form__block-select .tt-select-small {
+    width: 332px;
+    min-width: 332px;
+}
+.book-form__btn .btn {
+    margin-top: 0px;
+    height: 40px;
+}
+.book-form {
+    padding: 19px 0 19px 0;
+}
+.book-form-box {
+    background: #6678ea80;
+    margin-top: -78px;
+    position: relative;
+    z-index: 9999;
+}
+/*.desc-inner h1 {
+    color: #000;
+}
+.desc-inner p {
+    color: #000;
+}*/
+/*.car-info-box__description {
+    background: #fff;
+}
+.car-info-box__thumb {
+    background: #fff;
+}
+.car-info-box__thumb::after {
+    border-color: transparent transparent transparent #fff;
+}
+
+*/
+.car-info-box {
+    margin-bottom: 0px;
+}
+#page-content {
+    padding-bottom: 0px;
+    z-index: 2;
+}
+.desc-inner .contact-info i {
+    color: #6678ea;
+    font-size: 26px;
+    position: absolute;
+    left: 55px;
+}
+.mobile-top-panel__fixed .navbar-default .navbar-header {
+    padding: 12px 20px 12px 20px;
+}
+.mobile-top-panel__fixed .logo a {
+    padding-left: 0px;
+}
+.car-info-box .car-info-box__thumb {
+    height: auto;
+    margin-top: 5px;
+}
+.desc-inner .contact-info span.phone_number {
+    font-size: 18px;
+}
+.text-link {
+    font-size: 18px;
+}
+.post-column .text-link {
+    margin-bottom: 8px;
+}
+.wrapper p {
+    color: #000;
+}
+.testimonials-carousel_box .block_tesimonial blockquote {
+    border-right-color: rgba(0, 0, 0, 0.4);
+    border-left-color: rgba(0, 0, 0, 0.4);
+}
+.block_tesimonial blockquote .inner_blockquote::before {
+    background: rgba(0, 0, 0, 0.4);
+}
+.block_tesimonial blockquote .inner_blockquote::after {
+    background: rgba(0, 0, 0, 0.4);
+}
+.block_tesimonial blockquote .wrapper::before { 
+    background: rgba(0, 0, 0, 0.4);
+}
+.block_tesimonial blockquote .wrapper::after {
+    background: rgba(0, 0, 0, 0.4);
+}
+.testimonials-carousel_box .block_tesimonial .author_info .position {
+    color: #000;
+}
+.block_tesimonial .author_info .name a:hover {
+    color: rgb(102, 120, 234);
+}
+.testimonials-carousel_box h1 {
+    color: #6678ea;
+    margin-bottom: 15px;
+}
+.block_tesimonial .author_info .name {
+    color: #6678ea;
+}
+.testimonials-carousel_box {
+    margin-bottom: 0px;
+}
+.post-column {
+    background: #fff;
+    border: 1px solid #ccc;
+}
+.post-column h3 a {
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 17px;
+}
+.post-column h3 a:hover {
+    font-weight: 400;
+    color: #926161;
+    margin-bottom: 17px;
+}
+.post-column .btn.btn__marker {
+    color: #926161;
+}
