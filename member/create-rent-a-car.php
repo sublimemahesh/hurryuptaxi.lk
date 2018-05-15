@@ -291,7 +291,7 @@ $USER = new User($_SESSION["id"]);
                                                     <select class="form-control" autocomplete="off" type="text" id="airConditioned" autocomplete="off" name="airConditioned" required="TRUE">
                                                         <option value=""> -- Please Select Air Conditioned -- </option>
                                                         <option value="1">Yes</option>
-                                                        <option value="0">No</option>
+                                                        <option value="2">No</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -349,8 +349,20 @@ $USER = new User($_SESSION["id"]);
                                             </div>
                                         </div>
                                     </div>
+                                    <!--Price Per Excited Milage-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="price_per_excited_milage">Price Per Excited Milage</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="price_per_excited_milage" class="form-control" placeholder="Enter Price Price Per Excited Milage" autocomplete="off" name="price_per_excited_milage" required="TRUE">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     
-
                                     <!--Save-->
                                     <div class="row clearfix">
                                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5"> 

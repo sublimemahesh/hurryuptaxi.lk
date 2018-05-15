@@ -30,7 +30,7 @@ if (isset($_POST['add-rent-a-car'])) {
     $RENT_A_CAR->price_tours = $_POST['price_tours'];
     $RENT_A_CAR->price_wedding = $_POST['price_wedding'];
     $RENT_A_CAR->price_airport = $_POST['price_airport'];
-
+    $RENT_A_CAR->price_per_excited_milage = $_POST['price_per_excited_milage'];
 
     $VALID->check($RENT_A_CAR, [
         'name' => ['required' => TRUE],
@@ -96,6 +96,7 @@ if (isset($_POST['edit-rent-a-car'])) {
     $RENT_A_CAR->price_tours = $_POST['price_tours'];
     $RENT_A_CAR->price_wedding = $_POST['price_wedding'];
     $RENT_A_CAR->price_airport = $_POST['price_airport'];
+    $RENT_A_CAR->price_per_excited_milage = $_POST['price_per_excited_milage'];
 
     $VALID = new Validator();
     $VALID->check($RENT_A_CAR, [
