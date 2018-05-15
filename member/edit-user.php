@@ -48,9 +48,21 @@ $MEMBER = new User($id);
 
                     <div class="card">
                         <div class="header">
-                            <h2>
-                                Edit Member : <?php echo $MEMBER->username; ?>
-                            </h2> 
+                            <?php
+                            if ($MEMBER->id == 1) {
+                                ?>
+                                <h2>
+                                    Edit My Profile
+                                </h2>
+                                <?php
+                            } else {
+                                ?>
+                                <h2>
+                                    Edit Member : <?php echo $MEMBER->username; ?>
+                                </h2>
+                                <?php
+                            }
+                            ?> 
                         </div>
                         <div class="body">
                             <form class="form-horizontal" method="post" action="post-and-get/add-new-user.php" enctype="multipart/form-data"> 
@@ -58,7 +70,14 @@ $MEMBER = new User($id);
                                 <div class="row clearfix"> 
                                     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12"> 
                                         <div class="">
-                                            <label for="name" style="margin-left: 15px;">Join in &nbsp; <?php echo $MEMBER->createdAt; ?> </label>
+
+                                            <?php
+                                            if ($MEMBER->id != 1) {
+                                                ?>
+                                                <label for="name" style="margin-left: 15px;">Join in &nbsp; <?php echo $MEMBER->createdAt; ?> </label>
+                                                <?php
+                                            }
+                                            ?>  
                                         </div> 
                                     </div>
                                 </div> 

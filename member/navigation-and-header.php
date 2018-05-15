@@ -43,7 +43,7 @@
                                 </a>
                             </li>
                             <li role="seperator" class="divider"></li>
-                            <li><a href="edit-profile.php?id=<?php echo $USER->id; ?>"><i class="material-icons">edit</i>Edit My Profile</a></li>
+                            <li><a href="edit-user.php?id=<?php echo $USER->id; ?>"><i class="material-icons">edit</i>Edit My Profile</a></li>
                             <li><a href="change-password.php"><i class="material-icons">vpn_key</i>Change Password</a></li> 
                             <li role="seperator" class="divider"></li>
                             <li><a href="post-and-get/log-out.php"><i class="material-icons">input</i>Sign Out</a></li>
@@ -69,7 +69,7 @@
                             </a>
                         </li>
                         <li role="seperator" class="divider"></li>
-                        <li><a href="edit-profile.php?id=<?php echo $USER->id; ?>"><i class="material-icons">edit</i>Edit My Profile</a></li>
+                        <li><a href="edit-user.php?id=<?php echo $USER->id; ?>"><i class="material-icons">edit</i>Edit My Profile</a></li>
                         <li><a href="change-password.php"><i class="material-icons">vpn_key</i>Change Password</a></li> 
                         <li role="seperator" class="divider"></li>
                         <li><a href="post-and-get/log-out.php"><i class="material-icons">input</i>Sign Out</a></li>
