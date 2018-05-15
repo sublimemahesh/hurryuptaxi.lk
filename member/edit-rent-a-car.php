@@ -378,6 +378,63 @@ $RENT_A_CAR = new RentACar($id);
                                             </div>
                                         </div>
                                     </div>
+                                    
+                                     <!--Price Self Drive-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="price_self_drive">Price Self Drive</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="price_self_drive" class="hidden-lg hidden-md">Price Self Drive</label>
+                                                    <input type="text" id="price_self_drive" class="form-control" placeholder="Enter Price Self Drive" autocomplete="off" name="price_self_drive" required="TRUE" value="<?php echo $RENT_A_CAR->price_self_drive ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Price Tours-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="price_tours">Price Tours</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="price_tours" class="hidden-lg hidden-md">Price Tours</label>
+                                                    <input type="text" id="price_tours" class="form-control" placeholder="Enter Price Tours" autocomplete="off" name="price_tours" required="TRUE" value="<?php echo $RENT_A_CAR->price_tours ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Price Wedding-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="price_wedding">Price Wedding</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="price_wedding" class="hidden-lg hidden-md">Price Wedding</label>
+                                                    <input type="text" id="price_wedding" class="form-control" placeholder="Enter Price Wedding" autocomplete="off" name="price_wedding" required="TRUE" value="<?php echo $RENT_A_CAR->price_wedding ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Price Airport-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="price_airport">Price Airport</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="price_airport" class="hidden-lg hidden-md">Price Airport</label>
+                                                    <input type="text" id="price_airport" class="form-control" placeholder="Enter Price Airport" autocomplete="off" name="price_airport" required="TRUE" value="<?php echo $RENT_A_CAR->price_airport ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <!--Save-->
                                     <div class="row clearfix">
