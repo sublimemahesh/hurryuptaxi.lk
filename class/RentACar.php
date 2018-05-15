@@ -24,6 +24,10 @@ class RentACar {
     public $noOfBaggage;
     public $noOfDoors;
     public $airConditioned;
+    public $price_self_drive;
+    public $price_tours;
+    public $price_wedding;
+    public $price_airport;
 
     public function __construct($id) {
         if ($id) {
@@ -45,8 +49,13 @@ class RentACar {
                     . "`noOfPassengers`,"
                     . "`noOfBaggage`,"
                     . "`noOfDoors`,"
-                    . "`airConditioned`"
+                    . "`airConditioned`,"
+                    . "`price_self_drive`,"
+                    . "`price_tours`,"
+                    . "`price_wedding`,"
+                    . "`price_airport`"
                     . " FROM `rent_a_car` WHERE `id`=" . $id;
+
 
             $db = new Database();
 
@@ -69,6 +78,10 @@ class RentACar {
             $this->noOfBaggage = $result['noOfBaggage'];
             $this->noOfDoors = $result['noOfDoors'];
             $this->airConditioned = $result['airConditioned'];
+            $this->price_self_drive = $result['price_self_drive'];
+            $this->price_tours = $result['price_tours'];
+            $this->price_wedding = $result['price_wedding'];
+            $this->price_airport = $result['price_airport'];
 
             return $this;
         }
@@ -78,7 +91,7 @@ class RentACar {
 
         $query = "INSERT INTO `rent_a_car` "
                 . "(`user`,`name`,`mainTypes`,`requestTypes`,`conatcName`,`phoneNumber`,`email`,`district`,`city`,`address`,"
-                . "`vehicleNumber`,`fuelType`,`noOfPassengers`,`noOfBaggage`,`noOfDoors`,`airConditioned`) "
+                . "`vehicleNumber`,`fuelType`,`noOfPassengers`,`noOfBaggage`,`noOfDoors`,`airConditioned`,`price_self_drive`,`price_tours`,`price_wedding`,`price_airport`) "
                 . "VALUES "
                 . " ('" . $this->user . "',"
                 . "'" . $this->name . "',"
@@ -95,7 +108,11 @@ class RentACar {
                 . "'" . $this->noOfPassengers . "',"
                 . "'" . $this->noOfBaggage . "',"
                 . "'" . $this->noOfDoors . "',"
-                . "'" . $this->airConditioned . "')";
+                . "'" . $this->airConditioned . "',"
+                . "'" . $this->price_self_drive . "',"
+                . "'" . $this->price_tours . "',"
+                . "'" . $this->price_wedding . "',"
+                . "'" . $this->price_airport . "')";
 
         $db = new Database();
 
@@ -142,7 +159,11 @@ class RentACar {
                 . '`noOfPassengers`= "' . $this->noOfPassengers . '", '
                 . '`noOfBaggage`= "' . $this->noOfBaggage . '", '
                 . '`noOfDoors`= "' . $this->noOfDoors . '", '
-                . '`airConditioned`= "' . $this->airConditioned . '"'
+                . '`airConditioned`= "' . $this->airConditioned . '", '
+                . '`price_self_drive`= "' . $this->price_self_drive . '", '
+                . '`price_tours`= "' . $this->price_tours . '", '
+                . '`price_wedding`= "' . $this->price_wedding . '", '
+                . '`price_airport`= "' . $this->price_airport . '"'
                 . ' WHERE id="' . $this->id . '"';
 
         $db = new Database();
