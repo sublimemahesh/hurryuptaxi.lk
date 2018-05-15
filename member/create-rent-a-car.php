@@ -357,7 +357,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="price_per_excited_milage" class="form-control" placeholder="Enter Price Price Per Excited Milage" autocomplete="off" name="price_per_excited_milage" required="TRUE">
+                                                    <input type="text" id="price_per_excited_milage" class="form-control" placeholder="Enter Price Per Excited Milage" autocomplete="off" name="price_per_excited_milage" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
