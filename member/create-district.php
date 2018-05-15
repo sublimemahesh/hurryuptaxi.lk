@@ -60,10 +60,10 @@ $USER = new User($_SESSION["id"]);
                                 <div class="body">
                                     <form class="form-horizontal"  method="post" action="post-and-get/district.php" enctype="multipart/form-data"> 
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="name">Name</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="form-line">
                                                         <input type="text" id="name" class="form-control" placeholder="Enter district name" autocomplete="off" name="name" required="TRUE">
@@ -73,7 +73,7 @@ $USER = new User($_SESSION["id"]);
                                         </div> 
 
                                         <div class="row clearfix">
-                                            <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5"> 
+                                            <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-4"> 
                                                 <input type="submit" name="add-district" class="btn btn-primary m-t-15 waves-effect" value="Add District"/>
                                             </div>
                                         </div>

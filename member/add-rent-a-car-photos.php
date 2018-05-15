@@ -56,21 +56,23 @@ $RENT_A_CAR = new RentACar($id);
                             <div class="body">
                                 <form class="form-horizontal"  method="post" action="post-and-get/rent-a-car-photo.php" enctype="multipart/form-data"> 
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="image">Image</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
+                                                    <label for="image" class="hidden-lg hidden-md">Image</label>
                                                     <input type="file" id="image" class="form-control" name="image" required="true">
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="caption">Caption</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="text" id="caption" class="form-control" placeholder="Enter Image Caption" autocomplete="off" name="caption">

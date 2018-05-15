@@ -56,26 +56,30 @@ $RENT_A_CAR_PHOTO = new RentACarPhoto($id);
                                     </li>
                                 </ul>
                             </div>
-                            <div class="body row">
+                            <div class="body">
                                 <form class="form-horizontal" method="post" action="post-and-get/rent-a-car-photo.php" enctype="multipart/form-data"> 
 
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="caption">Caption</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
+                                                    <label for="caption" class="hidden-lg hidden-md">Caption</label>
                                                     <input type="text" id="caption" class="form-control"  value="<?php echo $RENT_A_CAR_PHOTO->caption; ?>"  name="caption"  required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="image">Image</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
+                                                    <label for="image" class="hidden-lg hidden-md">Image</label>
                                                     <input type="file" id="image" class="form-control" value="<?php echo $RENT_A_CAR_PHOTO->image_name; ?>"  name="image">
                                                     <br/>
                                                     <img src="../upload/rent-car-photos/thumb/<?php echo $RENT_A_CAR_PHOTO->image_name; ?>" id="image" class="view-edit-img img img-responsive img-thumbnail" name="image" alt="old image"> <br/>
@@ -86,7 +90,7 @@ $RENT_A_CAR_PHOTO = new RentACarPhoto($id);
 
 
                                     <div class="row clearfix">
-                                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-4">
                                             <input type="hidden" id="oldImageName" value="<?php echo $RENT_A_CAR_PHOTO->image_name; ?>" name="oldImageName"/>
                                             <input type="hidden" id="id" value="<?php echo $RENT_A_CAR_PHOTO->id; ?>" name="id"/>
                                             <input type="hidden" id="authToken" value="<?php echo $_SESSION["authToken"]; ?>" name="authToken"/>

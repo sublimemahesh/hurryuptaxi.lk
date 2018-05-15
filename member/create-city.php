@@ -59,10 +59,10 @@ $DISTRICT = new District($id)
                                 <div class="body">
                                     <form class="form-horizontal"  method="post" action="post-and-get/city.php" enctype="multipart/form-data"> 
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="district">District</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="form-line">
                                                         <input type="text" id="name" class="form-control" value="<?php echo $DISTRICT->name ?>" autocomplete="off" name="name" disabled="true">
@@ -72,13 +72,13 @@ $DISTRICT = new District($id)
                                         </div>
 
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="name">Name</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="form-line">
-                                                        <input type="text" id="name" class="form-control" placeholder="Enter Product name" autocomplete="off" name="name" >
+                                                        <input type="text" id="name" class="form-control" placeholder="Enter city name" autocomplete="off" name="name" >
                                                         <input type="hidden" id="id" value="<?php echo $DISTRICT->id; ?>" name="id"/>
                                                     </div>
                                                 </div>
@@ -86,7 +86,7 @@ $DISTRICT = new District($id)
                                         </div>
 
                                         <div class="row clearfix">
-                                            <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5"> 
+                                            <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-4"> 
 
                                                 <input type="submit" name="add-city" class="btn btn-primary m-t-15 waves-effect" value="Add City"/>
                                             </div>

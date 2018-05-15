@@ -56,26 +56,30 @@ $vehiclePhoto = new VehiclePhotos($id);
                                     </li>
                                 </ul>
                             </div>
-                            <div class="body row">
+                            <div class="body">
                                 <form class="form-horizontal" method="post" action="post-and-get/vehicle-photos.php" enctype="multipart/form-data"> 
 
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="caption">Caption</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="caption" class="form-control"  value="<?php echo $vehiclePhoto->caption; ?>"  name="caption"  required="TRUE">
+                                                    <label for="caption" class="hidden-lg hidden-md">Caption</label>
+                                                    <input type="text" id="caption" class="form-control" value="<?php echo $vehiclePhoto->caption; ?>" name="caption" required="TRUE" placeholder="Enter Image Caption">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="image">Image</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
+                                                    <label for="image" class="hidden-lg hidden-md">Image</label>
                                                     <input type="file" id="image" class="form-control" value="<?php echo $vehiclePhoto->image_name; ?>"  name="image">
                                                     <br/>
                                                     <img src="../upload/driver/vehicle-photos/thumb/<?php echo $vehiclePhoto->image_name; ?>" id="image" class="view-edit-img img img-responsive img-thumbnail" name="image" alt="old image"> <br/>
@@ -83,7 +87,6 @@ $vehiclePhoto = new VehiclePhotos($id);
                                             </div>
                                         </div>
                                     </div>
-
 
                                     <div class="row clearfix">
                                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
@@ -98,7 +101,6 @@ $vehiclePhoto = new VehiclePhotos($id);
                         </div>
                     </div>
                 </div>
-                <!-- #END# Vertical Layout -->
             </div>
         </section>
 

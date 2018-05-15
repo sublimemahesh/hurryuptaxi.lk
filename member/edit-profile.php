@@ -51,12 +51,13 @@ $USE = new User(NULL);
                                     <form class="form-horizontal col-sm-12 col-md-12" method="post" action="post-and-get/add-new-user.php" enctype="multipart/form-data"> 
                                         <!--Name-->
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="name">Name</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="form-line">
+                                                        <label for="name" class="hidden-lg hidden-md">Name</label>
                                                         <input type="text" id="name" class="form-control" placeholder="Enter your name" value="<?php echo $USER->name; ?>"  name="name"  required="TRUE">
                                                     </div>
                                                 </div>
@@ -64,12 +65,13 @@ $USE = new User(NULL);
                                         </div>
                                         <!--Username-->
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="username">Username</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="form-line">
+                                                        <label for="username" class="hidden-lg hidden-md">Username</label>
                                                         <input type="text" id="username" class="form-control" placeholder="Enter your username" value="<?php echo $USER->username; ?>" name="username" required="TRUE">
                                                     </div>
                                                 </div>
@@ -77,12 +79,13 @@ $USE = new User(NULL);
                                         </div> 
                                         <!--Email-->
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="email">Email</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="form-line">
+                                                        <label for="email" class="hidden-lg hidden-md">Email</label>
                                                         <input type="email" id="email" class="form-control" placeholder="Enter your email" value="<?php echo $USER->email; ?>" name="email" required="TRUE">
                                                     </div>
                                                 </div>
@@ -90,12 +93,13 @@ $USE = new User(NULL);
                                         </div>
                                         <!--Profile Picture-->
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="image">Profile Picture</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="form-line">
+                                                        <label for="image" class="hidden-lg hidden-md">Profile Picture</label>
                                                         <input type="file" id="image" class="form-control" name="image" value="<?php echo $USER->profile_picture; ?>">
                                                         <img src="../upload/user/<?php echo $USER->profile_picture; ?>" id="image" class="view-edit-img img img-responsive img-thumbnail" name="image" alt="old image">
                                                     </div>
@@ -104,12 +108,13 @@ $USE = new User(NULL);
                                         </div>
                                         <!--District-->
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="district">District</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group place-select">
                                                     <div class="form-line"> 
+                                                        <label for="district" class="hidden-lg hidden-md">District</label>
                                                         <select name="district" id="district" class="form-control" >
                                                             <option value=""> -- Please Select -- </option>
                                                             <?php
@@ -136,12 +141,13 @@ $USE = new User(NULL);
                                         </div> 
                                         <!--City-->
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="city">City</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group place-select">
                                                     <div class="form-line">
+                                                        <label for="city" class="hidden-lg hidden-md">City</label>
                                                         <select class="form-control" autocomplete="off" id="city-bar" autocomplete="off" name="city" required="TRUE">
                                                             <option> -- Please Select -- </option> 
                                                             <?php
@@ -170,12 +176,13 @@ $USE = new User(NULL);
                                         </div> 
                                         <!--Dealer-->
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="dealer">Dealer</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group place-select">
                                                     <div class="form-line">
+                                                        <label for="dealer" class="hidden-lg hidden-md">Dealer</label>
                                                         <select class="form-control" autocomplete="off" type="text" id="dealer" autocomplete="off" name="dealer" required="TRUE">
                                                             <option value=""> -- Please Select -- </option>
                                                             <?php
@@ -202,12 +209,13 @@ $USE = new User(NULL);
                                         </div> 
                                         <!--Address-->
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="address">Address</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="form-line">
+                                                        <label for="address" class="hidden-lg hidden-md">Address</label>
                                                         <input type="text" id="address" class="form-control" placeholder="Enter Your Address" autocomplete="off" name="address" value="<?php echo $USER->address; ?>">
                                                     </div>
                                                 </div>
@@ -215,12 +223,13 @@ $USE = new User(NULL);
                                         </div> 
                                         <!--Phone Number-->
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="phone_number">Phone Number</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="form-line">
+                                                        <label for="phone_number" class="hidden-lg hidden-md">Phone Number</label>
                                                         <input type="text" id="phone_number" class="form-control" placeholder="Enter Your Phone Number" autocomplete="off" name="phone_number" value="<?php echo $USER->phone_number; ?>">
                                                     </div>
                                                 </div>
@@ -228,12 +237,13 @@ $USE = new User(NULL);
                                         </div> 
                                         <!--NIC-->
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="nic">NIC</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="form-line">
+                                                        <label for="nic" class="hidden-lg hidden-md">NIC</label>
                                                         <input type="text" id="nic" class="form-control" placeholder="Enter Your NIC Number" autocomplete="off" name="nic" value="<?php echo $USER->nic; ?>">
                                                     </div>
                                                 </div>
@@ -243,12 +253,13 @@ $USE = new User(NULL);
                                         <hr>
                                         <!--Bank-->
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="bank">Bank</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group place-select">
                                                     <div class="form-line">
+                                                        <label for="bank" class="hidden-lg hidden-md">Bank</label>
                                                         <select class="form-control" autocomplete="off" type="text" id="bank" autocomplete="off" name="bank" required="TRUE">
                                                             <option value=""> -- Please Select -- </option>
                                                             <?php
@@ -275,12 +286,13 @@ $USE = new User(NULL);
                                         </div> 
                                         <!--Branch-->
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="branch">Branch</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="form-line">
+                                                        <label for="branch" class="hidden-lg hidden-md">Branch</label>
                                                         <input type="text" id="branch" class="form-control" placeholder="Enter Your Branch City" autocomplete="off" name="branch" value="<?php echo $USER->branch; ?>">
                                                     </div>
                                                 </div>
@@ -288,12 +300,13 @@ $USE = new User(NULL);
                                         </div> 
                                         <!--Account Type-->
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="account_type">Account Type</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group place-select">
                                                     <div class="form-line">
+                                                        <label for="account_type" class="hidden-lg hidden-md">Account Type</label>
                                                         <select class="form-control" autocomplete="off" type="text" id="account_type" autocomplete="off" name="account_type" required="TRUE"> 
                                                             <option value=""> -- Please Select -- </option>
                                                             <option value="1" <?php
@@ -313,12 +326,13 @@ $USE = new User(NULL);
                                         </div>
                                         <!--Holder Name-->
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="holder_name">Holder Name</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="form-line">
+                                                        <label for="holder_name" class="hidden-lg hidden-md">Holder Name</label>
                                                         <input type="text" id="holder_name" class="form-control" placeholder="Enter Holder Name" autocomplete="off" name="holder_name" value="<?php echo $USER->holder_name; ?>">
                                                     </div>
                                                 </div>
@@ -326,12 +340,13 @@ $USE = new User(NULL);
                                         </div>
                                         <!--Account Type-->
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="account_number">Account Number</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="form-line">
+                                                        <label for="account_number" class="hidden-lg hidden-md">Account Number</label>
                                                         <input type="text" id="account_number" class="form-control" placeholder="Enter Account Number" autocomplete="off" name="account_number" value="<?php echo $USER->account_number; ?>">
                                                     </div>
                                                 </div>
@@ -339,7 +354,7 @@ $USE = new User(NULL);
                                         </div>
 
                                         <div class="row clearfix">
-                                            <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                                            <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-4">
 
                                                 <input type="hidden" id="id" value="<?php echo $USER->id; ?>" name="id"/>
                                                 <input type="hidden" id="authToken" value="<?php echo $_SESSION["authToken"]; ?>" name="authToken"/>

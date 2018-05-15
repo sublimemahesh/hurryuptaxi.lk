@@ -55,12 +55,13 @@ $RENT_A_CAR = new RentACar($id);
 
                                     <!--name-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="name">Name</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
+                                                    <label for="name" class="hidden-lg hidden-md">Name</label>
                                                     <input type="text" id="name" class="form-control" placeholder="Enter Your name" value="<?php echo $RENT_A_CAR->name ?>" autocomplete="off" name="name" required="TRUE">
                                                 </div>
                                             </div>
@@ -69,11 +70,12 @@ $RENT_A_CAR = new RentACar($id);
                                     <!--Main Types-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="mainTypes">Main Type</label>
+                                            <label for="mainTypes">Vehicle Type</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
+                                                    <label for="mainTypes" class="hidden-lg hidden-md">Vehicle Type</label>
                                                     <select class="form-control" autocomplete="off" type="text" id="mainTypes" autocomplete="off" name="mainTypes" required="TRUE">
                                                         <option value=""> -- Select Vehicle Type -- </option>
 
@@ -108,6 +110,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
+                                                    <label for="requestTypes" class="hidden-lg hidden-md">Request Type</label>
                                                     <select class="form-control" autocomplete="off" type="text" id="account_type" autocomplete="off" name="requestTypes" required="TRUE">
                                                         <option value=""> -- Select Request Type -- </option>
 
@@ -141,6 +144,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
+                                                    <label for="fuelType" class="hidden-lg hidden-md">Fuel Type</label>
                                                     <select class="form-control" autocomplete="off" type="text" id="fuelType" autocomplete="off" name="fuelType" required="TRUE">
                                                         <option value=""> -- Select Fuel Type -- </option>
 
@@ -168,12 +172,13 @@ $RENT_A_CAR = new RentACar($id);
                                     </div>
                                     <!--Conatc Name-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="conatcName">Conatc Name</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
+                                                    <label for="conatcName" class="hidden-lg hidden-md">Conatc Name</label>
                                                     <input type="text" id="conatcName" class="form-control" placeholder="Enter Conatc Name" autocomplete="off" name="conatcName" value="<?php echo $RENT_A_CAR->conatcName ?>" required="TRUE">
                                                 </div>
                                             </div>
@@ -181,12 +186,13 @@ $RENT_A_CAR = new RentACar($id);
                                     </div>
                                     <!--Phone Number-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="phoneNumber">Phone Number</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
+                                                    <label for="phoneNumber" class="hidden-lg hidden-md">Phone Number</label>
                                                     <input type="text" id="phoneNumber" class="form-control" placeholder="Enter Phone Number" autocomplete="off" name="phoneNumber" value="<?php echo $RENT_A_CAR->phoneNumber ?>" required="TRUE">
                                                 </div>
                                             </div>
@@ -194,12 +200,13 @@ $RENT_A_CAR = new RentACar($id);
                                     </div>
                                     <!--Email-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="email">Email</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
+                                                    <label for="email" class="hidden-lg hidden-md">Email</label>
                                                     <input type="email" id="email" class="form-control" placeholder="Enter Your Email" autocomplete="off" name="email" value="<?php echo $RENT_A_CAR->email ?>" required="TRUE">
                                                 </div>
                                             </div>
@@ -207,7 +214,7 @@ $RENT_A_CAR = new RentACar($id);
                                     </div>
                                     <!--District-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2  hidden-sm  hidden-xs  form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="district">District</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
@@ -240,7 +247,7 @@ $RENT_A_CAR = new RentACar($id);
                                     </div> 
                                     <!--City-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2  hidden-sm  hidden-xs  form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="city">City</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
@@ -275,12 +282,13 @@ $RENT_A_CAR = new RentACar($id);
                                     </div>  
                                     <!--Address-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="address">Address</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
+                                                    <label for="address" class="hidden-lg hidden-md">Address</label>
                                                     <input type="text" id="address" class="form-control" placeholder="Enter Your Address" autocomplete="off" name="address" value="<?php echo $RENT_A_CAR->address ?>"  required="TRUE">
                                                 </div>
                                             </div>
@@ -288,12 +296,13 @@ $RENT_A_CAR = new RentACar($id);
                                     </div> 
                                     <!--Vehicle Number-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="vehicleNumber">Vehicle Number</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
+                                                    <label for="vehicleNumber" class="hidden-lg hidden-md">Vehicle Number</label>
                                                     <input type="text" id="vehicleNumber" class="form-control" placeholder="Enter Vehicle Number" autocomplete="off" name="vehicleNumber" value="<?php echo $RENT_A_CAR->vehicleNumber ?>" required="TRUE">
                                                 </div>
                                             </div>
@@ -301,12 +310,13 @@ $RENT_A_CAR = new RentACar($id);
                                     </div>
                                     <!--No Of Passengers-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="noOfPassengers">No Of Passengers</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
+                                                    <label for="noOfPassengers" class="hidden-lg hidden-md">No Of Passengers</label>
                                                     <input type="text" id="noOfPassengers" class="form-control" placeholder="Enter No Of Passengers" autocomplete="off" name="noOfPassengers" value="<?php echo $RENT_A_CAR->noOfPassengers ?>" required="TRUE">
                                                 </div>
                                             </div>
@@ -314,12 +324,13 @@ $RENT_A_CAR = new RentACar($id);
                                     </div>
                                     <!--No Of Baggage-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="noOfBaggage">No Of Baggage</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
+                                                    <label for="noOfBaggage" class="hidden-lg hidden-md">No Of Baggage</label>
                                                     <input type="text" id="noOfBaggage" class="form-control" placeholder="Enter No Of Baggage" autocomplete="off" name="noOfBaggage" value="<?php echo $RENT_A_CAR->noOfBaggage ?>" required="TRUE">
                                                 </div>
                                             </div>
@@ -327,12 +338,13 @@ $RENT_A_CAR = new RentACar($id);
                                     </div>
                                     <!--No Of Doors-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="noOfDoors">No Of Doors</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
+                                                    <label for="noOfDoors" class="hidden-lg hidden-md">No Of Doors</label>
                                                     <input type="text" id="noOfDoors" class="form-control" placeholder="Enter No Of Doors" autocomplete="off" name="noOfDoors" value="<?php echo $RENT_A_CAR->noOfDoors ?>" required="TRUE">
                                                 </div>
                                             </div>
@@ -346,6 +358,7 @@ $RENT_A_CAR = new RentACar($id);
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
+                                                    <label for="airConditioned" class="hidden-lg hidden-md">Air Conditioned</label>
                                                     <select class="form-control" autocomplete="off" type="text" id="airConditioned" autocomplete="off" name="airConditioned" value="<?php echo $RENT_A_CAR->airConditioned ?>" required="TRUE">
 
                                                         <option value=""> -- Please Select -- </option> 
@@ -368,7 +381,7 @@ $RENT_A_CAR = new RentACar($id);
 
                                     <!--Save-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5"> 
+                                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-4"> 
                                             <input type="hidden" id="user" class="form-control" value="<?php echo $_SESSION["id"] ?>" name="user">
                                             <input type="hidden" id="id" value="<?php echo $RENT_A_CAR->id; ?>" name="id"/>
                                             <input type="submit" name="edit-rent-a-car" class="btn btn-primary m-t-15 waves-effect" value="Save Changes"/>

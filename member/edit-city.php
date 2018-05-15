@@ -60,12 +60,13 @@ $CITY = new City($id);
                                 <div class="body row">
                                     <form class="form-horizontal col-sm-9 col-md-12" method="post" action="post-and-get/city.php" enctype="multipart/form-data"> 
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="district">District</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group place-select">
                                                     <div class="form-line">
+                                                        <label for="district" class="hidden-lg hidden-md">District</label>
                                                         <select class="form-control show-tick place-select1" type="text" id="district" autocomplete="off" name="district" disabled="true">
                                                             <option value="<?php $CITY->id ?>" class="active light-c">
                                                                 <?php
@@ -86,12 +87,13 @@ $CITY = new City($id);
                                         </div>
 
                                         <div class="row clearfix">
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                                 <label for="name">Name</label>
                                             </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                                 <div class="form-group">
                                                     <div class="form-line">
+                                                        <label for="name" class="hidden-lg hidden-md">Name</label>
                                                         <input type="text" id="name" class="form-control" placeholder="Enter City name" autocomplete="off" name="name" value="<?php echo $CITY->name; ?>" >
                                                     </div>
                                                 </div>
@@ -99,7 +101,7 @@ $CITY = new City($id);
                                         </div>
 
                                         <div class="row clearfix">
-                                            <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                                            <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-4">
                                                 <input type="hidden" id="id" value="<?php echo $CITY->id; ?>" name="id"/>
 
                                                 <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="edit-city" value="submit">Save Changes</button>
