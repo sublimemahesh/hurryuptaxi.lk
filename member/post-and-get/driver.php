@@ -18,6 +18,7 @@ if (isset($_POST['add-driver'])) {
     $DRIVER->address = $_POST['address'];
     $DRIVER->vehicle_number = $_POST['vehicle_number'];
     $DRIVER->nic_number = $_POST['nic_number'];
+    $DRIVER->price_per_km = $_POST['price_per_km'];
 
     $dir_dest = '../../upload/driver/';
 
@@ -52,6 +53,7 @@ if (isset($_POST['add-driver'])) {
         'vehicle_number' => ['required' => TRUE],
         'nic_number' => ['required' => TRUE],
         'profile_picture' => ['required' => TRUE],
+        'price_per_km' => ['required' => TRUE],
     ]);
 
     if ($VALID->passed()) {
@@ -111,6 +113,7 @@ if (isset($_POST['edit-driver'])) {
     $DRIVER->address = $_POST['address'];
     $DRIVER->vehicle_number = $_POST['vehicle_number'];
     $DRIVER->nic_number = $_POST['nic_number'];
+    $DRIVER->price_per_km = $_POST['price_per_km'];
 
     $VALID->check($DRIVER, [
         'name' => ['required' => TRUE],
@@ -119,6 +122,7 @@ if (isset($_POST['edit-driver'])) {
         'vehicle_number' => ['required' => TRUE],
         'nic_number' => ['required' => TRUE],
         'profile_picture' => ['required' => TRUE],
+        'price_per_km' => ['required' => TRUE],
     ]);
 
     if ($VALID->passed()) {
