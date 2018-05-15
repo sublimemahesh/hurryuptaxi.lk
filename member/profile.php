@@ -42,7 +42,7 @@ $USER = new User($_SESSION["id"]);
                                         </a>
                                         <ul class="dropdown-menu pull-right">
                                             <li>
-                                                <a href="edit-profile.php?id=<?php echo $USER->id; ?>">
+                                                <a href="edit-user.php?id=<?php echo $USER->id; ?>">
                                                     Edit My Profile
                                                 </a>
                                             </li> 
