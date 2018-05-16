@@ -8,7 +8,7 @@
         <meta name="description" content="html 5 template">
         <meta name="author" content="tonytemplates.com">
         <link rel="icon" href="favicon.ico">
-        <title>Rent a car - HTML 5 TEMPLATE</title>
+        <title>Contact Us || Rent a car || hurryuptaxi.lk || Sri Lanka</title>
         <!-- Bootstrap core CSS -->
         <link href="assets/css/plugins/bootstrap.min.css" rel="stylesheet">
         <link href="assets/css/plugins/jquery.smartmenus.bootstrap.css" rel="stylesheet">
@@ -17,7 +17,7 @@
         <link href="assets/css/main-style.css" rel="stylesheet">
         <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>
-
+        <link href="contact-form/style.css" rel="stylesheet" type="text/css"/>
         <!-- Icon Font-->
         <link href="iconfont/style.css" rel="stylesheet">
         <!-- Google Fonts -->
@@ -26,15 +26,11 @@
 
     <body class="page__contacts">
         <!-- Loader -->
+        <!--Header-->
         <?php
         include './loader.php';
-        ?>
-        <!-- //Loader -->
-        <!-- Header -->
-        <?php
         include './header.php';
         ?>
-        <!-- // Header -->
 
         <!-- Content  -->
         <main id="page-content">
@@ -90,34 +86,87 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="wrap-form">
-                            <h1>Leave a Message</h1>
-                            <form id="contactform" class="contact-form comment-form" name="contactform" method="post" novalidate>
-                                <div id="success">
-                                    <p>Your message was sent successfully!</p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="section-title text-center title-three no-margin">
+                                        <div class="title-border">
+                                            <h1 class="h1style">Send <span>Your message</span></h1>
+                                        </div>
+                                    </div>
+
+                                    <div class="contact-form">
+                                        <div class="row form-group">
+                                            <div class="col-xs-12 col-sm-6">
+                                                <label class="labelcon">Your Name</label>
+                                                <span id="star">*</span>
+                                                <input type="text" name="txtFullName" id="txtFullName" class="form-control input-validater">
+                                                <span id="spanFullName" ></span>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <label class="labelcon">Your Email</label>
+                                                <span id="star">*</span>
+                                                <input type="text" name="txtEmail" id="txtEmail" class="form-control input-validater">
+                                                <span id="spanEmail" ></span>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-xs-12 col-sm-6">
+                                                <label class="labelcon">Your Country</label>
+                                                <span id="star">*</span>
+                                                <input type="text" name="txtCountry"  id="txtCountry" class="form-control input-validater">
+                                                <span id="spanCountry" ></span>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <label class="labelcon">Your Contact Numbers</label>
+                                                <input type="text" name="txtPhone" id="txtPhone" class="form-control input-validater">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-xs-12 col-sm-12">
+                                                <label class="labelcon">Subject</label>
+                                                <span id="star">*</span>
+                                                <input type="text" name="txtSubject"  id="txtSubject" class="form-control input-validater">
+                                                <span id="spanSubject" ></span>
+                                            </div> 
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="labelcon">Your Message</label>
+                                            <span id="star">*</span>
+                                            <textarea name="txtMessage"  id="txtMessage" rows="6" class="form-control" placeholder="write message here"></textarea>
+                                            <span id="spanMessage" ></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <label class="labelcon" for="comment">Security Code:</label>
+                                                    <span id="star">*</span> 
+                                                    <input type="text" name="captchacode" id="captchacode" class="form-control input-validater" placeholder="Enter the security code >> ">
+                                                    <span id="capspan" ></span> 
+                                                </div>
+                                                <div class="col-sm-3"> 
+                                                    <?php include("./contact-form/captchacode-widget.php"); ?> 
+                                                </div>  
+                                                <div class="col-sm-4">
+                                                    <div class="div-check" >
+                                                        <img src="contact-form/img/checking.gif" id="checking"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <div class="col-sm-8 text-right">
+                                            <button type="submit" id="btnSubmit" class="cp-btn-style1">SEND YOUR MESSAGE</button>
+                                        </div> 
+                                        <div id="dismessage" align="center"></div>
+                                    </div>
                                 </div>
-                                <div id="error">
-                                    <p>Something went wrong, try refreshing and submitting the form again.</p>
-                                </div>
-                                <div class="input-wrapper first-child">
-                                    <input type="text" class="input-custom input-full" name="name" placeholder="Your name">
-                                </div>
-                                <div class="input-wrapper last-child">
-                                    <input type="text" class="input-custom input-full" name="email" placeholder="E-mail">
-                                </div>
-                                <div class="textarea-wrapper">
-                                    <textarea class="textarea-custom input-full" name="Comment" placeholder="Comment"></textarea>
-                                </div>
-                                <div class="btn-wrapper">
-                                    <button type="submit" id="submit" class="btn btn-form">Send message</button>
-                                </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
         <!-- // Content  -->
-        
+
         <!-- Footer -->
         <?php
         include './footer.php';
@@ -139,6 +188,6 @@
         <script src="assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
         <script src="assets/js/plugins/jquery-ui.min.js"></script>
         <script src="assets/js/custom.js"></script>
-
+        <script src="contact-form/scripts.js" type="text/javascript"></script>
     </body>
 </html>
