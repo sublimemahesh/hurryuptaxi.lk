@@ -8,7 +8,7 @@
         <meta name="description" content="html 5 template">
         <meta name="author" content="tonytemplates.com">
         <link rel="icon" href="favicon.ico">
-        <title>Rent a car - HTML 5 TEMPLATE</title>
+        <title>About Us | Hurryup Taxi</title>
         <!-- Bootstrap core CSS -->
         <link href="assets/css/plugins/bootstrap.min.css" rel="stylesheet">
         <link href="assets/css/plugins/jquery.smartmenus.bootstrap.css" rel="stylesheet">
@@ -69,19 +69,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="car-info-box">
-                <div class="car-info-box__description">
-                    <div class="desc-inner">
-                        <h1>Car Hire</h1>
-                        <span class="text-link">Search for the best deals on rental cars</span>
-                        <p>Find cheap car hire fast and hit the road happy with Rental Cars. Search the world’s top car hire companies. Instantly compare prices. Then book direct with the car rental company of your choice. It’s so easy.  We search thousands of destinations and compare thousands of car hire deals to help you find your perfect drive at a low price. </p>
-                    </div>
-                </div>
-                <figure class="car-info-box__thumb has-second-img">
-                    <img src="assets/images/car_hire.jpg" alt="" class="first-fade">
-                    <img src="assets/images/car_hire2.jpg" alt="" class="second-fade">
-                </figure>
             </div>
             <div class="image_box">
                 <div class="image_box__inner">
