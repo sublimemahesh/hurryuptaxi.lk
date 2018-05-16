@@ -236,6 +236,20 @@ class User {
         return TRUE;
     }
 
+    public function all() {
+
+        $query = "SELECT * FROM `user` ";
+        $db = new Database();
+        $result = $db->readQuery($query);
+        $array_res = array();
+
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+
+        return $array_res;
+    }
+
     public function update() {
 
         $query = "UPDATE  `user` SET "
@@ -445,7 +459,7 @@ class User {
     }
 
     public function setPaymentAndActive() {
- 
+
         $query = "UPDATE  `user` SET "
                 . "`isActive` ='" . $this->isActive . "', "
                 . "`activePaymentDate` ='" . $this->activePaymentDate . "', "
