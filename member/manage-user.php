@@ -104,13 +104,20 @@ $USER = new User($_SESSION["id"]);
                                                 |
                                                 <a href="manage-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-warning"><i class="glyphicon glyphicon-user"></i></a>
                                                 |
-                                                <a href="change-password-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-info"><i class="material-icons">vpn_key</i></a>
-
+                                                <a href="change-password-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-info"><i class="glyphicon glyphicon-lock"></i></a>
+                                                <?php
+                                                if ($USER->id == 1) {
+                                                    ?>
+                                                    |
+                                                    <a href="set-payment-and-active.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-info"><i class="glyphicon glyphicon-usd"></i></a>
+                                                    <?php
+                                                }
+                                                ?> 
                                             </td>
                                         </tr>
-                                        <?php
-                                    }
-                                    ?>   
+    <?php
+}
+?>   
                                 </tbody>
 
                                 <tfoot>

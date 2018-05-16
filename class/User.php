@@ -32,11 +32,13 @@ class User {
     public $username;
     public $resetCode;
     public $password;
+    public $activePaymentDate;
+    public $isComPaid;
 
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT `id`,`name`,`parent`,`email`,`district`,`city`,`dealer`,`address`,`phone_number`,`nic`,`createdAt`,`profile_picture`,`isActive`,`authToken`,`lastLogin`,`payment`,`bank`,`branch`,`account_type`,`holder_name`,`account_number`,`username`,`resetcode` FROM `user` WHERE `id`=" . $id;
+            $query = "SELECT `id`,`name`,`parent`,`email`,`district`,`city`,`dealer`,`address`,`phone_number`,`nic`,`createdAt`,`profile_picture`,`isActive`,`authToken`,`lastLogin`,`payment`,`bank`,`branch`,`account_type`,`holder_name`,`account_number`,`username`,`resetcode`,`activePaymentDate`,`isComPaid` FROM `user` WHERE `id`=" . $id;
 
             $db = new Database();
 
@@ -65,6 +67,8 @@ class User {
             $this->username = $result['username'];
             $this->authToken = $result['authToken'];
             $this->resetCode = $result['resetcode'];
+            $this->activePaymentDate = $result['activePaymentDate'];
+            $this->isComPaid = $result['isComPaid'];
 
             return $result;
         }
@@ -430,7 +434,7 @@ class User {
     }
 
     public function getNextAvailableUsername() {
-        
+
         $query = "SELECT MAX(id)+1 FROM `user`";
 
         $db = new Database();
@@ -438,6 +442,26 @@ class User {
         $result = mysql_fetch_array($db->readQuery($query));
 
         return 'HUR' . str_pad($result["MAX(id)+1"], 6, '0', STR_PAD_LEFT);
+    }
+
+    public function setPaymentAndActive() {
+ 
+        $query = "UPDATE  `user` SET "
+                . "`isActive` ='" . $this->isActive . "', "
+                . "`activePaymentDate` ='" . $this->activePaymentDate . "', "
+                . "`payment` ='" . $this->payment . "', "
+                . "`isComPaid` ='" . $this->isComPaid . "' "
+                . "WHERE `id` = '" . $this->id . "'";
+
+        $db = new Database();
+
+        $result = $db->readQuery($query);
+
+        if ($result) {
+            return $this->__construct($this->id);
+        } else {
+            return FALSE;
+        }
     }
 
 }

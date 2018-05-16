@@ -96,11 +96,11 @@ if (isset($_POST['update'])) {
 
     $handle = new Upload($_FILES['image']);
     $imageName = $_POST ["oldImageName"];
-    
+
     if (empty($imageName)) {
         $imageName = Helper::randamId();
     }
- 
+
     $imgName = null;
     if ($handle->uploaded) {
         $handle->image_resize = true;
@@ -138,7 +138,7 @@ if (isset($_POST['update'])) {
     $USER->account_number = filter_input(INPUT_POST, 'account_number');
     $USER->isActive = filter_input(INPUT_POST, 'active');
     $USER->profile_picture = $imgName;
-    
+
     $VALID = new Validator();
 
     $VALID->check($USER, [
@@ -149,7 +149,6 @@ if (isset($_POST['update'])) {
         'address' => ['required' => TRUE],
         'phone_number' => ['required' => TRUE],
         'nic' => ['required' => TRUE],
-        'parent' => ['required' => TRUE],
         'username' => ['required' => TRUE],
     ]);
 
@@ -185,5 +184,41 @@ if (isset($_POST['changePassword'])) {
     } else {
         header('location: ../change-password-user.php?id=' . $_POST["id"] . '&&message=14');
         exit();
+    }
+}
+
+if (isset($_POST['updatePayment'])) {
+
+    $USER = new User($_POST['id']);
+
+    $USER->payment = filter_input(INPUT_POST, 'payment');
+    $USER->isActive = filter_input(INPUT_POST, 'active');
+    $USER->activePaymentDate = filter_input(INPUT_POST, 'paymentDate');
+
+    $VALID = new Validator();
+
+    $VALID->check($USER, [
+        'id' => ['required' => TRUE],
+    ]);
+
+    if ($VALID->passed()) {
+        $USER->setPaymentAndActive();
+
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        $VALID->addError("Your changes saved successfully", 'success');
+        $_SESSION['ERRORS'] = $VALID->errors();
+
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    } else {
+
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+
+        $_SESSION['ERRORS'] = $VALID->errors();
+
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }
