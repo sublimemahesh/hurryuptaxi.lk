@@ -177,7 +177,7 @@
                     <ul class="menu-navigation__list nav navbar-nav">
                         <li class="current"><a href="./">Home</a></li>
                         <li><a href="about.php">About us</a></li>
-                        <li><a href="services.php" data-hover="Services">Services</a></li>
+                        <li><a href="rent-a-car.php" data-hover="Services">Rent A Car</a></li>
                         <li><a href="contacts.php" data-hover="Contacts">Contacts</a></li>
                     </ul>
 
@@ -242,7 +242,7 @@
                     <ul class="menu-navigation__list nav navbar-nav">
                         <li class="current"><a href="./" data-hover="Home">Home</a></li>
                         <li><a href="about.php" data-hover="About us">About us</a></li>
-                        <li><a href="services.php" data-hover="Services">Services</a></li>
+                        <li><a href="rent-a-car.php" data-hover="Services">Rent A Car</a></li>
                         <li><a href="contacts.php" data-hover="Contacts">Contacts</a></li>
                     </ul>
 
