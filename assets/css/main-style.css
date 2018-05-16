@@ -4627,11 +4627,13 @@ header.site-header {
 
 @media (max-width: 767px) {
   .footer-list, .site-footer .box-elements .row > div .location_info {
-    display: none; } }
+    display: none; 
+  } 
+}
 
 .footer-list-open {
-  display: block; }
-
+  display: block; 
+}
 .site-footer .box-elements .row > div .location_info-open {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4641,7 +4643,8 @@ header.site-header {
 .footer_logo {
   position: relative;
   padding-top: 0;
-  display: inline-block; }
+  display: inline-block; 
+}
 
 @media (min-width: 768px) and (max-width: 991px) {
   .footer_logo {
