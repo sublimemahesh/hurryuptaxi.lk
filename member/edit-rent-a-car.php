@@ -170,16 +170,16 @@ $RENT_A_CAR = new RentACar($id);
                                             </div>
                                         </div>
                                     </div>
-                                    <!--Conatc Name-->
+                                    <!--Contact Name-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="conatcName">Conatc Name</label>
+                                            <label for="conatcName">Contact Name</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <label for="conatcName" class="hidden-lg hidden-md">Conatc Name</label>
-                                                    <input type="text" id="conatcName" class="form-control" placeholder="Enter Conatc Name" autocomplete="off" name="conatcName" value="<?php echo $RENT_A_CAR->conatcName ?>" required="TRUE">
+                                                    <label for="conatcName" class="hidden-lg hidden-md">Contact Name</label>
+                                                    <input type="text" id="conatcName" class="form-control" placeholder="Enter Contact Name" autocomplete="off" name="conatcName" value="<?php echo $RENT_A_CAR->conatcName ?>" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -379,12 +379,12 @@ $RENT_A_CAR = new RentACar($id);
                                         </div>
                                     </div>
 
-                                    <!--Self Drive Price-->
+                                    <!--Self Drive Price / Excited Self Drive-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="price_self_drive">Self Drive Price</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="price_self_drive" class="hidden-lg hidden-md">Self Drive Price</label>
@@ -392,13 +392,21 @@ $RENT_A_CAR = new RentACar($id);
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="excited_milage_self_drive" class="hidden-lg hidden-md">Excited Self Drive</label>
+                                                    <input type="text" id="excited_milage_self_drive" class="form-control" placeholder="Enter Excited Self Drive" autocomplete="off" name="excited_milage_self_drive" required="TRUE" value="<?php echo $RENT_A_CAR->excited_milage_self_drive ?>">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <!--Tours / Chauffeur Driven Price-->
+                                    <!--Tours / Chauffeur Driven Price / Excited Milage Tour-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="price_tours">Tours / Chauffeur Driven Price</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="price_tours" class="hidden-lg hidden-md">Tours / Chauffeur Driven Price</label>
@@ -406,13 +414,21 @@ $RENT_A_CAR = new RentACar($id);
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="excited_milage_tour" class="hidden-lg hidden-md">Excited Milage Tour</label>
+                                                    <input type="text" id="excited_milage_tour" class="form-control" placeholder="Enter Excited Milage Tour" autocomplete="off" name="excited_milage_tour" required="TRUE" value="<?php echo $RENT_A_CAR->excited_milage_tour ?>">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <!--Airport / City Transfers Price-->
+                                    <!--Airport / City Transfers Price / Excited Milage Airport-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="price_airport">Airport / City Transfers Price</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="price_airport" class="hidden-lg hidden-md">Airport / City Transfers Price</label>
@@ -420,13 +436,21 @@ $RENT_A_CAR = new RentACar($id);
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="excited_milage_airport" class="hidden-lg hidden-md">Excited Milage Airport</label>
+                                                    <input type="text" id="excited_milage_airport" class="form-control" placeholder="Enter Excited Milage Airport" autocomplete="off" name="excited_milage_airport" required="TRUE" value="<?php echo $RENT_A_CAR->excited_milage_airport ?>">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <!--Weddings & Events Price-->
+                                    <!--Weddings & Events Price / Excited Milage Wedding-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                             <label for="price_wedding">Weddings & Events Price</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="price_wedding" class="hidden-lg hidden-md">Weddings & Events Price</label>
@@ -434,17 +458,11 @@ $RENT_A_CAR = new RentACar($id);
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!--Price Per Excited Milage-->
-                                    <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="price_per_excited_milage">Price Per Excited Milaget</label>
-                                        </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <label for="price_per_excited_milage" class="hidden-lg hidden-md">Price Per Excited Milaget</label>
-                                                    <input type="text" id="price_per_excited_milage" class="form-control" placeholder="Enter Price Per Excited Milage" autocomplete="off" name="price_per_excited_milage" required="TRUE" value="<?php echo $RENT_A_CAR->price_per_excited_milage ?>">
+                                                    <label for="excited_milage_wedding" class="hidden-lg hidden-md">Excited Milage Wedding</label>
+                                                    <input type="text" id="excited_milage_wedding" class="form-control" placeholder="Enter Excited Milage Wedding" autocomplete="off" name="excited_milage_wedding" required="TRUE" value="<?php echo $RENT_A_CAR->excited_milage_wedding ?>">
                                                 </div>
                                             </div>
                                         </div>

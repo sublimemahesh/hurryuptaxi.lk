@@ -141,15 +141,15 @@ $USER = new User($_SESSION["id"]);
                                             </div>
                                         </div>
                                     </div>
-                                    <!--Conatc Name-->
+                                    <!--Contact Name-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="conatcName">Conatc Name</label>
+                                            <label for="conatcName">Contact Name</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="conatcName" class="form-control" placeholder="Enter Conatc Name" autocomplete="off" name="conatcName" required="TRUE">
+                                                    <input type="text" id="conatcName" class="form-control" placeholder="Enter Contact Name" autocomplete="off" name="conatcName" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -297,72 +297,87 @@ $USER = new User($_SESSION["id"]);
                                             </div>
                                         </div>
                                     </div>
-                                    <!--Self Drive Price-->
+                                    <!--Self Drive Price / Excited Self Drive-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="price_self_drive">Self Drive Price</label>
+                                            <label for="excited_milage_self_drive">Self Drive</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="text" id="price_self_drive" class="form-control" placeholder="Enter Self Drive Price" autocomplete="off" name="price_self_drive" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="excited_milage_self_drive" class="form-control" placeholder="Enter Excited Self Drive" autocomplete="off" name="excited_milage_self_drive" required="TRUE">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <!--Tours / Chauffeur Driven Price-->
+                                    <!--Tours / Chauffeur Driven Price / Excited Milage Tour-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="price_tours">Tours / Chauffeur Driven Price</label>
+                                            <label for="price_tours">Tours / Chauffeur Driven</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="text" id="price_tours" class="form-control" placeholder="Enter Tours / Chauffeur Driven Price" autocomplete="off" name="price_tours" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="excited_milage_tour" class="form-control" placeholder="Enter Excited Milage Tour" autocomplete="off" name="excited_milage_tour" required="TRUE">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <!--Airport / City Transfers Price-->
+                                    <!--Airport / City Transfers Price / Excited Milage Airport-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="price_airport">Airport / City Transfers Price</label>
+                                            <label for="price_airport">Airport / City Transfers</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="text" id="price_airport" class="form-control" placeholder="Enter Airport / City Transfers Price" autocomplete="off" name="price_airport" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="excited_milage_airport" class="form-control" placeholder="Enter Excited Milage Airport" autocomplete="off" name="excited_milage_airport" required="TRUE">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <!--Weddings & Events Price-->
+                                    <!--Weddings & Events Price / Excited Milage Wedding-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="price_wedding">Weddings & Events Price</label>
+                                            <label for="price_wedding">Weddings & Events</label>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="text" id="price_wedding" class="form-control" placeholder="Enter Weddings & Events Price" autocomplete="off" name="price_wedding" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!--Price Per Excited Milage-->
-                                    <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="price_per_excited_milage">Price Per Excited Milage</label>
-                                        </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="price_per_excited_milage" class="form-control" placeholder="Enter Price Per Excited Milage" autocomplete="off" name="price_per_excited_milage" required="TRUE">
+                                                    <input type="text" id="excited_milage_wedding" class="form-control" placeholder="Enter Excited Milage Wedding" autocomplete="off" name="excited_milage_wedding" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
+                                    
                                     <!--Save-->
                                     <div class="row clearfix">
                                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5"> 
