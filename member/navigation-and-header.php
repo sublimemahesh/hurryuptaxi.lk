@@ -133,8 +133,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>  
-
+                </li>   
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">assignment_ind</i>
@@ -181,7 +180,7 @@
                 if ($USER->id == 1) {
                     ?>
 
-                    <li>
+<!--                    <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">recent_actors</i>
                             <span>Dealer</span>
@@ -200,7 +199,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
 
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">

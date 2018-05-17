@@ -8,18 +8,24 @@ if (isset($_POST['create'])) {
     $USER = new User(NULL);
     $VALID = new Validator();
 
-
     $password = md5(filter_var($_POST['password'], FILTER_SANITIZE_STRING));
 
     $USER->name = filter_input(INPUT_POST, 'name');
     $USER->email = filter_input(INPUT_POST, 'email');
     $USER->district = filter_input(INPUT_POST, 'district');
     $USER->city = filter_input(INPUT_POST, 'city');
-    $USER->dealer = filter_input(INPUT_POST, 'dealer');
+    $USER->dealer = 1;
+
+
+    if (!empty(filter_input(INPUT_POST, 'dealer'))) {
+        $USER->parent = filter_input(INPUT_POST, 'dealer');
+    } else {
+        $USER->parent = filter_input(INPUT_POST, 'parent');
+    }
+
     $USER->address = filter_input(INPUT_POST, 'address');
     $USER->phone_number = filter_input(INPUT_POST, 'phone_number');
     $USER->nic = filter_input(INPUT_POST, 'nic');
-    $USER->parent = filter_input(INPUT_POST, 'parent');
     $USER->createdAt = filter_input(INPUT_POST, 'createdAt');
     $USER->username = User::getNextAvailableUsername();
     $USER->bank = filter_input(INPUT_POST, 'bank');
@@ -126,7 +132,15 @@ if (isset($_POST['update'])) {
     $USER->email = filter_input(INPUT_POST, 'email');
     $USER->district = filter_input(INPUT_POST, 'district');
     $USER->city = filter_input(INPUT_POST, 'city');
-    $USER->dealer = filter_input(INPUT_POST, 'dealer');
+
+    $USER->dealer = 1;
+
+    if (!empty(filter_input(INPUT_POST, 'dealer'))) {
+        $USER->parent = filter_input(INPUT_POST, 'dealer');
+    } else {
+        $USER->parent = 1;
+    }
+ 
     $USER->address = filter_input(INPUT_POST, 'address');
     $USER->phone_number = filter_input(INPUT_POST, 'phone_number');
     $USER->nic = filter_input(INPUT_POST, 'nic');

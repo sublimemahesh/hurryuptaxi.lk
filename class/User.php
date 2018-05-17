@@ -258,7 +258,7 @@ class User {
                 . "`email` ='" . $this->email . "', "
                 . "`district` ='" . $this->district . "', "
                 . "`city` ='" . $this->city . "', "
-                . "`dealer` ='" . $this->dealer . "', "
+                . "`parent` ='" . $this->parent . "', "
                 . "`address` ='" . $this->address . "', "
                 . "`phone_number` ='" . $this->phone_number . "', "
                 . "`nic` ='" . $this->nic . "', "
@@ -476,6 +476,20 @@ class User {
         } else {
             return FALSE;
         }
+    }
+
+    public function allDealers() {
+
+        $query = "SELECT * FROM `user` WHERE `parent` = '1'";
+        $db = new Database();
+        $result = $db->readQuery($query);
+        $array_res = array();
+
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+
+        return $array_res;
     }
 
 }
