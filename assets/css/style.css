@@ -199,3 +199,24 @@ and open the template in the editor.
 .isotop-box {
     margin-bottom: 0px;
 }
+ul .inline li {
+    display: inline;
+}
+.icon-list {
+    margin-left: -50px;
+}
+.inline {
+    width: 208px;
+}
+.gallery__item {
+    min-height: 443px;
+}
+.alert-dismissable .close, .alert-dismissible .close {
+    right: 16px;
+}
+.order-details-form input[type="text"] {
+    padding: 9px 10px 11px 13px;
+}
+.timepicki-input {
+    margin-bottom: 0px;
+}

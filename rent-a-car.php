@@ -126,33 +126,39 @@ $RENT_A_CARS = RentACar::all();
                                                         ?>
                                                     </span>
                                                 </li>
-                                                <li>
-                                                    <i class = "tt-icon icon-group"></i>
-                                                    Passengers: <span><?php echo $car['noOfPassengers']; ?></span>
+                                                <li class="icon-list">
+                                                    <ul class="inline">
+                                                        <li>
+                                                            <i class = "tt-icon icon-group"></i>
+                                                            <span><?php echo $car['noOfPassengers']; ?></span>
+                                                        </li>
+                                                        <li>
+                                                            <i class = "tt-icon icon-luggage"></i>
+                                                            <span><?php echo $car['noOfBaggage']; ?></span>
+                                                        </li>
+                                                        <li>
+                                                            <i class = "tt-icon icon-car-door"></i>
+                                                            <span><?php echo $car['noOfDoors']; ?></span>
+                                                        </li>
+                                                        <li>
+                                                            <i class = "tt-icon icon-snowflake"></i>
+                                                            <span>
+                                                                <?php
+                                                                if ($car['airConditioned'] == 1) {
+                                                                    echo 'Yes';
+                                                                } else {
+                                                                    echo 'No';
+                                                                }
+                                                                ?>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+
+
                                                 </li>
-                                                <li>
-                                                    <i class = "tt-icon icon-luggage"></i>
-                                                    Baggage: <span><?php echo $car['noOfBaggage']; ?></span>
-                                                </li>
-                                                <li>
-                                                    <i class = "tt-icon icon-car-door"></i>
-                                                    Doors: <span><?php echo $car['noOfDoors']; ?></span>
-                                                </li>
-                                                <li>
-                                                    <i class = "tt-icon icon-snowflake"></i>
-                                                    Air Conditioned: <span>
-                                                        <?php
-                                                        if ($car['airConditioned'] == 1) {
-                                                            echo 'Yes';
-                                                        } else {
-                                                            echo 'No';
-                                                        }
-                                                        ?>
-                                                    </span>
-                                                </li>
+
                                             </ul>
-                                            <span class = "cost"><span><strong>21$</strong> / hour</span><span><strong>110$</strong> / day</span></span>
-                                            <span class = "btn" data-remodal-target = "modal">Book now</span>
+                                            <a href = "view-rent-a-car.php?id=<?php echo $car['id']; ?>" class="btn">View More</a>
                                         </div>
                                     </div>
                                     <?php

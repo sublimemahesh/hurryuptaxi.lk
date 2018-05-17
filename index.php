@@ -143,54 +143,54 @@ $CITY = new City(NULL);
                                 $RENT_A_CAR_PHOTOS = RentACarPhoto::getRentACarPhotosByRentACar($car['id']);
                                 ?>
                                 <!--<div class="col-md-3 col-sm-6 col-xs-12">-->
-                                    <div class="swiper-slide">
-                                        <div class="post-column">
-                                            <figure class="thumbnail">
+                                <div class="swiper-slide">
+                                    <div class="post-column">
+                                        <figure class="thumbnail">
+                                            <?php
+                                            foreach ($RENT_A_CAR_PHOTOS as $key => $img) {
+                                                if ($key === 0) {
+                                                    ?>
+                                                    <img src="upload/rent-car-photos/thumb/<?php echo $img['image_name'] ?>" alt=""/>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
+                                        </figure>
+                                        <div class="post-column__content">
+                                            <h3>
+                                                <a href="view-rent-a-car.php?id=<?php echo $car['id']; ?>"><?php echo $car['name']; ?></a>
+                                            </h3>
+                                            <span class="text-link">Vehicle Type - 
                                                 <?php
-                                                foreach ($RENT_A_CAR_PHOTOS as $key => $img) {
-                                                    if ($key === 0) {
-                                                        ?>
-                                                        <img src="upload/rent-car-photos/thumb/<?php echo $img['image_name'] ?>" alt=""/>
-                                                        <?php
+                                                foreach (VehicleType::mainTypes() as $key => $VEHICLE_TYPE) {
+                                                    if ($key == $car['mainTypes']) {
+                                                        echo $VEHICLE_TYPE;
                                                     }
                                                 }
                                                 ?>
-                                            </figure>
-                                            <div class="post-column__content">
-                                                <h3>
-                                                    <a href="view-rent-a-car.php?id=<?php echo $car['id']; ?>"><?php echo $car['name']; ?></a>
-                                                </h3>
-                                                <span class="text-link">Vehicle Type - 
-                                                    <?php
-                                                    foreach (VehicleType::mainTypes() as $key => $VEHICLE_TYPE) {
-                                                        if ($key == $car['mainTypes']) {
-                                                            echo $VEHICLE_TYPE;
-                                                        }
-                                                    }
-                                                    ?>
-                                                </span>
-                                                <span class="text-link">Request Type - 
-                                                    <?php
-                                                    foreach (VehicleType::requestTypes() as $key => $REQUEST_TYPE) {
-                                                        if ($key == $car['requestTypes']) {
-                                                            echo $REQUEST_TYPE;
-                                                        }
-                                                    }
-                                                    ?>
-                                                </span>
-                                                <span class="text-link">Fuel Type - 
+                                            </span>
+                                            <span class="text-link">Request Type - 
                                                 <?php
-                                                    foreach (VehicleType::fuelTypes() as $key => $FUEL_TYPE) {
-                                                        if ($key == $car['fuelType']) {
-                                                            echo $FUEL_TYPE;
-                                                        }
+                                                foreach (VehicleType::requestTypes() as $key => $REQUEST_TYPE) {
+                                                    if ($key == $car['requestTypes']) {
+                                                        echo $REQUEST_TYPE;
                                                     }
-                                                    ?>
-                                                </span>
-                                                <a href="view-rent-a-car.php?id=<?php echo $car['id']; ?>" class="btn btn__marker"><i class="icon-arrows"></i></a>
-                                            </div>
+                                                }
+                                                ?>
+                                            </span>
+                                            <span class="text-link">Fuel Type - 
+                                                <?php
+                                                foreach (VehicleType::fuelTypes() as $key => $FUEL_TYPE) {
+                                                    if ($key == $car['fuelType']) {
+                                                        echo $FUEL_TYPE;
+                                                    }
+                                                }
+                                                ?>
+                                            </span>
+                                            <a href="view-rent-a-car.php?id=<?php echo $car['id']; ?>" class="btn btn__marker"><i class="icon-arrows"></i></a>
                                         </div>
                                     </div>
+                                </div>
                                 <!--</div>-->
                                 <?php
                             }
@@ -209,13 +209,13 @@ $CITY = new City(NULL);
                         <h1>Car Hire</h1>
                         <span class="text-link">Search for the best deals on rental cars</span>
                         <div class="contact-info">
-                            <span class="phone_number"><i class="icon-telephone"></i> 1-800-123-4567</span>
-                            <span class="phone_number"><i class="icon-black-back-closed-envelope-shape"></i> test@t.com</span>
+                            <span class="phone_number"><i class="icon-telephone"></i> (+)94-77-758-9288 /<br>(+)94-78-770-1625</span>
+                            <span class="phone_number"><i class="icon-black-back-closed-envelope-shape"></i> hurryuptaxi@gmail.com</span>
                             <span class="location_info">
                                 <i class="icon-placeholder-for-map"></i>
-                                <em>The Company Name Inc.</em>
-                                <em>9870 St Vincent Place,</em>
-                                <em>Glasgow, DC 45 Fr 45.</em>
+                                <em>Hurry Up Taxi,</em>
+                                <em>Mahaedanda,</em>
+                                <em>Karandeniya.</em> 
                             </span>
                         </div>
                     </div>

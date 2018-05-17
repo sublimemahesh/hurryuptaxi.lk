@@ -5,6 +5,16 @@ $id = $_GET['id'];
 $RENT_A_CAR = new RentACar($id);
 $RENT_A_CAR_PHOTOS = RentACarPhoto::getRentACarPhotosByRentACar($RENT_A_CAR->id);
 $CITY = new City($RENT_A_CAR->city);
+
+$today = date("Y-m-d", time());
+date_default_timezone_set('Asia/Colombo');
+$now = date('Y-m-d H:i:s');
+
+if (isset($_GET['message'])) {
+    $message = $_GET['message'];
+} else {
+    $message = '';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,9 +34,14 @@ $CITY = new City($RENT_A_CAR->city);
         <link href="assets/css/plugins/intlTelInput.min.css" rel="stylesheet" >
         <link href="assets/css/plugins/bootstrap-datetimepicker.css" rel="stylesheet">
         <link href="assets/css/plugins/jquery-ui.css" rel="stylesheet">
+        <link href="assets/plugins/timepicki/css/timepicki.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/main-style.css" rel="stylesheet">
         <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/plugins/nivo-slider.css" rel="stylesheet">
+
+
 
         <!-- Icon Font-->
         <link href="iconfont/style.css" rel="stylesheet">
@@ -63,6 +78,25 @@ $CITY = new City($RENT_A_CAR->city);
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="container">
+                <?php
+                if ($message === 'success') {
+                    ?>
+                    <div class="alert alert-success  alert-dismissible fade in col-md-12">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Success!</strong> Booking was completed successfully. Please check your email.
+                    </div>
+                    <?php
+                } elseif ($message === 'error') {
+                    ?>
+                    <div class="alert alert-danger  alert-dismissible fade in col-md-12">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Error!</strong> There was an error. Please try again.
+                    </div>
+                    <?php
+                }
+                ?>
             </div>
             <!-- // Breadcrumbs  -->
             <div class="container">
@@ -163,93 +197,66 @@ $CITY = new City($RENT_A_CAR->city);
                             </div>
                         </div>
                         <!-- // order-details-form  -->
-                        <form action="#" class="order-details-form" name="contactform" method="post" novalidate>
+                        <form action="post-and-get/booking.php" class="order-details-form" name="bookingform" id="bookingform" method="post">
                             <div class="inner-form">
-                                <h3>Order Form</h3>
+                                <h3>Booking Form</h3>
                                 <div class="inner-form__elements">
                                     <div class="inner-half">
                                         <h5>New Reservation</h5>
                                         <div class="location">
-                                            <input type="text" name="location" placeholder="Your pickup location">
+                                            <input type="text" name="pick_up" id="pick_up" placeholder="Your pickup location">
                                             <i class="icon-placeholder-for-map"></i>
-                                        </div>
-                                        <div class="text-element stop-location">
-                                            <a href="#" class="add" id="add-stop"><i class="icon-plus-black-symbol"></i> <span>Click here to add a stop</span></a>
-                                            <a href="#" class="link-right">airports</a>
                                         </div>
                                         <div class="location-drop-off">
-                                            <input type="text" name="location-drop-off" placeholder="Enter drop-off location">
+                                            <input type="text" name="drop_off" id="drop_off" placeholder="Enter drop-off location">
                                             <i class="icon-placeholder-for-map"></i>
                                         </div>
-                                        <div class="text-element checkbox-div">
-                                            <div class="wishes">
-                                                <div class="box-checkbox">
-                                                    <input type="checkbox" name="takeback" id="checkbox-01" value="yes">
-                                                    <label for="checkbox-01">I would like the driver to wait and take me back</label>
-                                                </div>
-                                                <div class="box-checkbox">
-                                                    <input type="checkbox" name="takeback" id="checkbox-02" value="yes">
-                                                    <label for="checkbox-02">I would like to go by the hours</label>
-                                                </div>
-                                            </div>
-                                            <a href="#" class="link-right">airports</a>
-                                        </div>
-
                                         <div class="inner-half__width">
                                             <div class="input-date">
-                                                <input type="text" name="input-date" placeholder="Pick-up date">
+                                                <input type="text" name="pick_up_date" id="datepicker" class="pick_up_date" placeholder="Pick-up date">
                                                 <i class="icon-calendar-with-a-clock-time-tools"></i>
                                             </div>
                                             <div class="input-time">
-                                                <input type="text" name="input-time" placeholder="Pick-up time">
+                                                <input type="text" name="pick_up_time" id="timepicker1" class="pick_up_time" placeholder="Pick-up time">
                                                 <i class="icon-clock"></i>
                                             </div>
                                         </div>
                                         <div class="inner-half__width">
                                             <div class="input-date">
-                                                <input type="text" name="input-date" placeholder="Drop-off date">
+                                                <input type="text" name="drop_off_date" id="datepicker2" class="drop_off_date" placeholder="Drop-off date">
                                                 <i class="icon-calendar-with-a-clock-time-tools"></i>
                                             </div>
                                             <div class="input-time">
-                                                <input type="text" name="input-time" placeholder="Drop-off time">
+                                                <input type="text" name="drop_off_time" id="timepicker2" class="drop_off_time" placeholder="Drop-off time">
                                                 <i class="icon-clock"></i>
                                             </div>
                                         </div>
-
-                                        <div class="select-vehicle">
-                                            <select name="select-vehicle">
-                                                <option value="Vehicle class">Vehicle class</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                            </select>
-                                        </div>
-
                                         <div class="passengers-luggage">
                                             <div class="passengers">
                                                 <span>Passengers*</span>
-                                                <select name="passengers">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
+                                                <select name="no_of_passengers">
+                                                    <?php
+                                                    $passengers = $RENT_A_CAR->noOfPassengers;
+                                                    for ($i = 1; $i <= $passengers; $i++) {
+                                                        ?>
+                                                        <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                                        <?php
+                                                    }
+                                                    ?>
                                                 </select>
                                             </div>
                                             <div class="luggage">
-                                                <span>Luggage*</span>
-                                                <select name="luggage">
-                                                    <option value="0">0</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
+                                                <span>Baggage*</span>
+                                                <select name="no_of_baggage">
+                                                    <?php
+                                                    $baggage = $RENT_A_CAR->noOfBaggage;
+                                                    for ($i = 0; $i <= $baggage; $i++) {
+                                                        ?>
+                                                        <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                                        <?php
+                                                    }
+                                                    ?>
                                                 </select>
-                                            </div>
-                                            <div class="carseat">
-                                                <span></span>
-                                                <div class="box-checkbox">
-                                                    <input type="checkbox" name="carseat" id="checkbox-03" value="yes">
-                                                    <label for="checkbox-03">Car Seat</label>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -257,37 +264,29 @@ $CITY = new City($RENT_A_CAR->city);
                                         <h5>Passenger's Contact Info</h5>
                                         <div class="inner-half__width">
                                             <div class="first-name">
-                                                <input type="text" name="first-name" placeholder="First Name*">
+                                                <input type="text" name="first_name" id="first_name" placeholder="First Name*">
                                             </div>
                                             <div class="last-name">
-                                                <input type="text" name="last-name" placeholder="Last Name*">
+                                                <input type="text" name="second_name" id="second_name" placeholder="Last Name*">
                                             </div>
                                         </div>
 
                                         <div class="inner-half__width">
                                             <div class="your-phone">
-                                                <input type="tel" id="phone" placeholder="Your phone">
+                                                <input type="tel" name="contact_number" id="contact_number"   placeholder="Your phone">
                                             </div>
                                             <div class="email">
-                                                <input type="text" name="email" placeholder="E-mail">
+                                                <input type="text" name="email" id="email" placeholder="E-mail">
                                             </div>
                                         </div>
                                         <div class="specialreguests">
-                                            <textarea name="specialreguests" placeholder="Special Requests"></textarea>
-                                            <span class="textarea-text">(Maximum characters: 250. You have 250 characters left)</span>
-                                        </div>
-                                        <div class="payment">
-                                            <span>Payment</span>
-                                            <select name="your-phone">
-                                                <option value="Pay with Cash">Pay with Cash</option>
-                                                <option value="PayPal">PayPal</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                            </select>
+                                            <textarea name="message" placeholder="Message"></textarea>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn">CONTINUE</button>
+                                <input type="hidden" id="rent_a_car" value="<?php echo $id; ?>" name="rent_a_car"/>
+                                <input type="hidden" id="date_time_booked" value="<?php echo $now; ?>" name="date_time_booked"/>
+                                <button type="submit" class="btn" name="book" id="book">Book Now</button>
                             </div>
                         </form>
                         <!-- // order-details-form  -->
@@ -316,6 +315,34 @@ $CITY = new City($RENT_A_CAR->city);
         <script src="assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
         <script src="assets/js/plugins/jquery-ui.min.js"></script>
         <script src="assets/js/custom.js"></script>
+        <script src="assets/js/booking-validate.js" type="text/javascript"></script>
+        <script src="assets/plugins/sweetalert/sweetalert.min.js" type="text/javascript"></script>
+        <script src="assets/js/plugins/jquery.nivo.slider.js"></script>
+        <script src="assets/plugins/timepicki/js/timepicki.js" type="text/javascript"></script>
+        <script>
+
+            $(function () {
+                $("#datepicker").datepicker({
+                    dateFormat: 'yy-mm-dd'
+                }).val();
+            });
+            $(function () {
+                $("#datepicker2").datepicker({
+                    dateFormat: 'yy-mm-dd'
+                }).val();
+            });
+            $(function () {
+                $('#timepicker1').timepicki();
+            });
+            $(function () {
+                $('#timepicker2').timepicki();
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $(".timepicker_wrap ").hide();
+            });
+        </script>
 
     </body>
 </html>

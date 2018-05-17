@@ -199,8 +199,8 @@
                         <i class="icon-placeholder-for-map"></i>
                     </div>
                     <div class="tt-description">
-                        9870 St Vincent Place,<br>
-                        Glasgow, DC 45 Fr 45.
+                        Hurry Up Taxi,<br>Mahaedanda,<br>
+                         Karandeniya.
                     </div>
                 </div>
                 <div class="tt-item">
@@ -208,8 +208,8 @@
                         <i class="icon-telephone"></i>
                     </div>
                     <div class="tt-description">
-                        <a href="tel:1-800-123-4567">1-800-123-4567</a><br>
-                        Our Specialists 24/7
+                        (+)94-77-758-9288<br>
+                         (+)94-78-770-1625
                     </div>
                 </div>
                 <div class="tt-item">
