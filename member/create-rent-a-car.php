@@ -297,54 +297,54 @@ $USER = new User($_SESSION["id"]);
                                             </div>
                                         </div>
                                     </div>
-                                    <!--Price Self Drive-->
+                                    <!--Self Drive Price-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="price_self_drive">Price Self Drive</label>
+                                            <label for="price_self_drive">Self Drive Price</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="price_self_drive" class="form-control" placeholder="Enter Price Self Drive" autocomplete="off" name="price_self_drive" required="TRUE">
+                                                    <input type="text" id="price_self_drive" class="form-control" placeholder="Enter Self Drive Price" autocomplete="off" name="price_self_drive" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!--Price Tours-->
+                                    <!--Tours / Chauffeur Driven Price-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="price_tours">Price Tours</label>
+                                            <label for="price_tours">Tours / Chauffeur Driven Price</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="price_tours" class="form-control" placeholder="Enter Price Tours" autocomplete="off" name="price_tours" required="TRUE">
+                                                    <input type="text" id="price_tours" class="form-control" placeholder="Enter Tours / Chauffeur Driven Price" autocomplete="off" name="price_tours" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!--Price Wedding-->
+                                    <!--Airport / City Transfers Price-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="price_wedding">Price Wedding</label>
+                                            <label for="price_airport">Airport / City Transfers Price</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="price_wedding" class="form-control" placeholder="Enter Price Wedding" autocomplete="off" name="price_wedding" required="TRUE">
+                                                    <input type="text" id="price_airport" class="form-control" placeholder="Enter Airport / City Transfers Price" autocomplete="off" name="price_airport" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!--Price Airport-->
+                                    <!--Weddings & Events Price-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="price_airport">Price Airport</label>
+                                            <label for="price_wedding">Weddings & Events Price</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="price_airport" class="form-control" placeholder="Enter Price Airport" autocomplete="off" name="price_airport" required="TRUE">
+                                                    <input type="text" id="price_wedding" class="form-control" placeholder="Enter Weddings & Events Price" autocomplete="off" name="price_wedding" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -362,7 +362,7 @@ $USER = new User($_SESSION["id"]);
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!--Save-->
                                     <div class="row clearfix">
                                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5"> 
