@@ -14,7 +14,7 @@ $MEMBER = new User($id);
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Edit User || Admin || hurryuptaxi.lk</title>
+        <title>Edit User || Admin || www.hurryuptaxi.lk</title>
 
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -189,8 +189,8 @@ $MEMBER = new User($id);
                                                 <select class="form-control" autocomplete="off" type="text" id="dealer" autocomplete="off" name="dealer">
                                                     <option value=""> -- Please Select -- </option>
                                                     <?php
-                                                    foreach (Dealer::all() as $key => $dealer) {
-                                                        if ($dealer['id'] == $MEMBER->dealer) {
+                                                    foreach (User::allDealers() as $key => $dealer) {
+                                                        if ($dealer['id'] == $MEMBER->parent) {
                                                             ?>
                                                             <option value="<?php echo $dealer['id']; ?>" selected>
                                                                 <?php echo $dealer['name']; ?>

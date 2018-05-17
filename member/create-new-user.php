@@ -91,11 +91,11 @@ $createdAt = date('Y-m-d H:i:s');
                                         <div class="form-line">
                                             <select class="form-control" autocomplete="off" type="text" id="district" autocomplete="off" name="district" required="TRUE">
                                                 <option value=""> -- Select District -- </option>
-                                                <?php foreach (District::all() as $key => $city) {
-                                                    ?>
-                                                    <option ind_id="<?php echo $city['id']; ?>" value="<?php echo $city['id']; ?>"><?php echo $city['name']; ?></option><?php
-                                                }
-                                                ?>
+                                                <?php foreach (District::all() as $key => $city) { ?> 
+                                                    <option ind_id="<?php echo $city['id']; ?>" value="<?php echo $city['id']; ?>">
+                                                        <?php echo $city['name']; ?>
+                                                    </option>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@ $createdAt = date('Y-m-d H:i:s');
                                         <div class="form-line">
                                             <select class="form-control" autocomplete="off" type="text" id="dealer" autocomplete="off" name="dealer">
                                                 <option value=""> -- Select Dealer -- </option>
-                                                <?php foreach (Dealer::all() as $key => $dealer) {
+                                                <?php foreach (User::allDealers() as $key => $dealer) {
                                                     ?>
                                                     <option value="<?php echo $dealer['id']; ?>">
                                                         <?php echo $dealer['name']; ?>
@@ -308,8 +308,7 @@ $createdAt = date('Y-m-d H:i:s');
                             </div>
                             <!--save-->
                             <div class="row clearfix">
-                                <div class="col-md-12 text-center"> 
-
+                                <div class="col-md-12 text-center">
                                     <input type="submit" name="create" class="btn btn-primary m-t-15 waves-effect center-block" value="Register Member"/>
                                 </div>
                             </div>
