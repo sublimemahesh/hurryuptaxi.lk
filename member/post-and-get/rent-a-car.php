@@ -30,7 +30,10 @@ if (isset($_POST['add-rent-a-car'])) {
     $RENT_A_CAR->price_tours = $_POST['price_tours'];
     $RENT_A_CAR->price_wedding = $_POST['price_wedding'];
     $RENT_A_CAR->price_airport = $_POST['price_airport'];
-    $RENT_A_CAR->price_per_excited_milage = $_POST['price_per_excited_milage'];
+    $RENT_A_CAR->excited_milage_self_drive = $_POST['excited_milage_self_drive'];
+    $RENT_A_CAR->excited_milage_tour = $_POST['excited_milage_tour'];
+    $RENT_A_CAR->excited_milage_wedding = $_POST['excited_milage_wedding'];
+    $RENT_A_CAR->excited_milage_airport = $_POST['excited_milage_airport'];
 
     $VALID->check($RENT_A_CAR, [
         'name' => ['required' => TRUE],
@@ -96,7 +99,10 @@ if (isset($_POST['edit-rent-a-car'])) {
     $RENT_A_CAR->price_tours = $_POST['price_tours'];
     $RENT_A_CAR->price_wedding = $_POST['price_wedding'];
     $RENT_A_CAR->price_airport = $_POST['price_airport'];
-    $RENT_A_CAR->price_per_excited_milage = $_POST['price_per_excited_milage'];
+    $RENT_A_CAR->excited_milage_self_drive = $_POST['excited_milage_self_drive'];
+    $RENT_A_CAR->excited_milage_tour = $_POST['excited_milage_tour'];
+    $RENT_A_CAR->excited_milage_wedding = $_POST['excited_milage_wedding'];
+    $RENT_A_CAR->excited_milage_airport = $_POST['excited_milage_airport'];
 
     $VALID = new Validator();
     $VALID->check($RENT_A_CAR, [
