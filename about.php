@@ -147,6 +147,7 @@
         include './footer.php';
         ?>
         <!-- //Footer -->
+		
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
         <script src="assets/js/jquery.1.12.4.min.js"></script>
         <script src="assets/js/plugins/bootstrap.min.js"></script>
