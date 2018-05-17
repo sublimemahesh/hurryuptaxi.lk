@@ -26,14 +26,14 @@
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="contact-info">
-                        <span class="phone_number"><i class="icon-telephone"></i> 1-800-123-4567</span>
-                        <span class="phone_number"><i class="icon-black-back-closed-envelope-shape"></i> test@test.com</span>
+                        <span class="phone_number"><i class="icon-telephone"></i> (+)94-77-758-9288 / (+)94-78-770-1625</span>
+                        <span class="phone_number"><i class="icon-black-back-closed-envelope-shape"></i> hurryuptaxi@gmail.com</span>
                         <span class="location_info">
                             <i class="icon-placeholder-for-map"></i>
                             <span>
-                                <em>The Company Name Inc.</em>
-                                <em>9870 St Vincent Place,</em>
-                                <em>Glasgow, DC 45 Fr 45.</em> 
+                                <em>Hurry Up Taxi,</em>
+                                <em>Mahaedanda,</em>
+                                <em>Karandeniya.</em> 
                             </span>
                         </span>
 
