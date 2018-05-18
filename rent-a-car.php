@@ -29,6 +29,7 @@ if (isset($_GET['requesttype'])) {
 }
 
 $RENT_A_CARS = $SEARCH->GetVehiclesByKeywords($city, $vehicletype, $requesttype, $pageLimit, $setLimit);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

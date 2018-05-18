@@ -46,6 +46,134 @@ $CITY = new City(NULL);
         ?>
         <!-- //Loader -->
         <!-- Header -->
+        <div id="tt-mobile-top-box">
+            <div class="tt-container-toggle">
+                <div class="tt-search-toggle tt-toggle-tab">
+                    <form id="book-form" class="tt-search-toggle inside" name="form" action="rent-a-car.php" method="get">
+                        <div class="book-form__block-select">
+                            <div class="tt-row">
+                                <div class="tt-col">
+                                    <select class="tt-select-small tt-form-control" id="selectPrevTime" name="city">
+                                        <option value="">Location</option>
+                                        <?php
+                                        $cities = $CITY->all();
+                                        foreach ($cities as $city) {
+                                            ?>
+                                            <option value="<?php echo $city['id']; ?>"><?php echo $city['name']; ?></option>
+                                            <?php
+                                        }
+                                        ?>
+
+                                    </select>
+                                    <select class="tt-select-small tt-form-control" id="selectPrevTime" name="vehicletype">
+                                        <option value="">Vehicle Type</option>
+                                        <?php foreach (VehicleType::mainTypes() as $key => $VEHICLE_TYPE) {
+                                            ?>
+                                            <option value="<?php echo $key; ?>"> 
+                                                <?php echo $VEHICLE_TYPE; ?>
+                                            </option>
+
+                                            <?php
+                                        }
+                                        ?>
+                                    </select>
+                                    <select class="tt-select-small tt-form-control" id="selectPrevTime" name="requesttype">
+                                        <option value="">Request Type</option>
+                                        <?php foreach (VehicleType::requestTypes() as $key => $REQUEST_TYPE) {
+                                            ?>
+                                            <option value="<?php echo $key; ?>"> 
+                                                <?php echo $REQUEST_TYPE; ?>
+                                            </option>
+
+                                            <?php
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-form__btn tt-row">
+                            <input type="submit" class="btn" id="search" value="SEARCH">
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="tt-call-toggle tt-toggle-tab">
+                    <div class="inside">
+                        <ul>
+                            <li>
+                                <a href="skype:rentalcars?chat">
+                                    <i class="tt-icon icon-skype-logo"></i>
+                                    rentalcars
+                                </a>
+                            </li>
+                            <li>
+                                <a href="skype:+1-800-123-4567?call">
+                                    <i class="tt-icon icon-whatsapp"></i>
+                                    +1-800-123-4567
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="tt-icon icon-telegram"></i>
+                                    #rentalcars
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@mailinfo.com">
+                                    <i class="tt-icon icon-black-back-closed-envelope-shape"></i>
+                                    info@mailinfo.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tt-map-toggle tt-toggle-tab">
+                    <div id="contacts-map-main"></div>
+                </div>
+                <div class="tt-phrase-toggle tt-toggle-tab">
+                    <div class="inside">
+                        <form action="#" class="form-inline">
+                            <div class="tt-col col">
+                                <input type="text" placeholder="Search">
+                            </div>
+                            <div class="tt-col col-auto">
+                                <button class="btn btn-primary" type="submit">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <ul class="tt-list-btn">
+                <li><a href="#" data-target="tt-search-toggle" class="tt-btn-toggle">
+                        <i class="icon-car2"></i>
+                        <span class="tt-text">Search Auto</span>
+                    </a></li>
+                <li><a href="#" data-target="tt-call-toggle" class="tt-btn-toggle">
+                        <i class="icon-telephone"></i>
+                        <span class="tt-text">Call</span>
+                    </a></li>
+                <li><a href="#" data-target="tt-map-toggle" class="tt-btn-toggle">
+                        <i class="icon-placeholder-for-map"></i>
+                        <span class="tt-text">Find us</span>
+                    </a></li>
+                <li><a href="#" data-target="tt-phrase-toggle" class="tt-btn-toggle tt-btn-always">
+                        <i class="icon-magnifying-glass"></i>
+                    </a></li>
+                <li><a href="#" data-toggle="dropdown" aria-expanded="false">
+                        <span class="tt-text">EN</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="drodown-item"><a href="#">German</a></li>
+                        <li class="drodown-item"><a href="#">France</a></li>
+                        <li class="drodown-item"><a href="#">Italian</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
         <?php
         include './header.php';
         ?>
@@ -108,8 +236,10 @@ $CITY = new City(NULL);
                             <input type="submit" class="btn" id="search" value="SEARCH">
                         </div>
                     </form>
+
                 </div>
             </div>
+
             <!-- // Search -->
             <!-- Welcome -->
             <div class="parallax_box">
