@@ -209,7 +209,7 @@ $CITY = new City(NULL);
                         <h1>Car Hire</h1>
                         <span class="text-link">Search for the best deals on rental cars</span>
                         <div class="contact-info">
-                            <span class="phone_number"><i class="icon-telephone"></i> (+)94-77-758-9288 /<br>(+)94-78-770-1625</span>
+                            <span class="phone_number"><i class="icon-telephone"></i> (+)94-77-758-9288 / <br>(+)94-78-770-1625</span>
                             <span class="phone_number"><i class="icon-black-back-closed-envelope-shape"></i> hurryuptaxi@gmail.com</span>
                             <span class="location_info">
                                 <i class="icon-placeholder-for-map"></i>

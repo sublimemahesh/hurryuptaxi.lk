@@ -75,7 +75,7 @@ class Booking {
         $db = new Database();
 
         $result = $db->readQuery($query);
-
+        
         if ($result) {
             $last_id = mysql_insert_id();
 
