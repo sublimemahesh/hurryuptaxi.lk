@@ -2,13 +2,13 @@
 
 //----------------------Company Information---------------------
 
-$comany_name = "Cycling Tours, Galle";
-$website_name = "www.srilankacyclingtour.com";
-$comConNumber = "(+94) 77 365 4141, (+94) 91 312 7744";
-$comEmail = "info@srilankacyclingtour.com";
+$comany_name = "Hurry Up Taxi, Mahaedanda, Karandeniya, Galle";
+$website_name = "www.hurryuptaxi.lk";
+$comConNumber = "(+94) 77 758 9288, (+94) 78 770 1625";
+$comEmail = "hurryuptaxi@gmail.com";
 
-$from = 'info@srilankacyclingtour.com';
-$replay = 'info@srilankacyclingtour.com';
+$from = 'hurryuptaxi@gmail.com';
+$replay = 'hurryuptaxi@gmail.com';
 
 //----------------------CAPTCHACODE---------------------
 session_start();
