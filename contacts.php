@@ -44,7 +44,7 @@
                             <div class="breadcrumbs__items">
                                 <div class="breadcrumbs__wrap">
                                     <div class="breadcrumbs__item">
-                                        <a href="index.html" class="breadcrumbs__item-link">Home</a> <span>/</span> <a href="contacts.html" class="breadcrumbs__item-link">Contacts</a>
+                                        <a href="index.html" class="breadcrumbs__item-link">Home</a> <span>/</span> <a class="breadcrumbs__item-link">Contacts</a>
                                     </div>
                                 </div>
                             </div>
