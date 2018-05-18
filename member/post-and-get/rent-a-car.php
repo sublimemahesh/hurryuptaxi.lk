@@ -121,6 +121,8 @@ if (isset($_POST['edit-rent-a-car'])) {
         'noOfBaggage' => ['required' => TRUE],
         'noOfDoors' => ['required' => TRUE],
         'airConditioned' => ['required' => TRUE],
+
+        
     ]);
 
     if ($VALID->passed()) {
