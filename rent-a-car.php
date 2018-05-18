@@ -104,15 +104,25 @@ $RENT_A_CARS = RentACar::all();
                                                 </li>
                                                 <li>
                                                     <i class = "tt-icon icon-logo"></i>
-                                                    Request Type: <span>
-                                                        <?php
-                                                        foreach (VehicleType::requestTypes() as $key => $REQUEST_TYPE) {
-                                                            if ($key == $car['requestTypes']) {
-                                                                echo $REQUEST_TYPE;
-                                                            }
+                                                    Request Type: 
+                                                    <?php
+                                                    foreach (VehicleType::requestTypes() as $key => $REQUEST_TYPE) {
+                                                        if ($key == $car['requestTypes']) {
+                                                            ?>
+                                                            <span title="<?php echo $REQUEST_TYPE; ?>">
+                                                                <?php
+                                                                if (strlen($REQUEST_TYPE) > 21) {
+                                                                    echo substr($REQUEST_TYPE, 0, 20) . '...';
+                                                                } else {
+                                                                    echo $REQUEST_TYPE;
+                                                                }
+                                                                ?>
+                                                            </span>
+                                                            <?php
                                                         }
-                                                        ?>
-                                                    </span>
+                                                    }
+                                                    ?>
+
                                                 </li>
                                                 <li>
                                                     <i class = "tt-icon icon-manual_g"></i>
@@ -128,19 +138,19 @@ $RENT_A_CARS = RentACar::all();
                                                 </li>
                                                 <li class="icon-list">
                                                     <ul class="inline">
-                                                        <li>
+                                                        <li title="Passengers">
                                                             <i class = "tt-icon icon-group"></i>
                                                             <span><?php echo $car['noOfPassengers']; ?></span>
                                                         </li>
-                                                        <li>
+                                                        <li title="Baggages">
                                                             <i class = "tt-icon icon-luggage"></i>
                                                             <span><?php echo $car['noOfBaggage']; ?></span>
                                                         </li>
-                                                        <li>
+                                                        <li title="Doors">
                                                             <i class = "tt-icon icon-car-door"></i>
                                                             <span><?php echo $car['noOfDoors']; ?></span>
                                                         </li>
-                                                        <li>
+                                                        <li title="Air Conditioned">
                                                             <i class = "tt-icon icon-snowflake"></i>
                                                             <span>
                                                                 <?php
