@@ -23,5 +23,28 @@ and open the template in the editor.
     .footer_logo {
         margin-top: 0px;
     }
+    #search {
+        margin-top: 20px;
+    }
+}
+@media (max-width: 991px) {
+    #search {
+        margin-top: 20px;
+    }
+}
+@media (max-width: 420px) {
+    #search {
+        margin-left: 28%;
+    }
+}
+@media (min-width: 420px) and (max-width: 540px) {
+    #search {
+        margin-left: 32%;
+    }
+}
+@media (min-width: 540px) and (max-width: 991px) {
+    #search {
+        margin-left: 36%;
+    }
 }
 
