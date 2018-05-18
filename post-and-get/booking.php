@@ -26,10 +26,6 @@ $BOOKING->message = $_POST['message'];
 
 $RESULT = $BOOKING->create();
 
-if (!isset($_SESSION)) {
-    session_start();
-}
-
 if ($RESULT) {
 
     $visitor_f_name = $RESULT->first_name;

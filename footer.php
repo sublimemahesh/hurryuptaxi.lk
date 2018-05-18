@@ -4,7 +4,11 @@
         <div class="container">
             <div class="row">
                 <div class="logo-center col-xs-12 col-sm-12 col-md-12 col-lg-3">
-                    <figure class="footer_logo"><a href="#"><span><em>Celebrating</em>25<strong>YEARS</strong></span><i class="icon-111"></i></a></figure>
+                    <figure class="footer_logo">
+                        <a href="#">
+                            <img src="images/logo/logo-w.png" alt=""/>
+                        </a>
+                    </figure>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <h5>Quick Links</h5>
