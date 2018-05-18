@@ -4436,7 +4436,7 @@ header.site-header {
     @media (max-width: 767px) {
       .site-footer .box-elements .row > div h5, .site-footer .box-elements .row > div .contact-info {
         position: relative; }
-        .site-footer .box-elements .row > div h5:after, .site-footer .box-elements .row > div .contact-info:after {
+        .site-footer .box-elements .row > div h5:after {
           content: '\e911';
           font-family: 'iconfont';
           font-size: 12px;
