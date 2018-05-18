@@ -18,6 +18,7 @@ include_once(dirname(__FILE__) . '/RentACar.php');
 include_once(dirname(__FILE__) . '/RentACarPhoto.php');
 include_once(dirname(__FILE__) . '/Commission.php');
 include_once(dirname(__FILE__) . '/Booking.php');
+include_once(dirname(__FILE__) . '/Search.php');
 
 function dd($data) {
     var_dump($data);

@@ -61,11 +61,11 @@ $CITY = new City(NULL);
             <!-- Search -->
             <div class="book-form-box">
                 <div class="container">
-                    <form id="book-form" class="book-form" action="#">
+                    <form id="book-form" class="book-form" name="form" action="rent-a-car.php" method="get">
                         <div class="book-form__block-select">
                             <div class="tt-col">
                                 <div class="tt-row">
-                                    <select class="tt-select-small tt-form-control" id="selectPrevTime">
+                                    <select class="tt-select-small tt-form-control" id="selectPrevTime" name="city">
                                         <option value="">Location</option>
                                         <?php
                                         $cities = $CITY->all();
@@ -77,8 +77,8 @@ $CITY = new City(NULL);
                                         ?>
 
                                     </select>
-                                    <select class="tt-select-small tt-form-control" id="selectPrevTime">
-                                        <option value="0">Vehicle Type</option>
+                                    <select class="tt-select-small tt-form-control" id="selectPrevTime" name="vehicletype">
+                                        <option value="">Vehicle Type</option>
                                         <?php foreach (VehicleType::mainTypes() as $key => $VEHICLE_TYPE) {
                                             ?>
                                             <option value="<?php echo $key; ?>"> 
@@ -89,8 +89,8 @@ $CITY = new City(NULL);
                                         }
                                         ?>
                                     </select>
-                                    <select class="tt-select-small tt-form-control" id="selectPrevTime">
-                                        <option value="0">Request Type</option>
+                                    <select class="tt-select-small tt-form-control" id="selectPrevTime" name="requesttype">
+                                        <option value="">Request Type</option>
                                         <?php foreach (VehicleType::requestTypes() as $key => $REQUEST_TYPE) {
                                             ?>
                                             <option value="<?php echo $key; ?>"> 
@@ -105,7 +105,7 @@ $CITY = new City(NULL);
                             </div>
                         </div>
                         <div class="book-form__btn">
-                            <input type="submit" class="btn" id="setDateBtn" data-remodal-target="modal" value="SEARCH">
+                            <input type="submit" class="btn" id="search" value="SEARCH">
                         </div>
                     </form>
                 </div>
@@ -311,9 +311,7 @@ $CITY = new City(NULL);
         <?php
         include './footer.php';
         ?>
-        <?php
-        include './add-order.php';
-        ?>
+
 
 
         <!-- //Footer -->
@@ -327,7 +325,6 @@ $CITY = new City(NULL);
         <script src="assets/js/plugins/jquery.nivo.slider.js"></script>
         <script src="assets/js/plugins/swiper.min.js"></script>
         <script src="assets/js/plugins/intlTelInput.min.js"></script>
-        <script src="assets/js/plugins/remodal.js"></script>
         <script src="assets/js/plugins/stickup.min.js"></script>
         <script src="assets/js/plugins/tool.js"></script>
         <script src="assets/js/plugins/jquery.form.js"></script>

@@ -1,6 +1,34 @@
 <?php
 include_once(dirname(__FILE__) . '/class/include.php');
-$RENT_A_CARS = RentACar::all();
+//$RENT_A_CARS = RentACar::all();
+
+$SEARCH = new Search(NULL);
+$city = NULL;
+$vehicletype = NULL;
+$requesttype = NULL;
+
+
+/* set page numbers */
+if (isset($_GET["page"])) {
+    $page = (int) $_GET["page"];
+} else {
+    $page = 1;
+}
+$setLimit = 12;
+$pageLimit = ($page * $setLimit) - $setLimit;
+
+/* search */
+if (isset($_GET['city'])) {
+    $city = $_GET['city'];
+}
+if (isset($_GET['vehicletype'])) {
+    $vehicletype = $_GET['vehicletype'];
+}
+if (isset($_GET['requesttype'])) {
+    $requesttype = $_GET['requesttype'];
+}
+
+$RENT_A_CARS = $SEARCH->GetVehiclesByKeywords($city, $vehicletype, $requesttype, $pageLimit, $setLimit);
 ?>
 <!DOCTYPE html>
 <html lang="en">
