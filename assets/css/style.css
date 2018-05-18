@@ -236,3 +236,6 @@ ul .inline li {
         padding-left: 40px;
     position: relative;
 }
+.details-car.car-rates {
+    margin-bottom: 0px;
+}

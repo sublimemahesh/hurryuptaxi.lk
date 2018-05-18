@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="logo-center col-xs-12 col-sm-12 col-md-12 col-lg-3">
                     <figure class="footer_logo">
-                        <a href="#">
+                        <a href="./">
                             <img src="images/logo/logo-w.png" alt=""/>
                         </a>
                     </figure>

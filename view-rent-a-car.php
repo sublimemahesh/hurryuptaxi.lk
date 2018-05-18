@@ -67,11 +67,11 @@ if (isset($_GET['message'])) {
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
-                            <div class="breadcrumbs__title">Rent A Cars</div>
+                            <div class="breadcrumbs__title"><?php echo $RENT_A_CAR->name; ?></div>
                             <div class="breadcrumbs__items">
                                 <div class="breadcrumbs__wrap">
                                     <div class="breadcrumbs__item">
-                                        <a href="./" class="breadcrumbs__item-link">Home</a> <span>/</span> <a href="rent-a-car.php" class="breadcrumbs__item-link">Rent A Cars</a> <span>/</span> <a href="view-rent-a-car.php?id=<?php echo $id; ?>" class="breadcrumbs__item-link"><?php echo $RENT_A_CAR->name; ?></a>
+                                        <a href="./" class="breadcrumbs__item-link">Home</a> <span>/</span> <a href="rent-a-car.php" class="breadcrumbs__item-link">Rent A Cars</a> <span>/</span> <a class="breadcrumbs__item-link"><?php echo $RENT_A_CAR->name; ?></a>
                                     </div>
                                 </div>
                             </div>
@@ -106,16 +106,13 @@ if (isset($_GET['message'])) {
 
                             <div class="model-details-box__inner">
                                 <div class="model-details-box__info">
-                                    <h3><?php echo $RENT_A_CAR->name; ?></h3>
-                                    <h6>VEHICLE FEATURES</h6>
                                     <table class="details-car">
                                         <tr>
-                                            <th><?php echo $RENT_A_CAR->name; ?></th>
-                                            <th class="col-width"></th>
+                                            <th colspan="2">VEHICLE FEATURES</th>
                                         </tr>
                                         <tr>
                                             <td>Vehicle Type:</td>
-                                            <td>
+                                            <td class="col-width">
                                                 <?php
                                                 foreach (VehicleType::mainTypes() as $key => $VEHICLE_TYPE) {
                                                     if ($key == $RENT_A_CAR->mainTypes) {
@@ -179,7 +176,32 @@ if (isset($_GET['message'])) {
                                             </td>
                                         </tr>
                                     </table>
-                                    <a href="#" class="btn">CHECK RATES</a>
+
+                                    <table class="details-car car-rates">
+                                        <tr>
+                                            <th colspan="2">VEHICLE RATES (per day)</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Self Drive</td>
+                                            <td class="col-width"><?php echo 'LKR ' . number_format($RENT_A_CAR->price_self_drive, 2) . '/='; ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tours/ Chauffeur Driven</td>
+                                            <td><?php echo 'LKR ' . number_format($RENT_A_CAR->price_tours, 2) . '/='; ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Weddings & Events</td>
+                                            <td><?php echo 'LKR ' . number_format($RENT_A_CAR->price_wedding, 2) . '/='; ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Airport/ City Transfers</td>
+                                            <td><?php echo 'LKR ' . number_format($RENT_A_CAR->price_airport, 2) . '/='; ?>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </div>
                                 <div class="model-slider-wrapper">
                                     <ul id="lightSlider" class="model-slider">

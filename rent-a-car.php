@@ -54,7 +54,7 @@ $RENT_A_CARS = RentACar::all();
                             <div class="breadcrumbs__items">
                                 <div class="breadcrumbs__wrap">
                                     <div class="breadcrumbs__item">
-                                        <a href="./" class="breadcrumbs__item-link">Home</a> <span>/</span> <a href="fleet.html" class="breadcrumbs__item-link">Rent A Cars</a>
+                                        <a href="./" class="breadcrumbs__item-link">Home</a> <span>/</span> <a class="breadcrumbs__item-link">Rent A Cars</a>
                                     </div>
                                 </div>
                             </div>
