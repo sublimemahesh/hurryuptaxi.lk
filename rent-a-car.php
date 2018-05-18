@@ -206,6 +206,10 @@ $RENT_A_CARS = $SEARCH->GetVehiclesByKeywords($city, $vehicletype, $requesttype,
 
                         </div>
                     </div> <!-- //row -->
+
+                    <div class="row col-md-offset-4">
+                        <?php Search::showPagination($city, $vehicletype, $requesttype, $setLimit, $page); ?>
+                    </div
                 </div> <!-- //Container -->
             </section>
 
