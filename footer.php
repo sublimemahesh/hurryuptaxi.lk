@@ -29,7 +29,8 @@
                     </ul>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="contact-info">
+                    <h5>Contacts</h5>
+                    <div class="footer-list contact-info">
                         <span class="phone_number"><i class="icon-telephone"></i> (+)94-77-758-9288 / (+)94-78-770-1625</span>
                         <span class="phone_number"><i class="icon-black-back-closed-envelope-shape"></i> hurryuptaxi@gmail.com</span>
                         <span class="location_info">

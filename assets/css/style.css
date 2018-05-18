@@ -223,3 +223,16 @@ ul .inline li {
 .footer_logo {
     margin-top: 38px;
 }
+.site-footer .box-elements {
+    padding: 25px 0 0 0;
+}
+.site-footer__bottom-panel {
+    padding: 25px 0 25px;
+}
+.footer-list.contact-info span.phone_number {
+    display: block;
+    font-size: 18px;
+    padding: 0 0 12px 40px;
+        padding-left: 40px;
+    position: relative;
+}

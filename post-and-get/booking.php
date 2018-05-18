@@ -1,9 +1,8 @@
 <?php
-
 include_once(dirname(__FILE__) . '/../class/include.php');
 
-
 $RENT_A_CAR = new RentACar($_POST['rent_a_car']);
+
 
 $BOOKING = new Booking(NULL);
 
@@ -22,8 +21,7 @@ $BOOKING->drop_off_time = $_POST['drop_off_time'];
 $BOOKING->no_of_passengers = $_POST['no_of_passengers'];
 $BOOKING->no_of_baggage = $_POST['no_of_baggage'];
 $BOOKING->message = $_POST['message'];
-
-
+ 
 $RESULT = $BOOKING->create();
 
 if ($RESULT) {
@@ -347,7 +345,4 @@ if ($RESULT) {
     } else {
         header('Location: ' . $_SERVER['HTTP_REFERER'] . '&message=error');
     }
-}
-
-
-
+} 
