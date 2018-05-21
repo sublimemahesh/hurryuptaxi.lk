@@ -2,7 +2,14 @@
 include_once(dirname(__FILE__) . '/../class/include.php');
 
 $RENT_A_CAR = new RentACar($_POST['rent_a_car']);
+$user = $RENT_A_CAR->user;
 
+$ADMIN = new User(1);
+//$admin_email = $ADMIN->email;
+$admin_email = 'kavininisansala96@gmail.com';
+
+$VEHICLE_OWNER = new User($user);
+$vehicle_owner_email = $VEHICLE_OWNER->email;
 
 $BOOKING = new Booking(NULL);
 
@@ -340,7 +347,7 @@ if ($RESULT) {
 </html>';
 
     if (mail($visitor_email, $subject, $html, $headers) &&
-            mail($comEmail, $subject, $html, $headers)) {
+            mail($admin_email, $subject, $html, $headers) && mail($vehicle_owner_email, $subject, $html, $headers)) {
         header('Location: ' . $_SERVER['HTTP_REFERER'] . '&message=success');
     } else {
         header('Location: ' . $_SERVER['HTTP_REFERER'] . '&message=error');
