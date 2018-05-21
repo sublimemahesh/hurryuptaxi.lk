@@ -99,78 +99,26 @@ $CITY = new City(NULL);
 
                     </form>
                 </div>
-                <div class="tt-call-toggle tt-toggle-tab">
-                    <div class="inside">
-                        <ul>
-                            <li>
-                                <a href="skype:rentalcars?chat">
-                                    <i class="tt-icon icon-skype-logo"></i>
-                                    rentalcars
-                                </a>
-                            </li>
-                            <li>
-                                <a href="skype:+1-800-123-4567?call">
-                                    <i class="tt-icon icon-whatsapp"></i>
-                                    +1-800-123-4567
-                                </a>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="tt-icon icon-telegram"></i>
-                                    #rentalcars
-                                </a>
-                            </li>
-                            <li>
-                                <a href="mailto:info@mailinfo.com">
-                                    <i class="tt-icon icon-black-back-closed-envelope-shape"></i>
-                                    info@mailinfo.com
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="tt-map-toggle tt-toggle-tab">
-                    <div id="contacts-map-main"></div>
-                </div>
-                <div class="tt-phrase-toggle tt-toggle-tab">
-                    <div class="inside">
-                        <form action="#" class="form-inline">
-                            <div class="tt-col col">
-                                <input type="text" placeholder="Search">
-                            </div>
-                            <div class="tt-col col-auto">
-                                <button class="btn btn-primary" type="submit">Search</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
             </div>
             <ul class="tt-list-btn">
-                <li><a href="#" data-target="tt-search-toggle" class="tt-btn-toggle">
+                <li>
+                    <a href="#" data-target="tt-search-toggle" class="tt-btn-toggle">
                         <i class="icon-car2"></i>
                         <span class="tt-text">Search Auto</span>
-                    </a></li>
-                <li><a href="#" data-target="tt-call-toggle" class="tt-btn-toggle">
-                        <i class="icon-telephone"></i>
-                        <span class="tt-text">Call</span>
-                    </a></li>
-                <li><a href="#" data-target="tt-map-toggle" class="tt-btn-toggle">
-                        <i class="icon-placeholder-for-map"></i>
-                        <span class="tt-text">Find us</span>
-                    </a></li>
-                <li><a href="#" data-target="tt-phrase-toggle" class="tt-btn-toggle tt-btn-always">
-                        <i class="icon-magnifying-glass"></i>
-                    </a></li>
-                <li><a href="#" data-toggle="dropdown" aria-expanded="false">
-                        <span class="tt-text">EN</span>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li class="drodown-item"><a href="#">German</a></li>
-                        <li class="drodown-item"><a href="#">France</a></li>
-                        <li class="drodown-item"><a href="#">Italian</a></li>
-                    </ul>
+                </li>
+                <li class="header-tp">
+                    <a href="#">
+                        <i class="icon-telephone"></i>
+                        <span class="tt-text">(+)94-77-758-9288</span>
+                        <span class="tt-text header-tp2"> / (+)94-77-758-9288</span>
+                    </a>
+                </li>
+                <li class="header-email">
+                    <a href="#">
+                        <i class="icon-telephone"></i>
+                        <span class="tt-text">hurryuptaxi@gmail.com</span>
+                    </a>
                 </li>
             </ul>
         </div>

@@ -47,4 +47,72 @@ and open the template in the editor.
         margin-left: 36%;
     }
 }
+@media (max-width: 649px) {
+    #tt-mobile-top-box .inside .tt-select-small {
+        width: 32.5%;
+    }
+}
+@media (min-width: 650px) and (max-width: 991px) {
+    #tt-mobile-top-box .inside .tt-select-small {
+        width: 33%;
+    }
+}
+@media (min-width: 1000px) and (max-width: 1199px) {
+    .header-navigation-wrap .navbar .menu-navigation__list > li {
+        margin-right: 52px;
+        width: 185px;
+        text-align: center;
+    }
+}
+@media (max-width: 365px) {
+    .header-tp {
+        left: 64px;
+    }
+    .header-tp2 {
+        display: none;
+    }
+    .header-email {
+        display: none;
+    }
+}
+@media (max-width: 391px) {
+    .header-email {
+        display: none;
+    }
+}
+@media (width: 360px) {
+    .header-tp {
+        left: 104px;
+    }
+}
+@media (width: 996px) {
+    .header-navigation-wrap .navbar .menu-navigation__list > li {
+        width: 175px;
+    }
+}
+
+@media (min-width: 366px) and (max-width: 391px) {
+    .header-tp2 {
+        display: block;
+    }
+}
+@media (min-width: 392px) and (max-width: 533px) {
+    .header-tp2 {
+        display: none;
+    }
+}
+@media (min-width: 950px) and (max-width: 992px) {
+    .header-tp {
+        left: 243px;
+    }
+    .header-email {
+        left: 408px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .header-container__flex .tt-header-info .tt-item {
+        margin-left: 11px;
+    }
+}
+
 
