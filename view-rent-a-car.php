@@ -1,6 +1,5 @@
 <?php
 include_once(dirname(__FILE__) . '/class/include.php');
-
 $id = $_GET['id'];
 $RENT_A_CAR = new RentACar($id);
 $RENT_A_CAR_PHOTOS = RentACarPhoto::getRentACarPhotosByRentACar($RENT_A_CAR->id);
@@ -28,7 +27,7 @@ if (isset($_GET['message'])) {
         <link rel="icon" href="favicon.ico">
         <title><?php echo $RENT_A_CAR->name; ?> | Hurryup Taxi</title>
         <!-- Bootstrap core CSS -->
-        <link href="assets/css/plugins/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/plugins/jquery.smartmenus.bootstrap.css" rel="stylesheet">
         <link href="assets/css/plugins/lightslider.min.css" rel="stylesheet" >
         <link href="assets/css/plugins/intlTelInput.min.css" rel="stylesheet" >
@@ -40,9 +39,6 @@ if (isset($_GET['message'])) {
         <link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>
         <link href="assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/plugins/nivo-slider.css" rel="stylesheet">
-
-
-
         <!-- Icon Font-->
         <link href="iconfont/style.css" rel="stylesheet">
         <!-- Google Fonts -->
@@ -203,19 +199,19 @@ if (isset($_GET['message'])) {
                                         </tr>
                                     </table>
                                 </div>
-                                <div class="model-slider-wrapper">
-                                    <ul id="lightSlider" class="model-slider">
-                                        <?php
-                                        foreach ($RENT_A_CAR_PHOTOS as $img) {
-                                            ?>
-                                            <li data-thumb="upload/rent-car-photos/thumb/<?php echo $img['image_name']; ?>">
-                                                <img src="upload/rent-car-photos/<?php echo $img['image_name']; ?>" alt="" />
-                                            </li>
-                                            <?php
-                                        }
+                                <div class="vehicle-container model-slider-wrapper">
+                                <div id="vehicle_photos" class="galleria-slider  ">
+                                    <?php
+                                    foreach ($RENT_A_CAR_PHOTOS as $key => $img) {
                                         ?>
-                                    </ul>
-                                </div>
+                                        <a href="upload/rent-car-photos/<?php echo $img['image_name']; ?>">
+                                            <img src="upload/rent-car-photos/thumb/<?php echo $img['image_name']; ?>" data-title="" >
+                                        </a>
+                                        <?php
+                                    }
+                                    ?>
+                                </div> 
+                            </div>
                             </div>
                         </div>
                         <!-- // order-details-form  -->
@@ -324,9 +320,8 @@ if (isset($_GET['message'])) {
         ?>
         <!-- //Footer -->
 
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
         <script src="assets/js/jquery.1.12.4.min.js"></script>
-        <script src="assets/js/plugins/bootstrap.min.js"></script>
+        <script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="assets/js/plugins/jquery.smartmenus.min.js"></script>
         <script src="assets/js/plugins/jquery.smartmenus.bootstrap.js"></script>
         <script src="assets/js/plugins/stickup.min.js"></script>
@@ -339,8 +334,21 @@ if (isset($_GET['message'])) {
         <script src="assets/js/custom.js"></script>
         <script src="assets/js/booking-validate.js" type="text/javascript"></script>
         <script src="assets/plugins/sweetalert/sweetalert.min.js" type="text/javascript"></script>
-        <script src="assets/js/plugins/jquery.nivo.slider.js"></script>
         <script src="assets/plugins/timepicki/js/timepicki.js" type="text/javascript"></script>
+        <link href="assets/plugins/galleria/themes/classic/galleria.classic.css" rel="stylesheet" type="text/css"/>
+        <script src="assets/plugins/galleria/galleria.js" type="text/javascript"></script>
+        <script src="assets/plugins/galleria/galleria.classic.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $('#vehicle_photos').galleria({
+                responsive: true,
+                height: 500,
+                autoplay: 7000,
+                lightbox: true,
+                showInfo: true,
+
+                //                imageCrop: true,
+            });
+        </script>
         <script>
 
             $(function () {
@@ -365,6 +373,7 @@ if (isset($_GET['message'])) {
                 $(".timepicker_wrap ").hide();
             });
         </script>
+        
 
     </body>
 </html>
