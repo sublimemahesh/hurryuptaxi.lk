@@ -5,8 +5,7 @@ $RENT_A_CAR = new RentACar($_POST['rent_a_car']);
 $user = $RENT_A_CAR->user;
 
 $ADMIN = new User(1);
-//$admin_email = $ADMIN->email;
-$admin_email = 'kavininisansala96@gmail.com';
+$admin_email = $ADMIN->email;
 
 $VEHICLE_OWNER = new User($user);
 $vehicle_owner_email = $VEHICLE_OWNER->email;
