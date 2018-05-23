@@ -7,6 +7,11 @@ $id = '';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 }
+if($_SESSION["id"] == 1) {
+    $disabled = '';
+} else {
+    $disabled = 'disabled=""';
+}
 
 $BOOKING = new Booking($id);
 $RENT_A_CAR = new RentACar($BOOKING->rent_a_car);
@@ -64,7 +69,7 @@ $RENT_A_CAR = new RentACar($BOOKING->rent_a_car);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="rentACar" class="hidden-lg hidden-md">Rent A Car</label>
-                                                    <input type="text" id="rentACar" class="form-control" placeholder="Enter name" value="<?php echo $RENT_A_CAR->name ?>" autocomplete="off" name="rentACar" disabled="">
+                                                    <input type="text" id="rentACar" class="form-control" placeholder="Enter name" value="<?php echo $RENT_A_CAR->name ?>" autocomplete="off" name="rentACar" <?php echo $disabled; ?>>
                                                 </div>
                                             </div>
                                         </div>
@@ -78,7 +83,7 @@ $RENT_A_CAR = new RentACar($BOOKING->rent_a_car);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="first_name" class="hidden-lg hidden-md">First Name</label>
-                                                    <input type="text" id="first_name" class="form-control" placeholder="Enter first name" value="<?php echo $BOOKING->first_name; ?>" autocomplete="off" name="first_name" required="TRUE" disabled="">
+                                                    <input type="text" id="first_name" class="form-control" placeholder="Enter first name" value="<?php echo $BOOKING->first_name; ?>" autocomplete="off" name="first_name" required="TRUE" <?php echo $disabled; ?>>
                                                 </div>
                                             </div>
                                         </div>
@@ -92,7 +97,7 @@ $RENT_A_CAR = new RentACar($BOOKING->rent_a_car);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="second_name" class="hidden-lg hidden-md">Second Name</label>
-                                                    <input type="text" id="second_name" class="form-control" placeholder="Enter second name" value="<?php echo $BOOKING->second_name; ?>" autocomplete="off" name="second_name" required="TRUE" disabled="">
+                                                    <input type="text" id="second_name" class="form-control" placeholder="Enter second name" value="<?php echo $BOOKING->second_name; ?>" autocomplete="off" name="second_name" required="TRUE" <?php echo $disabled; ?>>
                                                 </div>
                                             </div>
                                         </div>
@@ -106,7 +111,7 @@ $RENT_A_CAR = new RentACar($BOOKING->rent_a_car);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="email" class="hidden-lg hidden-md">Email</label>
-                                                    <input type="email" id="email" class="form-control" placeholder="Enter Your Email" autocomplete="off" name="email" value="<?php echo $BOOKING->email ?>" required="TRUE" disabled="">
+                                                    <input type="email" id="email" class="form-control" placeholder="Enter Your Email" autocomplete="off" name="email" value="<?php echo $BOOKING->email ?>" required="TRUE" <?php echo $disabled; ?>>
                                                 </div>
                                             </div>
                                         </div>
@@ -120,7 +125,7 @@ $RENT_A_CAR = new RentACar($BOOKING->rent_a_car);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="contact_number" class="hidden-lg hidden-md">Phone Number</label>
-                                                    <input type="text" id="contact_number" class="form-control" placeholder="Enter Phone Number" autocomplete="off" name="contact_number" value="<?php echo $BOOKING->contact_number ?>" required="TRUE" disabled="">
+                                                    <input type="text" id="contact_number" class="form-control" placeholder="Enter Phone Number" autocomplete="off" name="contact_number" value="<?php echo $BOOKING->contact_number ?>" required="TRUE" <?php echo $disabled; ?>>
                                                 </div>
                                             </div>
                                         </div>
@@ -134,7 +139,7 @@ $RENT_A_CAR = new RentACar($BOOKING->rent_a_car);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="pick_up" class="hidden-lg hidden-md">Pick Up Location</label>
-                                                    <input type="text" id="pick_up" class="form-control" placeholder="Enter Pick Up Location" autocomplete="off" name="pick_up" value="<?php echo $BOOKING->pick_up; ?>" required="TRUE" disabled="">
+                                                    <input type="text" id="pick_up" class="form-control" placeholder="Enter Pick Up Location" autocomplete="off" name="pick_up" value="<?php echo $BOOKING->pick_up; ?>" required="TRUE" <?php echo $disabled; ?>>
                                                 </div>
                                             </div>
                                         </div>
@@ -148,7 +153,7 @@ $RENT_A_CAR = new RentACar($BOOKING->rent_a_car);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="drop_off" class="hidden-lg hidden-md">Drop Off Location</label>
-                                                    <input type="text" id="drop_off" class="form-control" placeholder="Enter Pick Up Location" autocomplete="off" name="drop_off" value="<?php echo $BOOKING->drop_off; ?>" required="TRUE" disabled="">
+                                                    <input type="text" id="drop_off" class="form-control" placeholder="Enter Pick Up Location" autocomplete="off" name="drop_off" value="<?php echo $BOOKING->drop_off; ?>" required="TRUE" <?php echo $disabled; ?>>
                                                 </div>
                                             </div>
                                         </div>
@@ -162,7 +167,7 @@ $RENT_A_CAR = new RentACar($BOOKING->rent_a_car);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="pick_up_date" class="hidden-lg hidden-md">Pick Up Date</label>
-                                                    <input type="text" id="pick_up_date" class="form-control" placeholder="Enter Pick Up Date" autocomplete="off" name="pick_up_date" value="<?php echo $BOOKING->pick_up_date ?>"  required="TRUE" disabled="">
+                                                    <input type="text" id="pick_up_date" class="form-control" placeholder="Enter Pick Up Date" autocomplete="off" name="pick_up_date" value="<?php echo $BOOKING->pick_up_date ?>"  required="TRUE" <?php echo $disabled; ?>>
                                                 </div>
                                             </div>
                                         </div>
@@ -176,7 +181,7 @@ $RENT_A_CAR = new RentACar($BOOKING->rent_a_car);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="pick_up_time" class="hidden-lg hidden-md">Pick Up Time</label>
-                                                    <input type="text" id="pick_up_time" class="form-control" placeholder="Enter Pick Up Time" autocomplete="off" name="pick_up_time" value="<?php echo $BOOKING->pick_up_time ?>" required="TRUE" disabled="">
+                                                    <input type="text" id="pick_up_time" class="form-control" placeholder="Enter Pick Up Time" autocomplete="off" name="pick_up_time" value="<?php echo $BOOKING->pick_up_time ?>" required="TRUE" <?php echo $disabled; ?>>
                                                 </div>
                                             </div>
                                         </div>
@@ -190,7 +195,7 @@ $RENT_A_CAR = new RentACar($BOOKING->rent_a_car);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="drop_off_date" class="hidden-lg hidden-md">Drop Off Date</label>
-                                                    <input type="text" id="drop_off_date" class="form-control" placeholder="Enter Drop Off Date" autocomplete="off" name="drop_off_date" value="<?php echo $BOOKING->drop_off_date ?>" required="TRUE" disabled="">
+                                                    <input type="text" id="drop_off_date" class="form-control" placeholder="Enter Drop Off Date" autocomplete="off" name="drop_off_date" value="<?php echo $BOOKING->drop_off_date ?>" required="TRUE" <?php echo $disabled; ?>>
                                                 </div>
                                             </div>
                                         </div>
@@ -204,7 +209,7 @@ $RENT_A_CAR = new RentACar($BOOKING->rent_a_car);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="drop_off_time" class="hidden-lg hidden-md">Drop Off Time</label>
-                                                    <input type="text" id="drop_off_time" class="form-control" placeholder="Enter Drop Off Time" autocomplete="off" name="drop_off_time" value="<?php echo $BOOKING->drop_off_time ?>" required="TRUE" disabled="">
+                                                    <input type="text" id="drop_off_time" class="form-control" placeholder="Enter Drop Off Time" autocomplete="off" name="drop_off_time" value="<?php echo $BOOKING->drop_off_time ?>" required="TRUE" <?php echo $disabled; ?>>
                                                 </div>
                                             </div>
                                         </div>
@@ -218,7 +223,7 @@ $RENT_A_CAR = new RentACar($BOOKING->rent_a_car);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="no_of_passengers" class="hidden-lg hidden-md">No Of Passengers</label>
-                                                    <input type="text" id="no_of_passengers" class="form-control" placeholder="Enter No Of Passengers" autocomplete="off" name="no_of_passengers" value="<?php echo $BOOKING->no_of_passengers ?>" required="TRUE" disabled="">
+                                                    <input type="text" id="no_of_passengers" class="form-control" placeholder="Enter No Of Passengers" autocomplete="off" name="no_of_passengers" value="<?php echo $BOOKING->no_of_passengers ?>" required="TRUE" <?php echo $disabled; ?>>
                                                 </div>
                                             </div>
                                         </div>
@@ -232,7 +237,7 @@ $RENT_A_CAR = new RentACar($BOOKING->rent_a_car);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="no_of_baggage" class="hidden-lg hidden-md">No Of Baggage</label>
-                                                    <input type="text" id="no_of_baggage" class="form-control" placeholder="Enter No Of Baggage" autocomplete="off" name="no_of_baggage" value="<?php echo $BOOKING->no_of_baggage ?>" required="TRUE" disabled="">
+                                                    <input type="text" id="no_of_baggage" class="form-control" placeholder="Enter No Of Baggage" autocomplete="off" name="no_of_baggage" value="<?php echo $BOOKING->no_of_baggage ?>" required="TRUE" <?php echo $disabled; ?>>
                                                 </div>
                                             </div>
                                         </div>
@@ -246,20 +251,20 @@ $RENT_A_CAR = new RentACar($BOOKING->rent_a_car);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="message" class="hidden-lg hidden-md">Message</label>
-                                                    <input type="text" id="message" class="form-control" placeholder="Enter Message" autocomplete="off" name="message" value="<?php echo $BOOKING->message ?>" required="TRUE" disabled="">
+                                                    <input type="text" id="message" class="form-control" placeholder="Enter Message" autocomplete="off" name="message" value="<?php echo $BOOKING->message ?>" required="TRUE" <?php echo $disabled; ?>>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!--Save-->
-<!--                                    <div class="row clearfix">
+                                    <div class="row clearfix">
                                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-4"> 
                                             <input type="hidden" id="rent_a_car" class="form-control" value="<?php echo $BOOKING->rent_a_car; ?>" name="rent_a_car">
                                             <input type="hidden" id="id" value="<?php echo $BOOKING->id; ?>" name="id"/>
-                                            <input type="submit" name="edit-rent-a-car" class="btn btn-primary m-t-15 waves-effect" value="Save Changes"/>
+                                            <input type="submit" name="edit-rent-a-car" class="btn btn-primary m-t-15 waves-effect" value="Save Changes" <?php echo $disabled; ?> />
                                         </div>
-                                    </div>-->
+                                    </div>
 
                                 </form> 
 

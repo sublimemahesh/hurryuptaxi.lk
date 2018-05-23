@@ -180,26 +180,26 @@
                 if ($USER->id == 1) {
                     ?>
 
-<!--                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">recent_actors</i>
-                            <span>Dealer</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="create-dealer.php">
-                                    <i class="material-icons">add</i>
-                                    <span>Add New</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="manage-dealer.php">
-                                    <i class="material-icons">list</i>
-                                    <span>Manage</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>-->
+                    <!--                    <li>
+                                            <a href="javascript:void(0);" class="menu-toggle">
+                                                <i class="material-icons">recent_actors</i>
+                                                <span>Dealer</span>
+                                            </a>
+                                            <ul class="ml-menu">
+                                                <li>
+                                                    <a href="create-dealer.php">
+                                                        <i class="material-icons">add</i>
+                                                        <span>Add New</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="manage-dealer.php">
+                                                        <i class="material-icons">list</i>
+                                                        <span>Manage</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>-->
 
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
@@ -275,12 +275,12 @@
                             <span>Bookings</span>
                         </a>
                         <ul class="ml-menu">
-<!--                            <li>
-                                <a href="create-commission.php">
-                                    <i class="material-icons">add</i>
-                                    <span>Add New</span>
-                                </a>
-                            </li>-->
+                            <!--                            <li>
+                                                            <a href="create-commission.php">
+                                                                <i class="material-icons">add</i>
+                                                                <span>Add New</span>
+                                                            </a>
+                                                        </li>-->
                             <li>
                                 <a href="manage-bookings.php">
                                     <i class="material-icons">list</i>
@@ -293,7 +293,20 @@
                     <?php
                 }
                 ?>
-
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">note_add</i>
+                        <span>Bookings</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="manage-bookings.php">
+                                <i class="material-icons">list</i>
+                                <span>Manage</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li>
                     <div style="height: 200px;"></div>
                 </li> 
