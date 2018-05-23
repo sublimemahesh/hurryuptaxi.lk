@@ -87,7 +87,7 @@ class Booking {
 
     public function all() {
 
-        $query = "SELECT * FROM `booking` ORDER BY `sort` ASC";
+        $query = "SELECT * FROM `booking`";
         $db = new Database();
         $result = $db->readQuery($query);
         $array_res = array();
@@ -102,7 +102,6 @@ class Booking {
     public function update() {
 
         $query = "UPDATE  `booking` SET "
-                . "`date_time_booked` ='" . $this->date_time_booked . "', "
                 . "`rent_a_car` ='" . $this->rent_a_car . "', "
                 . "`first_name` ='" . $this->first_name . "', "
                 . "`second_name` ='" . $this->second_name . "', "
