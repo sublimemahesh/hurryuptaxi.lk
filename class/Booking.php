@@ -98,6 +98,20 @@ class Booking {
 
         return $array_res;
     }
+    
+    public function getBookingsByUser($user) {
+
+        $query = "SELECT * FROM `booking` WHERE `rent_a_car` in (SELECT `id` FROM `rent_a_car` WHERE `user`='".$user."')";
+        $db = new Database();
+        $result = $db->readQuery($query);
+        $array_res = array();
+
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+
+        return $array_res;
+    }
 
     public function update() {
 

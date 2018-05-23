@@ -4,7 +4,12 @@ include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
 $RENT_A_CAR = new RentACar(NULL);
 
-$BOOKINGS = Booking::all();
+if($_SESSION["id"] == 1) {
+    $BOOKINGS = Booking::all();
+} else {
+    $BOOKINGS = Booking::getBookingsByUser($_SESSION["id"]);
+}
+
 
 ?> 
 <!DOCTYPE html>
@@ -85,8 +90,8 @@ $BOOKINGS = Booking::all();
                                                     <td><?php echo $booking['pick_up_date']; ?></td>
                                                     <td><?php echo $booking['drop_off_date']; ?></td>
                                                     <td> 
-                                                        <a href="view-booking.php?id=<?php echo $booking['id']; ?>" class="op-link btn btn-sm btn-info">
-                                                            <i class="glyphicon glyphicon-eye-open"></i>
+                                                        <a href="edit-booking.php?id=<?php echo $booking['id']; ?>" class="op-link btn btn-sm btn-info">
+                                                            <i class="glyphicon glyphicon-pencil"></i>
                                                         </a>
                                                         <a href="#" class="delete-booking btn btn-sm btn-danger" data-id="<?php echo $booking['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
