@@ -4,50 +4,63 @@ include_once(dirname(__FILE__) . '/auth.php');
 
 $USER = new User($_SESSION["id"]);
 ?>
-
 <!DOCTYPE html>
-<html> 
+<html>
+
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
-        <title>Add New Rent A Car || Admin || hurryuptaxi.lk</title>
+        <title>Collapse | Bootstrap Based Admin Template - Material Design</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+        <!-- Bootstrap Core Css -->
         <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Waves Effect Css -->
         <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+
+        <!-- Animation Css -->
         <link href="plugins/animate-css/animate.css" rel="stylesheet" />
-        <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
+        <!-- Custom Css -->
         <link href="css/style.css" rel="stylesheet">
+
+        <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
         <link href="css/themes/all-themes.css" rel="stylesheet" />
-        <!-- Bootstrap Spinner Css -->
-        <link href="plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
     </head>
 
     <body class="theme-red">
         <?php
         include './navigation-and-header.php';
         ?> 
-        <section class="content">
-            <div class="container-fluid"> 
-                <?php
-                $vali = new Validator();
 
-                $vali->show_message();
-                ?>
-                <!-- Vertical Layout -->
+        <section class="content">
+            <div class="container-fluid">
+
                 <div class="row clearfix">
+                    <!-- Basic Examples -->
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="card"  style="margin-top: 20px;">
+                        <div class="card">
                             <div class="header">
-                                <h2>Add New Rent A Car</h2>
-                                <ul class="header-dropdown">
-                                    <li class="">
-                                        <a href="manage-rent-a-car.php">
-                                            <i class="material-icons">list</i> 
+                                <h2>
+                                    BASIC EXAMPLES
+                                    <small>Extend the default collapse behavior to create an accordion with the panel component.</small>
+                                </h2>
+                                <ul class="header-dropdown m-r--5">
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="material-icons">more_vert</i>
                                         </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="javascript:void(0);">Action</a></li>
+                                            <li><a href="javascript:void(0);">Another action</a></li>
+                                            <li><a href="javascript:void(0);">Something else here</a></li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </div>
@@ -55,7 +68,7 @@ $USER = new User($_SESSION["id"]);
                                 <div class="row clearfix">
 
                                     <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
-
+                                        <b>Panel Danger</b>
                                         <div class="panel-group" id="accordion_4" role="tablist" aria-multiselectable="true">
                                             <form class="form-horizontal"  method="post" action="post-and-get/rent-a-car.php" enctype="multipart/form-data"> 
 
@@ -158,11 +171,7 @@ $USER = new User($_SESSION["id"]);
                                                                 </div>
                                                             </div> 
 
-                                                            <div class="col-md-12 text-right">
-                                                                <a role="button" id="step-1" class="btn btn-info tab-next-button" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">
-                                                                    Next >>
-                                                                </a>
-                                                            </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -335,17 +344,7 @@ $USER = new User($_SESSION["id"]);
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            
-                                                            <div class="col-md-6 col-xs-6 col-sm-6 text-left">
-                                                                <a role="button" id="step-prev-1" class="btn btn-info tab-next-button" data-toggle="collapse" aria-expanded="true" aria-controls="collapseTwo">
-                                                                    << Previous
-                                                                </a>
-                                                            </div>
-                                                            <div class="col-md-6 col-xs6 col-sm-6 text-right">
-                                                                <a role="button" id="step-2" class="btn btn-info tab-next-button" data-toggle="collapse" aria-expanded="true">
-                                                                    Next >>
-                                                                </a>
-                                                            </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -459,10 +458,12 @@ $USER = new User($_SESSION["id"]);
                         </div>
                     </div>
                 </div>
+
+
+                <!-- #END# Multiple Items To Be Open -->
             </div>
         </section>
 
-        <!-- Jquery Core Js -->
         <script src="plugins/jquery/jquery.min.js"></script>
         <script src="plugins/bootstrap/js/bootstrap.js"></script> 
         <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
@@ -471,7 +472,6 @@ $USER = new User($_SESSION["id"]);
         <script src="js/admin.js"></script>
         <script src="js/demo.js"></script>
         <script src="js/city.js" type="text/javascript"></script>
-        <script src="js/create-rent-a-car.js" type="text/javascript"></script>
     </body>
 
 </html>
