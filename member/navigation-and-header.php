@@ -129,9 +129,22 @@
                         <li>
                             <a href="manage-user.php">
                                 <i class="material-icons">list</i>
-                                <span>View All</span>
+                                <span>View My Members</span>
                             </a>
                         </li>
+                        <?php
+                        if ($USER->id == 1) {
+                            ?>
+                            <li>
+                                <a href="manage-all-users.php">
+                                    <i class="material-icons">list</i>
+                                    <span>View All Members</span>
+                                </a>
+                            </li>
+                            <?php
+                        }
+                        ?> 
+
                     </ul>
                 </li>   
                 <li>
@@ -158,7 +171,7 @@
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">local_taxi</i>
-                        <span>My Rent A Car</span>
+                        <span>My Rent A Cars</span>
                     </a>
                     <ul class="ml-menu">
                         <li>
@@ -173,6 +186,18 @@
                                 <span>Manage</span>
                             </a>
                         </li>
+                        <?php
+                        if ($USER->id == 1) {
+                            ?>
+                            <li>
+                                <a href="manage-all-rent-a-car.php">
+                                    <i class="material-icons">list</i>
+                                    <span>All Rent a car</span>
+                                </a>
+                            </li>
+                            <?php
+                        }
+                        ?>
                     </ul>
                 </li>  
 
@@ -272,7 +297,7 @@
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">note_add</i>
-                            <span>Bookings</span>
+                            <span>All Bookings</span>
                         </a>
                         <ul class="ml-menu">
                             <!--                            <li>
@@ -282,7 +307,7 @@
                                                             </a>
                                                         </li>-->
                             <li>
-                                <a href="manage-bookings.php">
+                                <a href="manage-all-bookings.php">
                                     <i class="material-icons">list</i>
                                     <span>Manage</span>
                                 </a>
@@ -296,7 +321,7 @@
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">note_add</i>
-                        <span>Bookings</span>
+                        <span>My Bookings</span>
                     </a>
                     <ul class="ml-menu">
                         <li>

@@ -43,7 +43,7 @@ $MEMBER = new User($id);
                 $vali->show_message();
                 ?>
                 <?php
-                if (($_SESSION['id'] == $MEMBER->parent || $_SESSION['id'] == 1)) {
+                if (( $_SESSION['id'] == 1)) {
                     ?>
 
                     <div class="card">
