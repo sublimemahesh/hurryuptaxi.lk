@@ -3,8 +3,6 @@ include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
 $RENT_A_CAR = new RentACar(NULL);
-
-$BOOKINGS = Booking::getBookingsByUser($_SESSION["id"]);
 ?> 
 <!DOCTYPE html>
 <html>
@@ -12,7 +10,7 @@ $BOOKINGS = Booking::getBookingsByUser($_SESSION["id"]);
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Manage Bookings || Admin || hurryuptaxi.lk</title>
+        <title>Manage Rent A Car || Admin || hurryuptaxi.lk</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -32,9 +30,9 @@ $BOOKINGS = Booking::getBookingsByUser($_SESSION["id"]);
     </head>
 
     <body class="theme-red">
-<?php
-include './navigation-and-header.php';
-?>
+        <?php
+        include './navigation-and-header.php';
+        ?>
         <section class="content">
             <div class="container-fluid"> 
                 <!-- Manage Districts -->
@@ -43,11 +41,11 @@ include './navigation-and-header.php';
                         <div class="card" style="margin-top: 20px;">
                             <div class="header">
                                 <h2>
-                                    Manage Bookings
+                                    Manage Rent A Car
                                 </h2>
                                 <ul class="header-dropdown m-r--5">
                                     <li class="dropdown">
-                                        <a href="#">
+                                        <a href="create-rent-a-car.php">
                                             <i class="material-icons">add</i> 
                                         </a>
                                         <ul class="dropdown-menu pull-right">
@@ -65,45 +63,61 @@ include './navigation-and-header.php';
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Booked Date</th>
-                                                <th>Rent A Car</th> 
-                                                <th>Pick Up Date</th>
-                                                <th>Drop Off Date</th>
+                                                <th>Name</th>
+                                                <th>Main Type</th> 
+                                                <th>Phone Number</th>
+                                                <th>City</th>
+                                                <th>Vehicle Number</th>
                                                 <th>Options</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-<?php
-foreach ($BOOKINGS as $key => $booking) {
-    $RENT_A_CAR = new RentACar($booking['rent_a_car']);
-    ?>
-                                                <tr id="row_<?php echo $booking['id']; ?>">
-                                                    <td><?php echo $booking['id']; ?></td> 
-                                                    <td><?php echo $booking['date_time_booked']; ?></td> 
-                                                    <td><?php echo $RENT_A_CAR->name; ?></td>
-                                                    <td><?php echo $booking['pick_up_date']; ?></td>
-                                                    <td><?php echo $booking['drop_off_date']; ?></td>
+                                            <?php
+                                            foreach ($RENT_A_CAR->all() as $key => $rent_a_car) {
+                                                ?>
+                                                <tr id="row_<?php echo $rent_a_car['id']; ?>">
+                                                    <td><?php echo $rent_a_car['id']; ?></td> 
+                                                    <td><?php echo $rent_a_car['name']; ?></td> 
+                                                    <td>
+                                                        <?php
+                                                        $VEHICLE_TYPE = new VehicleType();
+                                                        echo $VEHICLE_TYPE->mainTypes()[$rent_a_car['mainTypes']];
+                                                        ?>
+                                                    </td> 
+                                                    <td><?php echo $rent_a_car['phoneNumber']; ?></td>
+                                                    <td>
+                                                        <?php
+                                                        $CITY = new City($rent_a_car['city']);
+                                                        echo $CITY->name;
+                                                        ?>
+                                                    </td> 
+                                                    <td><?php echo $rent_a_car['vehicleNumber']; ?></td> 
                                                     <td> 
-                                                        <a href="edit-booking.php?id=<?php echo $booking['id']; ?>" class="op-link btn btn-sm btn-info">
+                                                        <a href="edit-rent-a-car.php?id=<?php echo $rent_a_car['id']; ?>" class="op-link btn btn-sm btn-info">
                                                             <i class="glyphicon glyphicon-pencil"></i>
                                                         </a>
-                                                        <a href="#" class="delete-booking btn btn-sm btn-danger" data-id="<?php echo $booking['id']; ?>">
+                                                        <a href="add-rent-a-car-photos.php?id=<?php echo $rent_a_car['id']; ?>" class="op-link btn btn-sm btn-success">
+                                                            <i class="glyphicon glyphicon-picture"></i>
+                                                        </a>
+
+                                                        <a href="#" class="delete-rent-a-car btn btn-sm btn-danger" data-id="<?php echo $rent_a_car['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
                                                         </a>
 
                                                     </td>
                                                 </tr>
-    <?php
-}
-?>   
+                                                <?php
+                                            }
+                                            ?>   
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Booked Date</th>
-                                                <th>Rent A Car</th> 
-                                                <th>Pickup Date</th>
-                                                <th>Drop Off Date</th>
+                                                <th>Name</th>
+                                                <th>Main Type</th> 
+                                                <th>Phone Number</th>
+                                                <th>City</th>
+                                                <th>Vehicle Number</th>
                                                 <th>Options</th>
                                             </tr>
                                         </tfoot>
@@ -135,7 +149,8 @@ foreach ($BOOKINGS as $key => $booking) {
         <script src="js/admin.js"></script>
         <script src="js/pages/tables/jquery-datatable.js"></script>
         <script src="js/demo.js"></script>
-        <script src="delete/js/booking.js" type="text/javascript"></script>
+        <script src="delete/js/member.js" type="text/javascript"></script>
+        <script src="delete/js/rent-a-car.js" type="text/javascript"></script>
 
     </body>
 

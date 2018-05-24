@@ -343,6 +343,7 @@ class User {
         return $array_res;
     }
 
+
     private function setLastLogin($id) {
 
         date_default_timezone_set('Asia/Colombo');

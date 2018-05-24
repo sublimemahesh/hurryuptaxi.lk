@@ -3,9 +3,8 @@ include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
 ?> 
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -73,11 +72,7 @@ $USER = new User($_SESSION["id"]);
                                 <tbody>
                                     <?php
                                     $USE = new User(NULL);
-                                    if (isset($_GET['user'])) {
-                                        $USERS = $USE->GetUserByParent($_GET['user']);
-                                    } else {
-                                        $USERS = $USE->GetUserByParent($_SESSION["id"]);
-                                    }
+                                   $USERS = $USE->all();
 
                                     foreach ($USERS as $key => $user) {
                                         ?>
@@ -114,9 +109,9 @@ $USER = new User($_SESSION["id"]);
                                                 ?> 
                                             </td>
                                         </tr>
-    <?php
-}
-?>   
+                                        <?php
+                                    }
+                                    ?>   
                                 </tbody>
 
                                 <tfoot>

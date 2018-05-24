@@ -4,7 +4,9 @@ include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
 $RENT_A_CAR = new RentACar(NULL);
 
-$BOOKINGS = Booking::getBookingsByUser($_SESSION["id"]);
+if ($_SESSION["id"] == 1) {
+    $BOOKINGS = Booking::all();
+}
 ?> 
 <!DOCTYPE html>
 <html>
