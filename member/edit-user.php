@@ -435,19 +435,45 @@ $MEMBER = new User($id);
                     ?>
 
                     <div class="card">
-                        <div class="header" >
-                            <h2 style="color: red">
-                                You don't have permission to access this page
-                            </h2>
-                            <ul class="header-dropdown">
-                                <li>
-                                    <a href="./">
-                                        <i class="material-icons">person</i>
-                                    </a>
-                                </li>
-                            </ul>
+                        <div class="header">
+                                <h2>
+                                    Edit My Profile
+                                </h2>
                         </div>
+                        <div class="body">
+                            <form class="form-horizontal" method="post" action="post-and-get/add-new-user.php" enctype="multipart/form-data"> 
 
+                                <!--Profile Picture-->
+                                <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                        <label for="image">Profile Picture</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label for="image" class="hidden-lg hidden-md">Profile Picture</label>
+                                            <input type="file" id="image" class="form-control" name="image" value="<?php echo $MEMBER->profile_picture; ?>">
+                                            <?php
+                                            if ($MEMBER->profile_picture) {
+                                                ?> 
+                                                <img src="../upload/user/<?php echo $MEMBER->profile_picture; ?>" id="image" class="view-edit-img img img-responsive img-thumbnail" name="image" alt="old image">
+                                                <?php
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <br/>
+
+                                <div class="row clearfix">
+                                    <div class="col-md-12 text-center">
+                                        <input type="hidden" id="oldImageName" value="<?php echo $MEMBER->profile_picture; ?>" name="oldImageName"/>
+                                        <input type="hidden" id="id" value="<?php echo $MEMBER->id; ?>" name="id"/>
+                                        <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="updateprofilepic" value="update">Save Changes</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
                     </div>
 
                     <?php

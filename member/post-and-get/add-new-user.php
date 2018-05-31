@@ -188,6 +188,66 @@ if (isset($_POST['update'])) {
     }
 }
 
+if (isset($_POST['updateprofilepic'])) {
+
+    $dir_dest = '../../upload/user/';
+
+    $handle = new Upload($_FILES['image']);
+    $imageName = $_POST ["oldImageName"];
+
+    if (empty($imageName)) {
+        $imageName = Helper::randamId();
+    }
+
+    $imgName = null;
+    if ($handle->uploaded) {
+        $handle->image_resize = true;
+        $handle->file_new_name_body = TRUE;
+        $handle->file_overwrite = TRUE;
+        $handle->file_new_name_ext = FALSE;
+        $handle->image_ratio_crop = 'C';
+        $handle->file_new_name_body = $imageName;
+        $handle->image_x = 250;
+        $handle->image_y = 250;
+
+        $handle->Process($dir_dest);
+
+        if ($handle->processed) {
+            $info = getimagesize($handle->file_dst_pathname);
+            $imgName = $handle->file_dst_name;
+        }
+    }
+
+    $USER = new User($_POST['id']);
+
+    $VALID = new Validator();
+
+    $VALID->check($USER, [
+        'profile_picture' => ['required' => TRUE]
+    ]);
+
+    if ($VALID->passed()) {
+        $USER->update();
+
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        $VALID->addError("Your changes saved successfully", 'success');
+        $_SESSION['ERRORS'] = $VALID->errors();
+
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    } else {
+
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+
+        $_SESSION['ERRORS'] = $VALID->errors();
+
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    }
+}
+
 if (isset($_POST['changePassword'])) {
 
 
