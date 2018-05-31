@@ -1,14 +1,17 @@
 <?php
+
 include_once(dirname(__FILE__) . '/../class/include.php');
 
 $RENT_A_CAR = new RentACar($_POST['rent_a_car']);
 $user = $RENT_A_CAR->user;
 
 $ADMIN = new User(1);
-$admin_email = $ADMIN->email;
+//$admin_email = $ADMIN->email;
+$admin_email = 'kavini@sublime.lk';
 
 $VEHICLE_OWNER = new User($user);
-$vehicle_owner_email = $VEHICLE_OWNER->email;
+//$vehicle_owner_email = $VEHICLE_OWNER->email;
+$vehicle_owner_email = 'uditharoshan555@gmail.com';
 
 $BOOKING = new Booking(NULL);
 
@@ -27,7 +30,7 @@ $BOOKING->drop_off_time = $_POST['drop_off_time'];
 $BOOKING->no_of_passengers = $_POST['no_of_passengers'];
 $BOOKING->no_of_baggage = $_POST['no_of_baggage'];
 $BOOKING->message = $_POST['message'];
- 
+
 $RESULT = $BOOKING->create();
 
 if ($RESULT) {
@@ -245,6 +248,36 @@ if ($RESULT) {
                                                 <li>
                                                     <font style="font-family: Verdana, Geneva, sans-serif; color:#68696a; font-size:14px; " >
                                                         Number of Baggages : ' . $no_of_baggage . '
+                                                    </font>
+                                                </li>
+                                                <li>
+                                                    <font style="font-family: Verdana, Geneva, sans-serif; color:#68696a; font-size:14px; " >
+                                                    Pick Up Location : ' . $picking_up . '
+                                                    </font>
+                                                </li>
+                                                <li>
+                                                    <font style="font-family: Verdana, Geneva, sans-serif; color:#68696a; font-size:14px; " >
+                                                    Drop Off Location : ' . $dropping_off . '
+                                                    </font>
+                                                </li>
+                                                <li>
+                                                    <font style="font-family: Verdana, Geneva, sans-serif; color:#68696a; font-size:14px; " >
+                                                    Pick Up Date : ' . $pick_up_date . '
+                                                    </font>
+                                                </li>
+                                                <li>
+                                                    <font style="font-family: Verdana, Geneva, sans-serif; color:#68696a; font-size:14px; " >
+                                                    Pick Up Time : ' . $pick_up_time . '
+                                                    </font>
+                                                </li>
+                                                <li>
+                                                    <font style="font-family: Verdana, Geneva, sans-serif; color:#68696a; font-size:14px; " >
+                                                    Drop Off Date : ' . $drop_off_date . '
+                                                    </font>
+                                                </li>
+                                                <li>
+                                                    <font style="font-family: Verdana, Geneva, sans-serif; color:#68696a; font-size:14px; " >
+                                                    Drop Off Time : ' . $drop_off_time . '
                                                     </font>
                                                 </li>
                                             </ul>
