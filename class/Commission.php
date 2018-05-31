@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description of Commision
+ * Description of Commission
  *
  * @author Mayomi Gunawardana
  */
@@ -11,6 +11,7 @@ class Commission {
     public $user;
     public $parent;
     public $date;
+    public $commission_amount;
     public $bank;
     public $payment_reference;
     public $other_comment;
@@ -18,7 +19,7 @@ class Commission {
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT `id`,`user`,`parent`,`date`,`bank`,`payment_reference`,`other_comment` FROM `commission` WHERE `id`=" . $id;
+            $query = "SELECT `id`,`user`,`parent`,`date`,`commission_amount`,`bank`,`payment_reference`,`other_comment` FROM `commission` WHERE `id`=" . $id;
 
             $db = new Database();
 
@@ -28,6 +29,7 @@ class Commission {
             $this->user = $result['user'];
             $this->parent = $result['parent'];
             $this->date = $result['date'];
+            $this->date = $result['commission_amount'];
             $this->bank = $result['bank'];
             $this->payment_reference = $result['payment_reference'];
             $this->other_comment = $result['other_comment'];
@@ -42,10 +44,11 @@ class Commission {
 
         $date = date('Y-m-d H:i:s');
 
-        $query = "INSERT INTO `commission` (`user`,`parent`,`date`,`bank`,`payment_reference`,`other_comment`) VALUES  ('"
+        $query = "INSERT INTO `commission` (`user`,`parent`,`date`,`commission_amount`,`bank`,`payment_reference`,`other_comment`) VALUES  ('"
                 . $this->user . "', '"
                 . $this->parent . "', '"
                 . $this->date . "', '"
+                . $this->commission_amount . "', '"
                 . $this->bank . "','"
                 . $this->payment_reference . "', '"
                 . $this->other_comment . "' )";
@@ -83,6 +86,7 @@ class Commission {
                 . "`user` ='" . $this->user . "', "
                 . "`parent` ='" . $this->parent . "', "
                 . "`date` ='" . $this->date . "', "
+                . "`commission_amount` ='" . $this->commission_amount . "', "
                 . "`bank` ='" . $this->bank . "', "
                 . "`payment_reference` ='" . $this->payment_reference . "', "
                 . "`other_comment` ='" . $this->other_comment . "'";
