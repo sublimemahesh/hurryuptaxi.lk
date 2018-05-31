@@ -6,12 +6,10 @@ $RENT_A_CAR = new RentACar($_POST['rent_a_car']);
 $user = $RENT_A_CAR->user;
 
 $ADMIN = new User(1);
-//$admin_email = $ADMIN->email;
-$admin_email = 'kavini@sublime.lk';
+$admin_email = $ADMIN->email;
 
 $VEHICLE_OWNER = new User($user);
-//$vehicle_owner_email = $VEHICLE_OWNER->email;
-$vehicle_owner_email = 'uditharoshan555@gmail.com';
+$vehicle_owner_email = $VEHICLE_OWNER->email;
 
 $BOOKING = new Booking(NULL);
 
@@ -30,6 +28,8 @@ $BOOKING->drop_off_time = $_POST['drop_off_time'];
 $BOOKING->no_of_passengers = $_POST['no_of_passengers'];
 $BOOKING->no_of_baggage = $_POST['no_of_baggage'];
 $BOOKING->message = $_POST['message'];
+
+
 
 $RESULT = $BOOKING->create();
 
