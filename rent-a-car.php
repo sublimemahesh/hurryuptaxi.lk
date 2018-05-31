@@ -117,7 +117,7 @@ $RENT_A_CARS = $SEARCH->GetVehiclesByKeywords($city, $vehicletype, $requesttype,
                                             </a>
                                         </figure>
                                         <div class = "gallery__item__content">
-                                            <h6><a href = "view-rent-a-car.php?id=<?php echo $car['id']; ?>"><?php echo $car['name']; ?></a></h6>
+                                            <h6><a href = "view-rent-a-car.php?id=<?php echo $car['id']; ?>" title="<?php echo $car['name']; ?>"><?php if(strlen($car['name'])>26){ echo substr($car['name'], 0,23). '...';} else { echo $car['name']; } ?></a></h6>
                                             <ul class = "tt-list-descriptions">
                                                 <li>
                                                     <i class = "tt-icon icon-car"></i>

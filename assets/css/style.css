@@ -297,3 +297,6 @@ ul.setPaginate li a {
     padding-top: 38px;
     padding-bottom: 26px;
 }
+.gallery__item__content .btn {
+    padding: 8px 40px 10px;
+}
