@@ -280,12 +280,12 @@
                             <span>Commission</span>
                         </a>
                         <ul class="ml-menu">
-                            <li>
+<!--                            <li>
                                 <a href="create-commission.php">
                                     <i class="material-icons">add</i>
                                     <span>Add New</span>
                                 </a>
-                            </li>
+                            </li>-->
                             <li>
                                 <a href="manage-commission.php">
                                     <i class="material-icons">list</i>

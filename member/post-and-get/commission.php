@@ -9,24 +9,32 @@ if (isset($_POST['add-commission'])) {
     $COMMISSION = New Commission(NULL);
     $VALID = new Validator();
 
-    $COMMISSION->id = $_POST['id'];
-    $COMMISSION->user = $_POST['user'];
-    $COMMISSION->parent = $_POST['parent'];
     $COMMISSION->date = $_POST['date'];
+    $COMMISSION->paid_for = $_POST['paid_for'];
+    $COMMISSION->paid_to = $_POST['paid_to'];
+    $COMMISSION->commission_amount = $_POST['commission_amount'];
     $COMMISSION->bank = $_POST['bank'];
     $COMMISSION->payment_reference = $_POST['payment_reference'];
     $COMMISSION->other_comment = $_POST['other_comment'];
 
 
     $VALID->check($COMMISSION, [
-        'user' => ['required' => TRUE],
-        'other_comment' => ['required' => TRUE],
+        'date' => ['required' => TRUE],
+        'paid_for' => ['required' => TRUE],
+        'paid_to' => ['required' => TRUE],
+        'commission_amount' => ['required' => TRUE],
         'bank' => ['required' => TRUE],
         'payment_reference' => ['required' => TRUE],
     ]);
 
     if ($VALID->passed()) {
-        $COMMISSION->create();
+        $RESULT = $COMMISSION->create();
+        if ($RESULT) {
+            $USER = New User(NULL);
+            $USER->id = $RESULT->paid_for;
+            $USER->isComPaid = 1;
+            $USER->setisComPaidTrue();
+        }
 
         if (!isset($_SESSION)) {
             session_start();
@@ -34,7 +42,7 @@ if (isset($_POST['add-commission'])) {
         $VALID->addError("Your data was saved successfully", 'success');
         $_SESSION['ERRORS'] = $VALID->errors();
 
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        header('Location: ../manage-commission.php');
     } else {
 
         if (!isset($_SESSION)) {

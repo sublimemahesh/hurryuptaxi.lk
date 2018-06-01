@@ -2,7 +2,7 @@
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
-$USERS = new User(NULL);
+$COMMISSION = new Commission(NULL);
 ?> 
 <!DOCTYPE html>
 <html>
@@ -63,31 +63,40 @@ $USERS = new User(NULL);
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Paid For</th> 
-                                                <th>Paid To</th>
-                                                <th>Registration Fee</th>
+                                                <th>User</th> 
+                                                <th>Member</th>
+                                                <th>Date</th>
+                                                <th>Bank</th>
+                                                <th>Payment Reference</th>
                                                 <th>Options</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            foreach ($USERS->GetUserByNotPayCommission() as $key => $user) {
+                                            foreach ($COMMISSION->all($_SESSION["id"]) as $key => $commission) {
                                                 ?>
-                                                <tr id="row_<?php echo $user['id']; ?>">
-                                                    <td><?php echo $user['id']; ?></td> 
-                                                    <td><?php echo $user['username']; ?></td> 
+                                                <tr id="row_<?php echo $commission['id']; ?>">
+                                                    <td><?php echo $commission['id']; ?></td> 
+                                                    <td><?php echo $commission['user']; ?></td> 
 
+                                                    <td><?php echo $commission['parent']; ?></td> 
+
+                                                    <td><?php echo $commission['date']; ?></td>
                                                     <td>
-                                                        <?php 
-                                                        $PARENT = new User($user['parent']);
-                                                        echo $PARENT->username; ?>
-                                                    </td> 
-
-                                                    <td><?php echo 'RS: ' . $user['payment'] . '/='; ?></td>
+                                                        <?php
+                                                        $BANK = new Bank($commission['bank']);
+                                                        echo $BANK->name;
+                                                        ?>
+                                                    </td>
+                                                    <td><?php echo $commission['payment_reference']; ?></td> 
                                                     <td> 
-                                                        <a href="create-commission.php?id=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-info">
-                                                            <i class="glyphicon glyphicon-usd"></i>
+                                                        <a href="edit-commission.php?id=<?php echo $commission['id']; ?>" class="op-link btn btn-sm btn-info">
+                                                            <i class="glyphicon glyphicon-pencil"></i>
                                                         </a>
+                                                        <a href="#" class="delete-commission btn btn-sm btn-danger" data-id="<?php echo $commission['id']; ?>">
+                                                            <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
+                                                        </a>
+
                                                     </td>
                                                 </tr>
                                                 <?php
@@ -97,9 +106,11 @@ $USERS = new User(NULL);
                                         <tfoot>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Paid For</th> 
-                                                <th>Paid To</th>
-                                                <th>Registration Fee</th>
+                                                <th>User</th> 
+                                                <th>Member</th>
+                                                <th>Date</th>
+                                                <th>Bank</th>
+                                                <th>Payment Reference</th>
                                                 <th>Options</th>
                                             </tr>
                                         </tfoot>
