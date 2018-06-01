@@ -35,6 +35,11 @@ $USERS = new User(NULL);
         ?>
         <section class="content">
             <div class="container-fluid"> 
+                <?php
+                $vali = new Validator();
+
+                $vali->show_message();
+                ?>
                 <!-- Manage Districts -->
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
