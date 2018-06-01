@@ -40,9 +40,8 @@ class Commission {
 
     public function create() {
 
-        date_default_timezone_set('Asia/Colombo');
-
-        $date = date('Y-m-d H:i:s');
+//        date_default_timezone_set('Asia/Colombo');
+//        $date = date('Y-m-d H:i:s');
 
         $query = "INSERT INTO `commission` (`date`,`paid_for`,`paid_to`,`commission_amount`,`bank`,`payment_reference`,`other_comment`) VALUES  ('"
                 . $this->date . "', '"
@@ -56,7 +55,7 @@ class Commission {
         $db = new Database();
 
         $result = $db->readQuery($query);
-
+        
         if ($result) {
             $last_id = mysql_insert_id();
 
