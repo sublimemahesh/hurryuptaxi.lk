@@ -81,7 +81,7 @@ if (isset($_GET['message'])) {
                     ?>
                     <div class="alert alert-success  alert-dismissible fade in col-md-12">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <strong>Success!</strong> Booking was completed successfully. Please check your email.
+                        <strong>Success!</strong> Your booking has been processed and one of our representatives will contact you shortly. Thank you!.
                     </div>
                     <?php
                 } elseif ($message === 'error') {
