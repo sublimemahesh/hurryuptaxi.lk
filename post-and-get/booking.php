@@ -74,7 +74,7 @@ if ($RESULT) {
     $site_link = "http://" . $_SERVER['HTTP_HOST'];
     $website_name = 'www.hurryuptaxi.lk';
     $comany_name = 'Hurryup Taxi';
-    $comConNumber = '09137347559';
+    $comConNumber = '(+)94-77-758-9288';
     $comEmail = 'hurryuptaxi@gmail.com';
     date_default_timezone_set('Asia/Colombo');
 
@@ -327,7 +327,7 @@ if ($RESULT) {
                                         <td width="2%" align="center">&nbsp;</td>
                                         <td width="29%" align="center">
                                             <font style="font-family: Verdana, Geneva, sans-serif; color:#68696a; font-size:8px; " >
-                                                <strong>Phone No : <br/> ' . $comConNumber . ' </strong>
+                                                <strong>Phone Number : <br/> ' . $comConNumber . ' </strong>
                                             </font>
                                         </td>
                                         <td width="2%" align="center">
@@ -364,7 +364,7 @@ if ($RESULT) {
                                         <td width="30%" align="right">
                                             <font style="font-family: Verdana, Geneva, sans-serif; color:#1400FF; font-size:9px; " > 
                                                 <a href="http://www.sublime.lk/">
-                                                    web solution by: Sublime Holdings</a>
+                                                    Solution By: Sublime Holdings</a>
                                             </font>
                                         </td>
                                         <td width="5%">&nbsp;</td>
