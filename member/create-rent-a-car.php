@@ -312,7 +312,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="excited_milage_self_drive" class="form-control" placeholder="Enter Excited Self Drive" autocomplete="off" name="excited_milage_self_drive" required="TRUE">
+                                                    <input type="text" id="excited_milage_self_drive" class="form-control" placeholder="Excess Mileage (Self Drive)" autocomplete="off" name="excited_milage_self_drive" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -332,7 +332,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="excited_milage_tour" class="form-control" placeholder="Enter Excited Milage Tour" autocomplete="off" name="excited_milage_tour" required="TRUE">
+                                                    <input type="text" id="excited_milage_tour" class="form-control" placeholder="Excess Mileage (Tours / Chauffeur Driven)" autocomplete="off" name="excited_milage_tour" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -352,7 +352,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="excited_milage_airport" class="form-control" placeholder="Enter Excited Milage Airport" autocomplete="off" name="excited_milage_airport" required="TRUE">
+                                                    <input type="text" id="excited_milage_airport" class="form-control" placeholder="Excess Mileage (Airport / City Transfers)" autocomplete="off" name="excited_milage_airport" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
@@ -372,7 +372,7 @@ $USER = new User($_SESSION["id"]);
                                         <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="excited_milage_wedding" class="form-control" placeholder="Enter Excited Milage Wedding" autocomplete="off" name="excited_milage_wedding" required="TRUE">
+                                                    <input type="text" id="excited_milage_wedding" class="form-control" placeholder="Excess Mileage (Weddings & Events)" autocomplete="off" name="excited_milage_wedding" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>

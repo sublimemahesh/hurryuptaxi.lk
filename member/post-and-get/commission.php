@@ -29,6 +29,7 @@ if (isset($_POST['add-commission'])) {
 
     if ($VALID->passed()) {
         $RESULT = $COMMISSION->create();
+        
         if ($RESULT) {
             $USER = New User(NULL);
             $USER->id = $RESULT->paid_for;
