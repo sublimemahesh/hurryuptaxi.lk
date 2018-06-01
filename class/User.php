@@ -343,7 +343,6 @@ class User {
         return $array_res;
     }
 
-
     private function setLastLogin($id) {
 
         date_default_timezone_set('Asia/Colombo');
@@ -478,11 +477,43 @@ class User {
             return FALSE;
         }
     }
+    public function setisComPaidTrue() {
+
+        $query = "UPDATE  `user` SET "
+                . "`isComPaid` ='" . $this->isComPaid . "' "
+                . "WHERE `id` = '" . $this->id . "'";
+
+        $db = new Database();
+
+        $result = $db->readQuery($query);
+
+        if ($result) {
+            return $this->__construct($this->id);
+        } else {
+            return FALSE;
+        }
+    }
 
     public function allDealers() {
 
         $query = "SELECT * FROM `user` WHERE `parent` = '1'";
         $db = new Database();
+        $result = $db->readQuery($query);
+        $array_res = array();
+
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+
+        return $array_res;
+    }
+    
+    public function GetUserByNotPayCommission() {
+
+        $query = "SELECT * FROM `user` WHERE `isActive` = '". 1 ."' AND `isComPaid` = '". 0 ."'";
+
+        $db = new Database();
+
         $result = $db->readQuery($query);
         $array_res = array();
 

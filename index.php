@@ -187,7 +187,6 @@ $CITY = new City(NULL);
 
                 </div>
             </div>
-
             <!-- // Search -->
             <!-- Welcome -->
             <div class="parallax_box">
@@ -389,9 +388,6 @@ $CITY = new City(NULL);
         <?php
         include './footer.php';
         ?>
-
-
-
         <!-- //Footer -->
         <!-- Google map -->
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>

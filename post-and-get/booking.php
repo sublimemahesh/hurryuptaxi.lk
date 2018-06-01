@@ -75,7 +75,7 @@ if ($RESULT) {
     $website_name = 'www.hurryuptaxi.lk';
     $comany_name = 'Hurryup Taxi';
     $comConNumber = '09137347559';
-    $comEmail = 'kavini@sublime.lk';
+    $comEmail = 'hurryuptaxi@gmail.com';
     date_default_timezone_set('Asia/Colombo');
 
     $todayis = date("l, F j, Y, g:i a");

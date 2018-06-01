@@ -3,14 +3,6 @@ include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 
 $USER = new User($_SESSION["id"]);
-$userid = $_GET['id'];
-
-$COMPAYUSER = new User($userid);
-$USERPARENT = new User($COMPAYUSER->parent);
-
-$amount = $COMPAYUSER->payment;
-$com_amount = $amount/2;
-
 
 date_default_timezone_set('Asia/Colombo');
 
@@ -64,75 +56,65 @@ $date = date('Y-m-d H:i:s');
                             </div>
                             <div class="body">
                                 <form class="form-horizontal"  method="post" action="post-and-get/commission.php" enctype="multipart/form-data"> 
-                                    <!--Date-->
+                                    <!--name-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="date">Date</label>
+                                            <label for="name">Name</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="date" id="date" class="form-control" placeholder="Enter Date" autocomplete="off" name="date" >
+                                                    <input type="text" id="name" class="form-control" placeholder="Enter Your name" autocomplete="off" name="name" >
                                                 </div>
                                             </div>
                                         </div>
                                     </div> 
-                                    <!--Paid For-->
+                                    <!--User-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="paid_for">Paid For</label>
+                                            <label for="user">User</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                            <div class="form-group">
+                                            <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" placeholder="Enter Your name" autocomplete="off" value="<?php echo $COMPAYUSER->username;?>" disabled="">
-                                                    <input type="hidden" id="paid_for" name="paid_for" value="<?php echo $COMPAYUSER->id;?>">
+                                                    <select class="form-control" autocomplete="off" type="text" id="user" autocomplete="off" name="user">
+                                                        <option value=""> -- Select User -- </option>
+                                                        <?php foreach (User::all() as $key => $user) {
+                                                            ?>
+                                                            <option value="<?php echo $user['id']; ?>">
+                                                                <?php echo $user['name']; ?>
+                                                            </option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
                                     </div> 
-                                    <!--Paid To-->
+                                    <!--Member-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="paid_to">Paid To</label>
+                                            <label for="parent">Member</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                            <div class="form-group">
+                                            <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" placeholder="Enter Your name" autocomplete="off" value="<?php echo $USERPARENT->username;?>" disabled="">
-                                                    <input type="hidden" id="paid_to" name="paid_to" value="<?php echo $USERPARENT->id;?>">
+                                                    <select class="form-control" autocomplete="off" type="text" id="user" autocomplete="off" name="user">
+                                                        <option value=""> -- Select User -- </option>
+                                                        <?php foreach (User::GetUserByParent() as $key => $parent) {
+                                                            ?>
+                                                            <option value="<?php echo $parent['id']; ?>">
+                                                                <?php echo $parent['name']; ?>
+                                                            </option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!--Amount-->
-                                    <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="amount">Amount</label>
-                                        </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="text" class="form-control" placeholder="Enter Amount" autocomplete="off" value="<?php echo 'Rs: ' . $amount . '/=';?>" disabled="">
-                                                    <input type="hidden" id="amount" name="amount" value="<?php echo $amount;?>">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                    <!--Commission Amount-->
-                                    <div class="row clearfix">
-                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="commission_amount">Commission Amount</label>
-                                        </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="text" class="form-control" placeholder="Enter Amount" autocomplete="off" value="<?php echo 'Rs: ' . $com_amount . '/=';?>" disabled="">
-                                                    <input type="hidden" id="commission_amount" class="form-control" name="commission_amount" value="<?php echo $com_amount;?>">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> 
                                     <!--Bank-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
@@ -142,7 +124,7 @@ $date = date('Y-m-d H:i:s');
                                             <div class="form-group place-select">
                                                 <div class="form-line">
                                                     <select class="form-control" autocomplete="off" type="text" id="bank" autocomplete="off" name="bank">
-                                                        <option value=""> -- Select Bank -- </option>
+                                                        <option value=""> -- Select User -- </option>
                                                         <?php foreach (Bank::all() as $key => $bank) {
                                                             ?>
                                                             <option value="<?php echo $bank['id']; ?>">
@@ -185,8 +167,9 @@ $date = date('Y-m-d H:i:s');
 
                                     <!--Save-->
                                     <div class="row clearfix">
-                                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
-                                            <input type="submit" name="add-commission" class="btn btn-primary m-t-15 waves-effect" value="Pay Commission"/>
+                                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5"> 
+                                            <input type="hidden" id="date" name="date" value="<?php echo $date; ?>">
+                                            <input type="submit" name="add-commission" class="btn btn-primary m-t-15 waves-effect" value="Add Driver"/>
                                         </div>
                                     </div>
 

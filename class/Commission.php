@@ -8,9 +8,9 @@
 class Commission {
 
     public $id;
-    public $user;
-    public $parent;
     public $date;
+    public $paid_for;
+    public $paid_to;
     public $commission_amount;
     public $bank;
     public $payment_reference;
@@ -19,16 +19,16 @@ class Commission {
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT `id`,`user`,`parent`,`date`,`commission_amount`,`bank`,`payment_reference`,`other_comment` FROM `commission` WHERE `id`=" . $id;
+            $query = "SELECT `id`,`date`,`paid_for`,`paid_to`,`commission_amount`,`bank`,`payment_reference`,`other_comment` FROM `commission` WHERE `id`=" . $id;
 
             $db = new Database();
 
             $result = mysql_fetch_array($db->readQuery($query));
 
             $this->id = $result['id'];
-            $this->user = $result['user'];
-            $this->parent = $result['parent'];
             $this->date = $result['date'];
+            $this->paid_for = $result['paid_for'];
+            $this->paid_to = $result['paid_to'];
             $this->date = $result['commission_amount'];
             $this->bank = $result['bank'];
             $this->payment_reference = $result['payment_reference'];
@@ -44,10 +44,10 @@ class Commission {
 
         $date = date('Y-m-d H:i:s');
 
-        $query = "INSERT INTO `commission` (`user`,`parent`,`date`,`commission_amount`,`bank`,`payment_reference`,`other_comment`) VALUES  ('"
-                . $this->user . "', '"
-                . $this->parent . "', '"
+        $query = "INSERT INTO `commission` (`date`,`paid_for`,`paid_to`,`commission_amount`,`bank`,`payment_reference`,`other_comment`) VALUES  ('"
                 . $this->date . "', '"
+                . $this->paid_for . "', '"
+                . $this->paid_to . "', '"
                 . $this->commission_amount . "', '"
                 . $this->bank . "','"
                 . $this->payment_reference . "', '"
@@ -83,9 +83,9 @@ class Commission {
     public function update() {
 
         $query = "UPDATE  `commission` SET "
-                . "`user` ='" . $this->user . "', "
-                . "`parent` ='" . $this->parent . "', "
                 . "`date` ='" . $this->date . "', "
+                . "`paid_for` ='" . $this->paid_for . "', "
+                . "`paid_to` ='" . $this->paid_to . "', "
                 . "`commission_amount` ='" . $this->commission_amount . "', "
                 . "`bank` ='" . $this->bank . "', "
                 . "`payment_reference` ='" . $this->payment_reference . "', "
@@ -101,9 +101,9 @@ class Commission {
         }
     }
 
-    public function GetCommisionByUser($user) {
+    public function GetCommisionByUser($paid_for) {
 
-        $query = "SELECT * FROM `commission` WHERE `user` = '" . $user . "'";
+        $query = "SELECT * FROM `commission` WHERE `paid_for` = '" . $paid_for . "'";
 
         $db = new Database();
 
@@ -133,9 +133,9 @@ class Commission {
         return $array_res;
     }
 
-    public function GetUserByParent($parent) {
+    public function GetUserByParent($paid_to) {
 
-        $query = "SELECT * FROM `commission` WHERE `parent` = '" . $parent . "'";
+        $query = "SELECT * FROM `commission` WHERE `paid_to` = '" . $paid_to . "'";
 
         $db = new Database();
 
