@@ -193,16 +193,9 @@ $CITY = new City(NULL);
                 <figure class="thumbnail move_img wow slideInLeft" data-wow-delay="0.5s"></figure>
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-12 col-lg-6 col-lg-push-6">
-                            <h1>Welcome</h1>
-                            <p>Hiring a car just got easier with the reliable service of Car Rental Service! Having covered all the 50 states in America, we offer the finest choice of vehicles ranging from economy to luxury.</p>
-                            <p>We have tied up with renowned car rental brands so that we can provide our customers with the most economic car rental deals along with world class customer service. </p>
-                            <ul class="list__marker">
-                                <li>Best price guarantee</li>
-                                <li>No cancellation or amendment fees</li>
-                                <li>No hidden extras to pay - theft and damage cover included</li>
-                            </ul>
-                            <a href="services.html" class="btn">Read more</a>
+                        <div class="col-sm-12 col-lg-6 col-lg-push-6 welcome-text">
+                            <p>Siyapatha Taxi & Rent A Car Service (Hurryup Taxi) ඔබට ප්‍රවාහන පහසුකම් ලබා ගත හැකි සහ ප්‍රවාහන පහසුකම් සපයා දිය හැකි අන්තර්ජාල සොදුරු නවාතැනකි. මෙම ක්‍රම වේදය යටතේ සැපයුම්කරුවන්, අතරමැදියන් සහ ගැණුම්කරුවන් එකිනෙකා මුණගැසිමට අවස්ථාවක් උදා වෙන අතර, වාහන ඇති, තැති සැමට ආදායම් මාර්ගයක් සලසා ගත හැකිවේ.එසේම සියළුම ප්‍රවාහන පහසුකම් අපගේ අන්තර්ජාලය හරහා සිදුවන බැවින් වේගවත් ප්‍රවාහන පහසුකම් ලබා ගැනිමට හැකියාවක් මෙමගින් උදාවනු ඇත... </p>
+                            <a href="about.php" class="btn">Read more</a>
                         </div>
                     </div>
                 </div>

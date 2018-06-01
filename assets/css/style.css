@@ -309,3 +309,10 @@ ul.setPaginate li a {
 .car-rates tr td:first-child {
     width: 37%;
 }
+.welcome-text {
+    top: -225px;
+}
+.parallax_box {
+    padding: 30% 0 3.54%;
+    text-align: left;
+}
