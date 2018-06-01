@@ -300,3 +300,12 @@ ul.setPaginate li a {
 .gallery__item__content .btn {
     padding: 8px 40px 10px;
 }
+.model-details-box__info {
+    padding-right: 0%;
+}
+.details-car tr td:first-child {
+    width: 45%;
+}
+.car-rates tr td:first-child {
+    width: 37%;
+}
