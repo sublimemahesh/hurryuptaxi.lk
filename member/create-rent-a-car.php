@@ -56,12 +56,12 @@ $USER = new User($_SESSION["id"]);
                                     <!--name-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="name">Name</label>
+                                            <label for="name">Title</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="name" class="form-control" placeholder="Enter Your name" autocomplete="off" name="name" required="TRUE">
+                                                    <input type="text" id="name" class="form-control" placeholder="Enter Your Business Title or Name" autocomplete="off" name="name" required="TRUE">
                                                 </div>
                                             </div>
                                         </div>
