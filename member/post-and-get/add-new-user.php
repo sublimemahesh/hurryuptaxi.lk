@@ -189,7 +189,7 @@ if (isset($_POST['update'])) {
 }
 
 if (isset($_POST['updateprofilepic'])) {
-
+    
     $dir_dest = '../../upload/user/';
 
     $handle = new Upload($_FILES['image']);
@@ -219,6 +219,8 @@ if (isset($_POST['updateprofilepic'])) {
     }
 
     $USER = new User($_POST['id']);
+    
+    $USER->profile_picture = $imgName;
 
     $VALID = new Validator();
 

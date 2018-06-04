@@ -54,7 +54,7 @@ if (isset($_POST['add-rent-a-car'])) {
     ]);
 
     if ($VALID->passed()) {
-        $RENT_A_CAR->create();
+        $RESULT = $RENT_A_CAR->create();
 
         if (!isset($_SESSION)) {
             session_start();
@@ -62,7 +62,7 @@ if (isset($_POST['add-rent-a-car'])) {
         $VALID->addError("Your data was saved successfully", 'success');
         $_SESSION['ERRORS'] = $VALID->errors();
 
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        header('Location: ../add-rent-a-car-photos.php?id='.$RESULT->id);
     } else {
 
         if (!isset($_SESSION)) {
