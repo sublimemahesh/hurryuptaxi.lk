@@ -3116,7 +3116,7 @@ textarea {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s; }
-  @media (max-width: 991px) {
+  @media (max-width: 1030px) {
     .book-form-box {
       display: none; } }
 
@@ -4122,7 +4122,7 @@ header.site-header {
     .mobile-top-panel__fixed .navbar, .mobile-top-panel__fixed .social-list {
       display: none; } }
 
-@media (min-width: 992px) {
+@media (min-width: 1030px) {
   #tt-mobile-top-box {
     display: none; } }
 

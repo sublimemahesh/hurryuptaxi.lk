@@ -202,11 +202,14 @@ $CITY = new City(NULL);
             </div>
             <!-- // Welcome -->
             <!-- Vehicle -->
-            <div class="services-box">
-                <div class="container">
-                    <div class="box-list-posts swiper-container-services swiper-container">
-                        <div class="swiper-wrapper">
-                            <?php
+            <!-- // Vehicle -->
+            <section class="blog-posts-carousel">
+			<div class="container">
+				<h1>Rent A Cars</h1>
+				<div class="swiper-container swiper-container-blog">
+					<div class="swiper-wrapper">
+                                            
+                                            <?php
                             $RENT_A_CARS = RentACar::all();
 
                             foreach ($RENT_A_CARS as $car) {
@@ -214,7 +217,7 @@ $CITY = new City(NULL);
                                 ?>
                                 <!--<div class="col-md-3 col-sm-6 col-xs-12">-->
                                 <div class="swiper-slide">
-                                    <div class="post-column">
+                                    <div class="post-item">
                                         <figure class="thumbnail">
                                             <?php
                                             foreach ($RENT_A_CAR_PHOTOS as $key => $img) {
@@ -226,7 +229,7 @@ $CITY = new City(NULL);
                                             }
                                             ?>
                                         </figure>
-                                        <div class="post-column__content">
+                                        <div class="post-item__content">
                                             <h3>
                                                 <a href="view-rent-a-car.php?id=<?php echo $car['id']; ?>"><?php echo $car['name']; ?></a>
                                             </h3>
@@ -261,17 +264,15 @@ $CITY = new City(NULL);
                                         </div>
                                     </div>
                                 </div>
-                                <!--</div>-->
                                 <?php
                             }
                             ?>
-                        </div>
-                        <div class="swiper-pagination swiper-pagination-services"></div>
-                    </div>
-                    <!-- // box-list-posts  -->
-                </div>
-            </div>
-            <!-- // Vehicle -->
+					</div>
+				</div>
+				<span class="swiper-button-next2 swiper-button-next"><i class="icon-left-arrow2"></i></span>
+				<span class="swiper-button-prev2 swiper-button-prev"><i class="icon-left-arrow"></i></span>
+			</div>
+		</section>
             <!-- Contact Us -->
             <section class="car-info-box" data-wow-duration="1s" data-wow-delay="1s">
                 <div class="car-info-box__description">

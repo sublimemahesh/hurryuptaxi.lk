@@ -79,6 +79,9 @@ and open the template in the editor.
     .header-email {
         display: none;
     }
+    .welcome-text {
+        top: -61px;
+    }
 }
 @media (width: 360px) {
     .header-tp {
@@ -100,6 +103,19 @@ and open the template in the editor.
     .header-tp2 {
         display: none;
     }
+    .welcome-text {
+        top: -82px;
+    }
+}
+@media (min-width: 534px) and (max-width: 633px) {
+    .welcome-text {
+        top: -126px;
+    }
+}
+@media (min-width: 634px) and (max-width: 800px) {
+    .welcome-text {
+        top: -190px;
+    }
 }
 @media (min-width: 950px) and (max-width: 992px) {
     .header-tp {
@@ -108,10 +124,29 @@ and open the template in the editor.
     .header-email {
         left: 408px;
     }
+    .blog-posts-carousel {
+        margin-top: -208px;
+    }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
     .header-container__flex .tt-header-info .tt-item {
         margin-left: 11px;
+    }
+    .gallery__item__content {
+        margin-bottom: 25px;
+    }
+    #search {
+        margin-left: 43%;
+        margin-top: 10px;
+    }
+    #tt-mobile-top-box .inside .tt-select-small {
+        width: 33%;
+    }
+    .header-email {
+        margin-left: 220px
+    }
+    .header-tp {
+        margin-left: 265px
     }
 }
 
