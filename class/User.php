@@ -251,7 +251,7 @@ class User {
     }
 
     public function update() {
-
+        
         $query = "UPDATE  `user` SET "
                 . "`name` ='" . $this->name . "', "
                 . "`username` ='" . $this->username . "', "
