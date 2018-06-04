@@ -86,7 +86,7 @@ and open the template in the editor.
 .text-link {
     font-size: 18px;
 }
-.post-column .text-link {
+.blog-posts-carousel .text-link {
     margin-bottom: 8px;
 }
 .wrapper p {
@@ -315,4 +315,16 @@ ul.setPaginate li a {
 .parallax_box {
     padding: 30% 0 3.54%;
     text-align: left;
+}
+.post-item__content {
+    padding: 30px 0px 20px;
+}
+.blog-posts-carousel .swiper-button-prev {
+    left: 60px;
+}
+.blog-posts-carousel .swiper-button-next {
+    right: 60px;
+}
+.blog-posts-carousel {
+    padding: 0px 0 25px;
 }
