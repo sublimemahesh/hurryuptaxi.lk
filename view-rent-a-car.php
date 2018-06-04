@@ -119,6 +119,11 @@ if (isset($_GET['message'])) {
                                             </td>
                                         </tr>
                                         <tr>
+                                            <td>Vehicle Number:</td>
+                                            <td><?php echo $RENT_A_CAR->vehicleNumber; ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <td>Request Type:</td>
                                             <td>
                                                 <?php

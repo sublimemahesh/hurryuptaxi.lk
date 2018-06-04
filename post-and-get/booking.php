@@ -70,6 +70,9 @@ if ($RESULT) {
     $drop_off_date = $RESULT->drop_off_date;
     $drop_off_time = $RESULT->drop_off_time;
     $message = $RESULT->message;
+    $vehicle_no = $RENT_A_CAR->vehicleNumber;
+    $name = $RENT_A_CAR->name;
+    
 
     $site_link = "http://" . $_SERVER['HTTP_HOST'];
     $website_name = 'www.hurryuptaxi.lk';
@@ -93,7 +96,7 @@ if ($RESULT) {
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Srilanka Tourism Email Template</title>
+        <title>Rent A Car Booking - '. $name .'</title>
     </head>
 
     <body bgcolor="#8d8e90">
@@ -139,7 +142,7 @@ if ($RESULT) {
                                         <td width="2%">&nbsp;</td>
                                         <td width="96%" align="center" style="border-bottom:1px solid #000000" height="50">
                                             <font style="font-family: Verdana, Geneva, sans-serif; color:#0B0B0E; font-size:18px; " >
-                                                <h4>Rent A Car Booking</h4>
+                                                <h4>Rent A Car Booking - '. $name .'</h4>
                                             </font>
                                         </td>
                                         <td width="2%">&nbsp;</td>
@@ -228,6 +231,11 @@ if ($RESULT) {
                                                 <li>
                                                     <font style="font-family: Verdana, Geneva, sans-serif; color:#68696a; font-size:14px; " >
                                                         Vehicle Type : ' . $vehicle_type . '
+                                                    </font>
+                                                </li>
+                                                <li>
+                                                    <font style="font-family: Verdana, Geneva, sans-serif; color:#68696a; font-size:14px; " >
+                                                        Vehicle Number : ' . $vehicle_no . '
                                                     </font>
                                                 </li>
                                                 <li>
@@ -377,6 +385,7 @@ if ($RESULT) {
         </table>
     </body>
 </html>';
+
 
     if (mail($visitor_email, $subject, $html, $headers) &&
             mail($admin_email, $subject, $html, $headers) && mail($vehicle_owner_email, $subject, $html, $headers)) {
