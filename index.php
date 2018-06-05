@@ -206,6 +206,7 @@ $CITY = new City(NULL);
             <section class="blog-posts-carousel">
                 <div class="container">
                     <h1>Rent A Cars</h1>
+                    <span class="text-link">What you can hire from us</span>
                     <div class="swiper-container swiper-container-blog">
                         <div class="swiper-wrapper gallery">
 
