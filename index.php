@@ -212,7 +212,8 @@ $CITY = new City(NULL);
                             <?php
                             $RENT_A_CARS = RentACar::all();
 
-                            foreach ($RENT_A_CARS as $car) {
+                            foreach ($RENT_A_CARS as $key => $car) {
+                                if ($key < 9) {
                                     $RENT_A_CAR_PHOTOS = RentACarPhoto::getRentACarPhotosByRentACar($car['id']);
                                     ?>
                                     <div class="swiper-slide">
@@ -315,16 +316,18 @@ $CITY = new City(NULL);
                                                     </li>
 
                                                 </ul>
-                                                <a href = "view-rent-a-car.php?id=<?php echo $car['id']; ?>" class="btn">View More</a></div>
+                                                <a href = "view-rent-a-car.php?id=<?php echo $car['id']; ?>" class="btn">Book Now</a></div>
                                         </div>
                                     </div>
                                     <?php
+                                }
                             }
                             ?>
                         </div>
                     </div>
                     <span class="swiper-button-next2 swiper-button-next"><i class="icon-left-arrow2"></i></span>
                     <span class="swiper-button-prev2 swiper-button-prev"><i class="icon-left-arrow"></i></span>
+                    <a href = "rent-a-car.php" class="btn view-vehicle">View More Vehicles <i class="icon-left-arrow2"></i><i class="icon-left-arrow2"></i></a></div>
                 </div>
             </section>
             <!-- Contact Us -->
