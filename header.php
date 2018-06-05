@@ -11,6 +11,9 @@
                             <img src="images/logo/logo-1.png" alt=""/>
                         </a>
                     </div>
+                    <div class="col-md-offset-11">
+                        <a href="member/" class="btn reg-btn">Login Now</a>
+                    </div>
                     <a class="menu-open">
                         <i class="icon-three"></i>
                     </a>
@@ -67,6 +70,9 @@
                         Mon-Fri:	8:30 - 17:00<br>
                         Sat-Sun: 9:30 - 18:00
                     </div>
+                </div>
+                <div class="col-md-offset-11">
+                    <a href="member/" class="btn reg-btn">Login Now...</a>
                 </div>
             </div>
         </div>
