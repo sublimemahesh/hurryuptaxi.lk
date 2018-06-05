@@ -5,7 +5,7 @@
     <div id="htmlcaption1" class="nivo-caption">
         <div class="nivo-caption__inner">
             <div class="text">
-                <h1 class="showtext showtext__h1">Enjoy <br/>the efficient and specialized<br/> services of<br/> HURRYUP TAXI</h1>
+                <h1 class="showtext showtext__h1 text-uppercase">Enjoy <br/>the efficient and specialized<br/> services of<br/> HURRYUP TAXI</h1>
                 
             </div>
         </div>
