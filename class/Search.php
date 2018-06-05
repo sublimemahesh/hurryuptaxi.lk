@@ -16,6 +16,8 @@ class Search {
         if (!empty($requesttype)) {
             $w[] = "`requestTypes` = '" . $requesttype . "'";
         }
+        $w[] = "`isActive` = 1";
+
         if (count($w)) {
             $where = "WHERE " . implode(' AND ', $w);
         }
@@ -32,6 +34,7 @@ class Search {
         }
         return $array_res;
     }
+
     public function showPagination($city, $vehicletype, $requesttype, $per_page, $page) {
 
         $w = array();
@@ -46,6 +49,8 @@ class Search {
         if (!empty($requesttype)) {
             $w[] = "`requestTypes` = '" . $requesttype . "'";
         }
+        $w[] = "`isActive` = 1";
+
         if (count($w)) {
             $where = "WHERE " . implode(' AND ', $w);
         }

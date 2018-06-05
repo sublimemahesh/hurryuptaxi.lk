@@ -378,6 +378,31 @@ $RENT_A_CAR = new RentACar($id);
                                             </div>
                                         </div>
                                     </div>
+                                    
+                                    <!--Active-->
+
+                                <?php
+                                if ( $_SESSION['id'] == 1) {
+                                    ?>
+
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2  hidden-sm  hidden-xs  form-control-label">
+                                            <label for="isActive">Status</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <input class="filled-in chk-col-pink" type="checkbox" <?php
+                                                if ($RENT_A_CAR->isActive == 1) {
+                                                    echo 'checked';
+                                                }
+                                                ?> name="isActive" value="1" id="isActive" style="margin-top: 6px;"/>
+                                                <label for="isActive">Active / InActive</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
+                                ?>
 
                                     <!--Self Drive Price / Excited Self Drive-->
                                     <div class="row clearfix">

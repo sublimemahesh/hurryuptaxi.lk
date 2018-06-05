@@ -24,6 +24,7 @@ class RentACar {
     public $noOfBaggage;
     public $noOfDoors;
     public $airConditioned;
+    public $isActive;
     public $price_self_drive;
     public $price_tours;
     public $price_wedding;
@@ -54,6 +55,7 @@ class RentACar {
                     . "`noOfBaggage`,"
                     . "`noOfDoors`,"
                     . "`airConditioned`,"
+                    . "`isActive`,"
                     . "`price_self_drive`,"
                     . "`price_tours`,"
                     . "`price_wedding`,"
@@ -86,6 +88,7 @@ class RentACar {
             $this->noOfBaggage = $result['noOfBaggage'];
             $this->noOfDoors = $result['noOfDoors'];
             $this->airConditioned = $result['airConditioned'];
+            $this->isActive = $result['isActive'];
             $this->price_self_drive = $result['price_self_drive'];
             $this->price_tours = $result['price_tours'];
             $this->price_wedding = $result['price_wedding'];
@@ -103,7 +106,7 @@ class RentACar {
 
         $query = "INSERT INTO `rent_a_car` "
                 . "(`user`,`name`,`mainTypes`,`requestTypes`,`conatcName`,`phoneNumber`,`email`,`district`,`city`,`address`,"
-                . "`vehicleNumber`,`fuelType`,`noOfPassengers`,`noOfBaggage`,`noOfDoors`,`airConditioned`,`price_self_drive`,"
+                . "`vehicleNumber`,`fuelType`,`noOfPassengers`,`noOfBaggage`,`noOfDoors`,`airConditioned`,`isActive`,`price_self_drive`,"
                 . "`price_tours`,`price_wedding`,`price_airport`,`excited_milage_self_drive`,`excited_milage_tour`,`excited_milage_wedding`,`excited_milage_airport`) "
                 . "VALUES "
                 . " ('" . $this->user . "',"
@@ -122,6 +125,7 @@ class RentACar {
                 . "'" . $this->noOfBaggage . "',"
                 . "'" . $this->noOfDoors . "',"
                 . "'" . $this->airConditioned . "',"
+                . "'" . $this->isActive . "',"
                 . "'" . $this->price_self_drive . "',"
                 . "'" . $this->price_tours . "',"
                 . "'" . $this->price_wedding . "',"
@@ -157,6 +161,20 @@ class RentACar {
 
         return $array_res;
     }
+    
+    public function getActiveVehicles() {
+
+        $query = "SELECT * FROM `rent_a_car` WHERE `isActive` = 1";
+        $db = new Database();
+        $result = $db->readQuery($query);
+        $array_res = array();
+
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+
+        return $array_res;
+    }
 
     public function update() {
 
@@ -177,6 +195,7 @@ class RentACar {
                 . '`noOfBaggage`= "' . $this->noOfBaggage . '", '
                 . '`noOfDoors`= "' . $this->noOfDoors . '", '
                 . '`airConditioned`= "' . $this->airConditioned . '", '
+                . '`isActive`= "' . $this->isActive . '", '
                 . '`price_self_drive`= "' . $this->price_self_drive . '", '
                 . '`price_tours`= "' . $this->price_tours . '", '
                 . '`price_wedding`= "' . $this->price_wedding . '", '
@@ -185,6 +204,22 @@ class RentACar {
                 . '`excited_milage_tour`= "' . $this->excited_milage_tour . '", '
                 . '`excited_milage_wedding`= "' . $this->excited_milage_wedding . '", '
                 . '`excited_milage_airport`= "' . $this->excited_milage_airport . '"'
+                . ' WHERE id="' . $this->id . '"';
+
+        $db = new Database();
+        $result = $db->readQuery($query);
+
+        if ($result) {
+            return $this->__construct($this->id);
+        } else {
+            return FALSE;
+        }
+    }
+    
+    public function activeVehicle() {
+
+        $query = "UPDATE  `rent_a_car` SET "
+                . '`isActive`= "' . $this->isActive . '" '
                 . ' WHERE id="' . $this->id . '"';
 
         $db = new Database();
