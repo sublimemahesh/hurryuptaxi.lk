@@ -178,33 +178,34 @@ if (isset($_GET['message'])) {
                                         </tr>
                                     </table>
 
-                                    <table class="details-car car-rates">
-                                        <tr>
-                                            <th colspan="2">VEHICLE RATES (per day)</th>
-                                            <th>EXCESS MILEAGE (per day)</th>
+                                    <table class="details-car car-rates table-bordered">
+                                        <tr >
+                                            <th class="text-center">REQUEST TYPE</th>
+                                            <th class="text-center">RATE PER DAY (LKR)</th>
+                                            <th class="text-center">EXCESS MILEAGE (LKR)</th>
                                         </tr>
                                         <tr>
                                             <td>Self Drive</td>
-                                            <td><?php echo 'LKR ' . number_format($RENT_A_CAR->price_self_drive, 2) . '/='; ?>
-                                            <td><?php echo 'LKR ' . number_format($RENT_A_CAR->excited_milage_self_drive, 2) . '/='; ?>
+                                            <td class="text-right"><?php echo number_format($RENT_A_CAR->price_self_drive, 2) . '/='; ?>
+                                            <td class="text-right"><?php echo number_format($RENT_A_CAR->excited_milage_self_drive, 2) . '/='; ?>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Tours/ Chauffeur Driven</td>
-                                            <td><?php echo 'LKR ' . number_format($RENT_A_CAR->price_tours, 2) . '/='; ?>
-                                            <td><?php echo 'LKR ' . number_format($RENT_A_CAR->excited_milage_tour, 2) . '/='; ?>
+                                            <td class="text-right"><?php echo number_format($RENT_A_CAR->price_tours, 2) . '/='; ?>
+                                            <td class="text-right"><?php echo number_format($RENT_A_CAR->excited_milage_tour, 2) . '/='; ?>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Weddings & Events</td>
-                                            <td><?php echo 'LKR ' . number_format($RENT_A_CAR->price_wedding, 2) . '/='; ?>
-                                            <td><?php echo 'LKR ' . number_format($RENT_A_CAR->excited_milage_wedding, 2) . '/='; ?>
+                                            <td class="text-right"><?php echo number_format($RENT_A_CAR->price_wedding, 2) . '/='; ?>
+                                            <td class="text-right"><?php echo number_format($RENT_A_CAR->excited_milage_wedding, 2) . '/='; ?>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Airport/ City Transfers</td>
-                                            <td><?php echo 'LKR ' . number_format($RENT_A_CAR->price_airport, 2) . '/='; ?>
-                                            <td><?php echo 'LKR ' . number_format($RENT_A_CAR->excited_milage_airport, 2) . '/='; ?>
+                                            <td class="text-right"><?php echo number_format($RENT_A_CAR->price_airport, 2) . '/='; ?>
+                                            <td class="text-right"><?php echo number_format($RENT_A_CAR->excited_milage_airport, 2) . '/='; ?>
                                             </td>
                                         </tr>
                                     </table>
