@@ -328,3 +328,18 @@ ul.setPaginate li a {
 .blog-posts-carousel {
     padding: 0px 0 25px;
 }
+.gallery__item__image {
+    width: 300px;
+}
+.gallery__item .tt-list-descriptions {
+    margin-left: 35px;
+}
+.gallery__item__content .btn {
+    margin-left: 44px;
+}
+.gallery__item__content h6 {
+    width: 300px;
+}
+.swiper-container-blog {
+    padding-bottom: 0px;
+}
