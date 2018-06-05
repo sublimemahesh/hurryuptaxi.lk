@@ -63,10 +63,20 @@ and open the template in the editor.
     #tt-mobile-top-box .inside .tt-select-small {
         width: 32.5%;
     }
+    .nivo-caption__inner .text h1 {
+        font-size: 15px;
+        line-height: 1em;
+        letter-spacing: 0px;
+    }
 }
 @media (min-width: 650px) and (max-width: 991px) {
     #tt-mobile-top-box .inside .tt-select-small {
         width: 33%;
+    }
+    .nivo-caption__inner .text h1 {
+        font-size: 41px;
+        line-height: 1.2em;
+        letter-spacing: 4px;
     }
 }
 @media (min-width: 1000px) and (max-width: 1199px) {
