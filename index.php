@@ -211,7 +211,7 @@ $CITY = new City(NULL);
                         <div class="swiper-wrapper gallery">
 
                             <?php
-                            $RENT_A_CARS = RentACar::all();
+                            $RENT_A_CARS = RentACar::getActiveVehicles();
 
                             foreach ($RENT_A_CARS as $key => $car) {
                                 if ($key < 9) {

@@ -26,6 +26,7 @@ if (isset($_POST['add-rent-a-car'])) {
     $RENT_A_CAR->noOfBaggage = $_POST['noOfBaggage'];
     $RENT_A_CAR->noOfDoors = $_POST['noOfDoors'];
     $RENT_A_CAR->airConditioned = $_POST['airConditioned'];
+    $RENT_A_CAR->isActive = 1;
     $RENT_A_CAR->price_self_drive = $_POST['price_self_drive'];
     $RENT_A_CAR->price_tours = $_POST['price_tours'];
     $RENT_A_CAR->price_wedding = $_POST['price_wedding'];
@@ -95,6 +96,7 @@ if (isset($_POST['edit-rent-a-car'])) {
     $RENT_A_CAR->noOfBaggage = $_POST['noOfBaggage'];
     $RENT_A_CAR->noOfDoors = $_POST['noOfDoors'];
     $RENT_A_CAR->airConditioned = $_POST['airConditioned'];
+    $RENT_A_CAR->isActive = $_POST['isActive'];
     $RENT_A_CAR->price_self_drive = $_POST['price_self_drive'];
     $RENT_A_CAR->price_tours = $_POST['price_tours'];
     $RENT_A_CAR->price_wedding = $_POST['price_wedding'];
