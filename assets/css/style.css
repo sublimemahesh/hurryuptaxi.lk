@@ -336,6 +336,7 @@ ul.setPaginate li a {
 }
 .gallery__item__content .btn {
     margin-left: 44px;
+    font-size: 14px;
 }
 .gallery__item__content h6 {
     width: 300px;

@@ -39,6 +39,9 @@ and open the template in the editor.
     #search {
         margin-left: 28%;
     }
+    .desc-inner .contact-info i {
+        left: -5px;
+    }
 }
 @media (min-width: 420px) and (max-width: 540px) {
     #search {
@@ -150,6 +153,9 @@ and open the template in the editor.
     }
     .header-tp {
         margin-left: 265px
+    }
+    .gallery__item__content .btn {
+        margin-left: -137px;
     }
 }
 
