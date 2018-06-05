@@ -140,7 +140,7 @@ and open the template in the editor.
         margin-top: -208px;
     }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1279px) {
     .header-container__flex .tt-header-info .tt-item {
         margin-left: 11px;
     }
