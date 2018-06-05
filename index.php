@@ -350,7 +350,7 @@ $CITY = new City(NULL);
                     </div>
                 </div>
                 <figure class="car-info-box__thumb has-second-img">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63371.803855932434!2d79.8211858627196!3d6.921922576462158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838d!2sColombo!5e0!3m2!1sen!2slk!4v1526367858712" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126908.85489853343!2d80.03612977336915!3d6.2766515187626215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae181d2d5030051%3A0x4ca48deb1176537!2sKarandeniya!5e0!3m2!1sen!2slk!4v1528190605849" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </figure>
             </section>
             <!-- // Contact Us -->
