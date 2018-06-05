@@ -352,3 +352,9 @@ ul.setPaginate li a {
 .logo a {
     padding-left: 30px;
 }
+.view-vehicle .icon-left-arrow2 {
+    font-weight: 900;
+}
+.view-vehicle {
+    padding: 15px 40px 17px;
+}
