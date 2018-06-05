@@ -94,6 +94,9 @@ and open the template in the editor.
     .welcome-text {
         top: -61px;
     }
+    .car-rates {
+        font-size: 12px;
+    }
 }
 @media (width: 360px) {
     .header-tp {
