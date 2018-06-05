@@ -103,6 +103,24 @@ $RENT_A_CAR = new RentACar(NULL);
                                                         <a href="#" class="delete-rent-a-car btn btn-sm btn-danger" data-id="<?php echo $rent_a_car['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
                                                         </a>
+                                                        <?php
+                                                        if ($_SESSION['id'] == 1) {
+
+                                                            if ($rent_a_car['isActive'] == 1) {
+                                                                ?>
+                                                                <a href="#" class="active-rent-a-car btn btn-sm btn-info" data-id="<?php echo $rent_a_car['id']; ?>" active="true">
+                                                                    <i class="glyphicon glyphicon-eye-open" data-type="cancel" title="Active"></i>
+                                                                </a>
+                                                                <?php
+                                                            } else {
+                                                                ?>
+                                                                <a href="#" class="active-rent-a-car btn btn-sm btn-info" data-id="<?php echo $rent_a_car['id']; ?>" active="false">
+                                                                    <i class="glyphicon glyphicon-eye-close" data-type="cancel" title="InActive"></i>
+                                                                </a>
+                                                                <?php
+                                                            }
+                                                        }
+                                                        ?>
 
                                                     </td>
                                                 </tr>
@@ -151,6 +169,7 @@ $RENT_A_CAR = new RentACar(NULL);
         <script src="js/demo.js"></script>
         <script src="delete/js/member.js" type="text/javascript"></script>
         <script src="delete/js/rent-a-car.js" type="text/javascript"></script>
+        <script src="js/active-vehicle.js" type="text/javascript"></script>
 
     </body>
 

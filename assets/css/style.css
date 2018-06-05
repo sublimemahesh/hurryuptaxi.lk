@@ -366,3 +366,9 @@ ul.setPaginate li a {
 .testimonials-carousel_box {
     padding: 60px 0 127px;
 }
+.text-block {
+    margin-bottom: 0;
+}
+#btnSubmit {
+    background-color: #009;
+}
