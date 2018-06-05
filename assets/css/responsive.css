@@ -34,6 +34,12 @@ and open the template in the editor.
     .gallery__item__content .btn {
         margin-left: -15px;
     }
+    .reg-btn {
+        margin-top: 0px;
+        padding: 10px 14px 9px;
+        margin-left: 0px;
+        font-size: 12px;
+    }
 }
 @media (max-width: 420px) {
     #search {
@@ -156,6 +162,12 @@ and open the template in the editor.
     }
     .gallery__item__content .btn {
         margin-left: -137px;
+    }
+    .header-container__flex .tt-header-info {
+        max-width: 620px;
+    }
+    .logo a {
+        padding-left: 0px;
     }
 }
 

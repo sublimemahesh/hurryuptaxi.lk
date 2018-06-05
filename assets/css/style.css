@@ -344,3 +344,11 @@ ul.setPaginate li a {
 .swiper-container-blog {
     padding-bottom: 0px;
 }
+.reg-btn {
+    margin-top: -79px;
+    padding: 14px 13px 16px;
+    margin-left: 20px;
+}
+.logo a {
+    padding-left: 30px;
+}

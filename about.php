@@ -82,7 +82,7 @@
                         <article>
                             <h1>Rent your vehicle with us</h1>
                             <span class="text-link">Drive away with more money in your pockets and more time on your itinerary.</span>
-                            <a href="member/" class="btn">Register Now...</a>
+                            <a href="member/" class="btn">Login Now...</a>
                         </article>
                     </div>
                 </div>
