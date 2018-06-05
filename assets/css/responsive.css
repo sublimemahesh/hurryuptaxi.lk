@@ -31,6 +31,9 @@ and open the template in the editor.
     #search {
         margin-top: 20px;
     }
+    .gallery__item__content .btn {
+        margin-left: -15px;
+    }
 }
 @media (max-width: 420px) {
     #search {
