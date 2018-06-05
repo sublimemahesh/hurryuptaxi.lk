@@ -326,7 +326,7 @@ ul.setPaginate li a {
     right: 60px;
 }
 .blog-posts-carousel {
-    padding: 0px 0 25px;
+    padding: 0px 0 60px;
 }
 .gallery__item__image {
     width: 300px;
@@ -343,6 +343,7 @@ ul.setPaginate li a {
 }
 .swiper-container-blog {
     padding-bottom: 0px;
+    margin-top: 35px;
 }
 .reg-btn {
     margin-top: -79px;
@@ -357,4 +358,11 @@ ul.setPaginate li a {
 }
 .view-vehicle {
     padding: 15px 40px 17px;
+}
+.blog-posts-carousel h1 {
+    margin-bottom: 15px;
+    color: #009;
+}
+.testimonials-carousel_box {
+    padding: 60px 0 127px;
 }
