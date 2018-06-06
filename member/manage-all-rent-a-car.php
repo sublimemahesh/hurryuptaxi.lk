@@ -10,7 +10,7 @@ $RENT_A_CAR = new RentACar(NULL);
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Manage Rent A Car || Admin || hurryuptaxi.lk</title>
+        <title>Manage All Rent A Cars || Admin || hurryuptaxi.lk</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -41,7 +41,7 @@ $RENT_A_CAR = new RentACar(NULL);
                         <div class="card" style="margin-top: 20px;">
                             <div class="header">
                                 <h2>
-                                    Manage Rent A Car
+                                    Manage All Rent A Cars
                                 </h2>
                                 <ul class="header-dropdown m-r--5">
                                     <li class="dropdown">

@@ -171,7 +171,7 @@
                             <li>
                                 <a href="manage-all-rent-a-car.php">
                                     <i class="material-icons">list</i>
-                                    <span>All Rent a car</span>
+                                    <span>All Rent a cars</span>
                                 </a>
                             </li>
                             <?php
@@ -179,7 +179,7 @@
                         ?>
                     </ul>
                 </li>  
-                
+
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">assignment_ind</i>
@@ -276,28 +276,8 @@
 
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">note_add</i>
+                            <i class="material-icons">send</i>
                             <span>Commission</span>
-                        </a>
-                        <ul class="ml-menu">
-<!--                            <li>
-                                <a href="create-commission.php">
-                                    <i class="material-icons">add</i>
-                                    <span>Add New</span>
-                                </a>
-                            </li>-->
-                            <li>
-                                <a href="manage-commission.php">
-                                    <i class="material-icons">list</i>
-                                    <span>Manage</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">note_add</i>
-                            <span>All Bookings</span>
                         </a>
                         <ul class="ml-menu">
                             <!--                            <li>
@@ -307,14 +287,13 @@
                                                             </a>
                                                         </li>-->
                             <li>
-                                <a href="manage-all-bookings.php">
+                                <a href="manage-commission.php">
                                     <i class="material-icons">list</i>
                                     <span>Manage</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
-
                     <?php
                 }
                 ?>
@@ -330,8 +309,52 @@
                                 <span>Manage</span>
                             </a>
                         </li>
+                        <?php
+                        if ($USER->id == 1) {
+                            ?>
+                            <li>
+                                <a href="manage-all-bookings.php">
+                                    <i class="material-icons">list</i>
+                                    <span>All Bookings</span>
+                                </a>
+                            </li>
+                            <?php
+                        }
+                        ?>
                     </ul>
                 </li>
+                <?php
+                if ($USER->id == 1) {
+                    ?>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">feedback</i>
+                            <span>Guest Comments</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="create-comment.php">
+                                    <i class="material-icons">add</i>
+                                    <span>Add New</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="manage-comments.php">
+                                    <i class="material-icons">list</i>
+                                    <span>Manage</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="arrange-comments.php">
+                                    <i class="material-icons">compare_arrows</i>
+                                    <span>Arrange</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <?php
+                }
+                ?>
                 <li>
                     <div style="height: 200px;"></div>
                 </li> 
