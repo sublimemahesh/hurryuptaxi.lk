@@ -155,7 +155,7 @@
                                                 </div>
                                             </div>
                                         </div> 
-                                        <div class="col-sm-8 text-right">
+                                        <div class="col-sm-8 text-right contact-btn">
                                             <button type="submit" id="btnSubmit" class="cp-btn-style1">SEND YOUR MESSAGE</button>
                                         </div> 
                                         <div id="dismessage" align="center"></div>

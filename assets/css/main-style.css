@@ -6851,7 +6851,7 @@ Skin Name: Nivo Slider Default Theme
     color: #6678ea; }
 
 .theme-default .nivo-directionNav a:before {
-  content: "\e915";
+  /*content: "\e915";*/
   font-family: 'iconfont';
   font-size: 2.5vw;
   line-height: 1em; }
@@ -6866,7 +6866,8 @@ Skin Name: Nivo Slider Default Theme
   left: 15px; }
 
 .theme-default .nivo-directionNav a.nivo-prevNav:before {
-  content: "\e912"; }
+  /*content: "\e912";*/ 
+}
 
 .theme-default .nivo-controlNav.nivo-thumbs-enabled {
   width: 100%; }

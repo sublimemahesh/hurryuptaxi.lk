@@ -373,7 +373,10 @@ ul.setPaginate li a {
     background-color: #009;
 }
 .nivo-caption__inner .text h1 {
-    font-size: 48px;
+    font-size: 40px;
     line-height: 1.2em;
     letter-spacing: 3px;
+}
+.nivo-caption__inner {
+    width: 500px;
 }
