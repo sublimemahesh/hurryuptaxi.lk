@@ -202,7 +202,6 @@ $CITY = new City(NULL);
             </div>
             <!-- // Welcome -->
             <!-- Vehicle -->
-            <!-- // Vehicle -->
             <section class="blog-posts-carousel">
                 <div class="container">
                     <h1>Rent A Cars</h1>
@@ -331,6 +330,7 @@ $CITY = new City(NULL);
                     <a href = "rent-a-car.php" class="btn view-vehicle">View More Vehicles <i class="icon-left-arrow2"></i><i class="icon-left-arrow2"></i></a></div>
                 </div>
             </section>
+            <!-- // Vehicle -->
             <!-- Contact Us -->
             <section class="car-info-box" data-wow-duration="1s" data-wow-delay="1s">
                 <div class="car-info-box__description">
@@ -361,71 +361,31 @@ $CITY = new City(NULL);
                     <span class="text-link">What our clients say about us</span>
                     <div class="swiper-container-blockquote swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <article class="block_tesimonial">
-                                    <blockquote>
-                                        <div class="inner_blockquote">
-                                            <div class="wrapper">
-                                                <p>I was very pleased once again. Hiring online was easy, collection was straight forward, and returning the car was quick. A very good experience! Thank you.</p>
-                                                <span class="author_info">
-                                                    <img src="assets/images/author_img.png" alt="">
-                                                    <span class="name">Thomas Burgess</span>
-                                                    <span class="position">Regular Customer</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </blockquote>
-                                </article>
-                            </div>
-                            <div class="swiper-slide">
-                                <article class="block_tesimonial">
-                                    <blockquote>
-                                        <div class="inner_blockquote">
-                                            <div class="wrapper">
-                                                <p>This is the second time this year that I have rented a Rental Cars direct vehicle and the cars were both virtually brand new. Awesome cars and very kind, helpful staff. Thank you!</p>
-                                                <span class="author_info">
-                                                    <img src="assets/images/author_img_1.png" alt="">
-                                                    <span class="name">Donald Alford</span>
-                                                    <span class="position">Regular Customer</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </blockquote>
+                            <?php
+                            $COMMENTS = Comments::activeComments();
 
-                                </article>
-                            </div>
-                            <div class="swiper-slide">
-                                <article class="block_tesimonial">
-                                    <blockquote>
-                                        <div class="inner_blockquote">
-                                            <div class="wrapper">
-                                                <p>Great Service, Absolutely Terrific staff, extremely professional!!! This was my first ever Car Renting experience, Awesome!!</p>
-                                                <span class="author_info">
-                                                    <img src="assets/images/author_img_2.png" alt="">
-                                                    <span class="name">James Knudsen</span>
-                                                    <span class="position">Regular Customer</span>
-                                                </span>
+                            foreach ($COMMENTS as $comment) {
+                                ?>
+                                <div class="swiper-slide">
+                                    <article class="block_tesimonial">
+                                        <blockquote>
+                                            <div class="inner_blockquote">
+                                                <div class="wrapper">
+                                                    <p><?php echo $comment['comment']; ?></p>
+                                                    <span class="author_info">
+                                                        <img src="upload/comments/<?php echo $comment['image_name']; ?>" class="img-circle" alt=""/>
+                                                        <span class="name"><?php echo $comment['name']; ?></span>
+                                                        <span class="position"><?php echo $comment['city']; ?></span>
+                                                    </span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </blockquote>
-                                </article>
-                            </div>
-                            <div class="swiper-slide">
-                                <article class="block_tesimonial">
-                                    <blockquote>
-                                        <div class="inner_blockquote">
-                                            <div class="wrapper">
-                                                <p>Im really impressed with your staff at all moosa branch, patricia. She has sevice minded, be attentive, proactive. I think you have a very value staff with you.</p>
-                                                <span class="author_info">
-                                                    <img src="assets/images/author_img_3.png" alt="">
-                                                    <span class="name">Bruce Justice</span>
-                                                    <span class="position">Regular Customer</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </blockquote>
-                                </article>
-                            </div>
+                                        </blockquote>
+                                    </article>
+                                </div>
+                                <?php
+                            }
+                            ?>
+
                         </div>
                     </div>
                     <div class="swiper-pagination swiper-pagination-blockquote"></div>
