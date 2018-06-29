@@ -29,7 +29,7 @@ class Commission {
             $this->date = $result['date'];
             $this->paid_for = $result['paid_for'];
             $this->paid_to = $result['paid_to'];
-            $this->date = $result['commission_amount'];
+            $this->commission_amount = $result['commission_amount'];
             $this->bank = $result['bank'];
             $this->payment_reference = $result['payment_reference'];
             $this->other_comment = $result['other_comment'];
@@ -88,7 +88,8 @@ class Commission {
                 . "`commission_amount` ='" . $this->commission_amount . "', "
                 . "`bank` ='" . $this->bank . "', "
                 . "`payment_reference` ='" . $this->payment_reference . "', "
-                . "`other_comment` ='" . $this->other_comment . "'";
+                . "`other_comment` ='" . $this->other_comment . "'"
+                . "WHERE `id` = '" . $this->id . "'";
 
         $db = new Database();
         $result = $db->readQuery($query);

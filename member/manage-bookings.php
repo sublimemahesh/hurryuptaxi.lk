@@ -32,9 +32,9 @@ $BOOKINGS = Booking::getBookingsByUser($_SESSION["id"]);
     </head>
 
     <body class="theme-red">
-<?php
-include './navigation-and-header.php';
-?>
+        <?php
+        include './navigation-and-header.php';
+        ?>
         <section class="content">
             <div class="container-fluid"> 
                 <!-- Manage Districts -->
@@ -73,10 +73,10 @@ include './navigation-and-header.php';
                                             </tr>
                                         </thead>
                                         <tbody>
-<?php
-foreach ($BOOKINGS as $key => $booking) {
-    $RENT_A_CAR = new RentACar($booking['rent_a_car']);
-    ?>
+                                            <?php
+                                            foreach ($BOOKINGS as $key => $booking) {
+                                                $RENT_A_CAR = new RentACar($booking['rent_a_car']);
+                                                ?>
                                                 <tr id="row_<?php echo $booking['id']; ?>">
                                                     <td><?php echo $booking['id']; ?></td> 
                                                     <td><?php echo $booking['date_time_booked']; ?></td> 
@@ -93,9 +93,9 @@ foreach ($BOOKINGS as $key => $booking) {
 
                                                     </td>
                                                 </tr>
-    <?php
-}
-?>   
+                                                <?php
+                                            }
+                                            ?>   
                                         </tbody>
                                         <tfoot>
                                             <tr>
