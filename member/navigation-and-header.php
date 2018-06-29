@@ -292,6 +292,12 @@
                                     <span>Manage</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="paid-commissions.php">
+                                    <i class="material-icons">list</i>
+                                    <span>All Paid Commissions</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <?php

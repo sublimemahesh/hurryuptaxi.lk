@@ -94,7 +94,7 @@ class Comments {
         }
     }
     
-        public function delete() {
+    public function delete() {
 
         $query = 'DELETE FROM `comments` WHERE id="' . $this->id . '"';
 
@@ -102,8 +102,8 @@ class Comments {
 
         return $db->readQuery($query);
     }
-    
-        public function activeComments() {
+
+    public function activeComments() {
 
         $query = "SELECT * FROM `comments` WHERE is_active = '1' ORDER BY queue ASC";
         $db = new Database();

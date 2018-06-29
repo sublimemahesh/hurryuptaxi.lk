@@ -61,18 +61,23 @@ if (isset($_POST['edit-commission'])) {
     $COMMISSION = New Commission($_POST['id']);
     $VALID = new Validator();
 
-    $COMMISSION->user = $_POST['user'];
-    $COMMISSION->parent = $_POST['parent'];
+    $COMMISSION->id = $_POST['id'];
+    $COMMISSION->date = $_POST['date'];
+    $COMMISSION->paid_for = $_POST['paid_for'];
+    $COMMISSION->paid_to = $_POST['paid_to'];
+    $COMMISSION->commission_amount = $_POST['commission_amount'];
     $COMMISSION->bank = $_POST['bank'];
     $COMMISSION->payment_reference = $_POST['payment_reference'];
     $COMMISSION->other_comment = $_POST['other_comment'];
 
     $VALID->check($COMMISSION, [
-        'user' => ['required' => TRUE],
-        'parent' => ['required' => TRUE],
-        'other_comment' => ['required' => TRUE],
+        'id' => ['required' => TRUE],
+        'date' => ['required' => TRUE],
+        'paid_for' => ['required' => TRUE],
+        'paid_to' => ['required' => TRUE],
+        'commission_amount' => ['required' => TRUE],
         'bank' => ['required' => TRUE],
-        'payment_reference' => ['required' => TRUE],
+        'payment_reference' => ['required' => TRUE]
     ]);
 
     if ($VALID->passed()) {
