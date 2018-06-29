@@ -10,7 +10,7 @@ $USERS = new User(NULL);
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Manage Commission || Admin || hurryuptaxi.lk</title>
+        <title>Manage Commissions || Admin || hurryuptaxi.lk</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -46,7 +46,7 @@ $USERS = new User(NULL);
                         <div class="card" style="margin-top: 20px;">
                             <div class="header">
                                 <h2>
-                                    Manage Commission
+                                    Manage Commissions
                                 </h2>
                                 <ul class="header-dropdown m-r--5">
                                     <li class="dropdown">
