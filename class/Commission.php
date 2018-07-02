@@ -55,7 +55,7 @@ class Commission {
         $db = new Database();
 
         $result = $db->readQuery($query);
-        
+
         if ($result) {
             $last_id = mysql_insert_id();
 
@@ -156,6 +156,30 @@ class Commission {
         $db = new Database();
 
         return $db->readQuery($query);
+    }
+
+    public function getPaidCommissionByParent($parent) {
+
+        $query = "SELECT * FROM `commission` WHERE `paid_to` = '" . $parent . "'";
+        $db = new Database();
+        $result = $db->readQuery($query);
+        $array_res = array();
+
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+
+        return $array_res;
+    }
+    
+    public function getTotalCommissionByParent($parent) {
+
+        $query = "SELECT sum(commission_amount) AS `total` FROM `commission` WHERE `paid_to` = '" . $parent . "'";
+        $db = new Database();
+
+        $result = mysql_fetch_array($db->readQuery($query));
+
+        return $result;
     }
 
 }
