@@ -477,6 +477,7 @@ class User {
             return FALSE;
         }
     }
+    
     public function setisComPaidTrue() {
 
         $query = "UPDATE  `user` SET "
@@ -522,6 +523,32 @@ class User {
         }
 
         return $array_res;
+    }
+    
+    public function GetUserByPendingCommissionAndParent($parent) {
+
+        $query = "SELECT * FROM `user` WHERE `parent` = '". $parent ."' AND `isComPaid` = '". 0 ."'";
+
+        $db = new Database();
+
+        $result = $db->readQuery($query);
+        $array_res = array();
+
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+
+        return $array_res;
+    }
+    
+    public function getTotalCommissionByParent($parent) {
+
+        $query = "SELECT sum(payment) AS `total` FROM `user` WHERE `parent` = '" . $parent . "' AND `isActive` = '" . 1 . "' AND `isComPaid` = '" . 0 . "'";
+        $db = new Database();
+
+        $result = mysql_fetch_array($db->readQuery($query));
+
+        return $result;
     }
 
 }

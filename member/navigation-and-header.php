@@ -293,7 +293,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="paid-commissions.php">
+                                <a href="all-paid-commissions.php">
                                     <i class="material-icons">list</i>
                                     <span>All Paid Commissions</span>
                                 </a>
@@ -303,6 +303,26 @@
                     <?php
                 }
                 ?>
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">send</i>
+                        <span>My Commissions</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="paid-commissions.php">
+                                <i class="material-icons">list</i>
+                                <span>Paid Commissions</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pending-commissions.php">
+                                <i class="material-icons">list</i>
+                                <span>Pending Commissions</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">note_add</i>

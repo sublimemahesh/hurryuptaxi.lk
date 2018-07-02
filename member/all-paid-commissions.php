@@ -2,7 +2,7 @@
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
-$USERS = new User(NULL);
+
 ?> 
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@ $USERS = new User(NULL);
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Manage Commissions || Admin || hurryuptaxi.lk</title>
+        <title>Manage Paid Commissions || Admin || hurryuptaxi.lk</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -46,11 +46,13 @@ $USERS = new User(NULL);
                         <div class="card" style="margin-top: 20px;">
                             <div class="header">
                                 <h2>
-                                    Manage Commissions
+                                    Manage Paid Commissions
                                 </h2>
                                 <ul class="header-dropdown m-r--5">
                                     <li class="dropdown">
-                                        
+                                        <a href="manage-commission.php">
+                                            <i class="material-icons">add</i> 
+                                        </a>
                                         <ul class="dropdown-menu pull-right">
                                             <li><a href="javascript:void(0);">Action</a></li>
                                             <li><a href="javascript:void(0);">Another action</a></li>
@@ -66,30 +68,29 @@ $USERS = new User(NULL);
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
+                                                <th>Date</th>
                                                 <th>Paid For</th> 
                                                 <th>Paid To</th>
-                                                <th>Registration Fee</th>
+                                                <th>Commission Amount</th>
                                                 <th>Options</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            foreach ($USERS->GetUserByNotPayCommission() as $key => $user) {
+                                            foreach (Commission::all() as $key => $commission) {
+                                                $USER1 = new User($commission['paid_for']);
+                                                $USER2 = new User($commission['paid_to']);
                                                 ?>
-                                                <tr id="row_<?php echo $user['id']; ?>">
-                                                    <td><?php echo $user['id']; ?></td> 
-                                                    <td><?php echo $user['username']; ?></td> 
+                                                <tr id="row_<?php echo $commission['id']; ?>">
+                                                    <td><?php echo $commission['id']; ?></td> 
+                                                    <td><?php echo $commission['date']; ?></td> 
+                                                    <td><?php echo $USER1->username; ?></td> 
+                                                    <td><?php echo $USER2->username; ?></td> 
 
-                                                    <td>
-                                                        <?php 
-                                                        $PARENT = new User($user['parent']);
-                                                        echo $PARENT->username; ?>
-                                                    </td> 
-
-                                                    <td class="text-right"><?php echo 'RS: ' . number_format($user['payment'],2) . '/='; ?></td>
+                                                    <td class="text-right"><?php echo 'RS: ' . number_format($commission['commission_amount'],2) . '/='; ?></td>
                                                     <td> 
-                                                        <a href="create-commission.php?id=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-info">
-                                                            <i class="glyphicon glyphicon-usd"></i>
+                                                        <a href="view-commission.php?id=<?php echo $commission['id']; ?>" class="op-link btn btn-sm btn-success">
+                                                            <i class="glyphicon glyphicon-pencil"></i>
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -98,13 +99,12 @@ $USERS = new User(NULL);
                                             ?>   
                                         </tbody>
                                         <tfoot>
-                                            <tr>
-                                                <th>ID</th>
+                                            <th>ID</th>
+                                                <th>Date</th>
                                                 <th>Paid For</th> 
                                                 <th>Paid To</th>
-                                                <th>Registration Fee</th>
+                                                <th>Commission Amount</th>
                                                 <th>Options</th>
-                                            </tr>
                                         </tfoot>
                                     </table>
                                 </div>

@@ -2,7 +2,7 @@
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
-
+$total = Commission::getTotalCommissionByParent($_SESSION["id"]);
 ?> 
 <!DOCTYPE html>
 <html>
@@ -69,42 +69,31 @@ $USER = new User($_SESSION["id"]);
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Date</th>
-                                                <th>Paid For</th> 
-                                                <th>Paid To</th>
+                                                <th>Paid For</th>
                                                 <th>Commission Amount</th>
-                                                <th>Options</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            foreach (Commission::all() as $key => $commission) {
+                                            foreach (Commission::getPaidCommissionByParent($_SESSION["id"]) as $key => $commission) {
                                                 $USER1 = new User($commission['paid_for']);
-                                                $USER2 = new User($commission['paid_to']);
                                                 ?>
                                                 <tr id="row_<?php echo $commission['id']; ?>">
                                                     <td><?php echo $commission['id']; ?></td> 
                                                     <td><?php echo $commission['date']; ?></td> 
-                                                    <td><?php echo $USER1->username; ?></td> 
-                                                    <td><?php echo $USER2->username; ?></td> 
+                                                    <td><?php echo $USER1->username; ?></td>
 
-                                                    <td><?php echo 'RS: ' . $commission['commission_amount'] . '/='; ?></td>
-                                                    <td> 
-                                                        <a href="view-commission.php?id=<?php echo $commission['id']; ?>" class="op-link btn btn-sm btn-success">
-                                                            <i class="glyphicon glyphicon-pencil"></i>
-                                                        </a>
-                                                    </td>
+                                                    <td class="text-right"><?php echo 'RS: ' . number_format($commission['commission_amount'],2) . '/='; ?></td>
                                                 </tr>
                                                 <?php
                                             }
                                             ?>   
                                         </tbody>
                                         <tfoot>
-                                            <th>ID</th>
-                                                <th>Date</th>
-                                                <th>Paid For</th> 
-                                                <th>Paid To</th>
-                                                <th>Commission Amount</th>
-                                                <th>Options</th>
+                                            <tr>
+                                                <th colspan="3" class="text-center">Total</th>
+                                                <th class="text-right"><?php echo 'RS: ' . number_format($total['total'],2) . '/='; ?></th>
+                                            </tr>
                                         </tfoot>
                                     </table>
                                 </div>
