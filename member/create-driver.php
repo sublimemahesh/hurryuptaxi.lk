@@ -70,6 +70,19 @@ $createdAt = date('Y-m-d H:i:s');
                                             </div>
                                         </div>
                                     </div> 
+                                    <!--email-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="name">Email</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="email" id="email" class="form-control" placeholder="Enter Your email" autocomplete="off" name="email" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
                                     <!--Phone Number-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
@@ -202,6 +215,32 @@ $createdAt = date('Y-m-d H:i:s');
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="text" id="price_per_km" class="form-control" placeholder="Enter Price Per KM" autocomplete="off" name="price_per_km">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Base Price-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="base_price">Base Price</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="base_price" class="form-control" placeholder="Enter Base Price" autocomplete="off" name="base_price">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Password-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="password">Password</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="password" id="password" class="form-control" placeholder="Enter Password" autocomplete="off" name="password">
                                                 </div>
                                             </div>
                                         </div>

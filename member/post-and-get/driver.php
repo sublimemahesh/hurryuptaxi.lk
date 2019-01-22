@@ -12,6 +12,7 @@ if (isset($_POST['add-driver'])) {
     $DRIVER->id = $_POST['id'];
     $DRIVER->user = $_POST['user'];
     $DRIVER->name = $_POST['name'];
+    $DRIVER->email = $_POST['email'];
     $DRIVER->contact_no = $_POST['contact_no'];
     $DRIVER->district = $_POST['district'];
     $DRIVER->city = $_POST['city'];
@@ -19,7 +20,12 @@ if (isset($_POST['add-driver'])) {
     $DRIVER->vehicle_number = $_POST['vehicle_number'];
     $DRIVER->nic_number = $_POST['nic_number'];
     $DRIVER->price_per_km = $_POST['price_per_km'];
+
     $DRIVER->vehicle_type = $_POST['vehicle_type'];
+
+    $DRIVER->base_price = $_POST['base_price'];
+    $DRIVER->password = $_POST['password'];
+
 
     $dir_dest = '../../upload/driver/';
 
@@ -47,6 +53,7 @@ if (isset($_POST['add-driver'])) {
 
     $VALID->check($DRIVER, [
         'name' => ['required' => TRUE],
+        'email' => ['required' => TRUE],
         'contact_no' => ['required' => TRUE],
         'address' => ['required' => TRUE],
         'district' => ['required' => TRUE],
@@ -55,6 +62,8 @@ if (isset($_POST['add-driver'])) {
         'nic_number' => ['required' => TRUE],
         'profile_picture' => ['required' => TRUE],
         'price_per_km' => ['required' => TRUE],
+        'base_price' => ['required' => TRUE],
+        'password' => ['required' => TRUE]
     ]);
 
     if ($VALID->passed()) {
@@ -110,21 +119,30 @@ if (isset($_POST['edit-driver'])) {
 
     $DRIVER->user = $_POST['user'];
     $DRIVER->name = $_POST['name'];
+    $DRIVER->email = $_POST['email'];
     $DRIVER->contact_no = $_POST['contact_no'];
     $DRIVER->address = $_POST['address'];
     $DRIVER->vehicle_number = $_POST['vehicle_number'];
     $DRIVER->nic_number = $_POST['nic_number'];
     $DRIVER->price_per_km = $_POST['price_per_km'];
+
     $DRIVER->vehicle_type = $_POST['vehicle_type'];
+
+    $DRIVER->base_price = $_POST['base_price'];
+    $DRIVER->password = md5($_POST['password']);
+    
+    
 
     $VALID->check($DRIVER, [
         'name' => ['required' => TRUE],
+        'email' => ['required' => TRUE],
         'contact_no' => ['required' => TRUE],
         'address' => ['required' => TRUE],
         'vehicle_number' => ['required' => TRUE],
         'nic_number' => ['required' => TRUE],
         'profile_picture' => ['required' => TRUE],
-        'price_per_km' => ['required' => TRUE],
+        'base_price' => ['required' => TRUE],
+        'password' => ['required' => TRUE]
     ]);
 
     if ($VALID->passed()) {

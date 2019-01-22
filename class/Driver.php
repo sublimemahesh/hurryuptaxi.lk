@@ -30,11 +30,14 @@ class Driver {
     public $longitude;
     public $latitude;
     public $vehicle_type;
+    public $longitude;
+    public $latitude;
 
     public function __construct($id) {
         if ($id) {
 
             $query = "SELECT `id`,`user`,`name`,`email`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`base_price`,`price_per_km`,`password`,`otp`,`verified`,`created_at`,`last_update_time`,`longitude`,`latitude`,`vehicle_type`  FROM `driver` WHERE `id`=" . $id;
+            $query = "SELECT `id`,`user`,`name`,`email`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`base_price`,`price_per_km`,`password`,`otp`,`verified`,`created_at`,`longitude`,`latitude`  FROM `driver` WHERE `id`=" . $id;
 
             $db = new Database();
 
@@ -57,20 +60,31 @@ class Driver {
             $this->otp = $result['otp'];
             $this->verified = $result['verified'];
             $this->createdAt = $result['created_at'];
+
             $this->last_update_time = $result['last_update_time'];
             $this->longitude = $result['longitude'];
             $this->latitude = $result['latitude'];
             $this->vehicle_type = $result['vehicle_type'];
+
+            $this->longitude = $result['longitude'];
+            $this->latitude = $result['latitude'];
+
 
             return $this;
         }
     }
 
     public function create() {
+        date_default_timezone_set('Asia/Colombo');
+        $createdAt = date('Y-m-d H:i:s');
+
 
         $createdAt = date('Y-m-d H:i:s');
 
         $query = "INSERT INTO `driver` (`user`,`name`,`email`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`base_price`,`price_per_km`,`password`,`verified`,`created_at`,`vehicle_type`) VALUES  ('"
+
+        $query = "INSERT INTO `driver` (`user`,`name`,`email`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`base_price`,`price_per_km`,`password`,`verified`,`created_at`) VALUES  ('"
+
                 . $this->user . "', '"
                 . $this->name . "', '"
                 . $this->email . "', '"
@@ -85,8 +99,12 @@ class Driver {
                 . $this->price_per_km . "', '"
                 . md5($this->password) . "', '"
                 . 1 . "', '"
+
                 . $createdAt . "', '"
                 . $this->vehicle_type . "' )";
+
+                . $createdAt . "' )";
+
 
         $db = new Database();
 
@@ -159,8 +177,12 @@ class Driver {
                 . "`base_price` ='" . $this->base_price . "', "
                 . "`price_per_km` ='" . $this->price_per_km . "', "
                 . "`password` ='" . md5($this->password) . "', "
+
                 . "`verified` ='" . $this->verified . "', "
                 . "`vehicle_type` ='" . $this->vehicle_type . "' "
+
+                . "`verified` ='" . $this->verified . "' "
+
                 . "WHERE `id` = '" . $this->id . "'";
 
         $db = new Database();
@@ -195,6 +217,9 @@ class Driver {
 
         $query = "UPDATE  `driver` SET "
                 . "`last_update_time` ='" . $createdAt . "', "
+
+        $query = "UPDATE  `driver` SET "
+
                 . "`longitude` ='" . $this->longitude . "', "
                 . "`latitude` ='" . $this->latitude . "'"
                 . "WHERE `id` = '" . $this->id . "'";
@@ -228,6 +253,7 @@ class Driver {
     public function GetDriversByPickup($latitude, $longitude) {
 
 
+
         $newTime = strtotime('-20 minutes');
 
         $timeAt = "'" . date('Y-m-d H:i:s', $newTime) . "'";
@@ -235,6 +261,9 @@ class Driver {
 
         $query = 'SELECT *, ROUND((6371 * acos ( cos ( radians(' . $latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $longitude . ') ) + sin ( radians(' . $latitude . ') ) * sin( radians( latitude ) ) ) ), 2) AS distance
         FROM driver WHERE  ' . $timeAt . '  <= last_update_time HAVING distance <= 1.00 ORDER BY distance';
+
+        $query = 'SELECT *, ROUND((6371 * acos ( cos ( radians(' . $latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $longitude . ') ) + sin ( radians(' . $latitude . ') ) * sin( radians( latitude ) ) ) ), 2) AS distance FROM driver HAVING distance <= 1.00 ORDER BY distance';
+
 
         $db = new Database();
 
