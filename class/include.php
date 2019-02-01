@@ -21,6 +21,7 @@ include_once(dirname(__FILE__) . '/Booking.php');
 include_once(dirname(__FILE__) . '/Search.php');
 include_once(dirname(__FILE__) . '/Comments.php');
 include_once(dirname(__FILE__) . '/VehicleType.php');
+include_once(dirname(__FILE__) . '/AppBooking.php');
 
 function dd($data) {
     var_dump($data);
