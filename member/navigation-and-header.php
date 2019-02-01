@@ -222,6 +222,13 @@
                         </li>
                     </ul>
                 </li> 
+                <li>
+                    <a href="view-app-booking.php" class="menu-toggle">
+                        <i class="material-icons">perm_contact_calendar</i>
+                        <span>View App Booking</span>
+                    </a>
+                     
+                </li> 
                 <?php
                 if ($USER->id == 1) {
                     ?>
