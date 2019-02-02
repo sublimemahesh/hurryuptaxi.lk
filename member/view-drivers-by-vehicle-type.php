@@ -1,8 +1,13 @@
-﻿<?php
+<?php
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
+
+
 $USER = new User($_SESSION["id"]);
-$VEHICLE_TYPE =  new VehicleType(NULL);
+$DRIVER = new Driver(NULL);
+
+$id = '';
+$id = $_GET['id'];
 ?> 
 <!DOCTYPE html>
 <html>
@@ -10,7 +15,7 @@ $VEHICLE_TYPE =  new VehicleType(NULL);
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Manage Vehicle Type || Admin || hurryuptaxi.lk</title>
+        <title>View Drivers By Vehicle Type || Admin || hurryuptaxi.lk</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -18,14 +23,11 @@ $VEHICLE_TYPE =  new VehicleType(NULL);
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
         <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
-
         <link href="plugins/node-waves/waves.css" rel="stylesheet" >
-
         <link href="plugins/animate-css/animate.css" rel="stylesheet" >
         <link href="plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" >
         <link href="css/style.css" rel="stylesheet">
-
         <link href="css/themes/all-themes.css" rel="stylesheet">
     </head>
 
@@ -41,7 +43,7 @@ $VEHICLE_TYPE =  new VehicleType(NULL);
                         <div class="card" style="margin-top: 20px;">
                             <div class="header">
                                 <h2>
-                                    Manage Vehicle Type
+                                    View Drivers By Vehicle Type
                                 </h2>
                                 <ul class="header-dropdown m-r--5">
                                     <li class="dropdown">
@@ -58,42 +60,34 @@ $VEHICLE_TYPE =  new VehicleType(NULL);
                             </div>
                             <div class="body">
                                 <div class="table-responsive">
-
                                     <table id="myTable"class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Type</th>
-                                                <th>Passengers</th>                                                 
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Contact No</th>
+                                                <th>Nic Number</th>
+                                                <th>Base Price</th>                                                 
                                                 <th>Options</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            foreach ($VEHICLE_TYPE->all() as $key => $vehicle_type) {
-                                                $key++;
+                                                   
+                                            foreach ($DRIVER->getDriversByVehicleType($id, $USER->id) as $key => $driver) {
                                                 ?>
-                                                <tr id="row_<?php echo  $vehicle_type['id'] ?>">
-                                                    <td><?php echo $key; ?></td> 
-                                                    <td><?php echo $vehicle_type['name']; ?></td>  
-                                                    <td><?php echo $vehicle_type['passengers']; ?></td>
-                                                    
+                                                <tr id="row_<?php echo $driver['id'] ?>">
+                                                    <td>#<?php echo $driver['id']; ?></td> 
+                                                    <td><?php  echo $driver['name'];  ?></td>  
+                                                    <td><?php  echo $driver['email'];  ?></td>  
+                                                    <td><?php  echo $driver['contact_no'];  ?></td>  
+                                                    <td><?php  echo $driver['nic_number'];  ?></td>                                                
+                                                    <td><?php  echo $driver['base_price'];  ?></td>  
                                                     <td> 
-                                                        <a href="edit-vehicle-type.php?id=<?php echo $vehicle_type['id']; ?>" class="op-link btn btn-sm btn-info">
-                                                            <i class="glyphicon glyphicon-pencil"></i>
-                                                        </a>
-                                                        <a href="add-vehicle-photos.php?id=<?php echo $vehicle_type['id']; ?>" class="op-link btn btn-sm btn-success">
-                                                            <i class="glyphicon glyphicon-picture"></i>
-                                                        </a>
-                                                        <a href="view-drivers-by-vehicle-type.php?id=<?php echo $vehicle_type['id']; ?>" class="op-link btn btn-sm btn-success">
-                                                            <i class="glyphicon glyphicon-picture"></i>
-                                                        </a>
-
-                                                        <a href="#" class="delete-vehicle-type btn btn-sm btn-danger" data-id="<?php echo $vehicle_type['id']; ?>">
+                                                        <a href="#" class="delete-app-booking btn btn-sm btn-danger" data-id="<?php echo $app_booking['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
                                                         </a>
-                                                        
-
                                                     </td>
                                                 </tr>
                                                 <?php
@@ -103,8 +97,11 @@ $VEHICLE_TYPE =  new VehicleType(NULL);
                                         <tfoot>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Type</th>
-                                                <th>Passengers</th>                                                 
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Contact No</th>
+                                                <th>Nic Number</th>
+                                                <th>Base Price</th>                                                 
                                                 <th>Options</th>
                                             </tr>
                                         </tfoot>
@@ -136,8 +133,8 @@ $VEHICLE_TYPE =  new VehicleType(NULL);
         <script src="js/admin.js"></script>
         <script src="js/pages/tables/jquery-datatable.js"></script>
         <script src="js/demo.js"></script>
-        <script src="delete/js/member.js" type="text/javascript"></script> 
-        <script src="delete/js/vehicle-type.js" type="text/javascript"></script>
+
+        <script src="delete/js/app-booking.js" type="text/javascript"></script>
     </body>
 
 </html> 
