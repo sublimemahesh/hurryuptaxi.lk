@@ -1,11 +1,11 @@
-﻿<?php
+<?php
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 
 $USER = new User($_SESSION["id"]);
 
 ?> 
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html> 
     <head>
         <meta charset="UTF-8">
