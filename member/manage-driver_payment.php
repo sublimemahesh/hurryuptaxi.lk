@@ -2,7 +2,7 @@
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
-$DRIVER = new Driver(NULL);
+$DRIVER_PAYMENT = new DriverPayment(NULL);
 ?> 
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@ $DRIVER = new Driver(NULL);
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Manage Driver || Admin || hurryuptaxi.lk</title>
+        <title>Manage Drivers Payments|| Admin || hurryuptaxi.lk</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -18,9 +18,7 @@ $DRIVER = new Driver(NULL);
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
         <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
-
         <link href="plugins/node-waves/waves.css" rel="stylesheet" >
-
         <link href="plugins/animate-css/animate.css" rel="stylesheet" >
         <link href="plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" >
@@ -41,7 +39,7 @@ $DRIVER = new Driver(NULL);
                         <div class="card" style="margin-top: 20px;">
                             <div class="header">
                                 <h2>
-                                    Manage Drivers
+                                    Manage Drivers Payments
                                 </h2>
                                 <ul class="header-dropdown m-r--5">
                                     <li class="dropdown">
@@ -58,51 +56,38 @@ $DRIVER = new Driver(NULL);
                             </div>
                             <div class="body">
                                 <div class="table-responsive">
-
                                     <table id="myTable"class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Phone Number</th> 
-                                                <th>Address</th>
-                                                <th>Vehicle Number</th>
-                                                <th>NIC Number</th>
+                                                <th>Driver</th>
+                                                <th>Date / Time</th> 
+                                                <th>Price</th>                                                
                                                 <th>Options</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            foreach ($DRIVER->GetDriversByUser($_SESSION["id"]) as $key => $driver) {
+                                            foreach ($DRIVER_PAYMENT->all() as $key => $driver_payment) {
                                                 ?>
-                                                <tr id="row_<?php echo $driver['id']; ?>">
-                                                    <td><?php echo $driver['id']; ?></td> 
-                                                    <td><?php echo $driver['name']; ?></td> 
-                                                    <td><?php echo $driver['contact_no']; ?></td> 
-                                                    <td><?php echo $driver['address']; ?></td>
-                                                    <td><?php echo $driver['vehicle_number']; ?></td> 
-                                                    <td><?php echo $driver['nic_number']; ?></td> 
+                                                <tr id="row_<?php echo $driver_payment['id']; ?>">
+                                                    <td><?php echo $driver_payment['id']; ?></td> 
+                                                    <td>
+                                                        <?php
+                                                        $DRIVER = new Driver($driver_payment['driver']);
+                                                        echo $DRIVER->name;
+                                                        ?>
+                                                    </td> 
+                                                    <td><?php echo $driver_payment['date_time']; ?></td> 
+                                                    <td><?php echo number_format($driver_payment['price'], 2); ?></td>
+
                                                     <td> 
-                                                        <a href="edit-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-info">
+                                                        <a href="edit_driver_payment.php?id=<?php echo $driver_payment['id']; ?>" class="op-link btn btn-sm btn-info">
                                                             <i class="glyphicon glyphicon-pencil"></i>
                                                         </a> | 
-                                                        <a href="add-vehicle-photos.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-success">
-                                                            <i class="glyphicon glyphicon-picture"></i>
-                                                        </a> | 
-                                                        <a href="view-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Drivers">
-                                                            <i class="glyphicon glyphicon-eye-open"></i> 
-                                                        </a> | 
-                                                        <a href="manage-driver-booking.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Drivers">
-                                                            <i class="glyphicon glyphicon-eye-close"></i> 
-                                                        </a> | 
-                                                        <a href="add_driver_payment.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Drivers">
-                                                            <i class="glyphicon glyphicon-earphone"></i> 
-                                                        </a> | 
-
-                                                        <a href="#" class="delete-driver btn btn-sm btn-danger" data-id="<?php echo $driver['id']; ?>">
+                                                        <a href="#" class="delete-payment btn btn-sm btn-danger" data-id="<?php echo $driver_payment['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
                                                         </a>
-
                                                     </td>
                                                 </tr>
                                                 <?php
@@ -112,11 +97,9 @@ $DRIVER = new Driver(NULL);
                                         <tfoot>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Phone Number</th> 
-                                                <th>Address</th>
-                                                <th>Vehicle Number</th>
-                                                <th>NIC Number</th>
+                                                <th>Driver</th>
+                                                <th>Date / Time</th> 
+                                                <th>Price</th>                                                
                                                 <th>Options</th>
                                             </tr>
                                         </tfoot>
@@ -126,7 +109,6 @@ $DRIVER = new Driver(NULL);
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -147,10 +129,8 @@ $DRIVER = new Driver(NULL);
         <script src="plugins/sweetalert/sweetalert.min.js"></script>
         <script src="js/admin.js"></script>
         <script src="js/pages/tables/jquery-datatable.js"></script>
-        <script src="js/demo.js"></script>
-        <script src="delete/js/member.js" type="text/javascript"></script>
-        <script src="delete/js/driver.js" type="text/javascript"></script>
-   
-</body>
+        <script src="js/demo.js"></script> 
+        <script src="delete/js/driver_payment.js" type="text/javascript"></script>
+    </body>
 
 </html> 

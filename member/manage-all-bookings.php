@@ -34,9 +34,9 @@ if ($_SESSION["id"] == 1) {
     </head>
 
     <body class="theme-red">
-<?php
-include './navigation-and-header.php';
-?>
+        <?php
+        include './navigation-and-header.php';
+        ?>
         <section class="content">
             <div class="container-fluid"> 
                 <!-- Manage Districts -->
@@ -75,10 +75,10 @@ include './navigation-and-header.php';
                                             </tr>
                                         </thead>
                                         <tbody>
-<?php
-foreach ($BOOKINGS as $key => $booking) {
-    $RENT_A_CAR = new RentACar($booking['rent_a_car']);
-    ?>
+                                            <?php
+                                            foreach ($BOOKINGS as $key => $booking) {
+                                                $RENT_A_CAR = new RentACar($booking['rent_a_car']);
+                                                ?>
                                                 <tr id="row_<?php echo $booking['id']; ?>">
                                                     <td><?php echo $booking['id']; ?></td> 
                                                     <td><?php echo $booking['date_time_booked']; ?></td> 
@@ -88,16 +88,16 @@ foreach ($BOOKINGS as $key => $booking) {
                                                     <td> 
                                                         <a href="edit-booking.php?id=<?php echo $booking['id']; ?>" class="op-link btn btn-sm btn-info">
                                                             <i class="glyphicon glyphicon-pencil"></i>
-                                                        </a>
+                                                        </a> | 
                                                         <a href="#" class="delete-booking btn btn-sm btn-danger" data-id="<?php echo $booking['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
                                                         </a>
 
                                                     </td>
                                                 </tr>
-    <?php
-}
-?>   
+                                                <?php
+                                            }
+                                            ?>   
                                         </tbody>
                                         <tfoot>
                                             <tr>
