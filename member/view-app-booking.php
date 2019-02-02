@@ -18,14 +18,11 @@ $APPBOOKING = new AppBooking(NULL);
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
         <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
-
         <link href="plugins/node-waves/waves.css" rel="stylesheet" >
-
         <link href="plugins/animate-css/animate.css" rel="stylesheet" >
         <link href="plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" >
         <link href="css/style.css" rel="stylesheet">
-
         <link href="css/themes/all-themes.css" rel="stylesheet">
     </head>
 
@@ -58,7 +55,6 @@ $APPBOOKING = new AppBooking(NULL);
                             </div>
                             <div class="body">
                                 <div class="table-responsive">
-
                                     <table id="myTable"class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
@@ -81,30 +77,33 @@ $APPBOOKING = new AppBooking(NULL);
                                                 <tr id="row_<?php echo $app_booking['id'] ?>">
                                                     <td><?php echo $key; ?></td> 
                                                     <td><?php
-                                                    $USER = new User($app_booking['user']);
-                                                     echo $USER->name
-                                                    ?></td>  
-                                                    <td><?php 
-                                                    $DRIVER = new Driver($app_booking['driver']);
-                                                    echo $DRIVER->name ; ?></td>
+                                                        $USER = new User($app_booking['user']);
+                                                        echo $USER->name
+                                                        ?></td>  
+                                                    <td><?php
+                                                        $DRIVER = new Driver($app_booking['driver']);
+                                                        echo $DRIVER->name;
+                                                        ?></td>
                                                     <td><?php echo $app_booking['pickup']; ?></td>
                                                     <td><?php echo $app_booking['destination']; ?></td>
                                                     <td><?php echo $app_booking['date_time']; ?></td>
                                                     <td><?php echo $app_booking['price']; ?></td>
-                                                    <td><?php echo $app_booking['status']; ?></td>
-
+                                                    <td><?php
+                                                        if ($app_booking['status'] == 1) {
+                                                            echo'<p style=color:blue;>Pending</p>';
+                                                        } else if ($app_booking['status'] == 2) {
+                                                            echo '<p style=color:green;>Excepted</p>';
+                                                        } elseif ($app_booking['status'] == 3) {
+                                                            echo '<p style=color:red;>Cancel</p>';
+                                                        } else {
+                                                            echo '<p style=color:black;>NO responce</p>';
+                                                        }
+                                                        ?>
+                                                    </td>
                                                     <td> 
-                                                        <a href="edit-vehicle-type.php?id=<?php echo $app_booking['id']; ?>" class="op-link btn btn-sm btn-info">
-                                                            <i class="glyphicon glyphicon-pencil"></i>
-                                                        </a>
-                                                        <a href="add-vehicle-photos.php?id=<?php echo $app_booking['id']; ?>" class="op-link btn btn-sm btn-success">
-                                                            <i class="glyphicon glyphicon-picture"></i>
-                                                        </a>
-
-                                                        <a href="#" class="delete-vehicle-type btn btn-sm btn-danger" data-id="<?php echo $app_booking['id']; ?>">
+                                                        <a href="#" class="delete-app-booking btn btn-sm btn-danger" data-id="<?php echo $app_booking['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
                                                         </a>
-
                                                     </td>
                                                 </tr>
                                                 <?php
@@ -152,8 +151,8 @@ $APPBOOKING = new AppBooking(NULL);
         <script src="js/admin.js"></script>
         <script src="js/pages/tables/jquery-datatable.js"></script>
         <script src="js/demo.js"></script>
-        <script src="delete/js/member.js" type="text/javascript"></script> 
-        <script src="delete/js/vehicle-type.js" type="text/javascript"></script>
+
+        <script src="delete/js/app-booking.js" type="text/javascript"></script>
     </body>
 
 </html> 
