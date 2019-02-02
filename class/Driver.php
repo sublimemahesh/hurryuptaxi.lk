@@ -18,11 +18,12 @@ class Driver {
     public $vehicle_number;
     public $nic_number;
     public $price_per_km;
+    public $vehicle_type;
 
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT `id`,`user`,`name`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`price_per_km` FROM `driver` WHERE `id`=" . $id;
+            $query = "SELECT `id`,`user`,`name`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`price_per_km`,`vehicle_type` FROM `driver` WHERE `id`=" . $id;
 
             $db = new Database();
 
@@ -39,6 +40,7 @@ class Driver {
             $this->vehicle_number = $result['vehicle_number'];
             $this->nic_number = $result['nic_number'];
             $this->price_per_km = $result['price_per_km'];
+            $this->vehicle_type = $result['vehicle_type'];
 
             return $this;
         }
@@ -46,7 +48,7 @@ class Driver {
 
     public function create() {
 
-        $query = "INSERT INTO `driver` (`user`,`name`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`price_per_km`) VALUES  ('"
+        $query = "INSERT INTO `driver` (`user`,`name`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`price_per_km`,`vehicle_type`) VALUES  ('"
                 . $this->user . "', '"
                 . $this->name . "', '"
                 . $this->contact_no . "', '"
@@ -56,7 +58,8 @@ class Driver {
                 . $this->address . "', '"
                 . $this->vehicle_number . "', '"
                 . $this->nic_number . "', '"
-                . $this->price_per_km . "' )";
+                . $this->price_per_km . "', '"
+                . $this->vehicle_type. "' )";
 
         $db = new Database();
 
@@ -97,6 +100,7 @@ class Driver {
                 . "`address` ='" . $this->address . "', "
                 . "`vehicle_number` ='" . $this->vehicle_number . "', "
                 . "`nic_number` ='" . $this->nic_number . "', "
+                . "`vehicle_type` ='" . $this->vehicle_type . "', "
                 . "`price_per_km` ='" . $this->price_per_km . "' "
                 . "WHERE `id` = '" . $this->id . "'";
 

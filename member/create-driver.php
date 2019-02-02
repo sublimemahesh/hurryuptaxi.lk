@@ -156,6 +156,29 @@ $createdAt = date('Y-m-d H:i:s');
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+
+                                    <!--Vehicle Type-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="vehicle_type">Vehicle Type</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group place-select">
+                                                <div class="form-line">
+                                                    <select class="form-control" autocomplete="off" type="text" id="vehicle_type" autocomplete="off" name="vehicle_type" required="TRUE">
+                                                        <option value=""> -- Please Select Vehicle Type -- </option>
+                                                        <?php
+                                                        $VEHICLE_TYPE = new VehicleType(NULL);
+                                                        foreach ($VEHICLE_TYPE->all() as $key => $vehicle_type) {
+                                                            ?>
+                                                            <option  value="<?php echo $vehicle_type['id']; ?>"><?php echo $vehicle_type['name']; ?></option><?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div> 
                                     <!--Vehicle Number-->
                                     <div class="row clearfix">
