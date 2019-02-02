@@ -8,7 +8,7 @@
 class AppBooking {
 
     public $id;
-    public $user;
+    public $customer;
     public $driver;
     public $pickup;
     public $destination;
@@ -26,7 +26,7 @@ class AppBooking {
             $result = mysql_fetch_array($db->readQuery($query));
 
             $this->id = $result['id'];
-            $this->user = $result['user'];
+            $this->customer = $result['customer'];
             $this->driver = $result['driver'];
             $this->pickup = $result['pickup'];
             $this->destination = $result['destination'];
@@ -40,8 +40,8 @@ class AppBooking {
 
     public function create() {
 
-        $query = "INSERT INTO `app_booking` (`user`,`driver`,`pickup`,`destination`,`date_time`,`price`,`status`) VALUES  ('"
-                . $this->user . "','"
+        $query = "INSERT INTO `app_booking` (`customer`,`driver`,`pickup`,`destination`,`date_time`,`price`,`status`) VALUES  ('"
+                . $this->customer . "','"
                 . $this->driver . "','"
                 . $this->pickup . "','"
                 . $this->destination . "','"
@@ -64,7 +64,7 @@ class AppBooking {
 
     public function all() {
 
-        $query = "SELECT * FROM `app_booking` ORDER BY `sort` ASC";
+        $query = "SELECT * FROM `app_booking`  ";
         $db = new Database();
         $result = $db->readQuery($query);
         $array_res = array();
@@ -76,9 +76,9 @@ class AppBooking {
         return $array_res;
     }
 
-    public function getBookingsByUser($user) {
+    public function getBookingsByDriver($driver) {
 
-        $query = "SELECT * FROM `app_booking` WHERE user= '" . $user . "'";
+        $query = "SELECT * FROM `app_booking` WHERE driver= '" . $driver . "'";
         $db = new Database();
         $result = $db->readQuery($query);
         $array_res = array();
