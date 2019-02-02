@@ -80,6 +80,20 @@ $DRIVER = new Driver($id);
                                             </div>
                                         </div>
                                     </div> 
+                                    <!--NIC Number-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="nic_number">NIC Number</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="nic_number" class="hidden-lg hidden-md">NIC Number</label>
+                                                    <input type="text" id="nic_number" class="form-control" placeholder="Enter NIC Number" autocomplete="off" name="nic_number" value="<?php echo $DRIVER->nic_number ?>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!--District-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
@@ -191,20 +205,33 @@ $DRIVER = new Driver($id);
                                             </div>
                                         </div>
                                     </div>
-                                    <!--NIC Number-->
+                                    <!--Vehicle Type-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="nic_number">NIC Number</label>
+                                            <label for="vehicle_type">Vehicle Type</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                            <div class="form-group">
+                                            <div class="form-group place-select">
                                                 <div class="form-line">
-                                                    <label for="nic_number" class="hidden-lg hidden-md">NIC Number</label>
-                                                    <input type="text" id="nic_number" class="form-control" placeholder="Enter NIC Number" autocomplete="off" name="nic_number" value="<?php echo $DRIVER->nic_number ?>">
+                                                    <select class="form-control" autocomplete="off" type="text" id="vehicle_type" autocomplete="off" name="vehicle_type" required="TRUE">
+                                                        <option value=""> -- Please Select Vehicle Type -- </option>
+                                                        <?php
+                                                        $VEHICLE_TYPE = new VehicleType(NULL);
+                                                        foreach ($VEHICLE_TYPE->all() as $key => $vehicle_type) {
+                                                            if ($DRIVER->vehicle_type == $vehicle_type['id']) {
+                                                                ?>
+                                                                <option  value="<?php echo $vehicle_type['id']; ?>" selected=""><?php echo $vehicle_type['name']; ?></option>
+                                                            <?php } else { ?>
+                                                                <option  value="<?php echo $vehicle_type['id']; ?>"><?php echo $vehicle_type['name']; ?></option><?php
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> 
+
                                     <!--Price Per KM-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
