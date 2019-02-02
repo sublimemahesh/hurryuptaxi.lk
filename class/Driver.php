@@ -59,7 +59,7 @@ class Driver {
                 . $this->vehicle_number . "', '"
                 . $this->nic_number . "', '"
                 . $this->price_per_km . "', '"
-                . $this->vehicle_type. "' )";
+                . $this->vehicle_type . "' )";
 
         $db = new Database();
 
@@ -77,6 +77,20 @@ class Driver {
     public function all() {
 
         $query = "SELECT * FROM `driver`";
+        $db = new Database();
+        $result = $db->readQuery($query);
+        $array_res = array();
+
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+
+        return $array_res;
+    }
+
+    public function getDriversByVehicleType($id, $user) {
+
+        $query = "SELECT * FROM `driver` WHERE vehicle_type= '" . $id . "' AND user= '" . $user . "'";
         $db = new Database();
         $result = $db->readQuery($query);
         $array_res = array();
