@@ -2,7 +2,9 @@
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
-$DRIVER = new Driver(NULL);
+$id = '';
+$id = $_GET['id'];
+$APPBOOKING = new AppBooking($id);
 ?> 
 <!DOCTYPE html>
 <html>
@@ -41,7 +43,7 @@ $DRIVER = new Driver(NULL);
                         <div class="card" style="margin-top: 20px;">
                             <div class="header">
                                 <h2>
-                                    Manage Drivers
+                                    Manage Driver Bookings
                                 </h2>
                                 <ul class="header-dropdown m-r--5">
                                     <li class="dropdown">
@@ -59,47 +61,55 @@ $DRIVER = new Driver(NULL);
                             <div class="body">
                                 <div class="table-responsive">
 
-                                    <table id="myTable"class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                     <table id="myTable"class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Phone Number</th> 
-                                                <th>Address</th>
-                                                <th>Vehicle Number</th>
-                                                <th>NIC Number</th>
+                                                <th>Customer</th>
+                                                <th>Driver</th>                                                 
+                                                <th>Pick up</th>
+                                                <th>Destination</th>
+                                                <th>Date / Time</th>
+                                                <th>Price</th>
+                                                <th>Status</th>
                                                 <th>Options</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            foreach ($DRIVER->GetDriversByUser($_SESSION["id"]) as $key => $driver) {
+                                            foreach ($APPBOOKING->getBookingsByDriver($id) as $key => $app_booking) {
+                                                $key++;
                                                 ?>
-                                                <tr id="row_<?php echo $driver['id']; ?>">
-                                                    <td><?php echo $driver['id']; ?></td> 
-                                                    <td><?php echo $driver['name']; ?></td> 
-                                                    <td><?php echo $driver['contact_no']; ?></td> 
-                                                    <td><?php echo $driver['address']; ?></td>
-                                                    <td><?php echo $driver['vehicle_number']; ?></td> 
-                                                    <td><?php echo $driver['nic_number']; ?></td> 
+                                                <tr id="row_<?php echo $app_booking['id'] ?>">
+                                                    <td><?php echo $key; ?></td> 
+                                                    <td><?php
+                                                        $CUSTOMER = new Customer($app_booking['customer']);
+                                                        echo $CUSTOMER->name;
+                                                        ?></td>  
+                                                    <td><?php
+                                                        $DRIVER = new Driver($app_booking['driver']);
+                                                        echo $DRIVER->name;
+                                                        ?></td>
+                                                    <td><?php echo $app_booking['pickup']; ?></td>
+                                                    <td><?php echo $app_booking['destination']; ?></td>
+                                                    <td><?php echo $app_booking['date_time']; ?></td>
+                                                    <td><?php echo $app_booking['price']; ?></td>
+                                                    <td><?php
+                                                        if ($app_booking['status'] == 1) {
+                                                            echo'<p style=color:blue;>Pending</p>';
+                                                        } else if ($app_booking['status'] == 2) {
+                                                            echo '<p style=color:green;>Excepted</p>';
+                                                        } elseif ($app_booking['status'] == 3) {
+                                                            echo '<p style=color:red;>Cancel</p>';
+                                                        } else {
+                                                            echo '<p style=color:black;>NO responce</p>';
+                                                        }
+                                                        ?>
+                                                    </td>
                                                     <td> 
-                                                        <a href="edit-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-info">
-                                                            <i class="glyphicon glyphicon-pencil"></i>
-                                                        </a> | 
-                                                        <a href="add-vehicle-photos.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-success">
-                                                            <i class="glyphicon glyphicon-picture"></i>
-                                                        </a> | 
-                                                        <a href="view-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Drivers">
-                                                            <i class="glyphicon glyphicon-eye-open"></i> 
-                                                        </a> | 
-                                                        <a href="manage-driver-booking.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Drivers">
-                                                            <i class="glyphicon glyphicon-eye-close"></i> 
-                                                        </a> | 
-
-                                                        <a href="#" class="delete-driver btn btn-sm btn-danger" data-id="<?php echo $driver['id']; ?>">
+                                                        <a href="#" class="delete-app-booking btn btn-sm btn-danger" data-id="<?php echo $app_booking['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
                                                         </a>
-
                                                     </td>
                                                 </tr>
                                                 <?php
@@ -109,11 +119,13 @@ $DRIVER = new Driver(NULL);
                                         <tfoot>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Phone Number</th> 
-                                                <th>Address</th>
-                                                <th>Vehicle Number</th>
-                                                <th>NIC Number</th>
+                                                <th>Customer</th>
+                                                <th>Driver</th>                                                 
+                                                <th>Pick up</th>
+                                                <th>Destination</th>
+                                                <th>Date / Time</th>
+                                                <th>Price</th>
+                                                <th>Status</th>                                                
                                                 <th>Options</th>
                                             </tr>
                                         </tfoot>
@@ -147,7 +159,7 @@ $DRIVER = new Driver(NULL);
         <script src="js/demo.js"></script>
         <script src="delete/js/member.js" type="text/javascript"></script>
         <script src="delete/js/driver.js" type="text/javascript"></script>
-   
-</body>
+
+    </body>
 
 </html> 

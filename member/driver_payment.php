@@ -2,7 +2,7 @@
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
-$DRIVER = new Driver(NULL);
+$total = Commission::getTotalCommissionByParent($_SESSION["id"]);
 ?> 
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@ $DRIVER = new Driver(NULL);
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Manage Driver || Admin || hurryuptaxi.lk</title>
+        <title>Manage Paid Commissions || Admin || hurryuptaxi.lk</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -35,17 +35,22 @@ $DRIVER = new Driver(NULL);
         ?>
         <section class="content">
             <div class="container-fluid"> 
+                <?php
+                $vali = new Validator();
+
+                $vali->show_message();
+                ?>
                 <!-- Manage Districts -->
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="card" style="margin-top: 20px;">
                             <div class="header">
                                 <h2>
-                                    Manage Drivers
+                                    Manage Paid Commissions
                                 </h2>
                                 <ul class="header-dropdown m-r--5">
                                     <li class="dropdown">
-                                        <a href="create-driver.php">
+                                        <a href="manage-commission.php">
                                             <i class="material-icons">add</i> 
                                         </a>
                                         <ul class="dropdown-menu pull-right">
@@ -63,44 +68,22 @@ $DRIVER = new Driver(NULL);
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Phone Number</th> 
-                                                <th>Address</th>
-                                                <th>Vehicle Number</th>
-                                                <th>NIC Number</th>
-                                                <th>Options</th>
+                                                <th>Date</th>
+                                                <th>Paid For</th>
+                                                <th>Commission Amount</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            foreach ($DRIVER->GetDriversByUser($_SESSION["id"]) as $key => $driver) {
+                                            foreach (Commission::getPaidCommissionByParent($_SESSION["id"]) as $key => $commission) {
+                                                $USER1 = new User($commission['paid_for']);
                                                 ?>
-                                                <tr id="row_<?php echo $driver['id']; ?>">
-                                                    <td><?php echo $driver['id']; ?></td> 
-                                                    <td><?php echo $driver['name']; ?></td> 
-                                                    <td><?php echo $driver['contact_no']; ?></td> 
-                                                    <td><?php echo $driver['address']; ?></td>
-                                                    <td><?php echo $driver['vehicle_number']; ?></td> 
-                                                    <td><?php echo $driver['nic_number']; ?></td> 
-                                                    <td> 
-                                                        <a href="edit-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-info">
-                                                            <i class="glyphicon glyphicon-pencil"></i>
-                                                        </a> | 
-                                                        <a href="add-vehicle-photos.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-success">
-                                                            <i class="glyphicon glyphicon-picture"></i>
-                                                        </a> | 
-                                                        <a href="view-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Drivers">
-                                                            <i class="glyphicon glyphicon-eye-open"></i> 
-                                                        </a> | 
-                                                        <a href="manage-driver-booking.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Drivers">
-                                                            <i class="glyphicon glyphicon-eye-close"></i> 
-                                                        </a> | 
+                                                <tr id="row_<?php echo $commission['id']; ?>">
+                                                    <td><?php echo $commission['id']; ?></td> 
+                                                    <td><?php echo $commission['date']; ?></td> 
+                                                    <td><?php echo $USER1->username; ?></td>
 
-                                                        <a href="#" class="delete-driver btn btn-sm btn-danger" data-id="<?php echo $driver['id']; ?>">
-                                                            <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
-                                                        </a>
-
-                                                    </td>
+                                                    <td class="text-right"><?php echo 'RS: ' . number_format($commission['commission_amount'],2) . '/='; ?></td>
                                                 </tr>
                                                 <?php
                                             }
@@ -108,13 +91,8 @@ $DRIVER = new Driver(NULL);
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Phone Number</th> 
-                                                <th>Address</th>
-                                                <th>Vehicle Number</th>
-                                                <th>NIC Number</th>
-                                                <th>Options</th>
+                                                <th colspan="3" class="text-center">Total</th>
+                                                <th class="text-right"><?php echo 'RS: ' . number_format($total['total'],2) . '/='; ?></th>
                                             </tr>
                                         </tfoot>
                                     </table>
@@ -145,9 +123,8 @@ $DRIVER = new Driver(NULL);
         <script src="js/admin.js"></script>
         <script src="js/pages/tables/jquery-datatable.js"></script>
         <script src="js/demo.js"></script>
-        <script src="delete/js/member.js" type="text/javascript"></script>
-        <script src="delete/js/driver.js" type="text/javascript"></script>
-   
-</body>
+        <script src="delete/js/commission.js" type="text/javascript"></script>
+
+    </body>
 
 </html> 

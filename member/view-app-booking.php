@@ -59,7 +59,7 @@ $APPBOOKING = new AppBooking(NULL);
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>User</th>
+                                                <th>Customer</th>
                                                 <th>Driver</th>                                                 
                                                 <th>Pick up</th>
                                                 <th>Destination</th>
@@ -71,14 +71,14 @@ $APPBOOKING = new AppBooking(NULL);
                                         </thead>
                                         <tbody>
                                             <?php
-                                            foreach ($APPBOOKING->getBookingsByUser($USER->id) as $key => $app_booking) {
+                                            foreach ($APPBOOKING->all() as $key => $app_booking) {
                                                 $key++;
                                                 ?>
                                                 <tr id="row_<?php echo $app_booking['id'] ?>">
                                                     <td><?php echo $key; ?></td> 
                                                     <td><?php
-                                                        $USER = new User($app_booking['user']);
-                                                        echo $USER->name
+                                                        $CUSTOMER = new Customer($app_booking['customer']);
+                                                        echo $CUSTOMER->name;
                                                         ?></td>  
                                                     <td><?php
                                                         $DRIVER = new Driver($app_booking['driver']);
@@ -113,7 +113,7 @@ $APPBOOKING = new AppBooking(NULL);
                                         <tfoot>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>User</th>
+                                                <th>Customer</th>
                                                 <th>Driver</th>                                                 
                                                 <th>Pick up</th>
                                                 <th>Destination</th>
