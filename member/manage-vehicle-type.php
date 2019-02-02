@@ -79,21 +79,19 @@ $VEHICLE_TYPE =  new VehicleType(NULL);
                                                     <td><?php echo $vehicle_type['passengers']; ?></td>
                                                     
                                                     <td> 
-                                                        <a href="edit-vehicle-type.php?id=<?php echo $vehicle_type['id']; ?>" class="op-link btn btn-sm btn-info">
+                                                        <a href="edit-vehicle-type.php?id=<?php echo $vehicle_type['id']; ?>" class="op-link btn btn-sm btn-info" title="Edit">
                                                             <i class="glyphicon glyphicon-pencil"></i>
-                                                        </a>
-                                                        <a href="add-vehicle-photos.php?id=<?php echo $vehicle_type['id']; ?>" class="op-link btn btn-sm btn-success">
+                                                        </a> | 
+                                                        <a href="add-vehicle-photos.php?id=<?php echo $vehicle_type['id']; ?>" class="op-link btn btn-sm btn-success" title="Add Vehicle Photo">
                                                             <i class="glyphicon glyphicon-picture"></i>
-                                                        </a>
-                                                        <a href="view-drivers-by-vehicle-type.php?id=<?php echo $vehicle_type['id']; ?>" class="op-link btn btn-sm btn-success">
-                                                            <i class="glyphicon glyphicon-picture"></i>
-                                                        </a>
+                                                        </a> | 
+                                                        <a href="view-drivers-by-vehicle-type.php?id=<?php echo $vehicle_type['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Drivers">
+                                                            <i class="glyphicon glyphicon-tasks"></i> 
+                                                        </a> | 
 
-                                                        <a href="#" class="delete-vehicle-type btn btn-sm btn-danger" data-id="<?php echo $vehicle_type['id']; ?>">
+                                                        <a href="#" class="delete-vehicle-type btn btn-sm btn-danger" data-id="<?php echo $vehicle_type['id']; ?>" title="Delete">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
-                                                        </a>
-                                                        
-
+                                                        </a>                                                       
                                                     </td>
                                                 </tr>
                                                 <?php
