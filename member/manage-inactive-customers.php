@@ -2,7 +2,7 @@
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
-$DRIVER = new Driver(NULL);
+$CUSTOMER = new Customer(NULL);
 ?> 
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@ $DRIVER = new Driver(NULL);
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Manage Driver || Admin || hurryuptaxi.lk</title>
+        <title>Manage Customers || Admin || hurryuptaxi.lk</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -41,11 +41,11 @@ $DRIVER = new Driver(NULL);
                         <div class="card" style="margin-top: 20px;">
                             <div class="header">
                                 <h2>
-                                    Manage Drivers
+                                    Manage In Active Customers
                                 </h2>
                                 <ul class="header-dropdown m-r--5">
                                     <li class="dropdown">
-                                        <a href="create-driver.php">
+                                        <a href="create-customer.php">
                                             <i class="material-icons">add</i> 
                                         </a>
                                         <ul class="dropdown-menu pull-right">
@@ -64,36 +64,35 @@ $DRIVER = new Driver(NULL);
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Name</th>
-                                                <th>Phone Number</th> 
-                                                <th>Address</th>
-                                                <th>Vehicle Number</th>
-                                                <th>NIC Number</th>
+                                                <th>Email</th> 
+                                                <th>Contact No</th>                                      
                                                 <th>Options</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            foreach ($DRIVER->GetDriversByUser($_SESSION["id"]) as $key => $driver) {
+                                            foreach ($CUSTOMER->InActiveCustomer() as $key => $customer) {
                                                 ?>
-                                                <tr id="row_<?php echo $driver['id']; ?>">
-                                                    <td><?php echo $driver['id']; ?></td> 
-                                                    <td><?php echo $driver['name']; ?></td> 
-                                                    <td><?php echo $driver['contact_no']; ?></td> 
-                                                    <td><?php echo $driver['address']; ?></td>
-                                                    <td><?php echo $driver['vehicle_number']; ?></td> 
-                                                    <td><?php echo $driver['nic_number']; ?></td> 
+                                                <tr id="row_<?php echo $customer['id']; ?>">
+                                                    <td>#<?php echo $customer['id']; ?></td> 
+                                                    <td><?php echo $customer['name']; ?></td> 
+                                                    <td><?php echo $customer['email']; ?></td> 
+                                                    <td><?php echo $customer['contact_no']; ?></td> 
+                                                   
+                                                     
                                                     <td> 
-                                                        <a href="edit-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-info">
+                                                        <a href="edit-customer.php?id=<?php echo $customer['id']; ?>" class="op-link btn btn-sm btn-info">
                                                             <i class="glyphicon glyphicon-pencil"></i>
                                                         </a> | 
-                                                        <a href="add-vehicle-photos.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-success">
-                                                            <i class="glyphicon glyphicon-picture"></i>
-                                                        </a> | 
-                                                        <a href="view-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Drivers">
+                                                         
+                                                        <a href="view-customer.php?id=<?php echo $customer['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Drivers">
                                                             <i class="glyphicon glyphicon-eye-open"></i> 
                                                         </a> | 
+                                                        <a href="change-password-customer.php?id=<?php echo $customer['id']; ?>" class="op-link btn btn-sm btn-default" title="View Drivers">
+                                                            <i class="glyphicon glyphicon-lock"></i> 
+                                                        </a> |
 
-                                                        <a href="#" class="delete-driver btn btn-sm btn-danger" data-id="<?php echo $driver['id']; ?>">
+                                                        <a href="#" class="delete-customer btn btn-sm btn-danger" data-id="<?php echo $customer['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
                                                         </a>
 
@@ -105,12 +104,10 @@ $DRIVER = new Driver(NULL);
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>ID</th>
+                                                 <th>ID</th>
                                                 <th>Name</th>
-                                                <th>Phone Number</th> 
-                                                <th>Address</th>
-                                                <th>Vehicle Number</th>
-                                                <th>NIC Number</th>
+                                                <th>Email</th> 
+                                                <th>Contact No</th>                                            
                                                 <th>Options</th>
                                             </tr>
                                         </tfoot>
@@ -141,10 +138,8 @@ $DRIVER = new Driver(NULL);
         <script src="plugins/sweetalert/sweetalert.min.js"></script>
         <script src="js/admin.js"></script>
         <script src="js/pages/tables/jquery-datatable.js"></script>
-        <script src="js/demo.js"></script>
-        <script src="delete/js/member.js" type="text/javascript"></script>
-        <script src="delete/js/driver.js" type="text/javascript"></script>
-   
+        <script src="js/demo.js"></script> 
+        <script src="delete/js/customer.js" type="text/javascript"></script>
 </body>
 
 </html> 

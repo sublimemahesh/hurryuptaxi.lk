@@ -149,34 +149,29 @@
                 </li>
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">local_taxi</i>
-                        <span>My Rent A Cars</span>
+                        <i class="material-icons">account_box</i>
+                        <span>Customers</span>
                     </a>
                     <ul class="ml-menu">
                         <li>
-                            <a href="create-rent-a-car.php">
+                            <a href="create-customer.php">
                                 <i class="material-icons">add</i>
                                 <span>Add New</span>
                             </a>
                         </li>
                         <li>
-                            <a href="manage-rent-a-car.php">
-                                <i class="material-icons">list</i>
-                                <span>Manage</span>
+                            <a href="manage-active-customers.php">
+                                <i class="material-icons">how_to_reg</i>
+                                <span>Active Customers</span>
                             </a>
                         </li>
-                        <?php
-                        if ($USER->id == 1) {
-                            ?>
-                            <li>
-                                <a href="manage-all-rent-a-car.php">
-                                    <i class="material-icons">list</i>
-                                    <span>All Rent a cars</span>
-                                </a>
-                            </li>
-                            <?php
-                        }
-                        ?>
+                        <li>
+                            <a href="manage-inactive-customers.php">
+                                <i class="material-icons">person_add_disabled</i>
+                                <span>InActive Customers</span>
+                            </a>
+                        </li>
+                        
                     </ul>
                 </li>  
 
