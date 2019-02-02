@@ -176,6 +176,13 @@
                 </li>  
 
                 <li>
+                    <a href="manage-driver_payment.php" class="menu-toggle">
+                        <i class="material-icons">monetization_on</i>
+                        <span>Driver Payment</span>
+                    </a>
+                     
+                </li>  
+                <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">assignment_ind</i>
                         <span>My Taxi</span>

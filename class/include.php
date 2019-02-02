@@ -23,6 +23,7 @@ include_once(dirname(__FILE__) . '/Comments.php');
 include_once(dirname(__FILE__) . '/VehicleType.php');
 include_once(dirname(__FILE__) . '/AppBooking.php');
 include_once(dirname(__FILE__) . '/Customer.php');
+include_once(dirname(__FILE__) . '/DriverPayment.php');
 
 function dd($data) {
     var_dump($data);
