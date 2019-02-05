@@ -129,6 +129,20 @@ class Driver {
         return $array_res;
     }
 
+    public function getUserByDriver($user) {
+
+        $query = "SELECT * FROM `driver` WHERE `user`= '" . $user . "'";
+        $db = new Database();
+        $result = $db->readQuery($query);
+        $array_res = array();
+
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+
+        return $array_res;
+    }
+
     public function update() {
 
         $query = "UPDATE  `driver` SET "
