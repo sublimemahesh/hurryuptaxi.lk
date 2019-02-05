@@ -75,6 +75,7 @@ class AppBooking {
 
         return $array_res;
     }
+ 
 
     public function getBookingsByDriver($driver) {
 

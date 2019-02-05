@@ -171,7 +171,7 @@
                                 <span>InActive Customers</span>
                             </a>
                         </li>
-                        
+
                     </ul>
                 </li>  
 
@@ -180,7 +180,7 @@
                         <i class="material-icons">monetization_on</i>
                         <span>Driver Payment</span>
                     </a>
-                     
+
                 </li>  
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
@@ -205,7 +205,7 @@
 
 
                 <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
+                    <a href="" class="menu-toggle">
                         <i class="material-icons">directions_car</i>
                         <span>Vehicle Type</span>
                     </a>
@@ -225,11 +225,24 @@
                     </ul>
                 </li> 
                 <li>
-                    <a href="view-app-booking.php" class="menu-toggle">
+                    <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">perm_contact_calendar</i>
-                        <span>View App Booking</span>
+                        <span>View App Bookings</span>
                     </a>
-                     
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="view-app-booking-all.php">
+                                <i class="material-icons">add</i>
+                                <span>View All </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="view-app-booking-for-user.php">
+                                <i class="material-icons">list</i>
+                                <span>User Bookings</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li> 
                 <?php
                 if ($USER->id == 1) {
