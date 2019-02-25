@@ -1,5 +1,6 @@
 <?php
- date_default_timezone_set('Asia/Colombo');
+
+date_default_timezone_set('Asia/Colombo');
 
 /**
  * Description of Driver
@@ -11,6 +12,7 @@ class Driver {
     public $id;
     public $user;
     public $name;
+    public $username;
     public $email;
     public $contact_no;
     public $profile_picture;
@@ -33,7 +35,7 @@ class Driver {
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT `id`,`user`,`name`,`email`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`base_price`,`price_per_km`,`password`,`otp`,`verified`,`created_at`,`last_update_time`,`longitude`,`latitude`,`vehicle_type`  FROM `driver` WHERE `id`=" . $id;
+            $query = "SELECT `id`,`user`,`name`,`username`,`email`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`base_price`,`price_per_km`,`password`,`otp`,`verified`,`created_at`,`last_update_time`,`longitude`,`latitude`,`vehicle_type`  FROM `driver` WHERE `id`=" . $id;
 
             $db = new Database();
 
@@ -42,6 +44,7 @@ class Driver {
             $this->id = $result['id'];
             $this->user = $result['user'];
             $this->name = $result['name'];
+            $this->username = $result['username'];
             $this->email = $result['email'];
             $this->contact_no = $result['contact_no'];
             $this->profile_picture = $result['profile_picture'];
@@ -66,12 +69,13 @@ class Driver {
     }
 
     public function create() {
-    
+
         $createdAt = date('Y-m-d H:i:s');
 
-        $query = "INSERT INTO `driver` (`user`,`name`,`email`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`base_price`,`price_per_km`,`vehicle_type`,`password`,`verified`,`created_at`) VALUES  ('"
+        $query = "INSERT INTO `driver` (`user`,`name`,`username`,`email`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`base_price`,`price_per_km`,`vehicle_type`,`password`,`verified`,`created_at`) VALUES  ('"
                 . $this->user . "', '"
                 . $this->name . "', '"
+                . $this->username . "', '"
                 . $this->email . "', '"
                 . $this->contact_no . "', '"
                 . $this->profile_picture . "','"
@@ -86,7 +90,7 @@ class Driver {
                 . md5($this->password) . "', '"
                 . 1 . "', '"
                 . $createdAt . "' )";
-    
+
         $db = new Database();
 
         $result = $db->readQuery($query);
@@ -98,6 +102,20 @@ class Driver {
         } else {
             return FALSE;
         }
+    }
+
+    public function getDriversByVehicleType($id) {
+
+        $query = "SELECT * FROM `driver` WHERE vehicle_type= '" . $id . "'";
+        $db = new Database();
+        $result = $db->readQuery($query);
+        $array_res = array();
+
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+
+        return $array_res;
     }
 
     public function all() {
@@ -133,7 +151,7 @@ class Driver {
                 . "`verified` ='" . $this->verified . "', "
                 . "`vehicle_type` ='" . $this->vehicle_type . "' "
                 . "WHERE `id` = '" . $this->id . "'";
-       
+
         $db = new Database();
         $result = $db->readQuery($query);
 
@@ -161,7 +179,7 @@ class Driver {
     }
 
     public function updateDriverLocation() {
-        
+
         $createdAt = date('Y-m-d H:i:s');
 
         $query = "UPDATE  `driver` SET "
@@ -197,15 +215,15 @@ class Driver {
     }
 
     public function GetDriversByPickup($latitude, $longitude, $vehicle_type) {
-        
-        
+
+
         $newTime = strtotime('-20 minutes');
 
-        $timeAt = "'".date('Y-m-d H:i:s', $newTime)."'";
-        
-    
+        $timeAt = "'" . date('Y-m-d H:i:s', $newTime) . "'";
+
+
         $query = 'SELECT *, ROUND((6371 * acos ( cos ( radians(' . $latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $longitude . ') ) + sin ( radians(' . $latitude . ') ) * sin( radians( latitude ) ) ) ), 2) AS distance 
-        FROM driver WHERE '. $timeAt .'  <= last_update_time AND vehicle_type = '. $vehicle_type .' HAVING distance <= 1.00 ORDER BY distance';
+        FROM driver WHERE ' . $timeAt . '  <= last_update_time AND vehicle_type = ' . $vehicle_type . ' HAVING distance <= 1.00 ORDER BY distance';
 
         $db = new Database();
 
@@ -217,6 +235,17 @@ class Driver {
         }
 
         return $array_res;
+    }
+
+    public function getNextAvailableUsername() {
+
+        $query = "SELECT MAX(id)+1 FROM `driver`";
+
+        $db = new Database();
+
+        $result = mysql_fetch_array($db->readQuery($query));
+
+        return 'HURD' . str_pad($result["MAX(id)+1"], 5, '0', STR_PAD_LEFT);
     }
 
 }

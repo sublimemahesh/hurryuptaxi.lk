@@ -37,22 +37,38 @@ $DRIVER = new Driver($id);
                         <div class="card">
                             <div class="header">
                                 <h2>
-                                    Driver : <?php echo $DRIVER->name?>
+                                    Driver : <?php echo $DRIVER->name ?>
                                 </h2>
-                                 
+
                             </div>
                             <div class="body">
                                 <div class="row">
                                     <div class="col-sm-9 col-md-9">
                                         <ul class="list-group">
                                             <li class="list-group-item bcg-color"><b>Your Details</b></li>
-                                            <li class="list-group-item"><b>Name</b> : <?php echo $DRIVER->name  ?></li> 
-                                            
-
-                                             
-
-
-                                         
+                                            <li class="list-group-item"><b>Name</b> : <?php echo $DRIVER->name ?></li>  
+                                            <li class="list-group-item"><b>Username</b> : <?php echo $DRIVER->username ?></li>  
+                                            <li class="list-group-item"><b>Email</b> : <?php echo $DRIVER->email ?></li>  
+                                            <li class="list-group-item"><b>Phone Number</b> : <?php echo $DRIVER->contact_no ?></li>  
+                                            <li class="list-group-item"><b>District</b> : <?php
+                                                $DISTRICT = new District($DRIVER->district);
+                                                echo $DISTRICT->name
+                                                ?>
+                                            </li>  
+                                            <li class="list-group-item"><b>City</b> : <?php
+                                                $CITY = new City($DRIVER->city);
+                                                echo $CITY->name
+                                                ?>
+                                            </li>  
+                                            <li class="list-group-item"><b>Address</b> : <?php echo $DRIVER->address ?></li>  
+                                            <li class="list-group-item"><b>Vehicle Number</b> : <?php echo $DRIVER->vehicle_number ?></li>  
+                                            <li class="list-group-item"><b>Vehicle Type</b> : <?php
+                                                $VEHICLE_TYPE = new VehicleType($DRIVER->vehicle_type);
+                                                echo $VEHICLE_TYPE->name
+                                                ?>
+                                            </li>  
+                                            <li class="list-group-item"><b>Price per km</b> : <?php echo $DRIVER->price_per_km ?></li>  
+                                            <li class="list-group-item"><b>Base Price</b> : <?php echo $DRIVER->base_price ?></li>  
                                         </ul>
                                     </div>
                                     <div class="col-sm-3 col-md-3">  

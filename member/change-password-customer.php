@@ -2,10 +2,10 @@
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 
-$USE = new User($_SESSION["id"]);
+$USER = new User($_SESSION["id"]);
 $id = '';
 $id = $_GET['id'];
- 
+$USER = new User($id);
 ?> 
 <!DOCTYPE html>
 <html> 
@@ -43,7 +43,7 @@ $id = $_GET['id'];
                 ?>
 
                 <?php
-                if (($_SESSION['id'] == $USE->parent || $_SESSION['id'] == 1)) {
+                if (($_SESSION['id'] == $USER->parent || $_SESSION['id'] == 1)) {
                     ?>
 
 

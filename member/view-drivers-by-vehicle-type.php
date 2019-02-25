@@ -69,21 +69,22 @@ $id = $_GET['id'];
                                                 <th>Contact No</th>
                                                 <th>Nic Number</th>
                                                 <th>Base Price</th>                                                 
+                                                <th>Price Pre Km</th>                                                 
                                                 <th>Options</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                                   
                                             foreach ($DRIVER->getDriversByVehicleType($id, $USER->id) as $key => $driver) {
                                                 ?>
                                                 <tr id="row_<?php echo $driver['id'] ?>">
                                                     <td>#<?php echo $driver['id']; ?></td> 
-                                                    <td><?php  echo $driver['name'];  ?></td>  
-                                                    <td><?php  echo $driver['email'];  ?></td>  
-                                                    <td><?php  echo $driver['contact_no'];  ?></td>  
-                                                    <td><?php  echo $driver['nic_number'];  ?></td>                                                
-                                                    <td><?php  echo $driver['base_price'];  ?></td>  
+                                                    <td><?php echo $driver['name']; ?></td>  
+                                                    <td><?php echo $driver['email']; ?></td>  
+                                                    <td><?php echo $driver['contact_no']; ?></td>  
+                                                    <td><?php echo $driver['nic_number']; ?></td>                                                
+                                                    <td><?php echo $driver['base_price']; ?></td>  
+                                                    <td><?php echo $driver['price_per_km']; ?></td>  
                                                     <td> 
                                                         <a href="#" class="delete-app-booking btn btn-sm btn-danger" data-id="<?php echo $app_booking['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
@@ -101,7 +102,8 @@ $id = $_GET['id'];
                                                 <th>Email</th>
                                                 <th>Contact No</th>
                                                 <th>Nic Number</th>
-                                                <th>Base Price</th>                                                 
+                                                <th>Base Price</th>      
+                                                <th>Price Pre Km</th>          
                                                 <th>Options</th>
                                             </tr>
                                         </tfoot>

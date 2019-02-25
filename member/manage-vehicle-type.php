@@ -2,7 +2,7 @@
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
-$VEHICLE_TYPE =  new VehicleType(NULL);
+$VEHICLE_TYPE = new VehicleType(NULL);
 ?> 
 <!DOCTYPE html>
 <html>
@@ -65,6 +65,7 @@ $VEHICLE_TYPE =  new VehicleType(NULL);
                                                 <th>ID</th>
                                                 <th>Type</th>
                                                 <th>Passengers</th>                                                 
+                                                <th>Baggages</th>                                                 
                                                 <th>Options</th>
                                             </tr>
                                         </thead>
@@ -73,11 +74,12 @@ $VEHICLE_TYPE =  new VehicleType(NULL);
                                             foreach ($VEHICLE_TYPE->all() as $key => $vehicle_type) {
                                                 $key++;
                                                 ?>
-                                                <tr id="row_<?php echo  $vehicle_type['id'] ?>">
+                                                <tr id="row_<?php echo $vehicle_type['id'] ?>">
                                                     <td><?php echo $key; ?></td> 
                                                     <td><?php echo $vehicle_type['name']; ?></td>  
                                                     <td><?php echo $vehicle_type['passengers']; ?></td>
-                                                    
+                                                    <td><?php echo $vehicle_type['baggages']; ?></td>
+
                                                     <td> 
                                                         <a href="edit-vehicle-type.php?id=<?php echo $vehicle_type['id']; ?>" class="op-link btn btn-sm btn-info" title="Edit">
                                                             <i class="glyphicon glyphicon-pencil"></i>
@@ -102,7 +104,8 @@ $VEHICLE_TYPE =  new VehicleType(NULL);
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Type</th>
-                                                <th>Passengers</th>                                                 
+                                                <th>Passengers</th>  
+                                                <th>Baggages</th>     
                                                 <th>Options</th>
                                             </tr>
                                         </tfoot>

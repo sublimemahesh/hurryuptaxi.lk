@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description of Customer
+ * Description of customer
  *
  * @author WJK Nisansala
  */
@@ -20,7 +20,7 @@ class Customer {
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT * FROM `Customer` WHERE `id`=" . $id;
+            $query = "SELECT * FROM `customer` WHERE `id`=" . $id;
 
             $db = new Database();
 
@@ -111,7 +111,7 @@ class Customer {
         return $db->readQuery($query);
     }
 
-    public function activeCustomer() {
+    public function activecustomer() {
 
         $query = "SELECT * FROM `customer` WHERE verified = '1' ";
         $db = new Database();
@@ -125,7 +125,7 @@ class Customer {
         return $array_res;
     }
 
-    public function InActiveCustomer() {
+    public function InActivecustomer() {
 
         $query = "SELECT * FROM `customer` WHERE verified = '0'";
         $db = new Database();

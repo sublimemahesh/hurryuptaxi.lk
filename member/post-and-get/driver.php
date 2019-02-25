@@ -12,6 +12,7 @@ if (isset($_POST['add-driver'])) {
     
     $DRIVER->user = $_POST['user'];
     $DRIVER->name = $_POST['name'];
+    $DRIVER->username = $DRIVER->getNextAvailableUsername();
     $DRIVER->email = $_POST['email'];
     $DRIVER->contact_no = $_POST['contact_no'];
     $DRIVER->district = $_POST['district'];
