@@ -65,7 +65,7 @@ $createdAt = date('Y-m-d H:i:s');
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="name" class="form-control" placeholder="Enter Your name" autocomplete="off" name="name" >
+                                                    <input type="text" id="name" class="form-control" placeholder="Enter Your name" autocomplete="off" name="name" required="">
                                                 </div>
                                             </div>
                                         </div>
@@ -78,7 +78,7 @@ $createdAt = date('Y-m-d H:i:s');
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="email" id="email" class="form-control" placeholder="Enter Your email" autocomplete="off" name="email" >
+                                                    <input type="email" id="email" class="form-control" placeholder="Enter Your email" autocomplete="off" name="email" required="">
                                                 </div>
                                             </div>
                                         </div>
@@ -91,7 +91,7 @@ $createdAt = date('Y-m-d H:i:s');
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="contact_no" class="form-control" placeholder="Enter Your Phone Number" autocomplete="off" name="contact_no">
+                                                    <input type="text" id="contact_no" class="form-control" placeholder="Enter Your Phone Number" autocomplete="off" name="contact_no" required="">
                                                 </div>
                                             </div>
                                         </div>
@@ -104,7 +104,7 @@ $createdAt = date('Y-m-d H:i:s');
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="nic_number" class="form-control" placeholder="Enter NIC Number" autocomplete="off" name="nic_number">
+                                                    <input type="text" id="nic_number" class="form-control" placeholder="Enter NIC Number" autocomplete="off" name="nic_number" required="">
                                                 </div>
                                             </div>
                                         </div>
@@ -165,7 +165,7 @@ $createdAt = date('Y-m-d H:i:s');
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="address" class="form-control" placeholder="Enter Your Address" autocomplete="off" name="address">
+                                                    <input type="text" id="address" class="form-control" placeholder="Enter Your Address" autocomplete="off" name="address" required="">
                                                 </div>
                                             </div>
                                         </div>
@@ -201,7 +201,7 @@ $createdAt = date('Y-m-d H:i:s');
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="vehicle_number" class="form-control" placeholder="Enter Vehicle Number" autocomplete="off" name="vehicle_number">
+                                                    <input type="text" id="vehicle_number" class="form-control" placeholder="Enter Vehicle Number" autocomplete="off" name="vehicle_number" required="">
                                                 </div>
                                             </div>
                                         </div>
@@ -214,7 +214,7 @@ $createdAt = date('Y-m-d H:i:s');
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="price_per_km" class="form-control" placeholder="Enter Price Per KM" autocomplete="off" name="price_per_km">
+                                                    <input type="text" id="price_per_km" class="form-control" placeholder="Enter Price Per KM" autocomplete="off" name="price_per_km" required="">
                                                 </div>
                                             </div>
                                         </div>
@@ -227,7 +227,7 @@ $createdAt = date('Y-m-d H:i:s');
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="base_price" class="form-control" placeholder="Enter Base Price" autocomplete="off" name="base_price">
+                                                    <input type="text" id="base_price" class="form-control" placeholder="Enter Base Price" autocomplete="off" name="base_price" required="">
                                                 </div>
                                             </div>
                                         </div>
@@ -240,7 +240,7 @@ $createdAt = date('Y-m-d H:i:s');
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="password" id="password" class="form-control" placeholder="Enter Password" autocomplete="off" name="password">
+                                                    <input type="password" id="password" class="form-control" placeholder="Enter Password" autocomplete="off" name="password" required="">
                                                 </div>
                                             </div>
                                         </div>
