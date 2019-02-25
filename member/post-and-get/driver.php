@@ -9,7 +9,7 @@ if (isset($_POST['add-driver'])) {
     $DRIVER = New Driver(NULL);
     $VALID = new Validator();
 
-    $DRIVER->id = $_POST['id'];
+    
     $DRIVER->user = $_POST['user'];
     $DRIVER->name = $_POST['name'];
     $DRIVER->email = $_POST['email'];
@@ -117,6 +117,8 @@ if (isset($_POST['edit-driver'])) {
     $DRIVER = New Driver($_POST['id']);
     $VALID = new Validator();
 
+   
+    
     $DRIVER->user = $_POST['user'];
     $DRIVER->name = $_POST['name'];
     $DRIVER->email = $_POST['email'];
@@ -125,9 +127,7 @@ if (isset($_POST['edit-driver'])) {
     $DRIVER->vehicle_number = $_POST['vehicle_number'];
     $DRIVER->nic_number = $_POST['nic_number'];
     $DRIVER->price_per_km = $_POST['price_per_km'];
-
     $DRIVER->vehicle_type = $_POST['vehicle_type'];
-
     $DRIVER->base_price = $_POST['base_price'];
     $DRIVER->password = md5($_POST['password']);
     

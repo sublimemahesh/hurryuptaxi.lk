@@ -28,11 +28,12 @@ class Driver {
     public $last_update_time;
     public $longitude;
     public $latitude;
+    public $vehicle_type;
 
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT `id`,`user`,`name`,`email`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`base_price`,`price_per_km`,`password`,`otp`,`verified`,`created_at`,`last_update_time`,`longitude`,`latitude`  FROM `driver` WHERE `id`=" . $id;
+            $query = "SELECT `id`,`user`,`name`,`email`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`base_price`,`price_per_km`,`password`,`otp`,`verified`,`created_at`,`last_update_time`,`longitude`,`latitude`,`vehicle_type`  FROM `driver` WHERE `id`=" . $id;
 
             $db = new Database();
 
@@ -58,6 +59,7 @@ class Driver {
             $this->last_update_time = $result['last_update_time'];
             $this->longitude = $result['longitude'];
             $this->latitude = $result['latitude'];
+            $this->vehicle_type = $result['vehicle_type'];
 
             return $this;
         }
@@ -67,7 +69,7 @@ class Driver {
     
         $createdAt = date('Y-m-d H:i:s');
 
-        $query = "INSERT INTO `driver` (`user`,`name`,`email`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`base_price`,`price_per_km`,`password`,`verified`,`created_at`) VALUES  ('"
+        $query = "INSERT INTO `driver` (`user`,`name`,`email`,`contact_no`,`profile_picture`,`district`,`city`,`address`,`vehicle_number`,`nic_number`,`base_price`,`price_per_km`,`vehicle_type`,`password`,`verified`,`created_at`) VALUES  ('"
                 . $this->user . "', '"
                 . $this->name . "', '"
                 . $this->email . "', '"
@@ -80,10 +82,11 @@ class Driver {
                 . $this->nic_number . "', '"
                 . $this->base_price . "', '"
                 . $this->price_per_km . "', '"
+                . $this->vehicle_type . "', '"
                 . md5($this->password) . "', '"
                 . 1 . "', '"
                 . $createdAt . "' )";
-
+    
         $db = new Database();
 
         $result = $db->readQuery($query);
@@ -127,9 +130,10 @@ class Driver {
                 . "`base_price` ='" . $this->base_price . "', "
                 . "`price_per_km` ='" . $this->price_per_km . "', "
                 . "`password` ='" . md5($this->password) . "', "
-                . "`verified` ='" . $this->verified . "' "
+                . "`verified` ='" . $this->verified . "', "
+                . "`vehicle_type` ='" . $this->vehicle_type . "' "
                 . "WHERE `id` = '" . $this->id . "'";
-
+       
         $db = new Database();
         $result = $db->readQuery($query);
 

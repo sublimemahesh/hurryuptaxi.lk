@@ -226,7 +226,7 @@ $DRIVER = new Driver($id);
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group place-select">
                                                 <div class="form-line">
-<<<<<<< HEAD
+ 
                                                     <select class="form-control" autocomplete="off" type="text" id="vehicle_type" autocomplete="off" name="vehicle_type" required="TRUE">
                                                         <option value=""> -- Please Select Vehicle Type -- </option>
                                                         <?php
@@ -241,10 +241,8 @@ $DRIVER = new Driver($id);
                                                         }
                                                         ?>
                                                     </select>
-=======
-                                                    <label for="nic_number" class="hidden-lg hidden-md">NIC Number</label>
-                                                    <input type="text" id="nic_number" class="form-control" placeholder="Enter NIC Number" autocomplete="off" name="nic_number" value="<?php echo $DRIVER->nic_number; ?>">
->>>>>>> Corrections
+ 
+                                                     
                                                 </div>
                                             </div>
                                         </div>
