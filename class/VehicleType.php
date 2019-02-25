@@ -11,6 +11,7 @@ class VehicleType {
     public $name;
     public $image;
     public $passengers;
+    public $baggages;
     public $sort;
 
     public function __construct($id) {
@@ -26,6 +27,7 @@ class VehicleType {
             $this->name = $result['name'];
             $this->image = $result['image'];
             $this->passengers = $result['passengers'];
+            $this->baggages = $result['baggages'];
             $this->sort = $result['sort'];
 
             return $this;
@@ -34,10 +36,11 @@ class VehicleType {
 
     public function create() {
 
-        $query = "INSERT INTO `vehicle_type` (`name`,`image`,`passengers`,`sort`) VALUES  ('"
+        $query = "INSERT INTO `vehicle_type` (`name`,`image`,`passengers`,`baggages`,`sort`) VALUES  ('"
                 . $this->name . "','"
                 . $this->image . "','"
                 . $this->passengers . "','"
+                . $this->baggages . "','"
                 . $this->sort . "')";
 
         $db = new Database();
@@ -72,7 +75,8 @@ class VehicleType {
         $query = "UPDATE `vehicle_type` SET "
                 . "`name` ='" . $this->name . "', "
                 . "`image` ='" . $this->image . "', "
-                . "`passengers` ='" . $this->passengers . "' "
+                . "`passengers` ='" . $this->passengers . "', "
+                . "`baggages` ='" . $this->baggages . "' "
                 . "WHERE `id` = '" . $this->id . "'";
      
         $db = new Database();

@@ -9,8 +9,9 @@ if (isset($_POST['create'])) {
     $VALID = new Validator();
 
 
-    $VEHICLE_TYPE->name = $_POST['name'];  
+    $VEHICLE_TYPE->name = $_POST['name'];
     $VEHICLE_TYPE->passengers = $_POST['passengers'];
+    $VEHICLE_TYPE->baggages = $_POST['baggages'];
 
     $server_name = "http://" . $_SERVER['SERVER_NAME'];
 
@@ -112,8 +113,9 @@ if (isset($_POST['update'])) {
         $VEHICLE_TYPE->image = $img;
     }
 
-    $VEHICLE_TYPE->name = $_POST['name']; 
+    $VEHICLE_TYPE->name = $_POST['name'];
     $VEHICLE_TYPE->passengers = $_POST['passengers'];
+    $VEHICLE_TYPE->baggages = $_POST['baggages'];
 
 
     $VALID->check($VEHICLE_TYPE, [

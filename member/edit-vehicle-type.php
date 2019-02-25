@@ -82,12 +82,25 @@ $VEHICLE_TYPE = new VehicleType($id);
                                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="number" id="passengers" class="form-control" placeholder="Passengers" value="<?php echo $VEHICLE_TYPE->passengers; ?>"autocomplete="off" name="passengers"  required="TRUE">
+                                            <input type="number" id="passengers" class="form-control" placeholder="Passengers" value="<?php echo $VEHICLE_TYPE->passengers; ?>" autocomplete="off" name="passengers"  required="TRUE">
                                         </div>
                                     </div>
                                 </div>
                             </div> 
 
+                            <!--Baggages-->
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                    <label for="baggages">Baggages</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="number" id="baggages" class="form-control" placeholder="Baggages" autocomplete="off" name="baggages" value="<?php echo $VEHICLE_TYPE->baggages; ?>" required="TRUE" min="0">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
 
                             <!--Image-->
                             <div class="row clearfix">
@@ -111,7 +124,7 @@ $VEHICLE_TYPE = new VehicleType($id);
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                     <input type="hidden" id="image" value="<?php echo $VEHICLE_TYPE->image; ?>" name="oldImageName"/>  
-                                    <input type="hidden" id="id" value="<?php echo  $id; ?>" name="id"/>                                      
+                                    <input type="hidden" id="id" value="<?php echo $id; ?>" name="id"/>                                      
                                     <input type="submit" name="update" class="btn btn-primary m-t-15 waves-effect center-block" value="Update"/>
                                 </div>
                             </div>

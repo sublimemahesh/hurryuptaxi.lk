@@ -78,7 +78,20 @@ $createdAt = date('Y-m-d H:i:s');
                                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="number" id="passengers" class="form-control" placeholder="Passengers" autocomplete="off" name="passengers"  required="TRUE">
+                                            <input type="number" id="passengers" class="form-control" placeholder="Passengers" autocomplete="off" name="passengers"  required="TRUE" min="0">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            <!--Baggages-->
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                    <label for="baggages">Baggages</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="number" id="baggages" class="form-control" placeholder="Baggages" autocomplete="off" name="baggages"  required="TRUE" min="0">
                                         </div>
                                     </div>
                                 </div>
