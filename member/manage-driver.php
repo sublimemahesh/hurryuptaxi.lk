@@ -92,11 +92,11 @@ $DRIVER = new Driver(NULL);
                                                         <a href="view-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Drivers">
                                                             <i class="glyphicon glyphicon-eye-open"></i> 
                                                         </a> | 
-                                                        <a href="manage-driver-booking.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Drivers">
-                                                            <i class="glyphicon glyphicon-eye-close"></i> 
+                                                        <a href="manage-driver-booking.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="Driver Bookings">
+                                                            <i class="glyphicon glyphicon-calendar"></i> 
                                                         </a> | 
-                                                        <a href="add_driver_payment.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Drivers">
-                                                            <i class="glyphicon glyphicon-earphone"></i> 
+                                                        <a href="add-driver-payment.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="Driver payment">
+                                                            <i class="glyphicon glyphicon-usd"></i> 
                                                         </a> | 
 
                                                         <a href="#" class="delete-driver btn btn-sm btn-danger" data-id="<?php echo $driver['id']; ?>">

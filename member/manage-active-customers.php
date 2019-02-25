@@ -1,4 +1,5 @@
-﻿<?php
+<?php
+ 
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
@@ -78,14 +79,14 @@ $CUSTOMER = new Customer(NULL);
                                                     <td><?php echo $customer['name']; ?></td> 
                                                     <td><?php echo $customer['email']; ?></td> 
                                                     <td><?php echo $customer['contact_no']; ?></td> 
-                                                   
-                                                     
-                                                     
+
+
+
                                                     <td> 
                                                         <a href="edit-customer.php?id=<?php echo $customer['id']; ?>" class="op-link btn btn-sm btn-info">
                                                             <i class="glyphicon glyphicon-pencil"></i>
                                                         </a> | 
-                                                         
+
                                                         <a href="view-customer.php?id=<?php echo $customer['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Drivers">
                                                             <i class="glyphicon glyphicon-eye-open"></i> 
                                                         </a> | 
@@ -105,7 +106,7 @@ $CUSTOMER = new Customer(NULL);
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                 <th>ID</th>
+                                                <th>ID</th>
                                                 <th>Name</th>
                                                 <th>Email</th> 
                                                 <th>Contact No</th>                                         
@@ -141,6 +142,6 @@ $CUSTOMER = new Customer(NULL);
         <script src="js/pages/tables/jquery-datatable.js"></script>
         <script src="js/demo.js"></script> 
         <script src="delete/js/customer.js" type="text/javascript"></script>
-</body>
+    </body>
 
 </html> 

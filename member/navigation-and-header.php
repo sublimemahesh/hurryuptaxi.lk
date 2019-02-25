@@ -147,103 +147,92 @@
 
                     </ul>
                 </li>
-                <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">account_box</i>
-                        <span>Customers</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="create-customer.php">
-                                <i class="material-icons">add</i>
-                                <span>Add New</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="manage-active-customers.php">
-                                <i class="material-icons">how_to_reg</i>
-                                <span>Active Customers</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="manage-inactive-customers.php">
-                                <i class="material-icons">person_add_disabled</i>
-                                <span>InActive Customers</span>
-                            </a>
-                        </li>
 
-                    </ul>
-                </li>  
+                <?php
+                if ($USER->id == 1) {
+                    ?>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">account_box</i>
+                            <span>App Users</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="create-customer.php">
+                                    <i class="material-icons">add</i>
+                                    <span>Add New</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="manage-active-customers.php">
+                                    <i class="material-icons">how_to_reg</i>
+                                    <span>Active Customers</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="manage-inactive-customers.php">
+                                    <i class="material-icons">person_add_disabled</i>
+                                    <span>InActive Customers</span>
+                                </a>
+                            </li>
 
-                <li>
-                    <a href="manage-driver-payment.php" class="menu-toggle">
-                        <i class="material-icons">monetization_on</i>
-                        <span>Driver Payment</span>
-                    </a>
-
-                </li>  
-                <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">assignment_ind</i>
-                        <span>My Taxi</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="create-driver.php">
-                                <i class="material-icons">add</i>
-                                <span>Add New</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="manage-driver.php">
-                                <i class="material-icons">list</i>
-                                <span>Manage</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li> 
+                        </ul>
+                    </li>  
 
 
-                <li>
-                    <a href="" class="menu-toggle">
-                        <i class="material-icons">directions_car</i>
-                        <span>Vehicle Type</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="create-vehicle-type.php">
-                                <i class="material-icons">add</i>
-                                <span>Add New</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="manage-vehicle-type.php">
-                                <i class="material-icons">list</i>
-                                <span>Manage</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li> 
-                <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">perm_contact_calendar</i>
-                        <span>View App Bookings</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="view-app-booking-all.php">
-                                <i class="material-icons">add</i>
-                                <span>View All </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="view-app-booking-for-user.php">
-                                <i class="material-icons">list</i>
-                                <span>User Bookings</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li> 
+                    <li>
+                        <a href="manage-driver-payment.php" class="menu-toggle">
+                            <i class="material-icons">monetization_on</i>
+                            <span>Driver Payment</span>
+                        </a>
+
+                    </li>  
+
+
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">directions_car</i>
+                            <span>Vehicle Type</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="create-vehicle-type.php">
+                                    <i class="material-icons">add</i>
+                                    <span>Add New</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="manage-vehicle-type.php">
+                                    <i class="material-icons">list</i>
+                                    <span>Manage</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li> 
+
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">perm_contact_calendar</i>
+                            <span>View App Bookings</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="view-app-booking-all.php">
+                                    <i class="material-icons">add</i>
+                                    <span>View All </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="view-app-booking-for-user.php">
+                                    <i class="material-icons">list</i>
+                                    <span>User Bookings</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li> 
+                    <?php
+                }
+                ?> 
                 <?php
                 if ($USER->id == 1) {
                     ?>
@@ -346,6 +335,26 @@
                     <?php
                 }
                 ?>
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">assignment_ind</i>
+                        <span>My Taxi</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="create-driver.php">
+                                <i class="material-icons">add</i>
+                                <span>Add New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="manage-driver.php">
+                                <i class="material-icons">list</i>
+                                <span>Manage</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">send</i>
