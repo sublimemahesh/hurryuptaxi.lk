@@ -44,18 +44,7 @@ $THIS_USER = new User($_GET['user']);
                                 <h2>
                                     Manage Drivers
                                 </h2>
-                                <ul class="header-dropdown m-r--5">
-                                    <li class="dropdown">
-                                        <a href="create-driver.php">
-                                            <i class="material-icons">add</i> 
-                                        </a>
-                                        <ul class="dropdown-menu pull-right">
-                                            <li><a href="javascript:void(0);">Action</a></li>
-                                            <li><a href="javascript:void(0);">Another action</a></li>
-                                            <li><a href="javascript:void(0);">Something else here</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+
                             </div>
                             <div class="body">
                                 <div class="table-responsive">
@@ -74,7 +63,6 @@ $THIS_USER = new User($_GET['user']);
                                         </thead>
                                         <tbody>
                                             <?php
-                                                
                                             $DRIVERS = $DRIVER->GetDriversByUser($THIS_USER->id);
 
 
@@ -89,17 +77,17 @@ $THIS_USER = new User($_GET['user']);
                                                     <td><?php echo $VEHICLE_TYPE->name ?></td>
                                                     <td><?php echo $driver['vehicle_number']; ?></td> 
                                                     <td><?php echo $driver['nic_number']; ?></td> 
-                                                    <td> 
-                                                        <a href="edit-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-info">
+                                                   <td> 
+                                                        <a href="edit-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-primary">
                                                             <i class="glyphicon glyphicon-pencil"></i>
                                                         </a> | 
-<!--                                                        <a href="add-vehicle-photos.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-success">
+<!--                                                            <a href="add-vehicle-photos.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-success">
                                                             <i class="glyphicon glyphicon-picture"></i>
                                                         </a> | -->
-                                                        <a href="view-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Driver">
+                                                        <a href="view-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-info" title="View Driver">
                                                             <i class="glyphicon glyphicon-eye-open"></i> 
                                                         </a> | 
-                                                        <a href="manage-driver-booking.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="Driver Bookings">
+                                                        <a href="manage-driver-booking.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-success" title="Driver Bookings">
                                                             <i class="glyphicon glyphicon-calendar"></i> 
                                                         </a> | 
                                                         <a href="add-driver-payment.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="Driver payment">
@@ -112,9 +100,9 @@ $THIS_USER = new User($_GET['user']);
 
                                                     </td>
                                                 </tr>
-    <?php
-}
-?>   
+                                                <?php
+                                            }
+                                            ?>   
                                         </tbody>
                                         <tfoot>
                                             <tr>

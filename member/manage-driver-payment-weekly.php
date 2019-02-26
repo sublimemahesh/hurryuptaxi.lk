@@ -4,17 +4,17 @@ include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
 $DRIVER_PAYMENT = new DriverPayment(NULL);
 
+
 if (isset($_GET['id'])) {
     $id = '';
     $id = $_GET['id'];
 }
-
 $asia_date = new DateTime('now', new DateTimezone('Asia/Dhaka'));
 $today = $asia_date->format('Y-m-d');
 
-$MONTH = new DateTime($today);
-$MONTH->modify('-30 day');
-$month = $MONTH->format('Y-m-d');
+$WEEKLY = new DateTime($today);
+$WEEKLY->modify('-7 day');
+$weekly = $WEEKLY->format('Y-m-d');
 ?> 
 <!DOCTYPE html>
 <html>
@@ -51,7 +51,7 @@ $month = $MONTH->format('Y-m-d');
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="card" style="margin-top: 20px;">
                             <div class="header">
-                                <h2>Monthly Payment Report</h2>
+                                <h2>Driver Payment Weekly</h2>
                                 <div class="dropdown pull-right" style="margin-top: -20px;">
                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select the type
                                         <span class="caret"></span></button>
@@ -74,12 +74,11 @@ $month = $MONTH->format('Y-m-d');
                                         </thead>
                                         <tbody>
                                             <?php
-                                            foreach ($DRIVER_PAYMENT->getPaymentByDriver($month, $today, $id) as $key => $driver_payment) {
+                                            foreach ($DRIVER_PAYMENT->getPaymentByDriver($weekly, $today, $id) as $key => $driver_payment) {
                                                 $key++;
                                                 ?>
                                                 <tr id="row_<?php echo $driver_payment['id']; ?>">
                                                     <td><?php echo $key; ?></td> 
-
                                                     <td><?php echo $driver_payment['date']; ?></td> 
                                                     <td><?php echo $driver_payment['time']; ?></td> 
                                                     <td><?php echo number_format($driver_payment['price'], 2); ?></td>
@@ -93,8 +92,7 @@ $month = $MONTH->format('Y-m-d');
                                                 <th>ID</th>                                                
                                                 <th>Date</th> 
                                                 <th>Time</th> 
-                                                <th>Price</th>                                                
-
+                                                <th>Price</th>                                              
                                             </tr>
                                         </tfoot>
                                     </table>
@@ -125,12 +123,7 @@ $month = $MONTH->format('Y-m-d');
         <script src="js/pages/tables/jquery-datatable.js"></script>
         <script src="js/demo.js"></script> 
         <script src="delete/js/driver_payment.js" type="text/javascript"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script>
-            $(function () {
-                $(".datepicker").datepicker({dateFormat: 'yy-mm-dd'});
-            });
-        </script> 
+
     </body>
 
 </html> 
