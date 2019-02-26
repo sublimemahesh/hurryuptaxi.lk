@@ -10,6 +10,12 @@ if (isset($_POST['add-driver'])) {
     $VALID = new Validator();
 
     
+    
+    $server_name = "http://" . $_SERVER['SERVER_NAME'];
+
+    $dir_dest_url = $server_name . '/upload/driver/';
+
+
     $DRIVER->user = $_POST['user'];
     $DRIVER->name = $_POST['name'];
     $DRIVER->username = $DRIVER->getNextAvailableUsername();
@@ -47,10 +53,13 @@ if (isset($_POST['add-driver'])) {
         if ($handle->processed) {
             $info = getimagesize($handle->file_dst_pathname);
             $imgName = $handle->file_dst_name;
+              $DRIVER->profile_picture = $dir_dest_url . $imgName;
+        } else {
+             $DRIVER->profile_picture = '';
         }
     }
 
-    $DRIVER->profile_picture = $imgName;
+  
 
     $VALID->check($DRIVER, [
         'name' => ['required' => TRUE],
@@ -61,7 +70,6 @@ if (isset($_POST['add-driver'])) {
         'city' => ['required' => TRUE],
         'vehicle_number' => ['required' => TRUE],
         'nic_number' => ['required' => TRUE],
-        'profile_picture' => ['required' => TRUE],
         'price_per_km' => ['required' => TRUE],
         'base_price' => ['required' => TRUE],
         'password' => ['required' => TRUE]
@@ -92,30 +100,47 @@ if (isset($_POST['add-driver'])) {
 if (isset($_POST['edit-driver'])) {
 
 
+    $img = $_POST ["oldImageName"];
+
+    $OLD_IMAGE = (explode("/", $img)[5]);
+
+    $server_name = "http://" . $_SERVER['SERVER_NAME'];
+
+    $dir_dest_url = $server_name . '/upload/driver/';
+    
     $dir_dest = '../../upload/driver/';
+    
+     $DRIVER = New Driver($_POST['id']);
 
     $handle = new Upload($_FILES['image']);
 
     $imgName = null;
+  
     if ($handle->uploaded) {
         $handle->image_resize = true;
         $handle->file_new_name_body = TRUE;
         $handle->file_overwrite = TRUE;
-        $handle->file_new_name_ext = FALSE;
+        $handle->file_new_name_ext = 'jpg';
         $handle->image_ratio_crop = 'C';
-        $handle->file_new_name_body = $_POST ["oldImageName"];
+        $handle->file_new_name_body = Helper::randamId();
         $handle->image_x = 250;
         $handle->image_y = 250;
 
         $handle->Process($dir_dest);
 
         if ($handle->processed) {
+
             $info = getimagesize($handle->file_dst_pathname);
+
             $imgName = $handle->file_dst_name;
         }
+        unlink('../../upload/driver/' . $OLD_IMAGE); // correct 
+        $DRIVER->profile_picture = $dir_dest_url . $imgName;
+    } else {
+        $DRIVER->profile_picture = $img;
     }
 
-    $DRIVER = New Driver($_POST['id']);
+   
     $VALID = new Validator();
 
    
@@ -141,7 +166,6 @@ if (isset($_POST['edit-driver'])) {
         'address' => ['required' => TRUE],
         'vehicle_number' => ['required' => TRUE],
         'nic_number' => ['required' => TRUE],
-        'profile_picture' => ['required' => TRUE],
         'base_price' => ['required' => TRUE],
         'password' => ['required' => TRUE]
     ]);

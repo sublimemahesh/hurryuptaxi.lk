@@ -3,6 +3,7 @@ include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 $USER = new User($_SESSION["id"]);
 $DRIVER = new Driver(NULL);
+$THIS_USER = new User($_GET['user']);
 ?> 
 <!DOCTYPE html>
 <html>
@@ -73,7 +74,8 @@ $DRIVER = new Driver(NULL);
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $DRIVERS = $DRIVER->GetDriversByUser($_SESSION["id"]);
+                                                
+                                            $DRIVERS = $DRIVER->GetDriversByUser($THIS_USER->id);
 
 
 
