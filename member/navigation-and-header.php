@@ -106,7 +106,7 @@
         <!-- #User Info -->
         <!-- Menu -->
         <div class="menu">
-            <ul class="list">
+            <ul class="list" style="height: auto !important;">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="active">
                     <a href="./">
@@ -178,16 +178,7 @@
 
                         </ul>
                     </li>  
-
-
-                    <li>
-                        <a href="manage-driver-payment.php" class="menu-toggle">
-                            <i class="material-icons">monetization_on</i>
-                            <span>Driver Payment</span>
-                        </a>
-
-                    </li>  
-
+ 
 
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
@@ -475,9 +466,7 @@
                     <?php
                 }
                 ?>
-                <li>
-                    <div style="height: 200px;"></div>
-                </li> 
+                
             </ul>
         </div>
         <!-- #Menu -->

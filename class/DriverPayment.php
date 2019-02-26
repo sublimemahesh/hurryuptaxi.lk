@@ -9,7 +9,8 @@ class DriverPayment {
 
     public $id;
     public $driver;
-    public $date_time;
+    public $date;
+    public $time;
     public $price;
     public $status;
 
@@ -24,7 +25,8 @@ class DriverPayment {
 
             $this->id = $result['id'];
             $this->driver = $result['driver'];
-            $this->date_time = $result['date_time'];
+            $this->date = $result['date'];
+            $this->time = $result['time'];
             $this->price = $result['price'];
             $this->status = $result['status'];
 
@@ -34,12 +36,13 @@ class DriverPayment {
 
     public function create() {
 
-        $query = "INSERT INTO `driver_payment` (`driver`,`date_time`,`price`,`status`) VALUES  ('"
-                . $this->driver . "','" 
-                . $this->date_time . "','"
+        $query = "INSERT INTO `driver_payment` (`driver`,`date`,`time`,`price`,`status`) VALUES  ('"
+                . $this->driver . "','"
+                . $this->date . "','"
+                . $this->time . "','"
                 . $this->price . "','"
                 . $this->status . "')";
-        
+
         $db = new Database();
 
         $result = $db->readQuery($query);
@@ -81,10 +84,26 @@ class DriverPayment {
         return $array_res;
     }
 
+    public function getPaymentByDriver($date, $today, $driver) {
+
+        $query = "SELECT * FROM `driver_payment` WHERE `date`  BETWEEN '" . $date . "' AND '" . $today . "' AND driver= '" . $driver . "'";
+
+        $db = new Database();
+        $result = $db->readQuery($query);
+        $array_res = array();
+
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+
+        return $array_res;
+    }
+
     public function update() {
 
         $query = "UPDATE `driver_payment` SET "
-                . "`date_time` ='" . $this->date_time . "', "
+                . "`date` ='" . $this->date . "', "
+                . "`time` ='" . $this->time . "', "
                 . "`price` ='" . $this->price . "', "
                 . "`status` ='" . $this->status . "' "
                 . "WHERE `id` = '" . $this->id . "'";

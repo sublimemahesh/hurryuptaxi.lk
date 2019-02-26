@@ -3,13 +3,15 @@ include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 
 $USER = new User($_SESSION["id"]);
-
 date_default_timezone_set('Asia/Colombo');
 
-$createdAt = date('Y-m-d H:i:s');
+$date = date('Y-m-d');
+$time = date('H:i:s');
+
 $id = '';
 $id = $_GET['id'];
 $DRIVER = new Driver($id);
+
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +33,9 @@ $DRIVER = new Driver($id);
         <link href="css/themes/all-themes.css" rel="stylesheet" />
         <!-- Bootstrap Spinner Css -->
         <link href="plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
     </head>
 
     <body class="theme-red">
@@ -50,7 +55,7 @@ $DRIVER = new Driver($id);
                         <h2>Add Driver Payment</h2>
                         <ul class="header-dropdown">
                             <li class="">
-                                <a href="manage-user.php">
+                                <a href="manage-all-drivers.php">
                                     <i class="material-icons">list</i> 
                                 </a>
                             </li>
@@ -74,12 +79,19 @@ $DRIVER = new Driver($id);
                             <!--Date time-->
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                    <label for="email">Date Time</label>
+                                    <label for="date">Date Time</label>
                                 </div>
-                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" id="date_time" name="date_time" class="form-control" value="<?php echo $createdAt ?>"   autocomplete="off" required="TRUE" >
+                                            <input type="text" id="date" name="date" class="form-control datepicker" value="<?php echo $date ?>"   autocomplete="off" required="TRUE" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="time" name="time" class="form-control" value="<?php echo $time ?>"   autocomplete="off" required="TRUE" >
                                         </div>
                                     </div>
                                 </div>
@@ -126,6 +138,12 @@ $DRIVER = new Driver($id);
         <script src="js/demo.js"></script>
         <script src="js/city.js" type="text/javascript"></script>
 
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $(function () {
+                $(".datepicker").datepicker({dateFormat: 'yy-mm-dd'});
+            });
+        </script> 
     </body>
 
 </html>

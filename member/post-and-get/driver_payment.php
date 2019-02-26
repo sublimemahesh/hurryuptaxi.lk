@@ -10,7 +10,8 @@ if (isset($_POST['create'])) {
     $VALID = new Validator();
 
     $DRIVER_PAYMENT->driver = $_POST['driver'];
-    $DRIVER_PAYMENT->date_time = $_POST['date_time'];
+    $DRIVER_PAYMENT->date = $_POST['date'];
+    $DRIVER_PAYMENT->time = $_POST['time'];
     $DRIVER_PAYMENT->price = $_POST['price'];
     $DRIVER_PAYMENT->status = 'paid';
 
@@ -46,7 +47,8 @@ if (isset($_POST['update'])) {
     $VALID = new Validator();
 
     $DRIVER_PAYMENT->driver = $_POST['driver'];
-    $DRIVER_PAYMENT->date_time = $_POST['date_time'];
+    $DRIVER_PAYMENT->date = $_POST['date'];
+    $DRIVER_PAYMENT->time = $_POST['time'];
     $DRIVER_PAYMENT->price = $_POST['price'];
     $DRIVER_PAYMENT->status = $_POST['status'];
 

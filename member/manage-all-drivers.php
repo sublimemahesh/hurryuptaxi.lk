@@ -74,9 +74,7 @@ $DRIVER = new Driver(NULL);
                                         <tbody>
                                             <?php
                                             $DRIVERS = $DRIVER->all();
-
-
-  foreach ($DRIVERS as $key => $driver) {
+                                            foreach ($DRIVERS as $key => $driver) {
                                                 $VEHICLE_TYPE = new VehicleType($driver['vehicle_type']);
                                                 ?>
                                                 <tr id="row_<?php echo $driver['id']; ?>">
@@ -87,31 +85,32 @@ $DRIVER = new Driver(NULL);
                                                     <td><?php echo $driver['vehicle_number']; ?></td> 
                                                     <td><?php echo $driver['nic_number']; ?></td> 
                                                     <td> 
-                                                        <a href="edit-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-info">
+                                                        <a href="edit-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-primary">
                                                             <i class="glyphicon glyphicon-pencil"></i>
                                                         </a> | 
-<!--                                                        <a href="add-vehicle-photos.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-success">
-                                                            <i class="glyphicon glyphicon-picture"></i>
-                                                        </a> | -->
-                                                        <a href="view-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="View Driver">
+
+                                                        <a href="view-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-info" title="View Driver">
                                                             <i class="glyphicon glyphicon-eye-open"></i> 
                                                         </a> | 
-                                                        <a href="manage-driver-booking.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="Driver Bookings">
+                                                        <a href="manage-driver-booking.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-success" title="Driver Bookings">
                                                             <i class="glyphicon glyphicon-calendar"></i> 
                                                         </a> | 
                                                         <a href="add-driver-payment.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-warning" title="Driver payment">
                                                             <i class="glyphicon glyphicon-usd"></i> 
-                                                        </a> | 
-
+                                                        </a> |
+                                                        <a href="manage-driver-payment.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-default" title="Peyment report">
+                                                            <i class="glyphicon glyphicon-folder-open"></i>
+                                                        </a> 
+                                                        |
                                                         <a href="#" class="delete-driver btn btn-sm btn-danger" data-id="<?php echo $driver['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
-                                                        </a>
 
+                                                        </a>
                                                     </td>
                                                 </tr>
-    <?php
-}
-?>
+                                                <?php
+                                            }
+                                            ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
@@ -130,7 +129,6 @@ $DRIVER = new Driver(NULL);
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
