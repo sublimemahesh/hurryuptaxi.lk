@@ -41,7 +41,7 @@ $DRIVER = new Driver(NULL);
                         <div class="card" style="margin-top: 20px;">
                             <div class="header">
                                 <h2>
-                                    Manage Drivers
+                                    Manage All Drivers
                                 </h2>
                                 <ul class="header-dropdown m-r--5">
                                     <li class="dropdown">
@@ -73,11 +73,10 @@ $DRIVER = new Driver(NULL);
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $DRIVERS = $DRIVER->GetDriversByUser($_SESSION["id"]);
+                                            $DRIVERS = $DRIVER->all();
 
 
-
-                                            foreach ($DRIVERS as $key => $driver) {
+  foreach ($DRIVERS as $key => $driver) {
                                                 $VEHICLE_TYPE = new VehicleType($driver['vehicle_type']);
                                                 ?>
                                                 <tr id="row_<?php echo $driver['id']; ?>">
@@ -112,7 +111,7 @@ $DRIVER = new Driver(NULL);
                                                 </tr>
     <?php
 }
-?>   
+?>
                                         </tbody>
                                         <tfoot>
                                             <tr>

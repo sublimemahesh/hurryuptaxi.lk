@@ -166,13 +166,13 @@
                             <li>
                                 <a href="manage-active-customers.php">
                                     <i class="material-icons">how_to_reg</i>
-                                    <span>Active Customers</span>
+                                    <span>Active Users</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="manage-inactive-customers.php">
                                     <i class="material-icons">person_add_disabled</i>
-                                    <span>InActive Customers</span>
+                                    <span>InActive Users</span>
                                 </a>
                             </li>
 
@@ -335,10 +335,46 @@
                     <?php
                 }
                 ?>
+                   <?php
+                        if ($USER->id == 1) {
+                            
+                            ?> 
+                    
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">assignment_ind</i>
-                        <span>My Taxi</span>
+                        <span>Drivers</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="create-driver.php">
+                                <i class="material-icons">add</i>
+                                <span>Add New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="manage-driver.php">
+                                <i class="material-icons">list</i>
+                                <span>My Drivers</span>
+                            </a>
+                        </li>
+                          
+                            <li>
+                                <a href="manage-all-drivers.php">
+                                    <i class="material-icons">list</i>
+                                    <span>All Drivers</span>
+                                </a>
+                            </li>
+                         
+                    </ul>
+                </li> 
+                   <?php
+                        } else {
+                            ?>
+                  <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">assignment_ind</i>
+                        <span>My Drivers</span>
                     </a>
                     <ul class="ml-menu">
                         <li>
@@ -353,8 +389,14 @@
                                 <span>Manage</span>
                             </a>
                         </li>
+                          
+                        
                     </ul>
                 </li> 
+                <?php
+                            
+                        }
+                        ?>
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">send</i>

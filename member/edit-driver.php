@@ -184,8 +184,8 @@ $DRIVER = new Driver($id);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="image" class="hidden-lg hidden-md">Profile Picture</label>
-                                                    <input type="file" id="image" class="form-control" name="image" value="<?php echo $DRIVER->profile_picture; ?>">
-                                                    <img src="../upload/driver/<?php echo $DRIVER->profile_picture; ?>" id="image" class="view-edit-img img img-responsive img-thumbnail" name="image" alt="old image">
+                                                    <input type="file" id="image" class="form-control" name="image" value="">
+                                                    <img src="<?php echo $DRIVER->profile_picture; ?>" id="image" class="view-edit-img img img-responsive img-thumbnail" name="image" alt="old image">
                                                 </div>
                                             </div>
                                         </div>

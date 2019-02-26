@@ -94,11 +94,13 @@ $USER = new User($_SESSION["id"]);
                                                 ?>
                                             </td>  
                                             <td  style="width: 200px"> 
-                                                <a href="edit-user.php?id=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-success"><i class="glyphicon glyphicon-pencil"></i></a>
+                                                <a href="edit-user.php?id=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-success" title="Edit Users"><i class="glyphicon glyphicon-pencil"></i></a>
                                                 |
-                                                <a href="manage-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-warning"><i class="glyphicon glyphicon-user"></i></a>
+                                                <a href="manage-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-warning" title="Manage Users"><i class="glyphicon glyphicon-user"></i></a>
                                                 |
-                                                <a href="change-password-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-info"><i class="glyphicon glyphicon-lock"></i></a>
+                                                <a href="manage-driver-by-member.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-info" title="Manage Drivers"><i class="glyphicon glyphicon-tags"></i></a>
+                                                |
+                                                <a href="change-password-user.php?user=<?php echo $user['id']; ?>" class="op-link btn btn-sm btn-info" title="Change Password"><i class="glyphicon glyphicon-lock"></i></a>
                                                 <?php
                                                 if ($USER->id == 1) {
                                                     ?>
