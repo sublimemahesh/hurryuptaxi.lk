@@ -221,6 +221,70 @@
                             </li>
                         </ul>
                     </li> 
+                     <?php
+                        if ($USER->id == 1) {
+                            
+                            ?> 
+                    
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">assignment_ind</i>
+                        <span>Drivers</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="create-driver.php">
+                                <i class="material-icons">add</i>
+                                <span>Add New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="manage-driver.php">
+                                <i class="material-icons">list</i>
+                                <span>My Drivers</span>
+                            </a>
+                        </li>
+                          
+                            <li>
+                                <a href="manage-all-drivers.php">
+                                    <i class="material-icons">list</i>
+                                    <span>All Drivers</span>
+                                </a>
+                            </li>
+                         
+                    </ul>
+                </li> 
+                   <?php
+                        } else {
+                            ?>
+                  <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">assignment_ind</i>
+                        <span>My Drivers</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="create-driver.php">
+                                <i class="material-icons">add</i>
+                                <span>Add New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="manage-driver.php">
+                                <i class="material-icons">list</i>
+                                <span>Manage</span>
+                            </a>
+                        </li>
+                          
+                        
+                    </ul>
+                </li> 
+                <?php
+                            
+                        }
+                        ?>
+                    
+                    
                     <?php
                 }
                 ?> 
@@ -326,68 +390,7 @@
                     <?php
                 }
                 ?>
-                   <?php
-                        if ($USER->id == 1) {
-                            
-                            ?> 
-                    
-                <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">assignment_ind</i>
-                        <span>Drivers</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="create-driver.php">
-                                <i class="material-icons">add</i>
-                                <span>Add New</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="manage-driver.php">
-                                <i class="material-icons">list</i>
-                                <span>My Drivers</span>
-                            </a>
-                        </li>
-                          
-                            <li>
-                                <a href="manage-all-drivers.php">
-                                    <i class="material-icons">list</i>
-                                    <span>All Drivers</span>
-                                </a>
-                            </li>
-                         
-                    </ul>
-                </li> 
-                   <?php
-                        } else {
-                            ?>
-                  <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">assignment_ind</i>
-                        <span>My Drivers</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="create-driver.php">
-                                <i class="material-icons">add</i>
-                                <span>Add New</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="manage-driver.php">
-                                <i class="material-icons">list</i>
-                                <span>Manage</span>
-                            </a>
-                        </li>
-                          
-                        
-                    </ul>
-                </li> 
-                <?php
-                            
-                        }
-                        ?>
+                  
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">send</i>
@@ -466,7 +469,25 @@
                     <?php
                 }
                 ?>
-                
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </ul>
         </div>
         <!-- #Menu -->
