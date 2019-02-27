@@ -223,7 +223,7 @@ class Driver {
 
 
         $query = 'SELECT *, ROUND((6371 * acos ( cos ( radians(' . $latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $longitude . ') ) + sin ( radians(' . $latitude . ') ) * sin( radians( latitude ) ) ) ), 2) AS distance 
-        FROM driver WHERE ' . $timeAt . '  <= last_update_time AND vehicle_type = ' . $vehicle_type . ' HAVING distance <= 1.00 ORDER BY distance';
+        FROM driver WHERE ' . $timeAt . '  <= last_update_time AND vehicle_type = ' . $vehicle_type . ' HAVING distance <= 2.00 ORDER BY distance';
 
         $db = new Database();
 
@@ -245,7 +245,7 @@ class Driver {
 
         $result = mysql_fetch_array($db->readQuery($query));
 
-        return 'HURD' . str_pad($result["MAX(id)+1"], 5, '0', STR_PAD_LEFT);
+        return 'DRI' . str_pad($result["MAX(id)+1"], 5, '0', STR_PAD_LEFT);
     }
 
 }
