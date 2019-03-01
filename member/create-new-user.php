@@ -2,6 +2,7 @@
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 
+
 $USER = new User($_SESSION["id"]);
 
 date_default_timezone_set('Asia/Colombo');
@@ -14,7 +15,7 @@ $createdAt = date('Y-m-d H:i:s');
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
+        <meta charset="utf-8"/>
         <title>Register New Member || www.hurryuptaxi.lk</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">

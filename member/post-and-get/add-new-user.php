@@ -1,8 +1,10 @@
- <?php
+<?php
 
 include_once(dirname(__FILE__) . '/../../class/include.php');
 
 include_once(dirname(__FILE__) . '/../auth.php');
+
+
 
 if (isset($_POST['create'])) {
     $USER = new User(NULL);
@@ -140,7 +142,7 @@ if (isset($_POST['update'])) {
     } else {
         $USER->parent = 1;
     }
- 
+
     $USER->address = filter_input(INPUT_POST, 'address');
     $USER->phone_number = filter_input(INPUT_POST, 'phone_number');
     $USER->nic = filter_input(INPUT_POST, 'nic');
@@ -189,7 +191,7 @@ if (isset($_POST['update'])) {
 }
 
 if (isset($_POST['updateprofilepic'])) {
-    
+
     $dir_dest = '../../upload/user/';
 
     $handle = new Upload($_FILES['image']);
@@ -219,7 +221,7 @@ if (isset($_POST['updateprofilepic'])) {
     }
 
     $USER = new User($_POST['id']);
-    
+
     $USER->profile_picture = $imgName;
 
     $VALID = new Validator();
