@@ -80,7 +80,7 @@ $DRIVER = new Driver(NULL);
                                                 ?>
                                                 <tr id="row_<?php echo $driver['id']; ?>">
                                                     <td><?php echo $driver['username']; ?></td> 
-                                                    <td><?php echo $driver['name']; ?></td> 
+                                                      <td><?php echo substr($driver['name'],12); ?></td> 
                                                     <td><?php echo $driver['contact_no']; ?></td> 
                                                     <td><?php echo $VEHICLE_TYPE->name ?></td>
                                                     <td><?php echo $driver['vehicle_number']; ?></td> 
@@ -89,9 +89,9 @@ $DRIVER = new Driver(NULL);
                                                         <a href="edit-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-primary">
                                                             <i class="glyphicon glyphicon-pencil"></i>
                                                         </a> | 
-<!--                                                            <a href="add-vehicle-photos.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-success">
-                                                            <i class="glyphicon glyphicon-picture"></i>
-                                                        </a> | -->
+                                                        <a href="change-password-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-default" title="Change Password">
+                                                                <i class="glyphicon glyphicon-lock"></i>
+                                                        </a> | 
                                                         <a href="view-driver.php?id=<?php echo $driver['id']; ?>" class="op-link btn btn-sm btn-info" title="View Driver">
                                                             <i class="glyphicon glyphicon-eye-open"></i> 
                                                         </a> | 
