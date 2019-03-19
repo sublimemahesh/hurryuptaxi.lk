@@ -104,6 +104,25 @@ class Driver {
         }
     }
 
+    public function changePassword($id, $password) {
+
+        $enPass = md5($password);
+
+        $query = "UPDATE  `driver` SET "
+                . "`password` ='" . $enPass . "' "
+                . "WHERE `id` = '" . $id . "'";
+
+        $db = new Database();
+
+        $result = $db->readQuery($query);
+
+        if ($result) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
     public function getDriversByVehicleType($id) {
 
         $query = "SELECT * FROM `driver` WHERE vehicle_type= '" . $id . "'";

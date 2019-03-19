@@ -9,11 +9,12 @@ if (isset($_POST['add-driver'])) {
     $DRIVER = New Driver(NULL);
     $VALID = new Validator();
 
-    
-    
+
+
     $server_name = "http://" . $_SERVER['SERVER_NAME'];
 
     $dir_dest_url = $server_name . '/upload/driver/';
+
 
 
     $DRIVER->user = $_POST['user'];
@@ -27,9 +28,7 @@ if (isset($_POST['add-driver'])) {
     $DRIVER->vehicle_number = $_POST['vehicle_number'];
     $DRIVER->nic_number = $_POST['nic_number'];
     $DRIVER->price_per_km = $_POST['price_per_km'];
-
     $DRIVER->vehicle_type = $_POST['vehicle_type'];
-
     $DRIVER->base_price = $_POST['base_price'];
     $DRIVER->password = $_POST['password'];
 
@@ -53,13 +52,13 @@ if (isset($_POST['add-driver'])) {
         if ($handle->processed) {
             $info = getimagesize($handle->file_dst_pathname);
             $imgName = $handle->file_dst_name;
-              $DRIVER->profile_picture = $dir_dest_url . $imgName;
+            $DRIVER->profile_picture = $dir_dest_url . $imgName;
         } else {
-             $DRIVER->profile_picture = '';
+            $DRIVER->profile_picture = '';
         }
     }
 
-  
+
 
     $VALID->check($DRIVER, [
         'name' => ['required' => TRUE],
@@ -72,7 +71,6 @@ if (isset($_POST['add-driver'])) {
         'nic_number' => ['required' => TRUE],
         'price_per_km' => ['required' => TRUE],
         'base_price' => ['required' => TRUE],
-        'password' => ['required' => TRUE]
     ]);
 
     if ($VALID->passed()) {
@@ -107,15 +105,15 @@ if (isset($_POST['edit-driver'])) {
     $server_name = "http://" . $_SERVER['SERVER_NAME'];
 
     $dir_dest_url = $server_name . '/upload/driver/';
-    
+
     $dir_dest = '../../upload/driver/';
-    
-     $DRIVER = New Driver($_POST['id']);
+
+    $DRIVER = New Driver($_POST['id']);
 
     $handle = new Upload($_FILES['image']);
 
     $imgName = null;
-  
+
     if ($handle->uploaded) {
         $handle->image_resize = true;
         $handle->file_new_name_body = TRUE;
@@ -140,11 +138,11 @@ if (isset($_POST['edit-driver'])) {
         $DRIVER->profile_picture = $img;
     }
 
-   
+
     $VALID = new Validator();
 
-   
-    
+
+
     $DRIVER->user = $_POST['user'];
     $DRIVER->name = $_POST['name'];
     $DRIVER->email = $_POST['email'];
@@ -156,8 +154,8 @@ if (isset($_POST['edit-driver'])) {
     $DRIVER->vehicle_type = $_POST['vehicle_type'];
     $DRIVER->base_price = $_POST['base_price'];
     $DRIVER->password = md5($_POST['password']);
-    
-    
+
+
 
     $VALID->check($DRIVER, [
         'name' => ['required' => TRUE],
@@ -193,4 +191,17 @@ if (isset($_POST['edit-driver'])) {
 }
 
 
+if (isset($_POST['changePassword'])) {
+
+    $DRIVER = new Driver(NULL);
+    
+    $result = $DRIVER->changePassword($_POST["id"], $_POST["newPass"]);
+    if ($result == 'TRUE') {
+        header('location: ../change-password-driver.php?id=' . $_POST["id"] . '&&message=9');
+        exit();
+    } else {
+        header('location: ../change-password-driver.php?id=' . $_POST["id"] . '&&message=14');
+        exit();
+    }
+}
 

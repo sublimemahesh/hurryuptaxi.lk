@@ -240,7 +240,8 @@ $createdAt = date('Y-m-d H:i:s');
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="password" id="password" class="form-control" placeholder="Enter Password" autocomplete="off" name="password" required="">
+                                                    <input type="text" id="password" class="form-control" value="abc123" name="password"  required="TRUE">
+
                                                 </div>
                                             </div>
                                         </div>
