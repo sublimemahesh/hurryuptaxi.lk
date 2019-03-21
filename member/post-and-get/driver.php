@@ -153,7 +153,7 @@ if (isset($_POST['edit-driver'])) {
     $DRIVER->price_per_km = $_POST['price_per_km'];
     $DRIVER->vehicle_type = $_POST['vehicle_type'];
     $DRIVER->base_price = $_POST['base_price'];
-    $DRIVER->password = md5($_POST['password']);
+  
 
 
 
@@ -165,7 +165,7 @@ if (isset($_POST['edit-driver'])) {
         'vehicle_number' => ['required' => TRUE],
         'nic_number' => ['required' => TRUE],
         'base_price' => ['required' => TRUE],
-        'password' => ['required' => TRUE]
+     
     ]);
 
     if ($VALID->passed()) {
