@@ -80,7 +80,7 @@ $DRIVER = new Driver(NULL);
                                                 ?>
                                                 <tr id="row_<?php echo $driver['id']; ?>">
                                                     <td><?php echo $driver['username']; ?></td> 
-                                                      <td><?php echo substr($driver['name'],12); ?></td> 
+                                                      <td><?php echo substr($driver['name'],0,20); ?></td> 
                                                     <td><?php echo $driver['contact_no']; ?></td> 
                                                     <td><?php echo $VEHICLE_TYPE->name ?></td>
                                                     <td><?php echo $driver['vehicle_number']; ?></td> 

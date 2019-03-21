@@ -166,7 +166,6 @@ class Driver {
                 . "`nic_number` ='" . $this->nic_number . "', "
                 . "`base_price` ='" . $this->base_price . "', "
                 . "`price_per_km` ='" . $this->price_per_km . "', "
-                . "`password` ='" . md5($this->password) . "', "
                 . "`verified` ='" . $this->verified . "', "
                 . "`vehicle_type` ='" . $this->vehicle_type . "' "
                 . "WHERE `id` = '" . $this->id . "'";
